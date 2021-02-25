@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */; };
+		76F593BF25E82ED3008E171E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BE25E82ED3008E171E /* ContentView.swift */; };
+		76F593C125E82ED4008E171E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593C025E82ED4008E171E /* Assets.xcassets */; };
+		76F593C425E82ED4008E171E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593C325E82ED4008E171E /* Preview Assets.xcassets */; };
+		76F593CF25E82ED4008E171E /* Self_Care_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593CE25E82ED4008E171E /* Self_Care_AppTests.swift */; };
+		76F593DA25E82ED4008E171E /* Self_Care_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593D925E82ED4008E171E /* Self_Care_AppUITests.swift */; };
+		76F593DF25E82ED4008E171E /* Self Care App WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 76F593DE25E82ED4008E171E /* Self Care App WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		76F593E425E82ED5008E171E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593E325E82ED5008E171E /* Assets.xcassets */; };
+		76F593EB25E82ED5008E171E /* Self Care App WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 76F593EA25E82ED5008E171E /* Self Care App WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		76F593F025E82ED5008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593EF25E82ED5008E171E /* Self_Care_AppApp.swift */; };
+		76F593F225E82ED5008E171E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593F125E82ED5008E171E /* ContentView.swift */; };
+		76F593F425E82ED5008E171E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593F325E82ED5008E171E /* NotificationController.swift */; };
+		76F593F625E82ED5008E171E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593F525E82ED5008E171E /* NotificationView.swift */; };
+		76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593F725E82ED5008E171E /* ComplicationController.swift */; };
+		76F593FA25E82ED6008E171E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593F925E82ED6008E171E /* Assets.xcassets */; };
+		76F593FD25E82ED6008E171E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593FC25E82ED6008E171E /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76F593CB25E82ED4008E171E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76F593B125E82ED3008E171E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76F593B825E82ED3008E171E;
+			remoteInfo = "Self Care App";
+		};
+		76F593D625E82ED4008E171E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76F593B125E82ED3008E171E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76F593B825E82ED3008E171E;
+			remoteInfo = "Self Care App";
+		};
+		76F593E025E82ED4008E171E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76F593B125E82ED3008E171E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76F593DD25E82ED4008E171E;
+			remoteInfo = "Self Care App WatchKit App";
+		};
+		76F593EC25E82ED5008E171E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76F593B125E82ED3008E171E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76F593E925E82ED5008E171E;
+			remoteInfo = "Self Care App WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76F5940525E82ED6008E171E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				76F593EB25E82ED5008E171E /* Self Care App WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F5940925E82ED6008E171E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				76F593DF25E82ED4008E171E /* Self Care App WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		76F593B925E82ED3008E171E /* Self Care App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_Care_AppApp.swift; sourceTree = "<group>"; };
+		76F593BE25E82ED3008E171E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		76F593C025E82ED4008E171E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76F593C325E82ED4008E171E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76F593C525E82ED4008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F593CA25E82ED4008E171E /* Self Care AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Self Care AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F593CE25E82ED4008E171E /* Self_Care_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_Care_AppTests.swift; sourceTree = "<group>"; };
+		76F593D025E82ED4008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F593D525E82ED4008E171E /* Self Care AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Self Care AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F593D925E82ED4008E171E /* Self_Care_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_Care_AppUITests.swift; sourceTree = "<group>"; };
+		76F593DB25E82ED4008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F593DE25E82ED4008E171E /* Self Care App WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F593E325E82ED5008E171E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76F593E525E82ED5008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F593EA25E82ED5008E171E /* Self Care App WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Self Care App WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F593EF25E82ED5008E171E /* Self_Care_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_Care_AppApp.swift; sourceTree = "<group>"; };
+		76F593F125E82ED5008E171E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		76F593F325E82ED5008E171E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		76F593F525E82ED5008E171E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		76F593F725E82ED5008E171E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		76F593F925E82ED6008E171E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76F593FC25E82ED6008E171E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76F593FE25E82ED6008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F593FF25E82ED6008E171E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76F593B625E82ED3008E171E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593C725E82ED4008E171E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593D225E82ED4008E171E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593E725E82ED5008E171E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76F593B025E82ED3008E171E = {
+			isa = PBXGroup;
+			children = (
+				76F593BB25E82ED3008E171E /* Self Care App */,
+				76F593CD25E82ED4008E171E /* Self Care AppTests */,
+				76F593D825E82ED4008E171E /* Self Care AppUITests */,
+				76F593E225E82ED4008E171E /* Self Care App WatchKit App */,
+				76F593EE25E82ED5008E171E /* Self Care App WatchKit Extension */,
+				76F593BA25E82ED3008E171E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76F593BA25E82ED3008E171E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76F593B925E82ED3008E171E /* Self Care App.app */,
+				76F593CA25E82ED4008E171E /* Self Care AppTests.xctest */,
+				76F593D525E82ED4008E171E /* Self Care AppUITests.xctest */,
+				76F593DE25E82ED4008E171E /* Self Care App WatchKit App.app */,
+				76F593EA25E82ED5008E171E /* Self Care App WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76F593BB25E82ED3008E171E /* Self Care App */ = {
+			isa = PBXGroup;
+			children = (
+				76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */,
+				76F593BE25E82ED3008E171E /* ContentView.swift */,
+				76F593C025E82ED4008E171E /* Assets.xcassets */,
+				76F593C525E82ED4008E171E /* Info.plist */,
+				76F593C225E82ED4008E171E /* Preview Content */,
+			);
+			path = "Self Care App";
+			sourceTree = "<group>";
+		};
+		76F593C225E82ED4008E171E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				76F593C325E82ED4008E171E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76F593CD25E82ED4008E171E /* Self Care AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				76F593CE25E82ED4008E171E /* Self_Care_AppTests.swift */,
+				76F593D025E82ED4008E171E /* Info.plist */,
+			);
+			path = "Self Care AppTests";
+			sourceTree = "<group>";
+		};
+		76F593D825E82ED4008E171E /* Self Care AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76F593D925E82ED4008E171E /* Self_Care_AppUITests.swift */,
+				76F593DB25E82ED4008E171E /* Info.plist */,
+			);
+			path = "Self Care AppUITests";
+			sourceTree = "<group>";
+		};
+		76F593E225E82ED4008E171E /* Self Care App WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				76F593E325E82ED5008E171E /* Assets.xcassets */,
+				76F593E525E82ED5008E171E /* Info.plist */,
+			);
+			path = "Self Care App WatchKit App";
+			sourceTree = "<group>";
+		};
+		76F593EE25E82ED5008E171E /* Self Care App WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				76F593EF25E82ED5008E171E /* Self_Care_AppApp.swift */,
+				76F593F125E82ED5008E171E /* ContentView.swift */,
+				76F593F325E82ED5008E171E /* NotificationController.swift */,
+				76F593F525E82ED5008E171E /* NotificationView.swift */,
+				76F593F725E82ED5008E171E /* ComplicationController.swift */,
+				76F593F925E82ED6008E171E /* Assets.xcassets */,
+				76F593FE25E82ED6008E171E /* Info.plist */,
+				76F593FF25E82ED6008E171E /* PushNotificationPayload.apns */,
+				76F593FB25E82ED6008E171E /* Preview Content */,
+			);
+			path = "Self Care App WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		76F593FB25E82ED6008E171E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				76F593FC25E82ED6008E171E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76F593B825E82ED3008E171E /* Self Care App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76F5940A25E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care App" */;
+			buildPhases = (
+				76F593B525E82ED3008E171E /* Sources */,
+				76F593B625E82ED3008E171E /* Frameworks */,
+				76F593B725E82ED3008E171E /* Resources */,
+				76F5940925E82ED6008E171E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76F593E125E82ED4008E171E /* PBXTargetDependency */,
+			);
+			name = "Self Care App";
+			productName = "Self Care App";
+			productReference = 76F593B925E82ED3008E171E /* Self Care App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76F593C925E82ED4008E171E /* Self Care AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76F5940D25E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care AppTests" */;
+			buildPhases = (
+				76F593C625E82ED4008E171E /* Sources */,
+				76F593C725E82ED4008E171E /* Frameworks */,
+				76F593C825E82ED4008E171E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76F593CC25E82ED4008E171E /* PBXTargetDependency */,
+			);
+			name = "Self Care AppTests";
+			productName = "Self Care AppTests";
+			productReference = 76F593CA25E82ED4008E171E /* Self Care AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		76F593D425E82ED4008E171E /* Self Care AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76F5941025E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care AppUITests" */;
+			buildPhases = (
+				76F593D125E82ED4008E171E /* Sources */,
+				76F593D225E82ED4008E171E /* Frameworks */,
+				76F593D325E82ED4008E171E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76F593D725E82ED4008E171E /* PBXTargetDependency */,
+			);
+			name = "Self Care AppUITests";
+			productName = "Self Care AppUITests";
+			productReference = 76F593D525E82ED4008E171E /* Self Care AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		76F593DD25E82ED4008E171E /* Self Care App WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76F5940625E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care App WatchKit App" */;
+			buildPhases = (
+				76F593DC25E82ED4008E171E /* Resources */,
+				76F5940525E82ED6008E171E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76F593ED25E82ED5008E171E /* PBXTargetDependency */,
+			);
+			name = "Self Care App WatchKit App";
+			productName = "Self Care App WatchKit App";
+			productReference = 76F593DE25E82ED4008E171E /* Self Care App WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		76F593E925E82ED5008E171E /* Self Care App WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76F5940225E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care App WatchKit Extension" */;
+			buildPhases = (
+				76F593E625E82ED5008E171E /* Sources */,
+				76F593E725E82ED5008E171E /* Frameworks */,
+				76F593E825E82ED5008E171E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Self Care App WatchKit Extension";
+			productName = "Self Care App WatchKit Extension";
+			productReference = 76F593EA25E82ED5008E171E /* Self Care App WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76F593B125E82ED3008E171E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					76F593B825E82ED3008E171E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					76F593C925E82ED4008E171E = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 76F593B825E82ED3008E171E;
+					};
+					76F593D425E82ED4008E171E = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 76F593B825E82ED3008E171E;
+					};
+					76F593DD25E82ED4008E171E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					76F593E925E82ED5008E171E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 76F593B425E82ED3008E171E /* Build configuration list for PBXProject "Self Care App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76F593B025E82ED3008E171E;
+			productRefGroup = 76F593BA25E82ED3008E171E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76F593B825E82ED3008E171E /* Self Care App */,
+				76F593C925E82ED4008E171E /* Self Care AppTests */,
+				76F593D425E82ED4008E171E /* Self Care AppUITests */,
+				76F593DD25E82ED4008E171E /* Self Care App WatchKit App */,
+				76F593E925E82ED5008E171E /* Self Care App WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76F593B725E82ED3008E171E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593C425E82ED4008E171E /* Preview Assets.xcassets in Resources */,
+				76F593C125E82ED4008E171E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593C825E82ED4008E171E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593D325E82ED4008E171E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593DC25E82ED4008E171E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593E425E82ED5008E171E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593E825E82ED5008E171E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593FD25E82ED6008E171E /* Preview Assets.xcassets in Resources */,
+				76F593FA25E82ED6008E171E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76F593B525E82ED3008E171E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593BF25E82ED3008E171E /* ContentView.swift in Sources */,
+				76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593C625E82ED4008E171E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593CF25E82ED4008E171E /* Self_Care_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593D125E82ED4008E171E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593DA25E82ED4008E171E /* Self_Care_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F593E625E82ED5008E171E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F593F425E82ED5008E171E /* NotificationController.swift in Sources */,
+				76F593F225E82ED5008E171E /* ContentView.swift in Sources */,
+				76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */,
+				76F593F025E82ED5008E171E /* Self_Care_AppApp.swift in Sources */,
+				76F593F625E82ED5008E171E /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76F593CC25E82ED4008E171E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76F593B825E82ED3008E171E /* Self Care App */;
+			targetProxy = 76F593CB25E82ED4008E171E /* PBXContainerItemProxy */;
+		};
+		76F593D725E82ED4008E171E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76F593B825E82ED3008E171E /* Self Care App */;
+			targetProxy = 76F593D625E82ED4008E171E /* PBXContainerItemProxy */;
+		};
+		76F593E125E82ED4008E171E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76F593DD25E82ED4008E171E /* Self Care App WatchKit App */;
+			targetProxy = 76F593E025E82ED4008E171E /* PBXContainerItemProxy */;
+		};
+		76F593ED25E82ED5008E171E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76F593E925E82ED5008E171E /* Self Care App WatchKit Extension */;
+			targetProxy = 76F593EC25E82ED5008E171E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		76F5940025E82ED6008E171E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		76F5940125E82ED6008E171E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		76F5940325E82ED6008E171E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Self Care App WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = FG34M55V26;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Self Care App WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-App.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		76F5940425E82ED6008E171E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Self Care App WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = FG34M55V26;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Self Care App WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-App.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		76F5940725E82ED6008E171E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG34M55V26;
+				IBSC_MODULE = Self_Care_App_WatchKit_Extension;
+				INFOPLIST_FILE = "Self Care App WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		76F5940825E82ED6008E171E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG34M55V26;
+				IBSC_MODULE = Self_Care_App_WatchKit_Extension;
+				INFOPLIST_FILE = "Self Care App WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		76F5940B25E82ED6008E171E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Self Care App/Preview Content\"";
+				DEVELOPMENT_TEAM = FG34M55V26;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Self Care App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76F5940C25E82ED6008E171E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Self Care App/Preview Content\"";
+				DEVELOPMENT_TEAM = FG34M55V26;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Self Care App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76F5940E25E82ED6008E171E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG34M55V26;
+				INFOPLIST_FILE = "Self Care AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Self Care App.app/Self Care App";
+			};
+			name = Debug;
+		};
+		76F5940F25E82ED6008E171E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG34M55V26;
+				INFOPLIST_FILE = "Self Care AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Self Care App.app/Self Care App";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76F5941125E82ED6008E171E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG34M55V26;
+				INFOPLIST_FILE = "Self Care AppUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Self Care App";
+			};
+			name = Debug;
+		};
+		76F5941225E82ED6008E171E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG34M55V26;
+				INFOPLIST_FILE = "Self Care AppUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascarvalho.Self-Care-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Self Care App";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76F593B425E82ED3008E171E /* Build configuration list for PBXProject "Self Care App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F5940025E82ED6008E171E /* Debug */,
+				76F5940125E82ED6008E171E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76F5940225E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care App WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F5940325E82ED6008E171E /* Debug */,
+				76F5940425E82ED6008E171E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76F5940625E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care App WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F5940725E82ED6008E171E /* Debug */,
+				76F5940825E82ED6008E171E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76F5940A25E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F5940B25E82ED6008E171E /* Debug */,
+				76F5940C25E82ED6008E171E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76F5940D25E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F5940E25E82ED6008E171E /* Debug */,
+				76F5940F25E82ED6008E171E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76F5941025E82ED6008E171E /* Build configuration list for PBXNativeTarget "Self Care AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F5941125E82ED6008E171E /* Debug */,
+				76F5941225E82ED6008E171E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76F593B125E82ED3008E171E /* Project object */;
+}
