@@ -33,11 +33,14 @@ struct ContentView: View {
             .cornerRadius(15)
             
         }
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        MainView()
         ContentView()
     }
 }
