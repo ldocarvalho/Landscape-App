@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var userName: String = ""
     var body: some View {
-        Text("Olá, GLV!")
-            .padding()
+        VStack {
+            VStack {
+                Text("Qual o seu nome?")
+                    .padding()
+                TextField("", text: $userName).frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .cornerRadius(15)
+            }
+            Button(action: {
+                //colocar ação aqui
+               print("a \(userName)")
+            }) {
+                VStack{
+                    Text("Continuar")
+                    
+                }
+                
+            }.frame(width: 100, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(Color.black)
+            .foregroundColor(.white)
+            .cornerRadius(15)
+            
+        }
     }
 }
 
