@@ -1,0 +1,75 @@
+//
+//  UserData.swift
+//  Self Care App
+//
+//  Created by Victor Vidal on 01/03/21.
+//
+
+import Foundation
+import CoreData
+
+
+internal struct UserDataManager{
+    static let shared = UserDataManager()
+    
+    let persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Moment")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error {
+                fatalError("erro de load \(error)")
+            }
+        }
+        return container
+    }()
+    func createMoment(partOfTheDay: Int?, selfCareType: Int?, title: String?, repeatActivity: Bool?, daysOfWeek:[Int]?) -> Moment? {
+                
+                let context = persistentContainer.viewContext
+                let userDetails = NSEntityDescription.insertNewObject(forEntityName: "Moment", into: context) as! Moment
+                
+                userDetails.partOfTheDay = Int32(partOfTheDay!)
+                userDetails.selfCareType = Int32(selfCareType!)
+                userDetails.title = title
+                userDetails.repeatActivity = repeatActivity!
+                userDetails.daysOfWeek = daysOfWeek as NSObject?
+                
+                do {
+                    try context.save()
+                    return userDetails
+                } catch let createError {
+                    print("Failed to create: \(createError)")
+                }
+                
+                return nil
+           }
+
+    func fetchMoments() -> [Moment]? {
+            let context = persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<Moment>(entityName: "Moment")
+
+            do{
+                let momentsList = try context.fetch(fetchRequest)
+                return momentsList
+            } catch let error{
+               print("Fetch Failed: \(error)")
+            }
+               return nil
+    }
+    func updatMomets(Moment: Moment){
+                let context = persistentContainer.viewContext
+              do{
+                    try context.save()
+                    } catch let updateError {
+                        print("Failed to update: \(updateError)")
+                }
+            }
+    func deleteMoment(investigation: Moment){
+                let context = persistentContainer.viewContext
+              context.delete(investigation)
+              do{
+                 try context.save()
+                 } catch let deleteError {
+               print("Failed to delete: \(deleteError)")
+               }
+            }
+
+}
