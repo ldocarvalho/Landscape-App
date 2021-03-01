@@ -25,6 +25,7 @@
 		76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593F725E82ED5008E171E /* ComplicationController.swift */; };
 		76F593FA25E82ED6008E171E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593F925E82ED6008E171E /* Assets.xcassets */; };
 		76F593FD25E82ED6008E171E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593FC25E82ED6008E171E /* Preview Assets.xcassets */; };
+		A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E7225ED6CF1008B7AF1 /* TabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		76F593FC25E82ED6008E171E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76F593FE25E82ED6008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76F593FF25E82ED6008E171E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A85F8E7225ED6CF1008B7AF1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */,
+				A85F8E7225ED6CF1008B7AF1 /* TabView.swift */,
 				76F593BE25E82ED3008E171E /* ContentView.swift */,
 				76F593C025E82ED4008E171E /* Assets.xcassets */,
 				76F593C525E82ED4008E171E /* Info.plist */,
@@ -435,6 +438,7 @@
 				76F593BF25E82ED3008E171E /* ContentView.swift in Sources */,
 				76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */,
 				76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */,
+				A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */,
 				76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
