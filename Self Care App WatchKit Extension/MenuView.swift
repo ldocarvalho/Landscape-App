@@ -52,3 +52,4 @@ struct MenuView_Previews: PreviewProvider {
         MenuView()
     }
 }
+

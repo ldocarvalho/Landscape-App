@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7616653A25ED7CE500A35A6A /* NewMomentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616653925ED7CE500A35A6A /* NewMomentView.swift */; };
+		7616655725ED8B1A00A35A6A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616655625ED8B1A00A35A6A /* MenuView.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
 		76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */; };
 		76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		7616653925ED7CE500A35A6A /* NewMomentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMomentView.swift; sourceTree = "<group>"; };
+		7616655625ED8B1A00A35A6A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
 		76F593B925E82ED3008E171E /* Self Care App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 				76F593FE25E82ED6008E171E /* Info.plist */,
 				76F593FF25E82ED6008E171E /* PushNotificationPayload.apns */,
 				76F593FB25E82ED6008E171E /* Preview Content */,
+				7616655625ED8B1A00A35A6A /* MenuView.swift */,
 			);
 			path = "Self Care App WatchKit Extension";
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F593F425E82ED5008E171E /* NotificationController.swift in Sources */,
+				7616655725ED8B1A00A35A6A /* MenuView.swift in Sources */,
 				76F593F225E82ED5008E171E /* ContentView.swift in Sources */,
 				76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */,
 				76F593F025E82ED5008E171E /* Self_Care_AppApp.swift in Sources */,
