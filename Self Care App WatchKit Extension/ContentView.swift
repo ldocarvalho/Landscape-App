@@ -20,8 +20,6 @@ struct ContentView: View {
             ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial).frame(height: 10)
             Spacer()
         }
-       
-        
     }
 }
 struct Circles: View {
