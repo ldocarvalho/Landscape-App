@@ -86,7 +86,7 @@ struct NewMomentView : View {
                         .foregroundColor(.gray)
                         .overlay(Text("T"))
                     Circle()
-                        .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 40, height: 40, alignment: .center)
                         .foregroundColor(.gray)
                         .overlay(Text("Q"))
                     Circle()

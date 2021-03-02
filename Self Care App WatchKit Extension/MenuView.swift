@@ -14,7 +14,7 @@ struct MenuView: View {
                 Spacer()
                 // adicionar View com momentos como destination
                 NavigationLink(
-                    destination: ContentView(),
+                    destination: MomentsView(),
                     label: {
                         Button(image: "p1", title: "Momentos")
                     }).buttonStyle(PlainButtonStyle())
