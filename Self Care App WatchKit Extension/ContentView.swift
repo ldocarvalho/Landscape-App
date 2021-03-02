@@ -6,20 +6,34 @@
 //
 
 import SwiftUI
-
+import UserNotifications
 struct ContentView: View {
+   
+
     @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
     @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
     @State var progressValueHobbies: Float = 0.65 //Colocar informação do banco aqui
+    
     var body: some View {
         VStack{
+            
+
             Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
                  .frame(width: 100.0, height: 100.0)
                  .padding(25.0)
 
             ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial).frame(height: 10)
             Spacer()
-        }
+        }.onAppear(perform: {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { success, error in
+                    if success {
+                        print("aceitou")
+                        scheduleNotifications()
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
+        })
        
         
     }

@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
-
+import UserNotifications
 @main
 struct Self_Care_AppApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                MenuView()
+                
             }
         }
-
+        
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
+

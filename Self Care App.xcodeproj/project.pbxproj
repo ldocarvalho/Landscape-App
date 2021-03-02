@@ -30,6 +30,7 @@
 		A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E7225ED6CF1008B7AF1 /* TabView.swift */; };
 		A85F8E8C25ED7488008B7AF1 /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E8A25ED7488008B7AF1 /* UserData.xcdatamodeld */; };
 		A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
+		A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		A85F8E7225ED6CF1008B7AF1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		A85F8E8B25ED7488008B7AF1 /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
 		A85F8E9E25ED7804008B7AF1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				76F593FF25E82ED6008E171E /* PushNotificationPayload.apns */,
 				76F593FB25E82ED6008E171E /* Preview Content */,
 				7616655625ED8B1A00A35A6A /* MenuView.swift */,
+				A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */,
 			);
 			path = "Self Care App WatchKit Extension";
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */,
 				76F593F425E82ED5008E171E /* NotificationController.swift in Sources */,
 				7616655725ED8B1A00A35A6A /* MenuView.swift in Sources */,
 				76F593F225E82ED5008E171E /* ContentView.swift in Sources */,

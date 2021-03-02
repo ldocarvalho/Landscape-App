@@ -26,7 +26,9 @@ struct MenuView: View {
                         Button(image: "p2", title: "Ciclos")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
-            }
+            }.onAppear(perform: {
+                scheduleNotifications()
+            })
         }
     }
 }
