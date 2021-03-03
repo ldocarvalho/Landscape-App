@@ -35,18 +35,18 @@ struct OnboardingView: View {
                 VStack {
                    
                     Button(action: {
-                     let momento = Moment(context: moc)
-                        momento.daysOfWeek = [0] as NSObject
-                        momento.partOfTheDay = 0
-                        momento.repeatActivity = false
-                        momento.selfCareType = 0
-                        do{
-                            try moc.save()
-                            moc.delete(momento)
-                        }
-                        catch{
-                            
-                        }
+//                     let momento = Moment(context: moc)
+//                        momento.daysOfWeek = [0] as NSObject
+//                        momento.partOfTheDay = 0
+//                        momento.repeatActivity = false
+//                        momento.selfCareType = 0
+//                        do{
+//                            try moc.save()
+//                            moc.delete(momento)
+//                        }
+//                        catch{
+//
+//                        }
                         if(RegisterMomentPart1View(momentTitle: $title).momentTitle != ""){
                             print("a")
                             let dataManager = UserDataManager.shared
