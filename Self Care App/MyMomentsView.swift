@@ -16,7 +16,9 @@ struct MyMomentsView: View {
         Card(id: 3, image: "p4", title: "Comer saudável", details: "Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.", expand: false),
         Card(id: 4, image: "p5", title: "Jantar em família", details: "Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.", expand: false)
     ]
-    
+        
+    @State var moments: [Moment]?
+        
     @State var showModalView = false
     
     var body: some View {
@@ -24,16 +26,16 @@ struct MyMomentsView: View {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
-                        ForEach(self.cards) { i in
+                        ForEach(self.moments!) { moment in
                             NavigationLink(
                                 destination: MomentDetailView()) {
                                 
-                                Image(i.image)
+                                Image("p1")
                                     .resizable()
                                     .frame(height: 250)
                                     .cornerRadius(25.0)
                                     .padding(.horizontal)
-                                    .overlay(Text(i.title)
+                                    .overlay(Text(moment.title!)
                                                 .font(.title)
                                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                                 .foregroundColor(.white)
@@ -49,7 +51,16 @@ struct MyMomentsView: View {
             .navigationBarItems(trailing: Button("Add", action: {
                 self.showModalView.toggle()
             }))
-        }.sheet(isPresented: self.$showModalView, content: {
+        }
+        .onAppear() {
+            let dataManager = UserDataManager.shared
+            if let savedMoments = dataManager.fetchMoments() {
+                self.moments = savedMoments
+            } else {
+                self.moments = []
+            }
+        }
+        .sheet(isPresented: self.$showModalView, content: {
             NewMomentView()
         })
     }
