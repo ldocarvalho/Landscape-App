@@ -35,6 +35,8 @@ struct MyMomentsView: View {
                                                 .font(.title)
                                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                                 .foregroundColor(.white)
+                                                .padding(30),
+                                             alignment: .topLeading
                                     )
                             }
                         }
