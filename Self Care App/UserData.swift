@@ -64,13 +64,13 @@ internal struct UserDataManager{
             let context = persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<Moment>(entityName: "Moment")
 
-            do{
-                let momentsList = try context.fetch(fetchRequest)
-                return momentsList
-            } catch let error{
-               print("Fetch Failed: \(error)")
-            }
-               return nil
+        do{
+            let momentsList = try context.fetch(fetchRequest)
+            return momentsList
+        } catch let error{
+            print("Fetch Failed: \(error)")
+        }
+        return nil
     }
     func updatMomets(Moment: Moment){
                 let context = persistentContainer.viewContext

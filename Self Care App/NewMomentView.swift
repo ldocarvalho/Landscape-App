@@ -12,19 +12,24 @@ struct NewMomentView : View {
     @State var momentTitle = ""
     @State var partOfDay = 0
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body : some View {
         VStack {
             HStack {
                 Button("Cancel") {
-                    print("Cancel")
+                    presentationMode.wrappedValue.dismiss()
                 }.padding()
                 Spacer()
                 Text("Add new moment")
+                    .fontWeight(.bold)
                 Spacer()
                 Button("Save") {
                     print("Save")
                 }.padding()
             }
+            
+            Spacer()
                         
             VStack {
                 Text("What would you like to do to take care of youself today?")
@@ -140,7 +145,8 @@ struct NewMomentView : View {
                     .foregroundColor(.gray)
                     .overlay(Text("Would you like to know more about self care?"))
             }
-        }
+            Spacer()
+        }.padding()
     }
 }
 
