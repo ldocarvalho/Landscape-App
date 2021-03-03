@@ -53,6 +53,7 @@ struct MyMomentsView: View {
                 self.showModalView.toggle()
             }))
         }
+        .padding(0.0)
         .onAppear() {
             let dataManager = UserDataManager.shared
             if let savedMoments = dataManager.fetchMoments() {

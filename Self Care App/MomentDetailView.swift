@@ -14,43 +14,61 @@ struct MomentDetailView: View {
                 VStack {
                     Image("p1")
                         .resizable()
-                        .frame(height: 250)
+                        .frame(height: 300)
                     
                     VStack {
                         HStack {
-                            Text("Title")
+                            Text("Skincare moment")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
+                                .foregroundColor(ColorManager.titleTextColor)
                             Spacer()
-                            Button("Edit") {
-                                print("Editar momento")
-                            }
+                            Button(action: {
+                                print("Olá")
+                            }, label: {
+                                Text("Edit")
+                                    .foregroundColor(ColorManager.actionButtonColor)
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            })
                         } .padding()
                         
                         Text("Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.")
-                            .font(.title3)
+                            .font(.body)
                             .padding()
-                        
-                        Text("Is this moment done for today?")
-                            .font(.title3)
-                            .bold()
-                            .padding()
+                            .foregroundColor(ColorManager.bodyTextColor)
                         
                         HStack {
-                            Button("Delete moment") {
-                                print("Deletar momento")
-                            }
+                            Text("Is this moment done for today?")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(ColorManager.titleTextColor)
+                                .padding()
+                            Spacer()
+                        }.padding(5)
+                        
+                        HStack {
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Delete moment")
+                                    .foregroundColor(ColorManager.titleTextColor)
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            })
                             .frame(width: 180, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .background(Color.gray)
+                            .background(ColorManager.secondaryButtonColor)
                             .cornerRadius(25.0)
                             
                             Spacer()
                             
-                            Button("Moment done") {
-                                print("Momento concluído")
-                            }
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Moment done")
+                                    .foregroundColor(ColorManager.backgroundColor)
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            })
                             .frame(width: 180, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .background(Color.gray)
+                            .background(ColorManager.mainButtonColor)
                             .cornerRadius(25.0)
                         }.padding()
                     }
