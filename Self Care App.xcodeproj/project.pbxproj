@@ -35,6 +35,9 @@
 		76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593F725E82ED5008E171E /* ComplicationController.swift */; };
 		76F593FA25E82ED6008E171E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593F925E82ED6008E171E /* Assets.xcassets */; };
 		76F593FD25E82ED6008E171E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593FC25E82ED6008E171E /* Preview Assets.xcassets */; };
+		A80B1CB825F008C6002386F8 /* AvisoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CB725F008C6002386F8 /* AvisoView.swift */; };
+		A80B1CBF25F00CC0002386F8 /* PageControlAvisoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */; };
+		A80B1CC725F01EA2002386F8 /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
 		A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E7225ED6CF1008B7AF1 /* TabView.swift */; };
 		A85F8E8C25ED7488008B7AF1 /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E8A25ED7488008B7AF1 /* UserData.xcdatamodeld */; };
 		A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
@@ -136,6 +139,9 @@
 		76F593FC25E82ED6008E171E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76F593FE25E82ED6008E171E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76F593FF25E82ED6008E171E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A80B1CB725F008C6002386F8 /* AvisoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisoView.swift; sourceTree = "<group>"; };
+		A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlAvisoView.swift; sourceTree = "<group>"; };
+		A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifUICoreData.swift; sourceTree = "<group>"; };
 		A85F8E7225ED6CF1008B7AF1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		A85F8E8B25ED7488008B7AF1 /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
 		A85F8E9E25ED7804008B7AF1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -219,6 +225,9 @@
 				7616657925EED44C00A35A6A /* MyMomentsView.swift */,
 				7616658025EED7E700A35A6A /* MomentDetailView.swift */,
 				A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */,
+				A80B1CB725F008C6002386F8 /* AvisoView.swift */,
+				A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */,
+				A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */,
 				769F889725F028BC00B68091 /* ColorManager.swift */,
 				769F889E25F02EC100B68091 /* CustomCorner.swift */,
 			);
@@ -477,9 +486,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80B1CBF25F00CC0002386F8 /* PageControlAvisoView.swift in Sources */,
 				7616657325EEC86800A35A6A /* RegisterMomentPart3View.swift in Sources */,
 				769F889F25F02EC100B68091 /* CustomCorner.swift in Sources */,
 				A85F8E8C25ED7488008B7AF1 /* UserData.xcdatamodeld in Sources */,
+				A80B1CC725F01EA2002386F8 /* SwifUICoreData.swift in Sources */,
 				76F593BF25E82ED3008E171E /* ContentView.swift in Sources */,
 				A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */,
 				7616656525EEC3E300A35A6A /* RegisterMomentPart1View.swift in Sources */,
@@ -493,6 +504,7 @@
 				7616657A25EED44C00A35A6A /* MyMomentsView.swift in Sources */,
 				A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */,
 				76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */,
+				A80B1CB825F008C6002386F8 /* AvisoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

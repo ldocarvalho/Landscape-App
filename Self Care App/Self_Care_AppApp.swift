@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Self_Care_AppApp: App {
+    let container = PersistenceController.shared.container
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            OnboardingView().environment(\.managedObjectContext, container.viewContext)
         }
     }
 }

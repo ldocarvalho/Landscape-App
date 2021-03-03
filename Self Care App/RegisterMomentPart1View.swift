@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterMomentPart1View: View {
     
-    @State var momentTitle = ""
+    @Binding  var momentTitle: String
     
     var body: some View {
                 
@@ -39,10 +39,13 @@ struct RegisterMomentPart1View: View {
             }
         }
     }
-}
-
-struct RegisterMomentPart1View_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterMomentPart1View()
+    func getName() -> String{
+        return momentTitle
     }
 }
+
+//struct RegisterMomentPart1View_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterMomentPart1View(momentTitle: <#T##Binding<String>#>)
+//    }
+//}
