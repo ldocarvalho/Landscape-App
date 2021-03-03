@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MomentsView : View {
     var body: some View {
-        CardScrollView()
+        NavigationView {
+            CardScrollView()
+        }.navigationTitle("Title")
     }
 }
 

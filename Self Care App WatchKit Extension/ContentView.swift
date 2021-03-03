@@ -24,18 +24,7 @@ struct ContentView: View {
 
             ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial).frame(height: 10)
             Spacer()
-        }.onAppear(perform: {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { success, error in
-                    if success {
-                        print("aceitou")
-                        scheduleNotifications()
-                    } else if let error = error {
-                        print(error.localizedDescription)
-                    }
-                }
-        })
-       
-        
+        }
     }
 }
 struct Circles: View {

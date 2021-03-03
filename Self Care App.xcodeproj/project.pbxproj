@@ -13,6 +13,8 @@
 		7616656525EEC3E300A35A6A /* RegisterMomentPart1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */; };
 		7616656C25EEC76C00A35A6A /* RegisterMomentPart2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */; };
 		7616657325EEC86800A35A6A /* RegisterMomentPart3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */; };
+		7616657A25EED44C00A35A6A /* MyMomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616657925EED44C00A35A6A /* MyMomentsView.swift */; };
+		7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616658025EED7E700A35A6A /* MomentDetailView.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
 		76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */; };
 		76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */; };
@@ -101,6 +103,8 @@
 		7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart1View.swift; sourceTree = "<group>"; };
 		7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart2View.swift; sourceTree = "<group>"; };
 		7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart3View.swift; sourceTree = "<group>"; };
+		7616657925EED44C00A35A6A /* MyMomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMomentsView.swift; sourceTree = "<group>"; };
+		7616658025EED7E700A35A6A /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
 		76F593B925E82ED3008E171E /* Self Care App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +212,8 @@
 				7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */,
 				7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */,
 				7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */,
+				7616657925EED44C00A35A6A /* MyMomentsView.swift */,
+				7616658025EED7E700A35A6A /* MomentDetailView.swift */,
 				A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */,
 			);
 			path = "Self Care App";
@@ -473,8 +479,10 @@
 				76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */,
 				76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */,
 				7616653A25ED7CE500A35A6A /* NewMomentView.swift in Sources */,
+				7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */,
 				7616656C25EEC76C00A35A6A /* RegisterMomentPart2View.swift in Sources */,
 				A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */,
+				7616657A25EED44C00A35A6A /* MyMomentsView.swift in Sources */,
 				A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */,
 				76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */,
 			);
