@@ -24,18 +24,19 @@ struct MyMomentsView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Spacer(minLength: 30)
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
-                        ForEach(self.moments!) { moment in
+                        ForEach(self.cards) { i in
                             NavigationLink(
                                 destination: MomentDetailView()) {
                                 
-                                Image("p1")
+                                Image(i.image)
                                     .resizable()
                                     .frame(height: 250)
                                     .cornerRadius(25.0)
                                     .padding(.horizontal)
-                                    .overlay(Text(moment.title!)
+                                    .overlay(Text(i.title)
                                                 .font(.title)
                                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                                 .foregroundColor(.white)

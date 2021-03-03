@@ -8,10 +8,10 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-           ContentView()
+           MyMomentsView()
              .tabItem {
                 Image(systemName: "phone.fill")
-                Text("home")
+                Text("Home")
            }
             ContentViewCircle()
              .tabItem {
