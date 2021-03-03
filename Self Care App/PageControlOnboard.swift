@@ -12,19 +12,21 @@ import SwiftUI
 
 struct OnboardingView: View {
     @State var View = false
-    var subviews = [
-        UIHostingController(rootView: RegisterMomentPart1View()),
-        UIHostingController(rootView: RegisterMomentPart2View()),
-        UIHostingController(rootView: RegisterMomentPart3View())
-    ]
+    @State var title = ""
     
-    var titles = ["Take some time out", "Conquer personal hindrances", "Create a peaceful mind"]
-    
-    var captions =  ["Take your time out and bring awareness into your everyday life", "Meditating helps you dealing with anxiety and other psychic problems", "Regular medidation sessions creates a peaceful inner mind"]
     
     @State var currentPageIndex = 0
     
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
+    
+    
     var body: some View {
+        let subviews = [
+            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title )),
+            UIHostingController(rootView: RegisterMomentPart2View()),
+            UIHostingController(rootView: RegisterMomentPart3View())
+        ]
         NavigationView{
             VStack(alignment: .leading) {
                 PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
@@ -33,18 +35,34 @@ struct OnboardingView: View {
                 VStack {
                    
                     Button(action: {
-                        if(RegisterMomentPart1View().momentTitle != ""){
+                     let momento = Moment(context: moc)
+                        momento.daysOfWeek = [0] as NSObject
+                        momento.partOfTheDay = 0
+                        momento.repeatActivity = false
+                        momento.selfCareType = 0
+                        do{
+                            try moc.save()
+                            moc.delete(momento)
+                        }
+                        catch{
+                            
+                        }
+                        if(RegisterMomentPart1View(momentTitle: $title).momentTitle != ""){
                             print("a")
+                            let dataManager = UserDataManager.shared
+                            if let _ = dataManager.createMoment(partOfTheDay: 0, selfCareType: 0, title: RegisterMomentPart1View(momentTitle: $title).momentTitle, repeatActivity: false, daysOfWeek: [0]){}
+                            else{return}
+//                            if self.currentPageIndex == 2 {
+//                                self.View = true
+//
+//                            }
+//                            if self.currentPageIndex+1 == subviews.count {
+//                                self.currentPageIndex = 0
+//                            } else {
+//                                self.currentPageIndex += 1
+//                            }
                         }
-                        if self.currentPageIndex == 2 {
-                            self.View = true
-
-                        }
-                        if self.currentPageIndex+1 == self.subviews.count {
-                            self.currentPageIndex = 0
-                        } else {
-                            self.currentPageIndex += 1
-                        }
+                        
 
 
                     }) {
@@ -55,13 +73,13 @@ struct OnboardingView: View {
                     .foregroundColor(.white)
                     
                     PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
+                        
                     NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
                     Spacer()
                     
                 }
-                    .padding()
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
         
 }
@@ -73,17 +91,6 @@ struct OnBoardView_Previews: PreviewProvider {
     }
 }
 
-struct ButtonContent: View {
-    var body: some View {
-        Image(systemName: "arrow.right")
-        .resizable()
-        .foregroundColor(.white)
-        .frame(width: 30, height: 30)
-        .padding()
-        .background(Color.orange)
-        .cornerRadius(30)
-    }
-}
 
 ///------------------------------------------------------------
 

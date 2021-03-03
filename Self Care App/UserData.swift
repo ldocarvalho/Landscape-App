@@ -21,6 +21,24 @@ internal struct UserDataManager{
         }
         return container
     }()
+//    public class Moment {
+//        var partOfTheDay: Int = 0
+//        var selfCareType: Int
+//        var title: String
+//        var repeatActivity: Bool
+//        var daysOfWeek: [Int]
+//        
+//
+////        init(atividade: String, descriçao: String, ilustração: UIImage, mood : Int) {
+////            self.atividade = atividade
+////            self.descriçao = descriçao
+////            self.ilustração = ilustração
+////            self.mood = mood
+////        }
+//
+//
+//    }
+    
     func createMoment(partOfTheDay: Int?, selfCareType: Int?, title: String?, repeatActivity: Bool?, daysOfWeek:[Int]?) -> Moment? {
                 
                 let context = persistentContainer.viewContext

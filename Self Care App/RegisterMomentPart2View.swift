@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+
 struct RegisterMomentPart2View: View {
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -52,7 +54,12 @@ struct RegisterMomentPart2View: View {
                             Text("Evening")
                         }.padding()
                     }
-                }
+                }.onAppear(perform: {
+                  
+                
+                    
+                    
+                })
                 
                 Spacer()
             }
