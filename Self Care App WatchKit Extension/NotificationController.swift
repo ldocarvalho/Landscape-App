@@ -10,10 +10,10 @@ import SwiftUI
 import UserNotifications
 
 class NotificationController: WKUserNotificationHostingController<NotificationView> {
-    var title: String?
+    var title: String? = "teste"
     let answer = "answer"
     override var body: NotificationView {
-       return NotificationView(title: title)
+        return NotificationView(title: "oi")
     }
 
     override func willActivate() {

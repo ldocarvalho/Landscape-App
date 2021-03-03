@@ -11,10 +11,13 @@ public func scheduleNotifications() {
         
         
        // UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        let category = UNNotificationCategory(identifier: "myCategory", actions: [], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
         let content = UNMutableNotificationContent()
         content.title = "teste"
         content.body = "teste"
         content.sound = UNNotificationSound.default
+        content.categoryIdentifier = "myCategory"
     
         var dateComponents = DateComponents()
         dateComponents.hour = 14

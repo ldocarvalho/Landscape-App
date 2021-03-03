@@ -51,6 +51,7 @@ struct RegisterMomentPart3View: View {
                                 .cornerRadius(25)
                             Text("Hobby")
                         }.padding()
+                        
                     }
                 }
                 Spacer()

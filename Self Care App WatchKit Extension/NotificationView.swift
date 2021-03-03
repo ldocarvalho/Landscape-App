@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationView: View {
-    var title: String? = "teste"
+    var title: String = "teste"
     var body: some View {
         VStack{
             VStack{
@@ -17,7 +17,7 @@ struct NotificationView: View {
                     .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                     .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
-                Text(title!)
+                Text(title)
                     .bold()
             }.background(Color.gray)
             .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

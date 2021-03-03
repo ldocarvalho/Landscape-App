@@ -35,6 +35,7 @@
 		A85F8E8C25ED7488008B7AF1 /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E8A25ED7488008B7AF1 /* UserData.xcdatamodeld */; };
 		A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 		A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
+		A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		A85F8E8B25ED7488008B7AF1 /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
 		A85F8E9E25ED7804008B7AF1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncNotification.swift; sourceTree = "<group>"; };
+		A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlOnboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */,
 				7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */,
 				7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */,
+				A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				7616653A25ED7CE500A35A6A /* NewMomentView.swift in Sources */,
 				7616656C25EEC76C00A35A6A /* RegisterMomentPart2View.swift in Sources */,
 				A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */,
+				A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */,
 				76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
