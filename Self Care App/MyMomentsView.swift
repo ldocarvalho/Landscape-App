@@ -17,6 +17,8 @@ struct MyMomentsView: View {
         Card(id: 4, image: "p5", title: "Jantar em família", details: "Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.", expand: false)
     ]
     
+    @State var showModalView = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -44,12 +46,12 @@ struct MyMomentsView: View {
                 }
             }
             .navigationBarTitle(Text("Meus momentos"))
-            .navigationBarItems(trailing: Button(action: {
-                print("Olá, mundo")
-            }, label: {
-                Text("Add")
+            .navigationBarItems(trailing: Button("Add", action: {
+                self.showModalView.toggle()
             }))
-        }
+        }.sheet(isPresented: self.$showModalView, content: {
+            NewMomentView()
+        })
     }
 }
 
