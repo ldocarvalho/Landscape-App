@@ -8,32 +8,39 @@
 import SwiftUI
 
 struct NotificationView: View {
-    var title: String = "teste"
+    var title: String = "Você já fez o 'Momentinho de skincare' esta manhã?"
+    
     var body: some View {
-        VStack{
-            VStack{
-                Image("p1")
-                    .resizable()
-                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                    .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
+        VStack {
+            VStack {
                 Text(title)
-                    .bold()
-            }.background(Color.gray)
-            .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .padding(20)
-            HStack{
-                
-                Button(image: "", title: "Não")
-                    .frame(width: 80, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(2)
-                Button(image: "", title: "Sim")
-                    .frame(width: 80, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(2)
+                    .font(.caption2)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .frame(width: 160, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            }
+            .frame(width: 160, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(WatchColorManager.menuBackgroundColor)
+            .cornerRadius(15.0)
+                             
+            Spacer()
+            
+            HStack {
+                Text("Não")
+                    .frame(width: 75, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(WatchColorManager.noButtonColor)
+                    .cornerRadius(15.0)
+                Text("Sim")
+                    .frame(width: 75, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(WatchColorManager.menuTextColor)
+                    .foregroundColor(.black)
+                    .cornerRadius(15.0)
             }
         }
     }
 }
+
+
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
