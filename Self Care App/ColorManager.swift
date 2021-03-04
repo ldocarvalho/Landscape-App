@@ -20,4 +20,12 @@ struct ColorManager {
     static let titleTextColor = Color("TextColor-Title")
     
     static let switchColor = Color("SwitchColor")
+    
+    static let purpleCicleColor = Color("Cicle-PurpleColor")
+    static let pinkCicleColor = Color("Cicle-PinkColor")
+    static let blueCicleColor = Color("Cicle-BlueColor")
+    
+    static let purpleCicleBackgroundColor = Color("Cicle-BackgroundPurpleColor")
+    static let pinkCicleBackgroundColor = Color("Cicle-BackgroundPinkColor")
+    static let blueCicleBackgroundColor = Color("Cicle-BackgroundBlueColor")
 }
