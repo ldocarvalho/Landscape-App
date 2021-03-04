@@ -27,7 +27,7 @@ struct MomentDetailView: View {
                             }, label: {
                                 Text("Edit")
                                     .foregroundColor(ColorManager.actionButtonColor)
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .fontWeight(.bold)
                             })
                         }.padding([.leading, .trailing], 26)
                         .padding(.top, 30)

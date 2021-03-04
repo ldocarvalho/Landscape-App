@@ -65,16 +65,8 @@ struct OnboardingView: View {
                         }
                         
                         if(RegisterMomentPart1View(momentTitle: $title).momentTitle != ""){
-                            let userName = Name(context: moc)
-                            userName.name = RegisterMomentPart1View(momentTitle: $title).momentTitle
-                               do{
-                                  // try moc.save()
-                                   
-                                
-                               }
-                               catch{
-
-                               }
+                            momento.title = RegisterMomentPart1View(momentTitle: $title).momentTitle
+                              
                             if self.currentPageIndex == 0 {
                                 currentPageIndex += 1
 
