@@ -9,19 +9,18 @@ import SwiftUI
 
 struct MomentDetailView: View {
     var body: some View {
+        
         VStack {
             GeometryReader { g in
                 VStack {
-                    Image("p1")
-                        .resizable()
-                        .frame(height: 300)
+                    VStack {
+                        Image("p1")
+                            .resizable()
+                            .frame(height: 400)
+                    }.offset(y: -g.frame(in: .global).minY)
                     
                     VStack {
                         HStack {
-                            Text("Skincare moment")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundColor(ColorManager.titleTextColor)
                             Spacer()
                             Button(action: {
                                 print("Olá")
@@ -30,7 +29,18 @@ struct MomentDetailView: View {
                                     .foregroundColor(ColorManager.actionButtonColor)
                                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             })
-                        } .padding()
+                        }.padding([.leading, .trailing], 26)
+                        .padding(.top, 30)
+                        
+                        HStack() {
+                            Text("Skincare moment")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(ColorManager.titleTextColor)
+                            Spacer()
+                            
+                        } .padding([.leading, .trailing], 16)
+                        .padding(.top, 8)
                         
                         Text("Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.")
                             .font(.body)
@@ -71,8 +81,10 @@ struct MomentDetailView: View {
                             .background(ColorManager.mainButtonColor)
                             .cornerRadius(25.0)
                         }.padding()
-                    }
-                }.offset(y: -g.frame(in: .global).minY)
+                    }.background(Color.white)
+                    .clipShape(CustomCorner())
+                    .offset(y: -g.frame(in: .global).minY - 50)
+                }
             }
         }
     }
