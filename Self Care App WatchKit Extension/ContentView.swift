@@ -9,22 +9,43 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
-
-    @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueHobbies: Float = 0.65 //Colocar informação do banco aqui
+    
+    @State private var currentPage = 0
     
     var body: some View {
         VStack{
-            Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
-                 .frame(width: 100.0, height: 100.0)
-                 .padding(25.0)
-
-            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial).frame(height: 10)
-            Spacer()
+            PagerManager(pageCount: 2, currentIndex: $currentPage) {
+                CirclesView()
+                ProgressBarView()
+            }
+            HStack{
+                Circle()
+                    .frame(width: 8, height: 8)
+                    .foregroundColor(currentPage==1 ? Color.gray:Color.white)
+                Circle()
+                    .frame(width: 8, height: 8)
+                    .foregroundColor(currentPage==1 ? Color.white:Color.gray)
+            }
         }
     }
 }
+
+struct CirclesView : View {
+    
+    @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
+    @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
+    @State var progressValueHobbies: Float = 0.65 //Colocar informação do banco aqui
+
+    
+    var body: some View {
+        VStack {
+            Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
+                 .frame(width: 100.0, height: 100.0)
+                 .padding(25.0)
+        }.frame(width: 100, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    }
+}
+
 struct Circles: View {
     @Binding var progressIndividual : Float
     @Binding var progressSocial: Float
@@ -72,6 +93,21 @@ struct Circles: View {
         }
     }
 }
+
+struct ProgressBarView : View {
+    
+    @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
+    @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
+    @State var progressValueHobbies: Float = 0.65 //Colocar informação do banco aqui
+
+    
+    var body: some View {
+        VStack {
+            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial).frame(height: 10)
+        }.frame(width: 100, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    }
+}
+
 struct ProgressBar: View {
     @Binding var progressIndividual: Float
     @Binding var progressHobbies: Float
@@ -81,37 +117,54 @@ struct ProgressBar: View {
         VStack{
             //barra Individual
             ZStack(alignment: .leading) {
-                Rectangle().frame(width: 150 , height: 10)
+                Rectangle().frame(width: 150 , height: 20)
                     .opacity(0.3)
                     .foregroundColor(WatchColorManager.purpleCicleBackgroundColor)
                     .background(WatchColorManager.purpleCicleBackgroundColor)
                
                     
-                Rectangle().frame(width: min(CGFloat(self.progressIndividual) * 150,  150), height: 10)
+                Rectangle().frame(width: min(CGFloat(self.progressIndividual) * 150,  150), height: 20)
                     .foregroundColor(WatchColorManager.purpleCicleColor)
                     .animation(.linear)
+                    .overlay(Text("Individual")
+                                .bold()
+                                .font(.caption2))
                 
                 }.cornerRadius(45.0)
-            //Barra hobbies
+                .padding(.bottom, 8)
+            
+            //Barra social
             ZStack(alignment: .leading){
-                Rectangle().frame(width: 150 , height: 10)
+                Rectangle().frame(width: 150 , height: 20)
                     .opacity(0.3)
                     .foregroundColor(WatchColorManager.pinkCicleBackgroundColor)
                     .background(WatchColorManager.pinkCicleBackgroundColor)
                     
-                Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 10)
+                Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 20)
                     .foregroundColor(WatchColorManager.pinkCicleColor)
                     .animation(.linear)
+                    .overlay(Text("Social")
+                                .bold()
+                                .font(.caption2))
+
             }.cornerRadius(45.0)
-            //Barra social
+            .padding(.bottom, 8)
+
+            
+            
+            //Barra hobbies
             ZStack(alignment: .leading){
-                Rectangle().frame(width: 150 , height: 10)
+                Rectangle().frame(width: 150 , height: 20)
                     .opacity(0.3)
                     .background(WatchColorManager.blueCicleColor)
                     
-                Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 10)
+                Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 20)
                     .foregroundColor(WatchColorManager.blueCicleColor)
                     .animation(.linear)
+                    .overlay(Text("Hobbies")
+                                .bold()
+                                .font(.caption2))
+
             }.cornerRadius(45.0)
         }
         
