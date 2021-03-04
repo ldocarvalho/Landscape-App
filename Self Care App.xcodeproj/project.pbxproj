@@ -17,6 +17,7 @@
 		7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616658025EED7E700A35A6A /* MomentDetailView.swift */; };
 		769F889825F028BC00B68091 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F889725F028BC00B68091 /* ColorManager.swift */; };
 		769F889F25F02EC100B68091 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F889E25F02EC100B68091 /* CustomCorner.swift */; };
+		769F88AB25F153F100B68091 /* WatchColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88AA25F153F100B68091 /* WatchColorManager.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
 		76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */; };
 		76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */; };
@@ -112,6 +113,7 @@
 		7616658025EED7E700A35A6A /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
 		769F889725F028BC00B68091 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		769F889E25F02EC100B68091 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
+		769F88AA25F153F100B68091 /* WatchColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColorManager.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
 		76F593B925E82ED3008E171E /* Self Care App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +286,7 @@
 				7616655625ED8B1A00A35A6A /* MenuView.swift */,
 				A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */,
 				7616655D25EEA8D000A35A6A /* MomentsView.swift */,
+				769F88AA25F153F100B68091 /* WatchColorManager.swift */,
 			);
 			path = "Self Care App WatchKit Extension";
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */,
 				76F593F025E82ED5008E171E /* Self_Care_AppApp.swift in Sources */,
 				76F593F625E82ED5008E171E /* NotificationView.swift in Sources */,
+				769F88AB25F153F100B68091 /* WatchColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

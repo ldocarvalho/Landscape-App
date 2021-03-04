@@ -37,7 +37,7 @@ struct MomentsView: View {
                         Text("Almoço com família e filhos")
                             .font(.system(size: 15, weight: .semibold))
                             .padding(10)
-                            .frame(width: 150, height: 90, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 150, height: 90, alignment: .center)
                             .scaleEffect(CGSize(width: scale, height: scale))
                     }
                     .background(Color.gray)

@@ -23,7 +23,7 @@ struct MenuView: View {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Button(image: "p2", title: "Ciclos")
+                        Button(image: "p1", title: "Ciclos")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
             }.onAppear(perform: {
@@ -42,9 +42,16 @@ struct Button : View {
         HStack {
             Text(title)
                 .padding()
+                .font(.title3)
+                .foregroundColor(WatchColorManager.menuTextColor)
             Spacer()
+            Image(image)
+                .resizable()
+                .frame(width:30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding()
         }
-        .background(Color(.gray))
+        .frame(width: 160, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .background(WatchColorManager.menuBackgroundColor)
         .cornerRadius(15.0)
     }
 }

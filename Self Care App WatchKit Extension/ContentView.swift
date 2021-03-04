@@ -7,8 +7,8 @@
 
 import SwiftUI
 import UserNotifications
+
 struct ContentView: View {
-   
 
     @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
     @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
@@ -16,8 +16,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            
-
             Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
                  .frame(width: 100.0, height: 100.0)
                  .padding(25.0)
