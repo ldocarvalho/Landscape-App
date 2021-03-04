@@ -38,7 +38,7 @@ struct Circles: View {
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressIndividual,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color.red)
+                .foregroundColor(WatchColorManager.purpleCicleColor)
                 .rotationEffect(Angle(degrees:270))
                 .animation(.linear)
             
@@ -50,7 +50,7 @@ struct Circles: View {
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressSocial,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color.blue)
+                .foregroundColor(WatchColorManager.pinkCicleColor)
                 .rotationEffect(Angle(degrees:270))
                 .animation(.linear)
                 .frame(width: 70, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -63,7 +63,7 @@ struct Circles: View {
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressHobbies,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color.purple)
+                .foregroundColor(WatchColorManager.blueCicleColor)
                 .rotationEffect(Angle(degrees:270))
                 .animation(.linear)
                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -83,34 +83,34 @@ struct ProgressBar: View {
             ZStack(alignment: .leading) {
                 Rectangle().frame(width: 150 , height: 10)
                     .opacity(0.3)
-                    .foregroundColor(Color(UIColor.red))
-                    
+                    .foregroundColor(WatchColorManager.purpleCicleBackgroundColor)
+                    .background(WatchColorManager.purpleCicleBackgroundColor)
                
                     
                 Rectangle().frame(width: min(CGFloat(self.progressIndividual) * 150,  150), height: 10)
-                    .foregroundColor(Color(UIColor.red))
+                    .foregroundColor(WatchColorManager.purpleCicleColor)
                     .animation(.linear)
-                
                 
                 }.cornerRadius(45.0)
             //Barra hobbies
             ZStack(alignment: .leading){
                 Rectangle().frame(width: 150 , height: 10)
                     .opacity(0.3)
-                    .foregroundColor(Color(UIColor.purple))
+                    .foregroundColor(WatchColorManager.pinkCicleBackgroundColor)
+                    .background(WatchColorManager.pinkCicleBackgroundColor)
                     
                 Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 10)
-                    .foregroundColor(Color(UIColor.purple))
+                    .foregroundColor(WatchColorManager.pinkCicleColor)
                     .animation(.linear)
             }.cornerRadius(45.0)
             //Barra social
             ZStack(alignment: .leading){
                 Rectangle().frame(width: 150 , height: 10)
                     .opacity(0.3)
-                    .foregroundColor(Color(UIColor.blue))
+                    .background(WatchColorManager.blueCicleColor)
                     
                 Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 10)
-                    .foregroundColor(Color(UIColor.blue))
+                    .foregroundColor(WatchColorManager.blueCicleColor)
                     .animation(.linear)
             }.cornerRadius(45.0)
         }
