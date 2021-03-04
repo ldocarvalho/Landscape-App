@@ -18,4 +18,6 @@ struct ColorManager {
     
     static let bodyTextColor = Color("TextColor-Body")
     static let titleTextColor = Color("TextColor-Title")
+    
+    static let switchColor = Color("SwitchColor")
 }
