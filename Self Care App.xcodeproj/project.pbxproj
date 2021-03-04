@@ -19,6 +19,7 @@
 		769F889F25F02EC100B68091 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F889E25F02EC100B68091 /* CustomCorner.swift */; };
 		769F88AB25F153F100B68091 /* WatchColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88AA25F153F100B68091 /* WatchColorManager.swift */; };
 		769F88BE25F1696200B68091 /* PagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88BD25F1696200B68091 /* PagerManager.swift */; };
+		769F88D125F172F900B68091 /* DeleteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88D025F172F900B68091 /* DeleteAlertView.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
 		76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */; };
 		76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */; };
@@ -116,6 +117,7 @@
 		769F889E25F02EC100B68091 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		769F88AA25F153F100B68091 /* WatchColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColorManager.swift; sourceTree = "<group>"; };
 		769F88BD25F1696200B68091 /* PagerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerManager.swift; sourceTree = "<group>"; };
+		769F88D025F172F900B68091 /* DeleteAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAlertView.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
 		76F593B925E82ED3008E171E /* Self Care App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 				A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */,
 				769F889725F028BC00B68091 /* ColorManager.swift */,
 				769F889E25F02EC100B68091 /* CustomCorner.swift */,
+				769F88D025F172F900B68091 /* DeleteAlertView.swift */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				7616656525EEC3E300A35A6A /* RegisterMomentPart1View.swift in Sources */,
 				76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */,
 				769F889825F028BC00B68091 /* ColorManager.swift in Sources */,
+				769F88D125F172F900B68091 /* DeleteAlertView.swift in Sources */,
 				76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */,
 				7616653A25ED7CE500A35A6A /* NewMomentView.swift in Sources */,
 				7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */,
