@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterMomentPart3View: View {
+    @Binding var typeOfCare : Int
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -35,6 +36,9 @@ struct RegisterMomentPart3View: View {
                                 .cornerRadius(25)
                             Text("Individual")
                         }.padding()
+                        .onTapGesture {
+                            typeOfCare = 1
+                        }
                         Spacer()
                         VStack {
                             Image("p4")
@@ -42,6 +46,8 @@ struct RegisterMomentPart3View: View {
                                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .cornerRadius(25)
                             Text("Social")
+                        }.onTapGesture {
+                            typeOfCare = 2
                         }
                         Spacer()
                         VStack {
@@ -51,6 +57,9 @@ struct RegisterMomentPart3View: View {
                                 .cornerRadius(25)
                             Text("Hobby")
                         }.padding()
+                        .onTapGesture {
+                            typeOfCare = 3
+                        }
                         
                     }
                 }
@@ -60,8 +69,8 @@ struct RegisterMomentPart3View: View {
     }
 }
 
-struct RegisterMomentPart3View_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterMomentPart3View()
-    }
-}
+//struct RegisterMomentPart3View_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterMomentPart3View()
+//    }
+//}

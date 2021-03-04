@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct RegisterMomentPart2View: View {
-    
+    @Binding  var partOfTheDay: Int
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -37,6 +37,9 @@ struct RegisterMomentPart2View: View {
                                 .cornerRadius(25)
                             Text("Morning")
                         }.padding()
+                        .onTapGesture {
+                            partOfTheDay = 1
+                        }
                         Spacer()
                         VStack {
                             Image("p2")
@@ -44,6 +47,8 @@ struct RegisterMomentPart2View: View {
                                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .cornerRadius(25)
                             Text("Afternoon")
+                        }.onTapGesture {
+                            partOfTheDay = 2
                         }
                         Spacer()
                         VStack {
@@ -53,6 +58,9 @@ struct RegisterMomentPart2View: View {
                                 .cornerRadius(25)
                             Text("Evening")
                         }.padding()
+                        .onTapGesture {
+                            partOfTheDay = 3
+                        }
                     }
                 }.onAppear(perform: {
                   
@@ -67,8 +75,8 @@ struct RegisterMomentPart2View: View {
     }
 }
 
-struct RegisterMomentPart2View_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterMomentPart2View()
-    }
-}
+//struct RegisterMomentPart2View_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterMomentPart2View()
+//    }
+//}

@@ -39,8 +39,8 @@
 		A80B1CB825F008C6002386F8 /* AvisoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CB725F008C6002386F8 /* AvisoView.swift */; };
 		A80B1CBF25F00CC0002386F8 /* PageControlAvisoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */; };
 		A80B1CC725F01EA2002386F8 /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
+		A80B1CF025F1664A002386F8 /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */; };
 		A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E7225ED6CF1008B7AF1 /* TabView.swift */; };
-		A85F8E8C25ED7488008B7AF1 /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E8A25ED7488008B7AF1 /* UserData.xcdatamodeld */; };
 		A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 		A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
 		A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */; };
@@ -144,8 +144,8 @@
 		A80B1CB725F008C6002386F8 /* AvisoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisoView.swift; sourceTree = "<group>"; };
 		A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlAvisoView.swift; sourceTree = "<group>"; };
 		A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifUICoreData.swift; sourceTree = "<group>"; };
+		A80B1CEF25F1664A002386F8 /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
 		A85F8E7225ED6CF1008B7AF1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		A85F8E8B25ED7488008B7AF1 /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
 		A85F8E9E25ED7804008B7AF1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncNotification.swift; sourceTree = "<group>"; };
 		A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlOnboard.swift; sourceTree = "<group>"; };
@@ -218,7 +218,6 @@
 				76F593C225E82ED4008E171E /* Preview Content */,
 				76ED3A6825ED564F00EF84A8 /* Circle.swift */,
 				76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */,
-				A85F8E8A25ED7488008B7AF1 /* UserData.xcdatamodeld */,
 				A85F8E9E25ED7804008B7AF1 /* UserData.swift */,
 				7616653925ED7CE500A35A6A /* NewMomentView.swift */,
 				7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */,
@@ -232,6 +231,7 @@
 				A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */,
 				769F889725F028BC00B68091 /* ColorManager.swift */,
 				769F889E25F02EC100B68091 /* CustomCorner.swift */,
+				A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -492,10 +492,10 @@
 				A80B1CBF25F00CC0002386F8 /* PageControlAvisoView.swift in Sources */,
 				7616657325EEC86800A35A6A /* RegisterMomentPart3View.swift in Sources */,
 				769F889F25F02EC100B68091 /* CustomCorner.swift in Sources */,
-				A85F8E8C25ED7488008B7AF1 /* UserData.xcdatamodeld in Sources */,
 				A80B1CC725F01EA2002386F8 /* SwifUICoreData.swift in Sources */,
 				76F593BF25E82ED3008E171E /* ContentView.swift in Sources */,
 				A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */,
+				A80B1CF025F1664A002386F8 /* UserData.xcdatamodeld in Sources */,
 				7616656525EEC3E300A35A6A /* RegisterMomentPart1View.swift in Sources */,
 				76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */,
 				769F889825F028BC00B68091 /* ColorManager.swift in Sources */,
@@ -969,12 +969,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A85F8E8A25ED7488008B7AF1 /* UserData.xcdatamodeld */ = {
+		A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A85F8E8B25ED7488008B7AF1 /* UserData.xcdatamodel */,
+				A80B1CEF25F1664A002386F8 /* UserData.xcdatamodel */,
 			);
-			currentVersion = A85F8E8B25ED7488008B7AF1 /* UserData.xcdatamodel */;
+			currentVersion = A80B1CEF25F1664A002386F8 /* UserData.xcdatamodel */;
 			path = UserData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

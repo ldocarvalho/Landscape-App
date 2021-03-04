@@ -13,19 +13,20 @@ import SwiftUI
 struct OnboardingView: View {
     @State var View = false
     @State var title = ""
-    
-    
+    @State var partOfTheDay = 0
+    @State var typeOfCare = 0
     @State var currentPageIndex = 0
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
+    @Environment(\.managedObjectContext) var moment
+    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     
     
     var body: some View {
         let subviews = [
             UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title )),
-            UIHostingController(rootView: RegisterMomentPart2View()),
-            UIHostingController(rootView: RegisterMomentPart3View())
+            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay)),
+            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare))
         ]
         NavigationView{
             VStack(alignment: .leading) {
@@ -35,36 +36,52 @@ struct OnboardingView: View {
                 VStack {
                    
                     Button(action: {
-//                     let momento = Moment(context: moc)
-//                        momento.daysOfWeek = [0] as NSObject
-//                        momento.partOfTheDay = 0
-//                        momento.repeatActivity = false
-//                        momento.selfCareType = 0
-//                        do{
-//                            try moc.save()
-//                            moc.delete(momento)
-//                        }
-//                        catch{
-//
-//                        }
-                        if(RegisterMomentPart1View(momentTitle: $title).momentTitle != ""){
-                            print("a")
-                            let dataManager = UserDataManager.shared
-                            if let _ = dataManager.createMoment(partOfTheDay: 0, selfCareType: 0, title: RegisterMomentPart1View(momentTitle: $title).momentTitle, repeatActivity: false, daysOfWeek: [0]){}
-                            else{return}
-//                            if self.currentPageIndex == 2 {
-//                                self.View = true
-//
-//                            }
-//                            if self.currentPageIndex+1 == subviews.count {
-//                                self.currentPageIndex = 0
-//                            } else {
-//                                self.currentPageIndex += 1
-//                            }
+                        let momento = Moment(context: moment)
+                        
+                        if(RegisterMomentPart3View(typeOfCare: $typeOfCare).typeOfCare != 0){
+                            
+                            momento.selfCareType = Int32( RegisterMomentPart3View(typeOfCare: $typeOfCare).typeOfCare)
+                            do{
+                               try  moment.save()
+                            }
+                            catch{
+                                
+                            }
+                            if self.currentPageIndex == 2 {
+                                self.View = true
+
+                            }
+                            
                         }
                         
+                        if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay).partOfTheDay != 0){
+                            
+                            momento.partOfTheDay = Int32( RegisterMomentPart2View(partOfTheDay: $partOfTheDay).partOfTheDay)
+                            if self.currentPageIndex == 1 {
+                                currentPageIndex += 1
 
+                            }
+                            
+                        }
+                        
+                        if(RegisterMomentPart1View(momentTitle: $title).momentTitle != ""){
+                            let userName = Name(context: moc)
+                            userName.name = RegisterMomentPart1View(momentTitle: $title).momentTitle
+                               do{
+                                  // try moc.save()
+                                   
+                                
+                               }
+                               catch{
 
+                               }
+                            if self.currentPageIndex == 0 {
+                                currentPageIndex += 1
+
+                            }
+                            
+                        }
+                        
                     }) {
                         Text("Continuar")
                             .padding()

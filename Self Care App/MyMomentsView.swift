@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyMomentsView: View {
-    
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
     @State var cards = [
         Card(id: 0, image: "p1", title: "Fazer skincare", details: "Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.", expand: false),
         Card(id: 1, image: "p2", title: "Brincar com meus filhos", details: "Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.", expand: false),
@@ -55,12 +55,7 @@ struct MyMomentsView: View {
         }
         .padding(0.0)
         .onAppear() {
-            let dataManager = UserDataManager.shared
-            if let savedMoments = dataManager.fetchMoments() {
-                self.moments = savedMoments
-            } else {
-                self.moments = []
-            }
+            cards[1].title = moment[0].title!
         }
         .sheet(isPresented: self.$showModalView, content: {
             NewMomentView()
