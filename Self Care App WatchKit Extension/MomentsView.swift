@@ -34,17 +34,22 @@ struct MomentsView: View {
                         
                         let scale = getScale(proxy: proxy)
                         
-                        Text("Almoço com família e filhos")
-                            .font(.system(size: 15, weight: .semibold))
-                            .padding(10)
-                            .frame(width: 150, height: 90, alignment: .center)
-                            .scaleEffect(CGSize(width: scale, height: scale))
+                        HStack {
+                            Text("Momentinho de Skincare")
+                                .font(.system(size: 12, weight: .semibold))
+                                .frame(width: 100, height: 60, alignment: .center)
+                                .scaleEffect(CGSize(width: scale, height: scale))
+                            Spacer()
+                            Image("p1")
+                                .resizable()
+                                .frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.padding([.leading, .trailing, .bottom], 10)
                     }
-                    .background(Color.gray)
-                    .frame(width: 150, height: 90, alignment: .center)
+                    .background(WatchColorManager.menuBackgroundColor)
+                    .frame(width: 150, height: 60, alignment: .center)
                     .cornerRadius(15.0)
                 }
-            }.padding(30)
+            }.padding([.leading, .trailing], 8)
         }
     }
 }

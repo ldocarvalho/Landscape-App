@@ -32,4 +32,9 @@ struct WatchColorManager {
     static let menuTextColor = Color("TextColor-Menu")
     
     static let menuBackgroundColor = Color("MenuColor-Background")
+        
+    static let morningTextBodyColor = Color("TextColor-BodyMorning")
+    static let afternoonTextBodyColor = Color("TextColor-BodyAfternoon")
+    static let eveningTextBodyColor = Color("TextColor-BodyEvening")
+
 }
