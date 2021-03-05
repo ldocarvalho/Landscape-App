@@ -16,7 +16,7 @@ struct MyMomentsView: View {
     @State var showModalView = false
     
     var body: some View {
-//        NavigationView {
+        NavigationView {
             VStack {
                 Spacer(minLength: 30)
                 ScrollView(.vertical, showsIndicators: false) {
@@ -46,10 +46,10 @@ struct MyMomentsView: View {
                     self.showModalView.toggle()
                 }))
                 .navigationBarBackButtonHidden(true)
-                .sheet(isPresented: self.$showModalView, content: {
-                    NewMomentView()
-                })
-          //  }
+            }
+            .sheet(isPresented: self.$showModalView, content: {
+                NewMomentView()
+            })
             
         }
         .padding(0.0)
