@@ -30,7 +30,7 @@ struct NewMomentView : View {
                     .fontWeight(.bold)
                 Spacer()
                 Button("Save") {
-                    
+                    momento.title = momentTitle
                     momento.date = Date()
                     momento.daysOfWeek = Int32(daysOfWeek.rawValue)
                     momento.partOfTheDay = Int64(partOfDay)
