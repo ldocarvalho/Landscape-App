@@ -8,33 +8,40 @@
 import SwiftUI
 
 struct NotificationView: View {
-    var title: String = "Você já fez o 'Momentinho de skincare' esta manhã?"
+    var title: String = "Você já fez o 'Momentinho de skincare' hoje?"
     
     var body: some View {
-        VStack {
+        GeometryReader { g in
             VStack {
-                Text(title)
-                    .font(.caption2)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-                    .frame(width: 160, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            }
-            .frame(width: 160, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(WatchColorManager.menuBackgroundColor)
-            .cornerRadius(15.0)
-                             
-            Spacer()
-            
-            HStack {
-                Text("Não")
-                    .frame(width: 75, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(WatchColorManager.noButtonColor)
-                    .cornerRadius(15.0)
-                Text("Sim")
-                    .frame(width: 75, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(WatchColorManager.menuTextColor)
-                    .foregroundColor(.black)
-                    .cornerRadius(15.0)
+                VStack {
+                    Image("Morning")
+                        .resizable()
+                        .frame(width: g.size.width*0.8, height: g.size.height*0.35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(5.0)
+                    Text(title)
+    //                    .font(.caption2)
+                        .font(.system(size: 12, weight: .semibold))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .frame(width: 140, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                .frame(width: g.size.width, height: g.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(WatchColorManager.menuBackgroundColor)
+                .cornerRadius(15.0)
+                                 
+                Spacer()
+                
+                HStack {
+                    Text("Não")
+                        .frame(width: g.size.width*0.4, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(WatchColorManager.noButtonColor)
+                        .cornerRadius(15.0)
+                    Text("Sim")
+                        .frame(width: g.size.width*0.4, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(WatchColorManager.menuTextColor)
+                        .foregroundColor(.black)
+                        .cornerRadius(15.0)
+                }
             }
         }
     }
