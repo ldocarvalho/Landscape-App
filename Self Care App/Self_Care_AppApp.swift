@@ -12,7 +12,7 @@ struct Self_Care_AppApp: App {
     let container = PersistenceController.shared.container
     var body: some Scene {
         WindowGroup {
-          NewMomentView().environment(\.managedObjectContext, container.viewContext)
+          ContentView().environment(\.managedObjectContext, container.viewContext)
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewMomentView : View {
     
+    @State var itsEditing : Bool
     @State var momentTitle = ""
     @State var selfCareType = 0
     @State var partOfDay = 0
@@ -258,13 +259,21 @@ struct NewMomentView : View {
             }
             Spacer()
         }.padding()
+        .onAppear(perform: {
+            if(itsEditing){
+                
+            }
+            else{
+                
+            }
+        })
         
     }
 }
 
-struct NewMomentView_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        NewMomentView( )
-    }
-}
+//struct NewMomentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        NewMomentView( )
+//    }
+//}

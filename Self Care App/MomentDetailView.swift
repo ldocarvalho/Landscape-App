@@ -11,6 +11,8 @@ struct MomentDetailView: View {
     var title : String
     var description : String
     var image : String
+    var id : Int
+    @State var View : Bool = false
     var body: some View {
         
         VStack {
@@ -26,7 +28,7 @@ struct MomentDetailView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                print("Olá")
+                                View.toggle()
                             }, label: {
                                 Text("Edit")
                                     .foregroundColor(ColorManager.actionButtonColor)
@@ -88,8 +90,9 @@ struct MomentDetailView: View {
                     .clipShape(CustomCorner())
                     .offset(y: -g.frame(in: .global).minY - 50)
                 }
+               
             }
-        }
+        }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true)})
     }
 }
 

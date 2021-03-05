@@ -31,7 +31,7 @@ struct MyMomentsView: View {
                         ForEach((0...moment.count - 1), id: \.self) { i in
                             if (Int(moment[i].partOfTheDay ) != 0){
                                 NavigationLink(
-                                    destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1] )) {
+                                    destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1],id: i )) {
                                     
                                     Image(partOfTheDayImage[Int(moment[i].partOfTheDay) - 1])
                                             .resizable()
@@ -54,7 +54,7 @@ struct MyMomentsView: View {
                 }
             }
             .sheet(isPresented: self.$showModalView, content: {
-                NewMomentView()
+                NewMomentView(itsEditing: false)
             })
             .navigationBarTitle(Text("Meus momentos"))
             .navigationBarItems(trailing: Button("Add", action: {
