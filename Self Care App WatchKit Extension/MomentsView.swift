@@ -9,6 +9,17 @@ import SwiftUI
 
 struct MomentsView: View {
     
+    @State private var currentPage = 0
+    
+    var body: some View {
+        VStack {
+            ListView()
+        }
+    }
+}
+
+struct ListView: View {
+    
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
         
@@ -24,7 +35,6 @@ struct MomentsView: View {
     }
     
     var body: some View {
-                        
         ScrollView(.vertical) {
             VStack(spacing: 10) {
                 
@@ -33,6 +43,7 @@ struct MomentsView: View {
                     GeometryReader { proxy in
                         
                         let scale = getScale(proxy: proxy)
+                        
                         VStack {
                             HStack {
                                 Text("Momentinho de Skincare")
@@ -60,3 +71,15 @@ struct MomentsView_Previews: PreviewProvider {
     }
 }
 
+//PagerManager(pageCount: 2, currentIndex: $currentPage) {
+//    CirclesView()
+//    ProgressBarView()
+//}
+//HStack{
+//    Circle()
+//        .frame(width: 8, height: 8)
+//        .foregroundColor(currentPage==1 ? Color.gray:Color.white)
+//    Circle()
+//        .frame(width: 8, height: 8)
+//        .foregroundColor(currentPage==1 ? Color.white:Color.gray)
+//}
