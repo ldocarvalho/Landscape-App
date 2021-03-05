@@ -273,7 +273,7 @@ struct NewMomentView : View {
                 }
                 
                 Spacer()
-            }.frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
             .onAppear() {
                 if itsEditing {
                     
