@@ -12,13 +12,14 @@ struct NewMomentView : View {
     @State var momentTitle = ""
     @State var selfCareType = 0
     @State var partOfDay = 0
-    @State var daysOfWeek : [Int] = []
+    @State var daysOfWeek : WeekDays = []
     
     @Environment(\.presentationMode) var presentationMode
 
-    @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
+   // @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
     var body : some View {
+        let momento = Moment(context: moc)
         VStack {
             HStack {
                 Button("Cancel") {
@@ -29,21 +30,28 @@ struct NewMomentView : View {
                     .fontWeight(.bold)
                 Spacer()
                 Button("Save") {
-                    print("Save")
                     
-                    let momento = Moment(context: moc)
-                    momento.daysOfWeek = Int32(daysOfWeek[0])
-                       momento.partOfTheDay = Int32(partOfDay)
+                    momento.date = Date()
+                    momento.daysOfWeek = Int32(daysOfWeek.rawValue)
+                    momento.partOfTheDay = Int64(partOfDay)
                        momento.repeatActivity = false
-                    momento.selfCareType = Int32(selfCareType)
-                       momento.title = momentTitle
-                       do{
-                           try moc.save()
-                           //moc.delete(momento)
-                       }
-                       catch{
-
-                       }
+                    momento.selfCareType = Int64(selfCareType)
+                    do{
+                        try moc.save()
+                    }
+                    catch{
+                        
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                    // editando
+//                    moc.performAndWait {
+//                        moment[0].title? = "editando"
+//                        try? moc.save()
+//                    }
+                       
+                  
+                          
+                        
                 }.padding()
             }
             
@@ -109,49 +117,51 @@ struct NewMomentView : View {
                         .foregroundColor(.gray)
                         .overlay(Text("D"))
                         .onTapGesture {
-                            daysOfWeek.append(0)
+                           
+                            daysOfWeek.toogle(.sunday)
+                            
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.gray)
                         .overlay(Text("S"))
                         .onTapGesture {
-                            daysOfWeek.append(1)
+                            daysOfWeek.toogle(.monday)
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.gray)
                         .overlay(Text("T"))
                         .onTapGesture {
-                            daysOfWeek.append(2)
+                            daysOfWeek.toogle(.thursday)
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: .center)
                         .foregroundColor(.gray)
                         .overlay(Text("Q"))
                         .onTapGesture {
-                            daysOfWeek.append(3)
+                            daysOfWeek.toogle(.wednesday)
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.gray)
                         .overlay(Text("Q"))
                         .onTapGesture {
-                            daysOfWeek.append(4)
+                            daysOfWeek.toogle(.thursday)
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.gray)
                         .overlay(Text("S"))
                         .onTapGesture {
-                            daysOfWeek.append(5)
+                            daysOfWeek.toogle(.friday)
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.gray)
                         .overlay(Text("S"))
                         .onTapGesture {
-                            daysOfWeek.append(6)
+                            daysOfWeek.toogle(.saturday)
                         }
                 }
             }

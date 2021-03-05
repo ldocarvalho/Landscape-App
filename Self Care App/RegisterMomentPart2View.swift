@@ -10,11 +10,12 @@ import SwiftUI
 
 struct RegisterMomentPart2View: View {
     @Binding  var partOfTheDay: Int
+    @State var name: String
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
                 VStack(alignment: .center) {
-                    Text("Hi, Lorena!")
+                    Text("Hi, " + name )
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(25)

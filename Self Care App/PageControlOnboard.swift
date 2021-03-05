@@ -24,11 +24,12 @@ struct OnboardingView: View {
     
     var body: some View {
         let subviews = [
-            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title )),
-            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay)),
-            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare))
+            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: nome[0].name! )),
+            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: nome[0].name!)),
+            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: nome[0].name!))
         ]
-        NavigationView{
+        //NavigationView{
+            
             VStack(alignment: .leading) {
                 PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
                     .frame(height: 600)
@@ -36,11 +37,15 @@ struct OnboardingView: View {
                 VStack {
                    
                     Button(action: {
-                        let momento = Moment(context: moment)
+                       
                         
-                        if(RegisterMomentPart3View(typeOfCare: $typeOfCare).typeOfCare != 0){
-                            
-                            momento.selfCareType = Int32( RegisterMomentPart3View(typeOfCare: $typeOfCare).typeOfCare)
+                        if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare != 0){
+                            let momento = Moment(context: moment)
+                            momento.date = Date()
+                            momento.daysOfWeek = 1
+                            momento.title = title
+                            momento.partOfTheDay = Int64(partOfTheDay)
+                            momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare)
                             do{
                                try  moment.save()
                             }
@@ -54,20 +59,22 @@ struct OnboardingView: View {
                             
                         }
                         
-                        if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay).partOfTheDay != 0){
+                        if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: nome[0].name!).partOfTheDay != 0){
                             
-                            momento.partOfTheDay = Int32( RegisterMomentPart2View(partOfTheDay: $partOfTheDay).partOfTheDay)
+                            
                             if self.currentPageIndex == 1 {
+                                partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: nome[0].name!).partOfTheDay
                                 currentPageIndex += 1
 
                             }
                             
                         }
                         
-                        if(RegisterMomentPart1View(momentTitle: $title).momentTitle != ""){
-                            momento.title = RegisterMomentPart1View(momentTitle: $title).momentTitle
+                        if(RegisterMomentPart1View(momentTitle: $title, name: nome[0].name!).momentTitle != ""){
+                           
                               
                             if self.currentPageIndex == 0 {
+                                title = RegisterMomentPart1View(momentTitle: $title, name: nome[0].name!).momentTitle
                                 currentPageIndex += 1
 
                             }
@@ -82,13 +89,13 @@ struct OnboardingView: View {
                     .foregroundColor(.white)
                     
                     PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
-                        
-                    NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+                        Spacer()
+                    NavigationLink(destination: MyMomentsView(), isActive: $View) { EmptyView() }
                     Spacer()
                     
                 }
-            }
-        }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(true)
+       // }.navigationBarBackButtonHidden(true)
     }
         
 }

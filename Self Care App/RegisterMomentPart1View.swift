@@ -10,13 +10,14 @@ import SwiftUI
 struct RegisterMomentPart1View: View {
     
     @Binding  var momentTitle: String
+    @State var name: String
     
     var body: some View {
                 
         NavigationView {
             VStack(alignment: .center) {
                 VStack(alignment: .center) {
-                    Text("Hi, Lorena!")
+                    Text("Hi, " + name)
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(25)

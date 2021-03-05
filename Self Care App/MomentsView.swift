@@ -102,3 +102,4 @@ struct Card : Identifiable {
     var details : String
     var expand: Bool
 }
+ 

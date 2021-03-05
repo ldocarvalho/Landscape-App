@@ -8,34 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var userNameData
+    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     @State public var userName: String = ""
+    @State var View : Bool = false
     var body: some View {
-        VStack {
+        NavigationView{
             VStack {
-                Text("Qual o seu nome?")
-                    .padding()
-                TextField("", text: $userName).frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .cornerRadius(15)
-            }
-            Button(action: {
-                //colocar ação aqui
-               print("a \(userName)")
-            }) {
-                VStack{
-                    Text("Continuar")
-                    
+                Spacer()
+                VStack {
+                    Text("Qual o seu nome?")
+                        .padding()
+                    TextField("", text: $userName).frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .cornerRadius(15)
                 }
-                
-            }.frame(width: 100, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(Color.black)
-            .foregroundColor(.white)
-            .cornerRadius(15)
+                Button(action: {
+                    //colocar ação aqui
+                    let user = Name(context: userNameData)
+                    user.name = self.userName
+                    do{
+                        try userNameData.save()
+                    
+                    }
+                    catch{
+                       print("error")
+                    }
+                    View = true
+                }) {
+                    VStack{
+                        Text("Continuar")
+                        
+                    }
+                    
+                }.frame(width: 100, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color.black)
+                .foregroundColor(.white)
+                .cornerRadius(15)
+                NavigationLink(destination: OnboardingView(), isActive: $View) { EmptyView() }
+                Spacer()
+            }
             
-        }
+        }.navigationBarBackButtonHidden(true)
         
     }
-    
+        
 }
 
 struct ContentView_Previews: PreviewProvider {

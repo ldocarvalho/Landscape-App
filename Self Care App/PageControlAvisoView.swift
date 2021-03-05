@@ -21,20 +21,23 @@ struct OnboardingViewPage: View {
     @State var currentPageIndex = 0
     
     var body: some View {
-        NavigationView{
+        Spacer(minLength: 30)
+        
             VStack(alignment: .leading) {
                 PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
                     .frame(height: 600)
-                    .padding()
+                    
                 VStack {
                     PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
-                        
-                    NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+                        .padding()
                     Spacer()
+                    NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+                    
                     
                 }
+                
             }
-        }.navigationBarBackButtonHidden(true)
+//        }.navigationBarBackButtonHidden(true)
     }
         
 }
