@@ -9,16 +9,23 @@ import SwiftUI
 
 struct MyMomentsView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    
     let partOfTheDayImage = ["Morning","Afternoon","Night"]
-    @State var cards : [Card] = []
-        
+    
+    @State private var selectedCategory = 0
         
     @State var showModalView = false
     
     var body: some View {
-//        NavigationView {
             VStack {
-                Spacer(minLength: 30)
+                Picker("Favorite Color", selection: $selectedCategory, content: {
+                    Text("Personal").tag(0)
+                    Text("Social").tag(1)
+                    Text("Physical").tag(2)
+                })
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(16)
+                
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
                         ForEach((0...moment.count - 1), id: \.self) { i in
@@ -55,13 +62,6 @@ struct MyMomentsView: View {
             }))
             .navigationBarBackButtonHidden(true)
             .padding(0.0)
-            
-            
-            
-//        }
-        
-        
-        
     }
 }
 
