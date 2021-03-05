@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MomentDetailView: View {
+    var title : String
+    var description : String
+    var image : String
     var body: some View {
         
         VStack {
             GeometryReader { g in
                 VStack {
                     VStack {
-                        Image("p1")
+                        Image(image)
                             .resizable()
                             .frame(height: 400)
                     }.offset(y: -g.frame(in: .global).minY)
@@ -33,7 +36,7 @@ struct MomentDetailView: View {
                         .padding(.top, 30)
                         
                         HStack() {
-                            Text("Skincare moment")
+                            Text(title)
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.titleTextColor)
@@ -42,7 +45,7 @@ struct MomentDetailView: View {
                         } .padding([.leading, .trailing], 16)
                         .padding(.top, 8)
                         
-                        Text("Fusce ligula lacus, dictum vel velit id, facilisis semper nisi. Vestibulum eu feugiat enim. Etiam sagittis quam nec risus egestas, eget pulvinar elit efficitur.")
+                        Text(description)
                             .font(.body)
                             .padding()
                             .foregroundColor(ColorManager.bodyTextColor)
@@ -90,8 +93,8 @@ struct MomentDetailView: View {
     }
 }
 
-struct MomentDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MomentDetailView()
-    }
-}
+//struct MomentDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MomentDetailView()
+//    }
+//}

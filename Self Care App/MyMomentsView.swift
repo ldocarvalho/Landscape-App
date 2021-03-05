@@ -16,48 +16,51 @@ struct MyMomentsView: View {
     @State var showModalView = false
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 Spacer(minLength: 30)
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
-                        ForEach(cards) { i in
-                            NavigationLink(
-                                destination: MomentDetailView()) {
-                                
-                                Image(i.image)
-                                        .resizable()
-                                        .frame(height: 250)
-                                        .cornerRadius(25.0)
-                                        .padding(.horizontal)
-                                        .overlay(Text(i.title)
-                                                    .font(.title)
-                                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                                    .foregroundColor(.white)
-                                                    .padding(30),
-                                                 alignment: .topLeading)
-                                
+                        ForEach((0...moment.count - 1), id: \.self) { i in
+                            if (Int(moment[i].partOfTheDay ) != 0){
+                                NavigationLink(
+                                    destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1] )) {
+                                    
+                                    Image(partOfTheDayImage[Int(moment[i].partOfTheDay) - 1])
+                                            .resizable()
+                                            .frame(height: 250)
+                                            .cornerRadius(25.0)
+                                            .padding(.horizontal)
+                                            .overlay(Text(moment[i].title!)
+                                                        .font(.title)
+                                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                                        .foregroundColor(.white)
+                                                        .padding(30),
+                                                     alignment: .topLeading)
+                                    
+                                }
                             }
+                            
                         }
                         
                     }
-                }.navigationBarTitle(Text("Meus momentos"))
-                .navigationBarItems(trailing: Button("Add", action: {
-                    self.showModalView.toggle()
-                }))
-                .navigationBarBackButtonHidden(true)
+                }
             }
             .sheet(isPresented: self.$showModalView, content: {
                 NewMomentView()
             })
+            .navigationBarTitle(Text("Meus momentos"))
+            .navigationBarItems(trailing: Button("Add", action: {
+                self.showModalView.toggle()
+            }))
+            .navigationBarBackButtonHidden(true)
+            .padding(0.0)
             
-        }
-        .padding(0.0)
-        .onAppear() {
-            for i in 0 ... moment.count - 1 {
-                cards.append(Card(id: 1, image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1], title: moment[i].title!, details: "", expand: true))
-            }
-        }
+            
+            
+//        }
+        
+        
         
     }
 }

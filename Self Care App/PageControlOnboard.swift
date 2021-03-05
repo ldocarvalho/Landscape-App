@@ -90,7 +90,7 @@ struct OnboardingView: View {
                     
                     PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                         Spacer()
-                    NavigationLink(destination: MainView(), isActive: $View) { EmptyView() }
+                    NavigationLink(destination: MyMomentsView(), isActive: $View) { EmptyView() }
                     Spacer()
                     
                 }
