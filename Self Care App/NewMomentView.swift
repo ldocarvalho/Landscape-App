@@ -13,7 +13,19 @@ struct NewMomentView : View {
     @State var selfCareType = 0
     @State var partOfDay = 0
     @State var daysOfWeek : WeekDays = []
-    
+    @State private var didTapSunday :Bool = true
+    @State private var didTapMonday :Bool = true
+    @State private var didTapThuesday :Bool = true
+    @State private var didTapWednesday :Bool = true
+    @State private var didTapThursday :Bool = true
+    @State private var didTapFriday :Bool = true
+    @State private var didTapSaturday :Bool = true
+    @State private var didTapMornig :Bool = true
+    @State private var didTapAfternoon :Bool = true
+    @State private var didTapNight :Bool = true
+    @State private var didTapIndividual :Bool = true
+    @State private var didTapSocial :Bool = true
+    @State private var didTapHobbys :Bool = true
     @Environment(\.presentationMode) var presentationMode
 
    // @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
@@ -74,35 +86,49 @@ struct NewMomentView : View {
                     .fontWeight(.bold)
                 HStack {
                     VStack {
-                        Image("p1")
+                        Image("ButtonMorning")
                             .resizable()
                             .frame(width: 100/*@END_MENU_TOKEN@*/, height: 100, alignment: /*@START_MENU_TOKEN@*/.center)
                             .cornerRadius(25)
-                        Text("Morning")
+                       // Text("Morning")
                     }.padding()
+                    .opacity(didTapMornig ? 1 : 0.5)
                     .onTapGesture {
                         partOfDay = 1
+                        didTapMornig = true
+                        didTapAfternoon = false
+                        didTapNight = false
+                        
                     }
+                    
                     Spacer()
                     VStack {
-                        Image("p1")
+                        Image("ButtonAfternoon")
                             .resizable()
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(25)
-                        Text("Afternoon")
-                    }.onTapGesture {
+                       // Text("Afternoon")
+                    }.opacity(didTapAfternoon ? 1 : 0.5)
+                    .onTapGesture {
                         partOfDay = 2
+                        didTapMornig = false
+                        didTapAfternoon = true
+                        didTapNight = false
                     }
                     Spacer()
                     VStack {
-                        Image("p1")
+                        Image("ButtonNight")
                             .resizable()
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(25)
-                        Text("Evening")
+                       // Text("Evening")
                     }.padding()
+                    .opacity(didTapNight ? 1 : 0.5)
                     .onTapGesture {
                         partOfDay = 3
+                        didTapMornig = false
+                        didTapAfternoon = false
+                        didTapNight = true
                     }
                 }
             }
@@ -114,54 +140,61 @@ struct NewMomentView : View {
                 HStack {
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("D"))
                         .onTapGesture {
                            
                             daysOfWeek.toogle(.sunday)
+                            didTapSunday.toggle()
                             
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("S"))
                         .onTapGesture {
                             daysOfWeek.toogle(.monday)
+                            didTapMonday.toggle()
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("T"))
                         .onTapGesture {
-                            daysOfWeek.toogle(.thursday)
+                            daysOfWeek.toogle(.thuesday)
+                            didTapThuesday.toggle()
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: .center)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("Q"))
                         .onTapGesture {
                             daysOfWeek.toogle(.wednesday)
+                            didTapWednesday.toggle()
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("Q"))
                         .onTapGesture {
                             daysOfWeek.toogle(.thursday)
+                            didTapThursday.toggle()
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("S"))
                         .onTapGesture {
                             daysOfWeek.toogle(.friday)
+                            didTapFriday.toggle()
                         }
                     Circle()
                         .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.gray)
+                        .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                         .overlay(Text("S"))
                         .onTapGesture {
                             daysOfWeek.toogle(.saturday)
+                            didTapSaturday.toggle()
                         }
                 }
             }
@@ -172,36 +205,48 @@ struct NewMomentView : View {
                     .fontWeight(.bold)
                 HStack {
                     VStack {
-                        Image("p2")
+                        Image("IndividualImage")
                             .resizable()
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .opacity(didTapIndividual ? 1 : 0.5)
                             .cornerRadius(25)
                             .onTapGesture {
                                 selfCareType = 1
+                                didTapSocial = false
+                                didTapHobbys = false
+                                didTapIndividual = true
                             }
-                        Text("Individual")
+                        //Text("Individual")
                     }.padding()
                     Spacer()
                     VStack {
-                        Image("p2")
+                        Image("ImageSocial")
                             .resizable()
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .opacity(didTapSocial ? 1 : 0.5)
                             .cornerRadius(25)
                             .onTapGesture {
                                 selfCareType = 2
+                                didTapSocial = true
+                                didTapHobbys = false
+                                didTapIndividual = false
                             }
-                        Text("Social")
+                        //Text("Social")
                     }
                     Spacer()
                     VStack {
-                        Image("p2")
+                        Image("ImageHobby")
                             .resizable()
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(25)
+                            .opacity(didTapHobbys ? 1 : 0.5)
                             .onTapGesture {
                                 selfCareType = 3
+                                didTapSocial = false
+                                didTapHobbys = true
+                                didTapIndividual = false
                             }
-                        Text("Hobby")
+                        //Text("Hobby")
                     }.padding()
                 }
                 
