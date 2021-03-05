@@ -16,14 +16,14 @@ struct MenuView: View {
                 NavigationLink(
                     destination: MomentsView(),
                     label: {
-                        Button(image: "p1", title: "Momentos")
+                        Button(image: "p1", title: "Moments")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
                 // adicionar View com ciclos como destination
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Button(image: "p1", title: "Ciclos")
+                        Button(image: "p1", title: "Cycles")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
             }.onAppear(perform: {
@@ -39,20 +39,22 @@ struct Button : View {
     var title : String
     
     var body : some View {
-        HStack {
-            Text(title)
-                .padding()
-                .font(.title3)
-                .foregroundColor(WatchColorManager.menuTextColor)
-            Spacer()
-            Image(image)
-                .resizable()
-                .frame(width:30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .padding()
+        GeometryReader { reader in
+            HStack {
+                Text(title)
+                    .padding()
+                    .font(.title3)
+                    .foregroundColor(WatchColorManager.menuTextColor)
+                Spacer()
+                Image(image)
+                    .resizable()
+                    .frame(width:30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding()
+            }
+            .frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .background(WatchColorManager.menuBackgroundColor)
+            .cornerRadius(15.0)
         }
-        .frame(width: 160, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .background(WatchColorManager.menuBackgroundColor)
-        .cornerRadius(15.0)
     }
 }
 
