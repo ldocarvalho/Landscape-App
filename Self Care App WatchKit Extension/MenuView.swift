@@ -16,14 +16,14 @@ struct MenuView: View {
                 NavigationLink(
                     destination: MomentsView(),
                     label: {
-                        Button(image: "p1", title: "Momentos")
+                        Button(image: "p1", title: "Moments")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
                 // adicionar View com ciclos como destination
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Button(image: "p1", title: "Ciclos")
+                        Button(image: "p1", title: "Cycles")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
             }.onAppear(perform: {
