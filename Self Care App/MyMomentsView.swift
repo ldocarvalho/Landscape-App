@@ -25,11 +25,15 @@ struct MyMomentsView: View {
                 })
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(16)
+                .sheet(isPresented: self.$showModalView, content: {
+
+                    NewMomentView(itsEditing: false, id: 0)
+                })
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
                         ForEach((0...moment.count - 1), id: \.self) { i in
-                            if (Int(moment[i].partOfTheDay ) != 0){
+                            if (Int(moment[i].partOfTheDay) != 0){
                                 NavigationLink(
                                     destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1],id: i )) {
                                     
@@ -53,9 +57,6 @@ struct MyMomentsView: View {
                     }
                 }
             }
-            .sheet(isPresented: self.$showModalView, content: {
-                NewMomentView(itsEditing: false)
-            })
             .navigationBarTitle(Text("Meus momentos"))
             .navigationBarItems(trailing: Button("Add", action: {
                 self.showModalView.toggle()

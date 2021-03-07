@@ -10,6 +10,7 @@ import SwiftUI
 struct NewMomentView : View {
     
     @State var itsEditing : Bool
+    @State var id : Int
     @State var momentTitle = ""
     @State var selfCareType = 0
     @State var partOfDay = 0
@@ -27,10 +28,11 @@ struct NewMomentView : View {
     @State private var didTapIndividual :Bool = true
     @State private var didTapSocial :Bool = true
     @State private var didTapHobbys :Bool = true
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
 
-   // @FetchRequest(entity: Moment.entity(), sortDescriptors: []) var moment: FetchedResults<Moment>
-    @Environment(\.managedObjectContext) var moc
+    
     var body : some View {
         let momento = Moment(context: moc)
         GeometryReader { reader in
@@ -54,7 +56,7 @@ struct NewMomentView : View {
                         momento.date = Date()
                         momento.daysOfWeek = Int32(daysOfWeek.rawValue)
                         momento.partOfTheDay = Int64(partOfDay)
-                           momento.repeatActivity = false
+                        momento.repeatActivity = false
                         momento.selfCareType = Int64(selfCareType)
                         do{
                             try moc.save()
@@ -106,9 +108,12 @@ struct NewMomentView : View {
                             .opacity(didTapMornig ? 1 : 0.3)
                             .onTapGesture {
                                 partOfDay = 1
-                                didTapMornig = true
-                                didTapAfternoon = false
-                                didTapNight = false
+                                if(partOfDay == 1){
+                                    didTapMornig = true
+                                    didTapAfternoon = false
+                                    didTapNight = false
+                                }
+                                
                                 
                             }
                             
@@ -120,9 +125,12 @@ struct NewMomentView : View {
                             }.opacity(didTapAfternoon ? 1 : 0.3)
                             .onTapGesture {
                                 partOfDay = 2
-                                didTapMornig = false
-                                didTapAfternoon = true
-                                didTapNight = false
+                                if(partOfDay == 2){
+                                    didTapMornig = false
+                                    didTapAfternoon = true
+                                    didTapNight = false
+                                }
+                                
                             }
                             VStack {
                                 Image("ButtonNight")
@@ -133,9 +141,12 @@ struct NewMomentView : View {
                             .opacity(didTapNight ? 1 : 0.3)
                             .onTapGesture {
                                 partOfDay = 3
-                                didTapMornig = false
-                                didTapAfternoon = false
-                                didTapNight = true
+                                if(partOfDay == 3){
+                                    didTapMornig = false
+                                    didTapAfternoon = false
+                                    didTapNight = true
+                                }
+                                
                             }
                         }.frame(width: reader.size.width*0.9, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }.padding(8)
@@ -225,9 +236,12 @@ struct NewMomentView : View {
                                     .cornerRadius(25)
                                     .onTapGesture {
                                         selfCareType = 1
-                                        didTapSocial = false
-                                        didTapHobbys = false
-                                        didTapIndividual = true
+                                        if(selfCareType == 1){
+                                            didTapSocial = false
+                                            didTapHobbys = false
+                                            didTapIndividual = true
+                                        }
+                                       
                                     }
                                 //Text("Individual")
                             }.padding()
@@ -240,9 +254,12 @@ struct NewMomentView : View {
                                     .cornerRadius(25)
                                     .onTapGesture {
                                         selfCareType = 2
-                                        didTapSocial = true
-                                        didTapHobbys = false
-                                        didTapIndividual = false
+                                        if(selfCareType == 2){
+                                            didTapSocial = true
+                                            didTapHobbys = false
+                                            didTapIndividual = false
+                                        }
+                                        
                                     }
                                 //Text("Social")
                             }
@@ -255,9 +272,12 @@ struct NewMomentView : View {
                                     .opacity(didTapHobbys ? 1 : 0.3)
                                     .onTapGesture {
                                         selfCareType = 3
-                                        didTapSocial = false
-                                        didTapHobbys = true
-                                        didTapIndividual = false
+                                        if(selfCareType == 3){
+                                            didTapSocial = false
+                                            didTapHobbys = true
+                                            didTapIndividual = false
+                                        }
+                                        
                                     }
                                 //Text("Hobby")
                             }.padding()
@@ -276,9 +296,10 @@ struct NewMomentView : View {
             }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
             .onAppear() {
                 if itsEditing {
-                    
-                } else {
-                    
+                    momentTitle = moment[id].title!
+                    selfCareType = Int(moment[id].selfCareType)
+                    partOfDay = Int(moment[id].partOfTheDay)
+                    daysOfWeek = WeekDays(rawValue: Int(moment[id].daysOfWeek))
                 }
             }
         }
@@ -287,7 +308,7 @@ struct NewMomentView : View {
 
 struct NewMomentView_Previews: PreviewProvider {
     static var previews: some View {
-        NewMomentView(itsEditing: false)
+        NewMomentView(itsEditing: false, id: 0)
     }
 }
 

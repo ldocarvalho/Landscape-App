@@ -88,7 +88,7 @@ struct MomentDetailView: View {
                         }.background(Color.white)
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
-            }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true)})
+            }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true, id: id)})
             .frame(width: g.size.width, alignment: .center)
         }
     }
