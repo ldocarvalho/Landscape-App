@@ -126,8 +126,8 @@
             filePath = "Self Care App/NewMomentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -263,7 +263,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5A93ED67-7494-4DD1-A694-E362D91A4A18"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Self Care App/PageControlOnboard.swift"
@@ -349,10 +349,10 @@
             filePath = "Self Care App/MyMomentsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "MyMomentsView_Previews"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -365,10 +365,10 @@
             filePath = "Self Care App/MyMomentsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "MyMomentsView"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "F0C8CFC7-F34F-478E-919C-9D174D1C2162 - 3d063e1991762ac0"
@@ -401,38 +401,6 @@
                   offsetFromSymbolStart = "240">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "527D0DAC-671B-4DFD-8902-4BB00A434D6A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Self Care App/NewMomentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5BF59D34-8A55-43EF-8716-3036E10E6C73"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Self Care App/NewMomentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -503,7 +471,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "88B8F52E-A3BB-4C91-A124-6AA027D143EE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Self Care App/NewMomentView.swift"
@@ -525,8 +493,56 @@
             filePath = "Self Care App/MyMomentsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "67371DC9-3EB0-45D5-99B6-4A265C018D70 - 2ca454843e7de1d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.sheet&lt;A where A1: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; A1) -&gt; some&gt;&gt;.0, SwiftUI.ScrollView&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.ClosedRange&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, Self_Care_App.MomentDetailView&gt;&gt;&gt;&gt;&gt;)&gt; in Self_Care_App.MyMomentsView.body.getter : some"
+                  moduleName = "Self Care App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vidal/Documents/Selfcare-App/Self%20Care%20App/MyMomentsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1743">
+               </Location>
+               <Location
+                  uuid = "67371DC9-3EB0-45D5-99B6-4A265C018D70 - 50835c9fbf6710e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.ClosedRange&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, Self_Care_App.MomentDetailView&gt;&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.sheet&lt;A where A1: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; A1) -&gt; some&gt;&gt;.0, SwiftUI.ScrollView&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.ClosedRange&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, Self_Care_App.MomentDetailView&gt;&gt;&gt;&gt;&gt;)&gt; in Self_Care_App.MyMomentsView.body.getter : some"
+                  moduleName = "Self Care App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vidal/Documents/Selfcare-App/Self%20Care%20App/MyMomentsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "175">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C330BA98-B5DA-466A-8A1C-9128EF43EF74"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Self Care App/MyMomentsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -534,15 +550,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C330BA98-B5DA-466A-8A1C-9128EF43EF74"
-            shouldBeEnabled = "Yes"
+            uuid = "57275C64-B9B0-48E5-8DF5-39E44E51338C"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Self Care App/MyMomentsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8327DA2-7776-419A-964D-FB398C8EFCE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Self Care App/MyMomentsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E13C6BC9-1E9D-4625-97CB-F35E2F85414D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Self Care App/NewMomentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

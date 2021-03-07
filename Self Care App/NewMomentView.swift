@@ -34,7 +34,7 @@ struct NewMomentView : View {
 
     
     var body : some View {
-        let momento = Moment(context: moc)
+ 
         GeometryReader { reader in
             VStack {
                 HStack {
@@ -52,19 +52,31 @@ struct NewMomentView : View {
                     Spacer()
                     
                     Button(action: {
-                        momento.title = momentTitle
-                        momento.date = Date()
-                        momento.daysOfWeek = Int32(daysOfWeek.rawValue)
-                        momento.partOfTheDay = Int64(partOfDay)
-                        momento.repeatActivity = false
-                        momento.selfCareType = Int64(selfCareType)
+                        if(itsEditing){
+                            moment[id].title = momentTitle
+                            moment[id].daysOfWeek = Int32(daysOfWeek.rawValue)
+                            moment[id].partOfTheDay = Int64(partOfDay)
+                            moment[id].repeatActivity = false
+                            moment[id].selfCareType = Int64(selfCareType)
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        else{
+                            let momento = Moment(context: moc)
+                            momento.title = momentTitle
+                            momento.date = Date()
+                            momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+                            momento.partOfTheDay = Int64(partOfDay)
+                            momento.repeatActivity = false
+                            momento.selfCareType = Int64(selfCareType)
+                            presentationMode.wrappedValue.dismiss()
+                            
+                        }
                         do{
                             try moc.save()
                         }
                         catch{
                             
                         }
-                        presentationMode.wrappedValue.dismiss()
                         // editando
     //                    moc.performAndWait {
     //                        moment[0].title? = "editando"
@@ -90,6 +102,69 @@ struct NewMomentView : View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .cornerRadius(15)
                     }.padding(8)
+                    .onAppear() {
+                        if (itsEditing) {
+                            momentTitle = moment[id].title!
+                            selfCareType = Int(moment[id].selfCareType)
+                            partOfDay = Int(moment[id].partOfTheDay)
+                            daysOfWeek = WeekDays(rawValue: Int(moment[id].daysOfWeek))
+                            //comparando part do dia
+                            if(partOfDay == 1){
+                                didTapMornig = true
+                                didTapAfternoon = false
+                                didTapNight = false
+                            }
+                            else if(partOfDay == 2){
+                                didTapMornig = false
+                                didTapAfternoon = true
+                                didTapNight = false
+                            }
+                            else if(partOfDay == 3){
+                                didTapMornig = false
+                                didTapAfternoon = false
+                                didTapNight = true
+                            }
+                            // comparando cuidado
+                            if(selfCareType == 1){
+                                didTapSocial = false
+                                didTapHobbys = false
+                                didTapIndividual = true
+                            }
+                            else if(selfCareType == 2){
+                                didTapSocial = true
+                                didTapHobbys = false
+                                didTapIndividual = false
+                            }
+                            else if(selfCareType == 3){
+                                didTapSocial = false
+                                didTapHobbys = true
+                                didTapIndividual = false
+                            }
+                            // vendo das da semana
+                            
+                            if (daysOfWeek.contains(.sunday)){
+                                didTapSunday = true
+                            }
+                            else if (daysOfWeek.contains(.monday)){
+                                didTapMonday.toggle()
+                            }
+                            else if (daysOfWeek.contains(.thuesday)){
+                                didTapThuesday.toggle()
+                            }
+                            else if (daysOfWeek.contains(.thursday)){
+                                didTapThursday.toggle()
+                            }
+                            else if (daysOfWeek.contains(.wednesday)){
+                                didTapWednesday.toggle()
+                            }
+                            else if (daysOfWeek.contains(.friday)){
+                                didTapFriday.toggle()
+                            }
+                            else if (daysOfWeek.contains(.saturday)){
+                                didTapSaturday.toggle()
+                            }
+                        }
+                    }
                     
                     VStack {
                         Text("In what part of the day would you rather do it?")
@@ -105,7 +180,7 @@ struct NewMomentView : View {
                                     .cornerRadius(25)
                                // Text("Morning")
                             }.padding()
-                            .opacity(didTapMornig ? 1 : 0.3)
+                            .opacity( didTapMornig ? 1 : 0.3)
                             .onTapGesture {
                                 partOfDay = 1
                                 if(partOfDay == 1){
@@ -138,7 +213,7 @@ struct NewMomentView : View {
                                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     .cornerRadius(25)
                             }.padding()
-                            .opacity(didTapNight ? 1 : 0.3)
+                            .opacity( didTapNight ? 1 : 0.3)
                             .onTapGesture {
                                 partOfDay = 3
                                 if(partOfDay == 3){
@@ -294,14 +369,7 @@ struct NewMomentView : View {
                 
                 Spacer()
             }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
-            .onAppear() {
-                if itsEditing {
-                    momentTitle = moment[id].title!
-                    selfCareType = Int(moment[id].selfCareType)
-                    partOfDay = Int(moment[id].partOfTheDay)
-                    daysOfWeek = WeekDays(rawValue: Int(moment[id].daysOfWeek))
-                }
-            }
+            
         }
     }
 }
