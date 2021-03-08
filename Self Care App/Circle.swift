@@ -11,8 +11,8 @@ import SwiftUI
 
 struct ContentViewCircle: View {
     @State var progressValueIndividual: Float = 0 //Colocar informação do banco aqui
-    @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueHobbies: Float = 0.73 //Colocar informação do banco aqui
+    @State var progressValueSocial: Float = 0 //Colocar informação do banco aqui
+    @State var progressValueHobbies: Float = 0 //Colocar informação do banco aqui
     @State var daysOfWeek : WeekDays = []
     @State var countTotalIndividual : Double = 0
     @State var countTotalHobby : Double = 0
@@ -98,9 +98,10 @@ struct ContentViewCircle: View {
                     }
             }
         }
-        progressValueSocial = Float((countSocial/countTotalSocial))
-        progressValueIndividual = Float((countIndividual/countTotalIndividual))
-        progressValueHobbies = Float((countHobby/countTotalHobby))
+        
+        progressValueSocial =  countTotalSocial == 0 ?  0 : Float((countSocial/countTotalSocial))
+        progressValueIndividual = countTotalIndividual == 0 ?  0 : Float((countIndividual/countTotalIndividual))
+        progressValueHobbies = countTotalHobby == 0 ?  0 : Float((countHobby/countTotalHobby))
             
     }
             
@@ -129,31 +130,33 @@ struct ContentViewCircle: View {
                     
                     
                 
-//                Circle()
-//                    .stroke(lineWidth: 20.0)
-//                    .opacity(0.3)
-//                    .foregroundColor(ColorManager.pinkCicleBackgroundColor)
-//                    .frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                Circle()
-//                    .trim(from: 0.0, to: CGFloat(min(self.progressSocial,1.0)))
-//                        .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
+                Circle()
+                    .stroke(lineWidth: 20.0)
+                    .opacity(0.3)
+                    .foregroundColor(ColorManager.pinkCicleBackgroundColor)
+                    .frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(min(self.progressSocial,1.0)))
+                    .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
 //                    .foregroundColor(ColorManager.pinkCicleColor)
-//                    .rotationEffect(Angle(degrees:270))
-//                    .animation(.linear)
-//                    .frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .fill(AngularGradient(gradient: .init(colors: [ColorManager.pinkCicleColor]), center: .center, startAngle: Angle(degrees:270), endAngle: Angle(degrees:360)))
+                    .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
+                    .rotationEffect(Angle(degrees:270))
+                    .frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 //
-//                Circle()
-//                    .stroke(lineWidth: 20.0)
-//                    .opacity(0.3)
-//                    .foregroundColor(ColorManager.blueCicleBackgroundColor)
-//                    .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                Circle()
-//                    .trim(from: 0.0, to: CGFloat(min(self.progressHobbies,1.0)))
-//                        .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
+                Circle()
+                    .stroke(lineWidth: 20.0)
+                    .opacity(0.3)
+                    .foregroundColor(ColorManager.blueCicleBackgroundColor)
+                    .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(min(self.progressHobbies,1.0)))
+                    .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
 //                    .foregroundColor(ColorManager.blueCicleColor)
-//                    .rotationEffect(Angle(degrees:270))
-//                    .animation(.linear)
-//                    .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .fill(AngularGradient(gradient: .init(colors: [ColorManager.pinkCicleColor]), center: .center, startAngle: Angle(degrees:270), endAngle: Angle(degrees:360)))
+                    .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
+                    .rotationEffect(Angle(degrees:270))
+                    .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 
             }
         }
@@ -176,7 +179,7 @@ struct ContentViewCircle: View {
                         
                     Rectangle().frame(width: min(CGFloat(self.progressIndividual) *  300,  300), height: 40)
                         .foregroundColor(ColorManager.purpleCicleColor)
-                        .animation(.linear)
+                        .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                         .cornerRadius(45.0)
                     
                     
@@ -190,7 +193,7 @@ struct ContentViewCircle: View {
                         
                     Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  300,  300), height: 40)
                         .foregroundColor(ColorManager.pinkCicleColor)
-                        .animation(.linear)
+                        .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                         .cornerRadius(45.0)
                 }.cornerRadius(45.0)
                 //Barra social
@@ -202,7 +205,7 @@ struct ContentViewCircle: View {
                     Rectangle().frame(width: min(CGFloat(self.progressSocial) *  300,  300), height: 40)
                         .cornerRadius(45.0)
                         .foregroundColor(ColorManager.blueCicleColor)
-                        .animation(.linear)
+                        .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                 }.cornerRadius(45.0)
             }
             
