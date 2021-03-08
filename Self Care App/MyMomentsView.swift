@@ -33,7 +33,7 @@ struct MyMomentsView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
                         ForEach((0...moment.count), id: \.self) { i in
-                            if (i < moment.count){
+                            if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
                                 NavigationLink(
                                     destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1],id: i )) {
                                     
@@ -42,6 +42,7 @@ struct MyMomentsView: View {
                                             .frame(height: 250)
                                             .cornerRadius(25.0)
                                             .padding(.horizontal)
+                                            .opacity(moment[i].done ? 0.3 : 1)
                                             .overlay(Text(moment[i].title!)
                                                         .font(.title)
                                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)

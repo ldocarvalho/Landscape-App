@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterMomentPart3View: View {
     @Binding var typeOfCare : Int
     @State var name : String
+  
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {

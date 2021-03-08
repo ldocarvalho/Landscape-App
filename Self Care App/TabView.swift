@@ -7,6 +7,7 @@
 import SwiftUI
 struct MainView: View {
     var body: some View {
+        NavigationView{
             TabView {
                MyMomentsView()
                  .tabItem {
@@ -20,6 +21,8 @@ struct MainView: View {
               }
             }.navigationBarBackButtonHidden(true)
        
+        }
+            
         
     }
 }

@@ -8,7 +8,19 @@
 import Foundation
 import CoreData
 import UserNotifications
+import Combine
 
+class UserSettings: ObservableObject {
+    @Published var firstUse: Bool {
+            didSet {
+                UserDefaults.standard.set(firstUse, forKey: "isFirtUse")
+            }
+        }
+    
+    init() {
+        self.firstUse = UserDefaults.standard.object(forKey: "isFirstUse") as? Bool ?? true
+    }
+}
 
 struct WeekDays: OptionSet {
     let rawValue: Int
@@ -34,4 +46,35 @@ struct WeekDays: OptionSet {
     }
    
 }
+func CurrentDay() -> WeekDays{
+    var daysOfWeek : WeekDays = []
+    let weekday = Calendar.current.component(.weekday, from: Date())
+    switch(weekday){
+    case 1:
+        daysOfWeek.insert(.sunday)
+        return daysOfWeek
+    case 2:
+        daysOfWeek.insert(.monday)
+        return daysOfWeek
+    case 3:
+        daysOfWeek.insert(.thuesday)
+        return daysOfWeek
+    case 4:
+        daysOfWeek.insert(.wednesday)
+        return daysOfWeek
+    case 5:
+        daysOfWeek.insert(.thursday)
+        return daysOfWeek
+    case 6:
+        daysOfWeek.insert(.friday)
+        return daysOfWeek
+    case 7:
+        daysOfWeek.insert(.saturday)
+        return daysOfWeek
+    default:
+        daysOfWeek.insert(.sunday)
+        return daysOfWeek
+        
+    }
 
+}

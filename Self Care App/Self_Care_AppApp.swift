@@ -10,9 +10,18 @@ import SwiftUI
 @main
 struct Self_Care_AppApp: App {
     let container = PersistenceController.shared.container
+    @ObservedObject var userSettings = UserSettings()
     var body: some Scene {
         WindowGroup {
-            ContentViewCircle().environment(\.managedObjectContext, container.viewContext)
+            
+            if(userSettings.firstUse){
+                ContentView().environment(\.managedObjectContext, container.viewContext)
+                
+            }
+            else{
+                MainView().environment(\.managedObjectContext, container.viewContext)
+            }
+           
         }
     }
 }
