@@ -32,8 +32,8 @@ struct MyMomentsView: View {
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
-                        ForEach((0...moment.count - 1), id: \.self) { i in
-                            if (Int(moment[i].partOfTheDay) != 0){
+                        ForEach((0...moment.count), id: \.self) { i in
+                            if (i < moment.count){
                                 NavigationLink(
                                     destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1],id: i )) {
                                     
