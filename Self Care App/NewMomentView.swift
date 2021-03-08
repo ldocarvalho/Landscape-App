@@ -58,6 +58,7 @@ struct NewMomentView : View {
                             moment[id].partOfTheDay = Int64(partOfDay)
                             moment[id].repeatActivity = false
                             moment[id].selfCareType = Int64(selfCareType)
+                            moment[id].done = false
                             presentationMode.wrappedValue.dismiss()
                         }
                         else{
@@ -68,6 +69,7 @@ struct NewMomentView : View {
                             momento.partOfTheDay = Int64(partOfDay)
                             momento.repeatActivity = false
                             momento.selfCareType = Int64(selfCareType)
+                            momento.done = false
                             presentationMode.wrappedValue.dismiss()
                             
                         }

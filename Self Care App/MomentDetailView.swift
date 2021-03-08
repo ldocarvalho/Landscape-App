@@ -13,6 +13,8 @@ struct MomentDetailView: View {
     var image : String = "p1"
     var id : Int = 0
     @State var View : Bool = false
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         GeometryReader { g in
             VStack {
@@ -74,7 +76,13 @@ struct MomentDetailView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    
+                                    moment[id].done = true
+                                    do{
+                                        try moc.save()
+                                    }
+                                    catch{
+                                        
+                                    }
                                 }, label: {
                                     Text("Moment done")
                                         .foregroundColor(ColorManager.backgroundColor)

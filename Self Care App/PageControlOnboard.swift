@@ -46,6 +46,7 @@ struct OnboardingView: View {
                             momento.title = title
                             momento.partOfTheDay = Int64(partOfTheDay)
                             momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare)
+                            momento.done = false
                             do{
                                try  moment.save()
                             }
