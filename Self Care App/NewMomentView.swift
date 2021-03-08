@@ -143,25 +143,25 @@ struct NewMomentView : View {
                             // vendo das da semana
                             
                             if (daysOfWeek.contains(.sunday)){
-                                didTapSunday = true
+                                didTapSunday = false
                             }
-                            else if (daysOfWeek.contains(.monday)){
-                                didTapMonday.toggle()
+                            if (daysOfWeek.contains(.monday)){
+                                didTapMonday = false
                             }
-                            else if (daysOfWeek.contains(.thuesday)){
-                                didTapThuesday.toggle()
+                            if (daysOfWeek.contains(.thuesday)){
+                                didTapThuesday = false
                             }
-                            else if (daysOfWeek.contains(.thursday)){
-                                didTapThursday.toggle()
+                            if (daysOfWeek.contains(.thursday)){
+                                didTapThursday = false
                             }
-                            else if (daysOfWeek.contains(.wednesday)){
-                                didTapWednesday.toggle()
+                            if (daysOfWeek.contains(.wednesday)){
+                                didTapWednesday = false
                             }
-                            else if (daysOfWeek.contains(.friday)){
-                                didTapFriday.toggle()
+                            if (daysOfWeek.contains(.friday)){
+                                didTapFriday = false
                             }
-                            else if (daysOfWeek.contains(.saturday)){
-                                didTapSaturday.toggle()
+                            if (daysOfWeek.contains(.saturday)){
+                                didTapSaturday = false
                             }
                         }
                     }
@@ -239,8 +239,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("D"))
                                 .onTapGesture {
-                                   
-                                    daysOfWeek.toogle(.sunday)
+                                    if (daysOfWeek.contains(.sunday)){
+                                        daysOfWeek.remove(.sunday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.sunday)
+                                    }
                                     didTapSunday.toggle()
                                     
                                 }
@@ -249,7 +253,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("S"))
                                 .onTapGesture {
-                                    daysOfWeek.toogle(.monday)
+                                    if (daysOfWeek.contains(.monday)){
+                                        daysOfWeek.remove(.monday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.monday)
+                                    }
                                     didTapMonday.toggle()
                                 }
                             Circle()
@@ -257,7 +266,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("T"))
                                 .onTapGesture {
-                                    daysOfWeek.toogle(.thuesday)
+                                    if (daysOfWeek.contains(.thuesday)){
+                                        daysOfWeek.remove(.thuesday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.thuesday)
+                                    }
                                     didTapThuesday.toggle()
                                 }
                             Circle()
@@ -265,7 +279,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("Q"))
                                 .onTapGesture {
-                                    daysOfWeek.toogle(.wednesday)
+                                    if (daysOfWeek.contains(.wednesday)){
+                                        daysOfWeek.remove(.wednesday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.wednesday)
+                                    }
                                     didTapWednesday.toggle()
                                 }
                             Circle()
@@ -273,7 +292,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("Q"))
                                 .onTapGesture {
-                                    daysOfWeek.toogle(.thursday)
+                                    if (daysOfWeek.contains(.thursday)){
+                                        daysOfWeek.remove(.thursday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.thursday)
+                                    }
                                     didTapThursday.toggle()
                                 }
                             Circle()
@@ -281,7 +305,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("S"))
                                 .onTapGesture {
-                                    daysOfWeek.toogle(.friday)
+                                    if (daysOfWeek.contains(.friday)){
+                                        daysOfWeek.remove(.friday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.friday)
+                                    }
                                     didTapFriday.toggle()
                                 }
                             Circle()
@@ -289,7 +318,12 @@ struct NewMomentView : View {
                                 .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                 .overlay(Text("S"))
                                 .onTapGesture {
-                                    daysOfWeek.toogle(.saturday)
+                                    if (daysOfWeek.contains(.saturday)){
+                                        daysOfWeek.remove(.saturday)
+                                    }
+                                    else{
+                                        daysOfWeek.insert(.saturday)
+                                    }
                                     didTapSaturday.toggle()
                                 }
                         }
