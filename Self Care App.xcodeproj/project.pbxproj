@@ -20,6 +20,7 @@
 		769F88AB25F153F100B68091 /* WatchColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88AA25F153F100B68091 /* WatchColorManager.swift */; };
 		769F88BE25F1696200B68091 /* PagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88BD25F1696200B68091 /* PagerManager.swift */; };
 		769F88D125F172F900B68091 /* DeleteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88D025F172F900B68091 /* DeleteAlertView.swift */; };
+		76A59E7125F696D200571698 /* RegisterMomentPart4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */; };
 		76BB7A8025F2A1F1007CE764 /* EmptyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
 		76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */; };
@@ -119,6 +120,7 @@
 		769F88AA25F153F100B68091 /* WatchColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColorManager.swift; sourceTree = "<group>"; };
 		769F88BD25F1696200B68091 /* PagerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerManager.swift; sourceTree = "<group>"; };
 		769F88D025F172F900B68091 /* DeleteAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAlertView.swift; sourceTree = "<group>"; };
+		76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart4View.swift; sourceTree = "<group>"; };
 		76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldView.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */,
 				769F88D025F172F900B68091 /* DeleteAlertView.swift */,
 				76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */,
+				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				A80B1CBF25F00CC0002386F8 /* PageControlAvisoView.swift in Sources */,
 				7616657325EEC86800A35A6A /* RegisterMomentPart3View.swift in Sources */,
 				769F889F25F02EC100B68091 /* CustomCorner.swift in Sources */,
+				76A59E7125F696D200571698 /* RegisterMomentPart4View.swift in Sources */,
 				A80B1CC725F01EA2002386F8 /* SwifUICoreData.swift in Sources */,
 				76F593BF25E82ED3008E171E /* ContentView.swift in Sources */,
 				A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */,
