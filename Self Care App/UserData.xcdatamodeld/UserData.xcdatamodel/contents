@@ -10,10 +10,11 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Name" representedClassName=".Name" syncable="YES" codeGenerationType="class">
+        <attribute name="firstUse" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Moment" positionX="-63" positionY="-18" width="128" height="134"/>
-        <element name="Name" positionX="-54" positionY="27" width="128" height="44"/>
+        <element name="Name" positionX="-54" positionY="27" width="128" height="59"/>
     </elements>
 </model>

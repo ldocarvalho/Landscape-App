@@ -27,6 +27,7 @@ struct ContentView: View {
                     //colocar ação aqui
                     let user = Name(context: userNameData)
                     user.name = self.userName
+                    user.firstUse = true
                     do{
                         try userNameData.save()
                     
