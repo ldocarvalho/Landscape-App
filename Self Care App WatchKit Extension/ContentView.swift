@@ -9,14 +9,23 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
-    
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @State private var currentPage = 0
-    
+    @State var daysOfWeek : WeekDays = []
+    @State var progressValueIndividual: Float = 0 //Colocar informação do banco aqui
+    @State var progressValueSocial: Float = 0 //Colocar informação do banco aqui
+    @State var progressValueHobbies: Float = 0 //Colocar informação do banco aqui
+    @State var countTotalIndividual : Double = 0
+    @State var countTotalHobby : Double = 0
+    @State var countTotalSocial : Double = 0
+    @State var countIndividual : Double = 0
+    @State var countSocial : Double = 0
+    @State var countHobby : Double = 0
     var body: some View {
         VStack{
             PagerManager(pageCount: 2, currentIndex: $currentPage) {
-                CirclesView()
-                ProgressBarView()
+                CirclesView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
+                ProgressBarView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
             }
             HStack{
                 Circle()
@@ -28,13 +37,62 @@ struct ContentView: View {
             }
         }
     }
+    func ProgressOfTheDay(){
+        let weekday = Calendar.current.component(.weekday, from: Date())
+        switch(weekday){
+        case 1:
+            daysOfWeek.insert(.sunday)
+        case 2:
+            daysOfWeek.insert(.monday)
+        case 3:
+            daysOfWeek.insert(.thuesday)
+        case 4:
+            daysOfWeek.insert(.wednesday)
+        case 5:
+            daysOfWeek.insert(.thursday)
+        case 6:
+            daysOfWeek.insert(.friday)
+        case 7:
+            daysOfWeek.insert(.saturday)
+        default:
+                daysOfWeek.insert(.sunday)
+            
+        }
+        for i in 0 ... moment.count {
+            if(i < moment.count){
+                if (WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek) && moment[i].selfCareType == 1){
+                    countTotalIndividual = countTotalIndividual + 1
+                    if (moment[i].done){
+                           countIndividual = countIndividual + 1
+                        }
+                    }
+                if (WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek) && moment[i].selfCareType == 2){
+                    countTotalSocial = countTotalSocial + 1
+                    if (moment[i].done){
+                           countSocial = countSocial + 1
+                        }
+                    }
+                if (WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek) && moment[i].selfCareType == 3){
+                    countTotalHobby = countTotalHobby + 1
+                    if (moment[i].done){
+                           countHobby = countHobby + 1
+                        }
+                    }
+            }
+        }
+        
+        progressValueSocial =  countTotalSocial == 0 ?  0 : Float((countSocial/countTotalSocial))
+        progressValueIndividual = countTotalIndividual == 0 ?  0 : Float((countIndividual/countTotalIndividual))
+        progressValueHobbies = countTotalHobby == 0 ?  0 : Float((countHobby/countTotalHobby))
+            
+    }
 }
 
 struct CirclesView : View {
     
-    @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueHobbies: Float = 0.65 //Colocar informação do banco aqui
+    @State var progressValueIndividual: Float  //Colocar informação do banco aqui
+    @State var progressValueSocial: Float //Colocar informação do banco aqui
+    @State var progressValueHobbies: Float  //Colocar informação do banco aqui
 
     
     var body: some View {
@@ -96,9 +154,9 @@ struct Circles: View {
 
 struct ProgressBarView : View {
     
-    @State var progressValueIndividual: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueSocial: Float = 0.65 //Colocar informação do banco aqui
-    @State var progressValueHobbies: Float = 0.65 //Colocar informação do banco aqui
+    @State var progressValueIndividual: Float  //Colocar informação do banco aqui
+    @State var progressValueSocial: Float //Colocar informação do banco aqui
+    @State var progressValueHobbies: Float  //Colocar informação do banco aqui
 
     
     var body: some View {
