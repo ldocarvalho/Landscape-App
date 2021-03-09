@@ -20,17 +20,27 @@ struct PersistenceController {
     init(inMemory: Bool = false) {
         // If you didn't name your model Main you'll need
         // to change this name below.
-        container = NSPersistentContainer(name: "UserData")
+        container = NSPersistentCloudKitContainer(name: "UserData")
 
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
-
+        guard let description = container.persistentStoreDescriptions.first else {
+                    fatalError("###\(#function): Failed to retrieve a persistent store description")
+            }
+        
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        description.cloudKitContainerOptions?.databaseScope = .public
+        
+    
         container.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("Error: \(error.localizedDescription)")
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     func save() {
         let context = container.viewContext

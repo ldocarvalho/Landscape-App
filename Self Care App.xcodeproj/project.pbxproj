@@ -48,6 +48,10 @@
 		A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 		A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
 		A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */; };
+		A892519625F7074A0068D4BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A892519525F7074A0068D4BE /* CloudKit.framework */; };
+		A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
+		A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
+		A89251A325F7082D0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +161,8 @@
 		A85F8E9E25ED7804008B7AF1 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncNotification.swift; sourceTree = "<group>"; };
 		A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlOnboard.swift; sourceTree = "<group>"; };
+		A892519325F707470068D4BE /* Self Care App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Self Care App.entitlements"; sourceTree = "<group>"; };
+		A892519525F7074A0068D4BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A892519625F7074A0068D4BE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +207,7 @@
 				76F593E225E82ED4008E171E /* Self Care App WatchKit App */,
 				76F593EE25E82ED5008E171E /* Self Care App WatchKit Extension */,
 				76F593BA25E82ED3008E171E /* Products */,
+				A892519425F7074A0068D4BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +226,7 @@
 		76F593BB25E82ED3008E171E /* Self Care App */ = {
 			isa = PBXGroup;
 			children = (
+				A892519325F707470068D4BE /* Self Care App.entitlements */,
 				76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */,
 				A85F8E7225ED6CF1008B7AF1 /* TabView.swift */,
 				76F593BE25E82ED3008E171E /* ContentView.swift */,
@@ -309,6 +318,14 @@
 				76F593FC25E82ED6008E171E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A892519425F7074A0068D4BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A892519525F7074A0068D4BE /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F593CF25E82ED4008E171E /* Self_Care_AppTests.swift in Sources */,
+				A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F593DA25E82ED4008E171E /* Self_Care_AppUITests.swift in Sources */,
+				A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +568,7 @@
 				A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */,
 				7616655E25EEA8D000A35A6A /* MomentsView.swift in Sources */,
 				76F593F425E82ED5008E171E /* NotificationController.swift in Sources */,
+				A89251A325F7082D0068D4BE /* SwifUICoreData.swift in Sources */,
 				769F88BE25F1696200B68091 /* PagerManager.swift in Sources */,
 				7616655725ED8B1A00A35A6A /* MenuView.swift in Sources */,
 				76F593F225E82ED5008E171E /* ContentView.swift in Sources */,
@@ -791,6 +811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Self Care App/Self Care App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Self Care App/Preview Content\"";
 				DEVELOPMENT_TEAM = FG34M55V26;
@@ -814,6 +835,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Self Care App/Self Care App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Self Care App/Preview Content\"";
 				DEVELOPMENT_TEAM = FG34M55V26;
