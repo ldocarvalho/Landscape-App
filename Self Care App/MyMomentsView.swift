@@ -17,6 +17,7 @@ struct MyMomentsView: View {
     @State var showModalView = false
     
     var body: some View {
+        GeometryReader { reader in
             VStack {
                 Picker("Favorite Color", selection: $selectedCategory, content: {
                     Text("Personal").tag(0)
@@ -63,7 +64,9 @@ struct MyMomentsView: View {
                 self.showModalView.toggle()
             }))
             .navigationBarBackButtonHidden(true)
+            .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .padding(0.0)
+        }
     }
 }
 
