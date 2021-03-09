@@ -16,35 +16,36 @@ struct OnboardingView: View {
     @State var partOfTheDay = 0
     @State var typeOfCare = 0
     @State var currentPageIndex = 0
-//    @ObservedObject var userSettings = UserSettings()
+   // @ObservedObject var userSettings = UserSettings()
     @Environment(\.managedObjectContext) var moc
     @Environment(\.managedObjectContext) var moment
     @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     
+    @State var name : String
     
     var body: some View {
         let subviews = [
-            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: nome[0].name! )),
-            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: nome[0].name!)),
-            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: nome[0].name!))
+            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: name )),
+            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: name)),
+            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: name))
         ]
         //NavigationView{
         
         GeometryReader { reader in
             VStack() {
                 PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                    .frame(height: 600)
-                    .padding()
+                    .frame(height: 400)
+//                    .padding()
                 
                 VStack {
                     Button(action: {
-                        if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare != 0){
+                        if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
                             let momento = Moment(context: moment)
                             momento.date = Date()
                             momento.daysOfWeek = 1
                             momento.title = title
                             momento.partOfTheDay = Int64(partOfTheDay)
-                            momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare)
+                            momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
                             momento.done = false
                             
                             do{
@@ -62,22 +63,22 @@ struct OnboardingView: View {
                             
                         }
                         
-                        if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: nome[0].name!).partOfTheDay != 0){
+                        if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay != 0){
                             
                             
                             if self.currentPageIndex == 1 {
-                                partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: nome[0].name!).partOfTheDay
+                                partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
                                 currentPageIndex += 1
 
                             }
                             
                         }
                         
-                        if(RegisterMomentPart1View(momentTitle: $title, name: nome[0].name!).momentTitle != ""){
+                        if(RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle != ""){
                            
                               
                             if self.currentPageIndex == 0 {
-                                title = RegisterMomentPart1View(momentTitle: $title, name: nome[0].name!).momentTitle
+                                title = RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle
                                 currentPageIndex += 1
 
                             }
@@ -91,12 +92,12 @@ struct OnboardingView: View {
                     .background(ColorManager.mainButtonColor)
                     .cornerRadius(25.0)
                     
-                    PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
+                    //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                         
-                    NavigationLink(destination: MyMomentsView(), isActive: $View) { EmptyView() }
+                    NavigationLink(destination: MainViewFirstUse(), isActive: $View) { EmptyView() }
                 }
             }.navigationBarBackButtonHidden(true)
-            .frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(width: reader.size.width, height: reader.size.height, alignment: .top)
         }
             
        // }.navigationBarBackButtonHidden(true)
@@ -107,7 +108,7 @@ struct OnboardingView: View {
 
 struct OnBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(name: "")
     }
 }
 

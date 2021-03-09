@@ -10,7 +10,7 @@ struct MainView: View {
         
             TabView {
                 NavigationView{
-                   MyMomentsView()
+                    MyMomentsView()
                 }.navigationBarBackButtonHidden(true)
                 .tabItem {
                    Image(systemName:  "tv.fill")
