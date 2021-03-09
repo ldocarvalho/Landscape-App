@@ -17,14 +17,14 @@ struct MenuView: View {
                 NavigationLink(
                     destination: MomentsView(),
                     label: {
-                        Button(image: "p1", title: "Moments")
+                        Button(image: "Watch-Menu-MomentsIcon", title: "Moments")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
                 // adicionar View com ciclos como destination
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Button(image: "p1", title: "Cycles")
+                        Button(image: "Watch-Menu-CyclesIcon", title: "Cycles")
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
             }.onAppear(perform: {
@@ -43,13 +43,14 @@ struct Button : View {
         GeometryReader { reader in
             HStack {
                 Text(title)
-                    .padding()
+                    .fontWeight(.medium)
                     .font(.title3)
+                    .padding()
                     .foregroundColor(WatchColorManager.menuTextColor)
                 Spacer()
                 Image(image)
                     .resizable()
-                    .frame(width:30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width:35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding()
             }
             .frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
