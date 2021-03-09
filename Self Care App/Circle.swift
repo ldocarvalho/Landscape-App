@@ -22,39 +22,44 @@ struct ContentViewCircle: View {
     @State var countHobby : Double = 0
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
+    
         var body: some View {
-            NavigationView{
-                ZStack {
-                    ColorManager.backgroundColor
-                        .edgesIgnoringSafeArea(.all)
-                    VStack{
-                        Text("What about taking care of yourself today? You can do it!")
-                            .font(.body)
-                            .fontWeight(.medium)
-                            .foregroundColor(ColorManager.titleTextColor)
-                            .padding([.leading, .trailing, .bottom], 16)
-                            .padding([.top], 32)
-                            .multilineTextAlignment(.center)
+            GeometryReader { reader in
+                NavigationView{
+                    ScrollView(.vertical, showsIndicators: false) {
                         VStack {
-                            Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
-                        }.onAppear(perform: {
-                            ProgressOfTheDay()
-                        })
-                        .frame(width: 300.0, height: 350)
-                        .padding(16)
-                        
-                        
-                        VStack {
-                            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
+                            VStack {
+                                Text("What about taking care of yourself today? You can do it!")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(ColorManager.titleTextColor)
+                                    .padding([.leading, .trailing, .bottom], 16)
+                                    .padding([.top], 32)
+                                    .multilineTextAlignment(.center)
+                                VStack {
+                                    Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
+                                }.onAppear(perform: {
+                                    ProgressOfTheDay()
+                                })
+                                .frame(width: 300.0, height: 350)
+                                .padding(16)
+                                
+                                
+                                VStack {
+                                    ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
 
+                                }
+                                .frame(width: 100, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .padding(8)
+                                Spacer()
+                            }
                         }
-                        .frame(width: 100, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding(8)
-                        Spacer()
-                    }
-                }.navigationTitle(Text("Meus Ciclos"))
+                    }.navigationTitle(Text("Meus Ciclos"))
+                    .frame(width: reader.size.width*0.9, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
             }
     }
+    
     func ProgressOfTheDay(){
         let weekday = Calendar.current.component(.weekday, from: Date())
         switch(weekday){
@@ -104,7 +109,6 @@ struct ContentViewCircle: View {
         progressValueHobbies = countTotalHobby == 0 ?  0 : Float((countHobby/countTotalHobby))
             
     }
-            
 }
      
 
