@@ -29,16 +29,15 @@ struct OnboardingView: View {
             UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: nome[0].name!))
         ]
         //NavigationView{
-            
-            VStack(alignment: .leading) {
+        
+        GeometryReader { reader in
+            VStack() {
                 PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
                     .frame(height: 600)
                     .padding()
+                
                 VStack {
-                   
                     Button(action: {
-                       
-                        
                         if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare != 0){
                             let momento = Moment(context: moment)
                             momento.date = Date()
@@ -86,19 +85,20 @@ struct OnboardingView: View {
                         }
                         
                     }) {
-                        Text("Continuar")
-                            .padding()
-                    }.background(Color.purple)
-                    .padding(20)
-                    .foregroundColor(.white)
+                        Text("Continue")
+                            .foregroundColor(.white)
+                    }.frame(width: reader.size.width*0.6, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(ColorManager.mainButtonColor)
+                    .cornerRadius(25.0)
                     
                     PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
-                        Spacer()
+                        
                     NavigationLink(destination: MyMomentsView(), isActive: $View) { EmptyView() }
-                    Spacer()
-                    
                 }
             }.navigationBarBackButtonHidden(true)
+            .frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }
+            
        // }.navigationBarBackButtonHidden(true)
     }
         
