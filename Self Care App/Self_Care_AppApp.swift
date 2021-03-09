@@ -13,8 +13,6 @@ struct Self_Care_AppApp: App {
     var body: some Scene {
         WindowGroup {
                 ContentView().environment(\.managedObjectContext, container.viewContext)
-                   
-
            
         }
     }

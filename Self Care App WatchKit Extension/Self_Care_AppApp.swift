@@ -13,9 +13,9 @@ struct Self_Care_AppApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                MenuView().environment(\.managedObjectContext, container.viewContext)
+                MenuView()
                 
-            }
+            }.environment(\.managedObjectContext, container.viewContext)
         }
         
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")

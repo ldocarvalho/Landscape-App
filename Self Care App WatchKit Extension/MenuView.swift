@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
     var body: some View {
         GeometryReader { g in
             VStack {

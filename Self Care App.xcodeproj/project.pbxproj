@@ -52,6 +52,10 @@
 		A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
 		A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
 		A89251A325F7082D0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
+		A89251B325F708EC0068D4BE /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */; };
+		A89251B925F708EC0068D4BE /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */; };
+		A89251BA25F708ED0068D4BE /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */; };
+		A89251C725F7108C0068D4BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89251C625F7108C0068D4BE /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +167,8 @@
 		A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlOnboard.swift; sourceTree = "<group>"; };
 		A892519325F707470068D4BE /* Self Care App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Self Care App.entitlements"; sourceTree = "<group>"; };
 		A892519525F7074A0068D4BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		A89251C025F710880068D4BE /* Self Care App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Self Care App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		A89251C625F7108C0068D4BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89251C725F7108C0068D4BE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +301,7 @@
 		76F593EE25E82ED5008E171E /* Self Care App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A89251C025F710880068D4BE /* Self Care App WatchKit Extension.entitlements */,
 				76F593EF25E82ED5008E171E /* Self_Care_AppApp.swift */,
 				76F593F125E82ED5008E171E /* ContentView.swift */,
 				76F593F325E82ED5008E171E /* NotificationController.swift */,
@@ -323,6 +331,7 @@
 		A892519425F7074A0068D4BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A89251C625F7108C0068D4BE /* CloudKit.framework */,
 				A892519525F7074A0068D4BE /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -547,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89251B325F708EC0068D4BE /* UserData.xcdatamodeld in Sources */,
 				76F593CF25E82ED4008E171E /* Self_Care_AppTests.swift in Sources */,
 				A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */,
 			);
@@ -556,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89251B925F708EC0068D4BE /* UserData.xcdatamodeld in Sources */,
 				76F593DA25E82ED4008E171E /* Self_Care_AppUITests.swift in Sources */,
 				A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */,
 			);
@@ -571,6 +582,7 @@
 				A89251A325F7082D0068D4BE /* SwifUICoreData.swift in Sources */,
 				769F88BE25F1696200B68091 /* PagerManager.swift in Sources */,
 				7616655725ED8B1A00A35A6A /* MenuView.swift in Sources */,
+				A89251BA25F708ED0068D4BE /* UserData.xcdatamodeld in Sources */,
 				76F593F225E82ED5008E171E /* ContentView.swift in Sources */,
 				76F593F825E82ED5008E171E /* ComplicationController.swift in Sources */,
 				76F593F025E82ED5008E171E /* Self_Care_AppApp.swift in Sources */,
@@ -720,6 +732,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Self Care App WatchKit Extension/Self Care App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Self Care App WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = FG34M55V26;
@@ -744,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Self Care App WatchKit Extension/Self Care App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Self Care App WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = FG34M55V26;

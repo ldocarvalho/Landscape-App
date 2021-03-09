@@ -52,30 +52,32 @@ struct ListPersonalView: View {
         
         return scale
     }
-    
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
     var body: some View {
         GeometryReader { g in 
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
                     VStack(spacing: 5) {
-                        ForEach(0..<6) { moment in
-                            VStack {
-                                HStack {
-                                    Text("Personal")
-                                        .font(.system(size: 10, weight: .semibold))
-                                        .frame(width: 100, height: 10, alignment: .leading)
-                                        .foregroundColor(WatchColorManager.menuTextColor)
-                                    Spacer()
-                                }.padding([.leading, .top], 8)
-                                HStack {
-                                    Text("Skincare moment")
-                                        .font(.system(size: 12, weight: .semibold))
-                                        .frame(width: 100, height: 40, alignment: .leading)
-                                    Image("p1")
-                                        .resizable()
-                                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                }.padding([.leading, .trailing, .bottom], 8)
-                            }
+                        ForEach(0...moments.count - 1, id: \.self) { i in
+//                            if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType == selectedCategory + 1) {
+                                VStack {
+                                    HStack {
+                                        Text("Personal")
+                                            .font(.system(size: 10, weight: .semibold))
+                                            .frame(width: 100, height: 10, alignment: .leading)
+                                            .foregroundColor(WatchColorManager.menuTextColor)
+                                        Spacer()
+                                    }.padding([.leading, .top], 8)
+                                    HStack {
+                                        Text(moments[i].title!)
+                                            .font(.system(size: 12, weight: .semibold))
+                                            .frame(width: 100, height: 40, alignment: .leading)
+                                        Image("p1")
+                                            .resizable()
+                                            .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    }.padding([.leading, .trailing, .bottom], 8)
+                                }
+//                            }
                         }.background(WatchColorManager.menuBackgroundColor)
                         .cornerRadius(15.0)
                         .frame(width: g.size.width*0.9, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
