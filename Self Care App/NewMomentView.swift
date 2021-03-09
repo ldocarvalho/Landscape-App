@@ -83,10 +83,10 @@ struct NewMomentView : View {
                                 
                             }
                             // editando
-        //                    moc.performAndWait {
-        //                        moment[0].title? = "editando"
-        //                        try? moc.save()
-        //                    }
+                            //                    moc.performAndWait {
+                            //                        moment[0].title? = "editando"
+                            //                        try? moc.save()
+                            //                    }
                         }, label: {
                             Text("Save")
                                 .foregroundColor(ColorManager.actionButtonColor)
@@ -185,7 +185,7 @@ struct NewMomentView : View {
                                         .resizable()
                                         .frame(width: 96/*@END_MENU_TOKEN@*/, height: 112, alignment: /*@START_MENU_TOKEN@*/.center)
                                         .cornerRadius(15)
-                                   // Text("Morning")
+                                    // Text("Morning")
                                 }.padding()
                                 .opacity( didTapMornig ? 1 : 0.4)
                                 .onTapGesture {
@@ -217,7 +217,7 @@ struct NewMomentView : View {
                                 VStack {
                                     Image("iOS-EveningIcon")
                                         .resizable()
-                                        .frame(width: 96, height: 112, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 96, height: 112, alignment: .center)
                                         .cornerRadius(15)
                                 }.padding()
                                 .opacity( didTapNight ? 1 : 0.4)
@@ -230,7 +230,7 @@ struct NewMomentView : View {
                                     }
                                     
                                 }
-                            }.frame(width: reader.size.width*0.9, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            }.frame(width: reader.size.width*0.9, height: 110, alignment: .center)
                         }.padding(8)
                         
                         VStack {
@@ -239,7 +239,7 @@ struct NewMomentView : View {
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
-
+                            
                             HStack {
                                 Circle()
                                     .frame(width: 40, height: 40, alignment: .center)
@@ -258,7 +258,7 @@ struct NewMomentView : View {
                                         
                                     }
                                 Circle()
-                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("M")
                                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -273,7 +273,7 @@ struct NewMomentView : View {
                                         didTapMonday.toggle()
                                     }
                                 Circle()
-                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("T")
                                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -303,7 +303,7 @@ struct NewMomentView : View {
                                         didTapWednesday.toggle()
                                     }
                                 Circle()
-                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("T")
                                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -318,7 +318,7 @@ struct NewMomentView : View {
                                         didTapThursday.toggle()
                                     }
                                 Circle()
-                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("F")
                                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -333,7 +333,7 @@ struct NewMomentView : View {
                                         didTapFriday.toggle()
                                     }
                                 Circle()
-                                    .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("S")
                                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -356,7 +356,7 @@ struct NewMomentView : View {
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
-
+                            
                             HStack {
                                 VStack {
                                     Image("iOS-PersonalIcon")
@@ -397,7 +397,7 @@ struct NewMomentView : View {
                                 VStack {
                                     Image("iOS-PhysicalIcon")
                                         .resizable()
-                                        .frame(width: 96, height: 112, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 96, height: 112, alignment: .center)
                                         .cornerRadius(15)
                                         .opacity(didTapHobbys ? 1 : 0.4)
                                         .onTapGesture {
@@ -411,7 +411,7 @@ struct NewMomentView : View {
                                         }
                                     //Text("Hobby")
                                 }.padding()
-                            }.frame(width: reader.size.width*0.9, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            }.frame(width: reader.size.width*0.9, height: 110, alignment: .center)
                         }.padding(8)
                         
                         Rectangle()

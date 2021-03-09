@@ -13,47 +13,61 @@ struct ContentView: View {
     @State public var userName: String = ""
     @State var View : Bool = false
     var body: some View {
-        NavigationView{
-            VStack {
-                Spacer()
-                VStack {
-                    Text("Qual o seu nome?")
-                        .padding()
-                    TextField("", text: $userName).frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .cornerRadius(15)
-                }
-                Button(action: {
-                    //colocar ação aqui
-                    let user = Name(context: userNameData)
-                    user.name = self.userName
-                    user.firstUse = true
-                    do{
-                        try userNameData.save()
-                    
-                    }
-                    catch{
-                       print("error")
-                    }
-                    View = true
-                }) {
-                    VStack{
-                        Text("Continuar")
+        GeometryReader { reader in
+            NavigationView{
+                ZStack {
+                    ColorManager.backgroundColor
+                        .edgesIgnoringSafeArea(.all)
+                    VStack {
+                        Spacer()
+                        VStack {
+                            Text("How would you like to be called?")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(ColorManager.titleTextColor)
+                                .multilineTextAlignment(.center)
+                                .frame(width: reader.size.width*0.9, height: 100, alignment: .center)
+                            
+                            TextField("Type your name here", text: $userName)
+                                .frame(width: reader.size.width*0.8, height: 50, alignment: .center)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .cornerRadius(15)
+                                .padding(16)
+                        }
                         
-                    }
-                    
-                }.frame(width: 100, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .background(Color.black)
-                .foregroundColor(.white)
-                .cornerRadius(15)
-                NavigationLink(destination: OnboardingView(name: userName), isActive: $View) { EmptyView() }
-                Spacer()
-            }
-            
-        }.navigationBarBackButtonHidden(true)
-        
+                        Button(action: {
+                            //colocar ação aqui
+                            let user = Name(context: userNameData)
+                            user.name = self.userName
+                            user.firstUse = true
+                            do{
+                                try userNameData.save()
+                                
+                            }
+                            catch{
+                                print("error")
+                            }
+                            View = true
+                        }) {
+                            VStack{
+                                Text("Continue")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                
+                            }
+                        }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
+                        .background(ColorManager.mainButtonColor)
+                        .cornerRadius(25.0)
+                        NavigationLink(destination: OnboardingView(name: userName), isActive: $View) { EmptyView() }
+                        Spacer()
+                        Image("iOS - OnboardingImage")
+                            .resizable()
+                            .frame(width: reader.size.width, height: 315, alignment: .center)
+                    } .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                }
+            }.navigationBarBackButtonHidden(true)
+        }
     }
-        
 }
 
 struct ContentView_Previews: PreviewProvider {

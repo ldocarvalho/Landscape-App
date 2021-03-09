@@ -32,72 +32,85 @@ struct OnboardingView: View {
         //NavigationView{
         
         GeometryReader { reader in
-            VStack() {
-                PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                    .frame(height: 400)
-//                    .padding()
-                
-                VStack {
-                    Button(action: {
-                        if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
-                            let momento = Moment(context: moment)
-                            momento.date = Date()
-                            momento.daysOfWeek = 1
-                            momento.title = title
-                            momento.partOfTheDay = Int64(partOfTheDay)
-                            momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
-                            momento.done = false
-                            
-                            do{
-                               try  moment.save()
-                            //   UserDefaults.standard.set(false, forKey: "isFirtUse")
-                            }
-                            catch{
+            ZStack {
+                ColorManager.backgroundColor
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                VStack() {
+                    PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
+                        .frame(width: reader.size.width, height: reader.size.height*0.6, alignment: .top)
+                    Spacer()
+                    VStack {
+                        Button(action: {
+                            if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
+                                let momento = Moment(context: moment)
+                                momento.date = Date()
+                                momento.daysOfWeek = 1
+                                momento.title = title
+                                momento.partOfTheDay = Int64(partOfTheDay)
+                                momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
+                                momento.done = false
+                                
+                                do{
+                                   try  moment.save()
+                                //   UserDefaults.standard.set(false, forKey: "isFirtUse")
+                                }
+                                catch{
+                                    
+                                }
+                                UserDefaults.standard.set(false, forKey: "isFirtUse")
+                                if self.currentPageIndex == 2 {
+                                    self.View = true
+
+                                }
                                 
                             }
-                            UserDefaults.standard.set(false, forKey: "isFirtUse")
-                            if self.currentPageIndex == 2 {
-                                self.View = true
+                            
+                            if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay != 0){
+                                
+                                
+                                if self.currentPageIndex == 1 {
+                                    partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
+                                    currentPageIndex += 1
 
+                                }
+                                
                             }
                             
-                        }
-                        
-                        if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay != 0){
-                            
-                            
-                            if self.currentPageIndex == 1 {
-                                partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
-                                currentPageIndex += 1
+                            if(RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle != ""){
+                               
+                                  
+                                if self.currentPageIndex == 0 {
+                                    title = RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle
+                                    currentPageIndex += 1
 
+                                }
+                                
                             }
                             
-                        }
+                        }) {
+                            Text("Continue")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                        }.frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(ColorManager.mainButtonColor)
+                        .cornerRadius(25.0)
                         
-                        if(RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle != ""){
-                           
-                              
-                            if self.currentPageIndex == 0 {
-                                title = RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle
-                                currentPageIndex += 1
-
-                            }
+                        //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                             
-                        }
+                        NavigationLink(destination: MainViewFirstUse(), isActive: $View) { EmptyView() }
                         
-                    }) {
-                        Text("Continue")
-                            .foregroundColor(.white)
-                    }.frame(width: reader.size.width*0.6, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(ColorManager.mainButtonColor)
-                    .cornerRadius(25.0)
-                    
-                    //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                         
-                    NavigationLink(destination: MainViewFirstUse(), isActive: $View) { EmptyView() }
+                        Image("iOS - OnboardingImage")
+                            .resizable()
+                            .frame(width: reader.size.width, height: 315, alignment: .center)
+
+                    }
+                    .frame(width: reader.size.width, height: reader.size.height*0.4, alignment: .center)
                 }
-            }.navigationBarBackButtonHidden(true)
-            .frame(width: reader.size.width, height: reader.size.height, alignment: .top)
+                .navigationBarBackButtonHidden(true)
+                .frame(width: reader.size.width, height: reader.size.height, alignment: .top)
+            }
+            
         }
             
        // }.navigationBarBackButtonHidden(true)
