@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "iOS - PersonalIcon @ 1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iOS - PersonalIcon @ 2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iOS - PersonalIcon @ 3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
