@@ -56,6 +56,9 @@
 		A89251B925F708EC0068D4BE /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */; };
 		A89251BA25F708ED0068D4BE /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */; };
 		A89251C725F7108C0068D4BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89251C625F7108C0068D4BE /* CloudKit.framework */; };
+		A89251D225F7195E0068D4BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
+		A89251D825F719600068D4BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
+		A89251D925F719600068D4BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -558,6 +561,7 @@
 			files = (
 				A89251B325F708EC0068D4BE /* UserData.xcdatamodeld in Sources */,
 				76F593CF25E82ED4008E171E /* Self_Care_AppTests.swift in Sources */,
+				A89251D925F719600068D4BE /* UserData.swift in Sources */,
 				A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +572,7 @@
 			files = (
 				A89251B925F708EC0068D4BE /* UserData.xcdatamodeld in Sources */,
 				76F593DA25E82ED4008E171E /* Self_Care_AppUITests.swift in Sources */,
+				A89251D825F719600068D4BE /* UserData.swift in Sources */,
 				A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89251D225F7195E0068D4BE /* UserData.swift in Sources */,
 				A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */,
 				7616655E25EEA8D000A35A6A /* MomentsView.swift in Sources */,
 				76F593F425E82ED5008E171E /* NotificationController.swift in Sources */,
