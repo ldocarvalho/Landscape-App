@@ -47,12 +47,10 @@ struct OnboardingView: View {
                             momento.partOfTheDay = Int64(partOfTheDay)
                             momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: nome[0].name!).typeOfCare)
                             momento.done = false
-                            nome[0].firstUse = false
                             
                             do{
-                               try moc.save()
                                try  moment.save()
-                                
+                               UserDefaults.standard.set(false, forKey: "isFirtUse")
                             }
                             catch{
                                 
