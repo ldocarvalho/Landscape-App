@@ -41,16 +41,16 @@ struct RegisterMomentPart1View: View {
                     }.padding([.leading, .trailing], 16)
                     .padding(.top, 50)
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Continue")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                    }).frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(ColorManager.mainButtonColor)
-                    .cornerRadius(25.0)
-                    .padding(.top, 25)
+//                    Button(action: {
+//                        
+//                    }, label: {
+//                        Text("Continue")
+//                            .foregroundColor(.white)
+//                            .fontWeight(.bold)
+//                    }).frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                    .background(ColorManager.mainButtonColor)
+//                    .cornerRadius(25.0)
+//                    .padding(.top, 25)
                     
                     Spacer()
                     

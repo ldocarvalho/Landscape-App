@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var userNameData
-    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
+   // @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     @State public var userName: String = ""
     @State var View : Bool = false
     var body: some View {
@@ -46,7 +46,7 @@ struct ContentView: View {
                 .background(Color.black)
                 .foregroundColor(.white)
                 .cornerRadius(15)
-                NavigationLink(destination: OnboardingView(), isActive: $View) { EmptyView() }
+                NavigationLink(destination: OnboardingView(name: userName), isActive: $View) { EmptyView() }
                 Spacer()
             }
             

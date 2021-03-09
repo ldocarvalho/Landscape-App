@@ -59,6 +59,7 @@
 		A89251D225F7195E0068D4BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 		A89251D825F719600068D4BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 		A89251D925F719600068D4BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
+		A89251E025F809D90068D4BE /* TabViewFirstUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		A892519525F7074A0068D4BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		A89251C025F710880068D4BE /* Self Care App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Self Care App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		A89251C625F7108C0068D4BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewFirstUse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 				769F88D025F172F900B68091 /* DeleteAlertView.swift */,
 				76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */,
 				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
+				A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */,
 				7616657A25EED44C00A35A6A /* MyMomentsView.swift in Sources */,
 				A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */,
+				A89251E025F809D90068D4BE /* TabViewFirstUse.swift in Sources */,
 				76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */,
 				A80B1CB825F008C6002386F8 /* AvisoView.swift in Sources */,
 			);

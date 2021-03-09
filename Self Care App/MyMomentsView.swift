@@ -14,7 +14,7 @@ struct MyMomentsView: View {
     
     @State private var selectedCategory = 0
         
-    @State var showModalView = false
+    @State var showModalView : Bool = false
     
     var body: some View {
         GeometryReader { reader in
@@ -70,9 +70,9 @@ struct MyMomentsView: View {
     }
 }
 
-struct MyMomentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyMomentsView()
-    }
-}
+//struct MyMomentsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyMomentsView()
+//    }
+//}
 

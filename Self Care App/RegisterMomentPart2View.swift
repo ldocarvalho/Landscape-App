@@ -64,17 +64,17 @@ struct RegisterMomentPart2View: View {
                         }.frame(width: reader.size.width*0.9, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }.padding([.leading, .trailing, .top], 16)
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Continue")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                    }).frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(ColorManager.mainButtonColor)
-                    .cornerRadius(25.0)
-                    .padding(.top, 25)
-                    Spacer()
+//                    Button(action: {
+//
+//                    }, label: {
+//                        Text("Continue")
+//                            .foregroundColor(.white)
+//                            .fontWeight(.bold)
+//                    }).frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                    .background(ColorManager.mainButtonColor)
+//                    .cornerRadius(25.0)
+//                    .padding(.top, 25)
+//                    Spacer()
                 }.frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
         }
