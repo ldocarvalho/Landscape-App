@@ -7,19 +7,21 @@
 import SwiftUI
 struct MainView: View {
     var body: some View {
-        NavigationView{
+        
             TabView {
-               MyMomentsView()
-                 .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Home")
-               }
+                NavigationView{
+                   MyMomentsView()
+                }.navigationBarBackButtonHidden(true)
+                .tabItem {
+                   Image(systemName:  "tv.fill")
+                   Text("Home")
+                }
                 ContentViewCircle()
                  .tabItem {
                     Image(systemName: "tv.fill")
                     Text("Cicles")
               }
-            }.navigationBarBackButtonHidden(true)
+           
        
         }
             

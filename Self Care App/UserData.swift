@@ -10,17 +10,17 @@ import CoreData
 import UserNotifications
 import Combine
 
-class UserSettings: ObservableObject {
-    @Published var firstUse: Bool {
-            didSet {
-                UserDefaults.standard.set(firstUse, forKey: "isFirtUse")
-            }
-        }
-    
-    init() {
-        self.firstUse = UserDefaults.standard.object(forKey: "isFirstUse") as? Bool ?? true
-    }
-}
+//class UserSettings: ObservableObject {
+//    @Published var firstUse: Bool {
+//            didSet {
+//                UserDefaults.standard.set(firstUse, forKey: "isFirtUse")
+//            }
+//        }
+//    
+//    init() {
+//        self.firstUse = UserDefaults.standard.object(forKey: "isFirstUse") as? Bool ?? true
+//    }
+//}
 
 struct WeekDays: OptionSet {
     let rawValue: Int

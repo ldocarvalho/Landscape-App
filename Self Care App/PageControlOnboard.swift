@@ -16,7 +16,7 @@ struct OnboardingView: View {
     @State var partOfTheDay = 0
     @State var typeOfCare = 0
     @State var currentPageIndex = 0
-    @ObservedObject var userSettings = UserSettings()
+//    @ObservedObject var userSettings = UserSettings()
     @Environment(\.managedObjectContext) var moc
     @Environment(\.managedObjectContext) var moment
     @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
@@ -50,7 +50,7 @@ struct OnboardingView: View {
                             
                             do{
                                try  moment.save()
-                               UserDefaults.standard.set(false, forKey: "isFirtUse")
+                            //   UserDefaults.standard.set(false, forKey: "isFirtUse")
                             }
                             catch{
                                 
