@@ -13,7 +13,9 @@ struct MomentDetailView: View {
     var image : String = "p1"
     var id : Int = 0
     @State var View : Bool = false
-    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+//    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    var moment = PersistenceController().fetchMoments()
+
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         GeometryReader { g in

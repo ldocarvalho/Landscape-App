@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MyMomentsView: View {
-    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+//    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    
+    var moment = PersistenceController().fetchMoments()
     
     let partOfTheDayImage = ["Morning","Afternoon","Night"]
     

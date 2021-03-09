@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var userNameData
-    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
+//    @Environment(\.managedObjectContext) var userNameData
+//    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     @State public var userName: String = ""
     @State var View : Bool = false
     var body: some View {
@@ -25,21 +25,20 @@ struct ContentView: View {
                 }
                 Button(action: {
                     //colocar ação aqui
-                    let user = Name(context: userNameData)
-                    user.name = self.userName
-                    user.firstUse = true
-                    do{
-                        try userNameData.save()
-                    
-                    }
-                    catch{
-                       print("error")
-                    }
+//                    let user = Name(context: userNameData)
+//                    user.name = self.userName
+//                    user.firstUse = true
+//                    do{
+//                        try userNameData.save()
+//                    }
+//                    catch{
+//                       print("error")
+//                    }
+                    PersistenceController().saveName(name: self.userName)
                     View = true
                 }) {
                     VStack{
                         Text("Continuar")
-                        
                     }
                     
                 }.frame(width: 100, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -51,9 +50,10 @@ struct ContentView: View {
             }
             
         }.navigationBarBackButtonHidden(true)
-        
+        .onAppear() {
+//            debugPrint(PersistenceController().fetchMoments())
+        }
     }
-        
 }
 
 struct ContentView_Previews: PreviewProvider {

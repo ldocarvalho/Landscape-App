@@ -20,7 +20,10 @@ struct ContentViewCircle: View {
     @State var countIndividual : Double = 0
     @State var countSocial : Double = 0
     @State var countHobby : Double = 0
-    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+//    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    
+    var moment = PersistenceController().fetchMoments()
+    
     @Environment(\.managedObjectContext) var moc
         var body: some View {
             NavigationView{

@@ -28,11 +28,12 @@ struct NewMomentView : View {
     @State private var didTapIndividual :Bool = true
     @State private var didTapSocial :Bool = true
     @State private var didTapHobbys :Bool = true
-    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
-    @Environment(\.managedObjectContext) var moc
+//    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    var moment = PersistenceController().fetchMoments()
+
+//    @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
 
-    
     var body : some View {
  
         GeometryReader { reader in
@@ -62,23 +63,24 @@ struct NewMomentView : View {
                             presentationMode.wrappedValue.dismiss()
                         }
                         else{
-                            let momento = Moment(context: moc)
-                            momento.title = momentTitle
-                            momento.date = Date()
-                            momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
-                            momento.partOfTheDay = Int64(partOfDay)
-                            momento.repeatActivity = false
-                            momento.selfCareType = Int64(selfCareType)
-                            momento.done = false
+//                            let momento = Moment(context: moc)
+//                            momento.title = momentTitle
+//                            momento.date = Date()
+//                            momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+//                            momento.partOfTheDay = Int64(partOfDay)
+//                            momento.repeatActivity = false
+//                            momento.selfCareType = Int64(selfCareType)
+//                            momento.done = false
+                            PersistenceController().saveMoment(momentTitle: momentTitle, daysOfWeek: Int32(Int(daysOfWeek.rawValue)), partOfTheDay: Int64(partOfDay), repeatActivity: false, selfCareType: Int64(selfCareType), done: false)
                             presentationMode.wrappedValue.dismiss()
                             
                         }
-                        do{
-                            try moc.save()
-                        }
-                        catch{
-                            
-                        }
+//                        do{
+//                            try moc.save()
+//                        }
+//                        catch{
+//                            
+//                        }
                         // editando
     //                    moc.performAndWait {
     //                        moment[0].title? = "editando"

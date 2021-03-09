@@ -9,20 +9,25 @@ import SwiftUI
 
 @main
 struct Self_Care_AppApp: App {
-    let container = PersistenceController.shared.container
-    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
-    @ObservedObject var userSettings = UserSettings()
+    let container = PersistenceController().container
+//    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
+//    @ObservedObject var userSettings = UserSettings()
+    
+    init() {
+        print(PersistenceController().fetchMoments())
+    }
+    
     var body: some Scene {
         WindowGroup {
-            if(nome.count <= 0){
-                ContentView().environment(\.managedObjectContext, container.viewContext)
-                   
-            }
-            
-            else{
-                MainView().environment(\.managedObjectContext, container.viewContext)
-            }
-           
+//            if(nome.count <= 0){
+//                ContentView().environment(\.managedObjectContext, container.viewContext)
+//
+//            }
+//
+//            else{
+//                MainView().environment(\.managedObjectContext, container.viewContext)
+//            }
+            ContentView().environment(\.managedObjectContext, container.viewContext)
         }
     }
 }

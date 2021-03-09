@@ -9,11 +9,17 @@ import SwiftUI
 import UserNotifications
 @main
 struct Self_Care_AppApp: App {
+    
+    let container = PersistenceController().container
+    
+    init() {
+        print(PersistenceController().fetchMoments())
+    }
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                MenuView()
-                
+                MenuView().environment(\.managedObjectContext, container.viewContext)
             }
         }
         
