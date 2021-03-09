@@ -221,8 +221,8 @@
             filePath = "Self Care App/PageControlOnboard.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -797,24 +797,8 @@
             filePath = "Self Care App/PageControlOnboard.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9EA9F66D-8541-469A-B76B-9CF60356879D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Self Care App/PageControlOnboard.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
