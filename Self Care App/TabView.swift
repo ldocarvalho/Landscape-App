@@ -11,16 +11,19 @@ struct MainView: View {
             TabView {
                 NavigationView{
                     MyMomentsView()
-                }.navigationBarBackButtonHidden(false)
+                }.navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
                 .tabItem {
                    Image(systemName: "tv.fill")
                    Text("Moments")
                 }
-                ContentViewCircle()
+                ContentViewCircle().navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
                  .tabItem {
                     Image(systemName: "tv.fill")
                     Text("Cycles")
-              }
-        }
+                 }
+        }.navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }

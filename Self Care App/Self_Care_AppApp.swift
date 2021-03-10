@@ -19,7 +19,7 @@ struct Self_Care_AppApp: App {
             else{
                 MainView().environment(\.managedObjectContext, container.viewContext)
             }
-           //MainView().environment(\.managedObjectContext, container.viewContext)
+//            ContentView().environment(\.managedObjectContext, container.viewContext)
         }
     }
 }

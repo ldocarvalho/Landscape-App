@@ -112,7 +112,7 @@ struct OnboardingView: View {
                         
                         //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                             
-                        NavigationLink(destination: MainViewFirstUse(), isActive: $View) { EmptyView() }
+                        NavigationLink(destination: MainView(), isActive: $View) { EmptyView() }
                         
                         
                         Image("iOS - OnboardingImage")
@@ -138,11 +138,11 @@ struct OnboardingView: View {
 }
 
 
-struct OnBoardView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView(name: "")
-    }
-}
+//struct OnBoardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OnboardingView(name: "")
+//    }
+//}
 
 
 ///------------------------------------------------------------

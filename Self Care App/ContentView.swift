@@ -66,6 +66,7 @@ struct ContentView: View {
                     } .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
                 }
             }.navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
         }
     }
 }
