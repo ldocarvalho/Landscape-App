@@ -17,13 +17,13 @@ struct RegisterMomentPart4View: View {
     @State private var didTapFriday :Bool = true
     @State private var didTapSaturday :Bool = true
     
-    @State var daysOfWeek : WeekDays = []
+    @Binding var daysOfWeek : WeekDays 
     
-    @State private var showDaysOfWeek = false
+    @Binding var showDaysOfWeek :Bool
     
     var body: some View {
         GeometryReader { reader in
-            NavigationView {
+            //NavigationView {
                 VStack(alignment: .center) {
                     VStack(alignment: .center) {
                         Text("Hi")
@@ -149,14 +149,14 @@ struct RegisterMomentPart4View: View {
                         }
                     }.padding(8)
                     Spacer()
-                }
-            }.frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }.navigationBarHidden(true)
+           // }.frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }
     }
 }
 
-struct RegisterMomentPart4View_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterMomentPart4View()
-    }
-}
+//struct RegisterMomentPart4View_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterMomentPart4View()
+//    }
+//}
