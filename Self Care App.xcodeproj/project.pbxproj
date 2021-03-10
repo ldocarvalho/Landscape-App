@@ -254,6 +254,7 @@
 				7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */,
 				7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */,
 				7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */,
+				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
 				7616657925EED44C00A35A6A /* MyMomentsView.swift */,
 				7616658025EED7E700A35A6A /* MomentDetailView.swift */,
 				A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */,
@@ -265,7 +266,6 @@
 				A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */,
 				769F88D025F172F900B68091 /* DeleteAlertView.swift */,
 				76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */,
-				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
 				A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */,
 				76A1D47D25F865CA006F7AE7 /* DoneAlertView.swift */,
 			);

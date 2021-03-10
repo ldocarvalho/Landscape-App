@@ -29,7 +29,7 @@ struct OnboardingView: View {
         let subviews = [
             UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: name )),
             UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: name)),
-            UIHostingController(rootView: RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek)),
+            UIHostingController(rootView: RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek)),
             UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: name))
         ]
         //NavigationView{
@@ -40,7 +40,8 @@ struct OnboardingView: View {
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 VStack() {
                     PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                        .frame(width: reader.size.width, height: reader.size.height*0.55, alignment: .top)
+                        .frame(width: reader.size.width, height: reader.size.height*0.50, alignment: .center)
+
                     VStack {
                         Button(action: {
                             if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
@@ -67,12 +68,12 @@ struct OnboardingView: View {
                                 }
                                 
                             }
-                            if(!RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek.isEmpty){
+                            if(!RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek.isEmpty){
                                 
                                 
                                 if self.currentPageIndex == 2 {
-                                    daysOfWeek.union(RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
-                                    showDaysOfWeek = RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
+                                    daysOfWeek.union(RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
+                                    showDaysOfWeek = RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
                                     currentPageIndex += 1
 
                                 }
@@ -120,8 +121,7 @@ struct OnboardingView: View {
                             //.padding(.bottom, 60)
 
                     }
-                    .frame(width: reader.size.width, height: reader.size.height*0.4, alignment: .center)
-                 
+                    .frame(width: reader.size.width, height: reader.size.height*0.6, alignment: .center)
                 }
                 .navigationBarBackButtonHidden(true)
                 .frame(width: reader.size.width, height: reader.size.height, alignment: .top)

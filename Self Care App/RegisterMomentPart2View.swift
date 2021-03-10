@@ -91,13 +91,12 @@ struct RegisterMomentPart2View: View {
                                     
                                 }
                             }.frame(width: reader.size.width*0.9, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .navigationBarHidden(true)
+                            .padding(.top,0)
                         }.padding([.leading, .trailing, .top], 16)
                         Spacer()
                     }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
-                    .navigationBarHidden(true)
-                    .padding(.top,10)
                 }
-
         }
     }
 }
