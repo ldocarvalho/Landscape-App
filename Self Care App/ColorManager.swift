@@ -16,6 +16,8 @@ struct ColorManager {
     
     static let cardColor = Color("CardColor")
     
+    static let cardTitleColor = Color("TextColor-CardTitle")
+    
     static let bodyTextColor = Color("TextColor-Body")
     static let titleTextColor = Color("TextColor-Title")
     

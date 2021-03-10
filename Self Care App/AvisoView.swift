@@ -16,17 +16,20 @@ struct AvisoView: View {
         VStack {
             VStack {
                 Text(pergunta)
+                    .font(.title)
+                    .fontWeight(.bold)
                     .navigationTitle(Text(pergunta))
+                    .foregroundColor(ColorManager.cardTitleColor)
                     .padding()
-                    .font(.largeTitle)
+                    .frame(width: 330, height: 100, alignment: .leading)
                 Text(mensagem)
+                    .fontWeight(.medium)
+                    .font(.title3)
                     .padding(10)
-                    .frame(width:350, height: 600, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                   
-            }.background(Color.gray)
+                    .foregroundColor(ColorManager.bodyTextColor)
+                    .frame(width:350, height: 600, alignment: .leading)
+            }.background(ColorManager.cardColor)
             .cornerRadius(15)
-            
-            
         }
         
     }
@@ -34,7 +37,7 @@ struct AvisoView: View {
 }
 struct AvisoView_Previews: PreviewProvider {
     static var previews: some View {
-        AvisoView(mensagem: "coloque o aviso aqui",pergunta: "dale?")
+        AvisoView(mensagem: "coloque o aviso aqui",pergunta: "What is self care?")
         
     }
 }
