@@ -112,7 +112,7 @@ struct MomentDetailView: View {
                         .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 40 : 0)
                 
                 if shownDeleteAlert {
-                    DeleteAlertView(shown: $shownDeleteAlert)
+                    DeleteAlertView(shown: $shownDeleteAlert, id: id)
                         .offset(y: -g.frame(in: .global).minY - UIScreen.main.bounds.height/2)
                 }
                 

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MyMomentsView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
-    
+    @Environment(\.managedObjectContext) var moc
+    @State var daysOfWeek : WeekDays = []
     let partOfTheDayImage = ["iOS - PersonalIllustrationMorning","iOS - PersonalIllustrationAfternoon","iOS - PersonalIllustrationEvening"]
     
     let partOfTheDayImages = [["iOS - PersonalIllustrationMorning","iOS - PersonalIllustrationAfternoon","iOS - PersonalIllustrationEvening"], ["iOS - SocialIllustrationMorning","iOS - SocialIllustrationAfternoon","iOS - SocialIllustrationEvening"], ["iOS - PhysicalIllustrationMorning","iOS - PhysicalIllustrationAfternoon","iOS - PhysicalIllustrationEvening"]]
@@ -69,6 +70,48 @@ struct MyMomentsView: View {
                             }
                         }
                     }.frame(width: reader.size.width)
+                    .onAppear(perform:{
+                        let weekday = Calendar.current.component(.weekday, from: Date())
+                        switch(weekday){
+                        case 1:
+                            daysOfWeek.insert(.sunday)
+                        case 2:
+                            daysOfWeek.insert(.monday)
+                        case 3:
+                            daysOfWeek.insert(.thuesday)
+                        case 4:
+                            daysOfWeek.insert(.wednesday)
+                        case 5:
+                            daysOfWeek.insert(.thursday)
+                        case 6:
+                            daysOfWeek.insert(.friday)
+                        case 7:
+                            daysOfWeek.insert(.saturday)
+                        default:
+                                daysOfWeek.insert(.sunday)
+                            
+                        }
+                        if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
+                            if let diff = Calendar.current.dateComponents([.weekday], from: date, to: Date()).weekday, diff != 0{
+                                for i in 0 ... moment.count {
+                                    if(i < moment.count){
+                                        if (WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek)  ){
+                                            
+                                            moment[i].done = false
+                                            }
+                                        
+                                    }
+                                }
+                                do{
+                                    try moc.save()
+                                }
+                                catch{
+                                    
+                                }
+
+                            }
+                        }
+                    })
                 }
                 .navigationBarTitle(Text("Meus momentos"))
                 .navigationBarItems(trailing:

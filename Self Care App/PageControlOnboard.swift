@@ -58,6 +58,7 @@ struct OnboardingView: View {
                                     
                                 }
                                 UserDefaults.standard.set(false, forKey: "isFirtUse")
+                                UserDefaults.standard.set(Date(), forKey:"creationTime")
                                 if self.currentPageIndex == 2 {
                                     self.View = true
 
