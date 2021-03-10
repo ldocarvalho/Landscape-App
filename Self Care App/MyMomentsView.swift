@@ -29,11 +29,15 @@ struct MyMomentsView: View {
                         Text("Physical").tag(2)
                     })
                     .pickerStyle(SegmentedPickerStyle())
-                    .padding(16)
+                    .background(ColorManager.segmentColor)
+                    .cornerRadius(8.0)
+                    .padding(20)
+                    .frame(width: reader.size.width*0.95)
                     .sheet(isPresented: self.$showModalView, content: {
 
                         NewMomentView(itsEditing: false, id: 0)
                     })
+
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {
@@ -44,29 +48,38 @@ struct MyMomentsView: View {
                                         
                                         Image(partOfTheDayImage[Int(moment[i].partOfTheDay) - 1])
                                                 .resizable()
-                                                .frame(height: 250)
+                                                .frame(height: 240)
                                                 .cornerRadius(25.0)
                                                 .padding(.horizontal)
                                                 .opacity(moment[i].done ? 0.3 : 1)
                                                 .overlay(Text(moment[i].title!)
-                                                            .font(.title)
-                                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                                            .font(.largeTitle)
+                                                            .fontWeight(.medium)
                                                             .foregroundColor(.white)
-                                                            .padding(30),
+                                                            .padding(.top, 30)
+                                                            .padding(.leading, 40),
                                                          alignment: .topLeading)
                                         
                                     }
                                 }
                                 
                             }
-                            
                         }
-                    }
+                    }.frame(width: reader.size.width*1.05)
                 }
                 .navigationBarTitle(Text("Meus momentos"))
-                .navigationBarItems(trailing: Button("Add", action: {
-                    self.showModalView.toggle()
-                }))
+                .navigationBarItems(trailing:
+                        Button(action: {
+                            self.showModalView.toggle()
+                        }, label: {
+                            Image(systemName: "plus")
+                                .foregroundColor(ColorManager.actionButtonColor)
+                                .imageScale(.large)
+                        })
+//                                        Button("Add", action: {
+//                    self.showModalView.toggle()
+//                })
+                )
                 .navigationBarBackButtonHidden(true)
                 .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .padding(0.0)

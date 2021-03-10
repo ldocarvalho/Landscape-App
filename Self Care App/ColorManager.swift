@@ -28,4 +28,6 @@ struct ColorManager {
     static let purpleCicleBackgroundColor = Color("Cicle-BackgroundPurpleColor")
     static let pinkCicleBackgroundColor = Color("Cicle-BackgroundPinkColor")
     static let blueCicleBackgroundColor = Color("Cicle-BackgroundBlueColor")
+    
+    static let segmentColor = Color("SegmentColor")
 }
