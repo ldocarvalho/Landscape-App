@@ -33,5 +33,7 @@ struct ColorManager {
     
     static let textColorMainButton = Color("TextColor-MainButton")
     static let textColorSecondaryButton = Color("TextColor-SecondaryButton")
+    
+    static let daysOfWeekColor = Color("DaysOfWeek-Color")
 
 }
