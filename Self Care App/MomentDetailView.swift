@@ -21,7 +21,7 @@ struct MomentDetailView: View {
                         VStack {
                             Image(image)
                                 .resizable()
-                                .frame(width: g.size.width, height: g.size.height*0.4, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }.offset(y: -g.frame(in: .global).minY)
                         
                         VStack {

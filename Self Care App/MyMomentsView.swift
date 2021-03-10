@@ -10,7 +10,11 @@ import SwiftUI
 struct MyMomentsView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     
-    let partOfTheDayImage = ["Morning","Afternoon","Night"]
+    let partOfTheDayImage = ["iOS - PersonalIllustrationMorning","iOS - PersonalIllustrationAfternoon","iOS - PersonalIllustrationEvening"]
+    
+    let partOfTheDayImages = [["iOS - PersonalIllustrationMorning","iOS - PersonalIllustrationAfternoon","iOS - PersonalIllustrationEvening"], ["iOS - SocialIllustrationMorning","iOS - SocialIllustrationAfternoon","iOS - SocialIllustrationEvening"], ["iOS - PhysicalIllustrationMorning","iOS - PhysicalIllustrationAfternoon","iOS - PhysicalIllustrationEvening"]]
+    
+    let partOfTheDayImagesDetail = [["iOS - PersonalIllustrationMorningDetail","iOS - PersonalIllustrationAfternoonDetail","iOS - PersonalIllustrationEveningDetail"], ["iOS - SocialIllustrationMorningDetail","iOS - SocialIllustrationAfternoonDetail","iOS - SocialIllustrationEveningDetail"], ["iOS - PhysicalIllustrationMorningDetail","iOS - PhysicalIllustrationAfternoonDetail","iOS - PhysicalIllustrationEveningDetail"]]
     
     @State private var selectedCategory = 0
         
@@ -44,12 +48,11 @@ struct MyMomentsView: View {
                             ForEach((0...moment.count), id: \.self) { i in
                                 if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
                                     NavigationLink(
-                                        destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImage[Int(moment[i].partOfTheDay ) - 1],id: i )) {
-                                        
-                                        Image(partOfTheDayImage[Int(moment[i].partOfTheDay) - 1])
+                                        destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImagesDetail[Int(moment[i].selfCareType) - 1][Int(moment[i].partOfTheDay) - 1],id: i )) {
+                                        Image(partOfTheDayImages[Int(moment[i].selfCareType) - 1][Int(moment[i].partOfTheDay) - 1])
                                                 .resizable()
-                                                .frame(height: 240)
-                                                .cornerRadius(25.0)
+                                                .frame(height: 223)
+                                                .cornerRadius(30.0)
                                                 .padding(.horizontal)
                                                 .opacity(moment[i].done ? 0.3 : 1)
                                                 .overlay(Text(moment[i].title!)
@@ -59,13 +62,13 @@ struct MyMomentsView: View {
                                                             .padding(.top, 30)
                                                             .padding(.leading, 40),
                                                          alignment: .topLeading)
-                                        
+                                            .padding(.bottom, 16)
                                     }
                                 }
                                 
                             }
                         }
-                    }.frame(width: reader.size.width*1.05)
+                    }.frame(width: reader.size.width)
                 }
                 .navigationBarTitle(Text("Meus momentos"))
                 .navigationBarItems(trailing:
