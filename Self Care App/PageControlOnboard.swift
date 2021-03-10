@@ -50,7 +50,7 @@ struct OnboardingView: View {
                                 momento.title = title
                                 momento.partOfTheDay = Int64(partOfTheDay)
                                 momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
-                                momento.done = showDaysOfWeek
+                                momento.repeatActivity = showDaysOfWeek
                                 
                                 do{
                                    try  moment.save()
