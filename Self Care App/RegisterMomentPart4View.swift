@@ -150,6 +150,7 @@ struct RegisterMomentPart4View: View {
                     }.padding(8)
                     Spacer()
                 }.navigationBarHidden(true)
+                .padding(.top,10)
            // }.frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }
     }

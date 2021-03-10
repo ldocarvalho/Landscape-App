@@ -98,7 +98,7 @@ struct RegisterMomentPart3View: View {
                                 }
                             }.frame(width: reader.size.width*0.8, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .navigationBarHidden(true)
-                            .padding(.top,20)
+                            .padding(.top,10)
                         }.padding([.leading, .trailing, .top], 16)
                         
                         Spacer()

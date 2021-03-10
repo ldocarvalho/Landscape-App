@@ -40,7 +40,7 @@ struct OnboardingView: View {
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 VStack() {
                     PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                        .frame(width: reader.size.width, height: reader.size.height*0.6, alignment: .top)
+                        .frame(width: reader.size.width, height: reader.size.height*0.55, alignment: .top)
                     VStack {
                         Button(action: {
                             if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
