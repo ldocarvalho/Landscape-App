@@ -30,4 +30,8 @@ struct ColorManager {
     static let blueCicleBackgroundColor = Color("Cicle-BackgroundBlueColor")
     
     static let segmentColor = Color("SegmentColor")
+    
+    static let textColorMainButton = Color("TextColor-MainButton")
+    static let textColorSecondaryButton = Color("TextColor-SecondaryButton")
+
 }

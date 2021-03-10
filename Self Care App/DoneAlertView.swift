@@ -33,8 +33,8 @@ struct DoneAlertView: View {
                 Button(action: {
                     shown.toggle()
                 }, label: {
-                    Text("How nice!")
-                        .foregroundColor(ColorManager.backgroundColor)
+                    Text("That's nice!")
+                        .foregroundColor(ColorManager.textColorMainButton)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 })
                 .frame(width: 150, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

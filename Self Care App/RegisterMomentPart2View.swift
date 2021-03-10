@@ -97,6 +97,7 @@ struct RegisterMomentPart2View: View {
                     .navigationBarHidden(true)
                     .padding(.top,10)
                 }
+
         }
     }
 }
