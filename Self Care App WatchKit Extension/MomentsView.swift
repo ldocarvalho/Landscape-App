@@ -11,6 +11,8 @@ struct MomentsView: View {
     
     @State private var currentPage = 0
     
+    var pages = ["Personal", "Social", "Physical"]
+    
     var body: some View {
         GeometryReader { g in
             VStack() {
@@ -20,6 +22,7 @@ struct MomentsView: View {
                         ListSocialView()
                         ListPhysicalView()
                     }
+                    .navigationTitle(pages[currentPage])
                 }.frame(width: g.size.width, height: g.size.height*0.999, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 HStack{
                     Circle()
@@ -68,13 +71,13 @@ struct ListPersonalView: View {
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  1) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
                                     VStack {
-                                        HStack {
-                                            Text("Personal")
-                                                .font(.system(size: 10, weight: .semibold))
-                                                .frame(width: 100, height: 10, alignment: .leading)
-                                                .foregroundColor(WatchColorManager.menuTextColor)
-                                            Spacer()
-                                        }.padding([.leading, .top], 8)
+//                                        HStack {
+//                                            Text("Personal")
+//                                                .font(.system(size: 10, weight: .semibold))
+//                                                .frame(width: 100, height: 10, alignment: .leading)
+//                                                .foregroundColor(WatchColorManager.menuTextColor)
+//                                            Spacer()
+//                                        }.padding([.leading, .top], 8)
                                         HStack {
                                             Text(moments[i].title!)
                                                 .font(.system(size: 12, weight: .semibold))
@@ -130,13 +133,13 @@ struct ListSocialView: View {
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  2) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
                                     VStack {
-                                        HStack {
-                                            Text("Social")
-                                                .font(.system(size: 10, weight: .semibold))
-                                                .frame(width: 100, height: 10, alignment: .leading)
-                                                .foregroundColor(WatchColorManager.menuTextColor)
-                                            Spacer()
-                                        }.padding([.leading, .top], 8)
+//                                        HStack {
+//                                            Text("Social")
+//                                                .font(.system(size: 10, weight: .semibold))
+//                                                .frame(width: 100, height: 10, alignment: .leading)
+//                                                .foregroundColor(WatchColorManager.menuTextColor)
+//                                            Spacer()
+//                                        }.padding([.leading, .top], 8)
                                         HStack {
                                             Text(moments[i].title!)
                                                 .font(.system(size: 12, weight: .semibold))
@@ -190,13 +193,13 @@ struct ListPhysicalView: View {
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  3) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
                                     VStack {
-                                        HStack {
-                                            Text("Physical")
-                                                .font(.system(size: 10, weight: .semibold))
-                                                .frame(width: 100, height: 10, alignment: .leading)
-                                                .foregroundColor(WatchColorManager.menuTextColor)
-                                            Spacer()
-                                        }.padding([.leading, .top], 8)
+//                                        HStack {
+//                                            Text("Physical")
+//                                                .font(.system(size: 10, weight: .semibold))
+//                                                .frame(width: 100, height: 10, alignment: .leading)
+//                                                .foregroundColor(WatchColorManager.menuTextColor)
+//                                            Spacer()
+//                                        }.padding([.leading, .top], 8)
                                         HStack {
                                             Text(moments[i].title!)
                                                 .font(.system(size: 12, weight: .semibold))

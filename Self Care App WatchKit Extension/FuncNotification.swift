@@ -7,17 +7,18 @@
 
 import Foundation
 import UserNotifications
-public func scheduleNotifications(hour: Int,minute: Int, weekday:Int,repeats: Bool) {
+public func scheduleNotifications(hour: Int, minute: Int, weekday: Int, repeats: Bool, title: String, body: String) {
         
         
        // UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        let category = UNNotificationCategory(identifier: "myCategory", actions: [], intentIdentifiers: [], options: [])
-        UNUserNotificationCenter.current().setNotificationCategories([category])
+//        let category = UNNotificationCategory(identifier: "myCategory", actions: [], intentIdentifiers: [], options: [])
+//        UNUserNotificationCenter.current().setNotificationCategories([category])
+    
         let content = UNMutableNotificationContent()
-        content.title = "teste"
-        content.body = "teste"
+        content.title = title
+        content.body = body
         content.sound = UNNotificationSound.default
-        content.categoryIdentifier = "myCategory"
+//        content.categoryIdentifier = "myCategory"
     
         var dateComponents = DateComponents()
         dateComponents.hour = hour

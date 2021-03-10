@@ -28,6 +28,9 @@ struct NewMomentView : View {
     @State private var didTapIndividual :Bool = true
     @State private var didTapSocial :Bool = true
     @State private var didTapHobbys :Bool = true
+    
+    @State var showDaysOfWeek : Bool = false
+    
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
@@ -59,7 +62,7 @@ struct NewMomentView : View {
                                 moment[id].title = momentTitle
                                 moment[id].daysOfWeek = Int32(daysOfWeek.rawValue)
                                 moment[id].partOfTheDay = Int64(partOfDay)
-                                moment[id].repeatActivity = false
+                                moment[id].repeatActivity = showDaysOfWeek
                                 moment[id].selfCareType = Int64(selfCareType)
                                 moment[id].done = false
                                 presentationMode.wrappedValue.dismiss()
@@ -70,11 +73,10 @@ struct NewMomentView : View {
                                 momento.date = Date()
                                 momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
                                 momento.partOfTheDay = Int64(partOfDay)
-                                momento.repeatActivity = false
+                                momento.repeatActivity = showDaysOfWeek
                                 momento.selfCareType = Int64(selfCareType)
                                 momento.done = false
                                 presentationMode.wrappedValue.dismiss()
-                                
                             }
                             do{
                                 try moc.save()
@@ -115,6 +117,7 @@ struct NewMomentView : View {
                                 selfCareType = Int(moment[id].selfCareType)
                                 partOfDay = Int(moment[id].partOfTheDay)
                                 daysOfWeek = WeekDays(rawValue: Int(moment[id].daysOfWeek))
+                                showDaysOfWeek = moment[id].repeatActivity
                                 //comparando part do dia
                                 if(partOfDay == 1){
                                     didTapMornig = true
@@ -232,6 +235,19 @@ struct NewMomentView : View {
                                 }
                             }.frame(width: reader.size.width*0.9, height: 110, alignment: .center)
                         }.padding(8)
+                        
+                        HStack {
+                            Text("Would you like to do it in other days?")
+                                .font(.body)
+                                .fontWeight(.bold)
+                                .foregroundColor(ColorManager.bodyTextColor)
+                            Spacer()
+                            Toggle("", isOn: $showDaysOfWeek)
+                                .toggleStyle(SwitchToggleStyle(tint: ColorManager.switchColor))
+                                .frame(width: 40)
+                        }.frame(width: reader.size.width*0.9, height: 60, alignment: .leading)
+                        .padding(.top, 10)
+                        .padding([.leading, .trailing], 10)
                         
                         VStack {
                             Text("In what days of the week would you like to do it?")
