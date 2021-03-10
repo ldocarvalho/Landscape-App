@@ -7,7 +7,7 @@
 
 import Foundation
 import UserNotifications
-public func scheduleNotifications() {
+public func scheduleNotifications(hour: Int,minute: Int, weekday:Int,repeats: Bool) {
         
         
        // UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
@@ -20,10 +20,11 @@ public func scheduleNotifications() {
         content.categoryIdentifier = "myCategory"
     
         var dateComponents = DateComponents()
-        dateComponents.hour = 14
-        dateComponents.minute = 50
-       // let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        dateComponents.weekday = weekday
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
+       // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeats)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
 }

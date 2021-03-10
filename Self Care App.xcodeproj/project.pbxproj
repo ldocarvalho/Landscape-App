@@ -49,6 +49,9 @@
 		A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8E9E25ED7804008B7AF1 /* UserData.swift */; };
 		A85F8EB025EEBF8D008B7AF1 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
 		A85F8EBC25EED088008B7AF1 /* PageControlOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */; };
+		A867067E25F9681500C37CD2 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
+		A867068425F9681500C37CD2 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
+		A867068A25F9681600C37CD2 /* FuncNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F8EAF25EEBF8D008B7AF1 /* FuncNotification.swift */; };
 		A892519625F7074A0068D4BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A892519525F7074A0068D4BE /* CloudKit.framework */; };
 		A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
 		A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */; };
@@ -542,6 +545,7 @@
 				76A59E7125F696D200571698 /* RegisterMomentPart4View.swift in Sources */,
 				A80B1CC725F01EA2002386F8 /* SwifUICoreData.swift in Sources */,
 				76F593BF25E82ED3008E171E /* ContentView.swift in Sources */,
+				A867067E25F9681500C37CD2 /* FuncNotification.swift in Sources */,
 				A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */,
 				A80B1CF025F1664A002386F8 /* UserData.xcdatamodeld in Sources */,
 				7616656525EEC3E300A35A6A /* RegisterMomentPart1View.swift in Sources */,
@@ -568,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A89251B325F708EC0068D4BE /* UserData.xcdatamodeld in Sources */,
+				A867068425F9681500C37CD2 /* FuncNotification.swift in Sources */,
 				76F593CF25E82ED4008E171E /* Self_Care_AppTests.swift in Sources */,
 				A89251D925F719600068D4BE /* UserData.swift in Sources */,
 				A892519C25F7082B0068D4BE /* SwifUICoreData.swift in Sources */,
@@ -579,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A89251B925F708EC0068D4BE /* UserData.xcdatamodeld in Sources */,
+				A867068A25F9681600C37CD2 /* FuncNotification.swift in Sources */,
 				76F593DA25E82ED4008E171E /* Self_Care_AppUITests.swift in Sources */,
 				A89251D825F719600068D4BE /* UserData.swift in Sources */,
 				A89251A225F7082C0068D4BE /* SwifUICoreData.swift in Sources */,

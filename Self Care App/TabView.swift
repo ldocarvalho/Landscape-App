@@ -15,6 +15,7 @@ struct MainView: View {
                 .navigationBarBackButtonHidden(true)
                 .tabItem {
                    Image(systemName: "tv.fill")
+                    
                    Text("Moments")
                 }
                 ContentViewCircle().navigationBarHidden(true)

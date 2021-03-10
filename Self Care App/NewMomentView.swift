@@ -422,6 +422,9 @@ struct NewMomentView : View {
                                     .fontWeight(.medium))
                             .padding([.top, .bottom], 12)
                             .padding(8)
+                            .onTapGesture {
+                                NavigationLink(destination: MainView()) { EmptyView() }
+                            }
                     }
                     
                     Spacer()
