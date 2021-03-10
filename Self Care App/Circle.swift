@@ -25,37 +25,42 @@ struct ContentViewCircle: View {
     
         var body: some View {
             GeometryReader { reader in
-                NavigationView{
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack {
+                NavigationView {
+                    ZStack {
+                        ColorManager.backgroundColor
+                            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        ScrollView(.vertical, showsIndicators: false) {
                             VStack {
-                                Text("What about taking care of yourself today? You can do it!")
-                                    .font(.body)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(ColorManager.titleTextColor)
-                                    .padding([.leading, .trailing, .bottom], 16)
-                                    .padding([.top], 32)
-                                    .multilineTextAlignment(.center)
-                                VStack {
-                                    Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
-                                }.onAppear(perform: {
-                                    ProgressOfTheDay()
-                                })
-                                .frame(width: 300.0, height: 350)
-                                .padding(16)
-                                
                                 
                                 VStack {
-                                    ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
+                                    Text("What about taking care of yourself today? You can do it!")
+                                        .font(.body)
+                                        .fontWeight(.medium)
+                                        .foregroundColor(ColorManager.titleTextColor)
+                                        .padding([.leading, .trailing, .bottom], 16)
+                                        .padding([.top], 32)
+                                        .multilineTextAlignment(.center)
+                                    VStack {
+                                        Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
+                                    }.onAppear(perform: {
+                                        ProgressOfTheDay()
+                                    })
+                                    .frame(width: 300.0, height: 350)
+                                    .padding(16)
+                                    
+                                    
+                                    VStack {
+                                        ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
 
+                                    }
+                                    .frame(width: 100, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .padding(8)
+                                    Spacer()
                                 }
-                                .frame(width: 100, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding(8)
-                                Spacer()
                             }
-                        }
-                    }.navigationTitle(Text("Meus Ciclos"))
-                    .frame(width: reader.size.width*0.9, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.navigationTitle(Text("Meus Ciclos"))
+                        .frame(width: reader.size.width*0.9, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
                 }
             }
     }
@@ -184,8 +189,7 @@ struct ContentViewCircle: View {
                     Rectangle().frame(width: min(CGFloat(self.progressIndividual) *  300,  300), height: 40)
                         .foregroundColor(ColorManager.purpleCicleColor)
                         .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
-                        .cornerRadius(45.0)
-                    
+                        .cornerRadius(45.0)                    
                     
                     }.cornerRadius(45.0)
                 

@@ -17,7 +17,6 @@ struct Self_Care_AppApp: App {
                 ContentView().environment(\.managedObjectContext, container.viewContext)
             }
             else{
-
                 MainView().environment(\.managedObjectContext, container.viewContext)
             }
            //MainView().environment(\.managedObjectContext, container.viewContext)
