@@ -55,6 +55,8 @@ struct RegisterMomentPart1View: View {
     //                    .padding(.top, 25)
                         Spacer()
                     }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                    .navigationBarHidden(true)
+                    .padding(.top,10)
             }
         }
     }

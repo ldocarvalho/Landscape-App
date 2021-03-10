@@ -16,6 +16,8 @@ struct OnboardingView: View {
     @State var partOfTheDay = 0
     @State var typeOfCare = 0
     @State var currentPageIndex = 0
+    @State var daysOfWeek : WeekDays = []
+    @State var showDaysOfWeek : Bool = false
    // @ObservedObject var userSettings = UserSettings()
     @Environment(\.managedObjectContext) var moc
     @Environment(\.managedObjectContext) var moment
@@ -27,6 +29,7 @@ struct OnboardingView: View {
         let subviews = [
             UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: name )),
             UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: name)),
+            UIHostingController(rootView: RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek)),
             UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: name))
         ]
         //NavigationView{
@@ -37,18 +40,17 @@ struct OnboardingView: View {
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 VStack() {
                     PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                        .frame(width: reader.size.width, height: reader.size.height*0.6, alignment: .top)
-                    Spacer()
+                        .frame(width: reader.size.width, height: reader.size.height*0.55, alignment: .top)
                     VStack {
                         Button(action: {
                             if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
                                 let momento = Moment(context: moment)
                                 momento.date = Date()
-                                momento.daysOfWeek = 1
+                                momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
                                 momento.title = title
                                 momento.partOfTheDay = Int64(partOfTheDay)
                                 momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
-                                momento.done = false
+                                momento.done = showDaysOfWeek
                                 
                                 do{
                                    try  moment.save()
@@ -59,8 +61,19 @@ struct OnboardingView: View {
                                 }
                                 UserDefaults.standard.set(false, forKey: "isFirtUse")
                                 UserDefaults.standard.set(Date(), forKey:"creationTime")
-                                if self.currentPageIndex == 2 {
+                                if self.currentPageIndex == 3 {
                                     self.View = true
+
+                                }
+                                
+                            }
+                            if(!RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek.isEmpty){
+                                
+                                
+                                if self.currentPageIndex == 2 {
+                                    daysOfWeek.union(RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
+                                    showDaysOfWeek = RegisterMomentPart4View(daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
+                                    currentPageIndex += 1
 
                                 }
                                 
@@ -108,9 +121,13 @@ struct OnboardingView: View {
 
                     }
                     .frame(width: reader.size.width, height: reader.size.height*0.4, alignment: .center)
+                 
                 }
                 .navigationBarBackButtonHidden(true)
                 .frame(width: reader.size.width, height: reader.size.height, alignment: .top)
+                .navigationBarHidden(true)
+                .padding(.top,20)
+       
             }
             
         }
