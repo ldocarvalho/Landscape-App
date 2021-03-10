@@ -28,7 +28,7 @@ struct MenuView: View {
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
             }.onAppear(perform: {
-                scheduleNotifications()
+              //  scheduleNotifications()
             })
         }
     }

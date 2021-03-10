@@ -99,7 +99,8 @@ struct MyMomentsView: View {
                                             
                                             moment[i].done = false
                                             }
-                                        
+                                        UserDefaults.standard.removeObject(forKey: "creationTime")
+                                        UserDefaults.standard.setValue(Date(), forKey: "creationTime")
                                     }
                                 }
                                 do{
