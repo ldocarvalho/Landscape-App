@@ -36,7 +36,7 @@ struct DeleteAlertView: View {
                     shown.toggle()
                 }, label: {
                     Text("Cancel")
-                        .foregroundColor(ColorManager.titleTextColor)
+                        .foregroundColor(ColorManager.textColorSecondaryButton)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 })
                 .frame(width: 150, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -54,7 +54,7 @@ struct DeleteAlertView: View {
                     
                 }, label: {
                     Text("Delete")
-                        .foregroundColor(ColorManager.backgroundColor)
+                        .foregroundColor(ColorManager.textColorMainButton)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 })
                 .frame(width: 150, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
