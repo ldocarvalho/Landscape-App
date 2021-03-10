@@ -113,17 +113,18 @@ struct MomentDetailView: View {
                 
                 if shownDeleteAlert {
                     DeleteAlertView(shown: $shownDeleteAlert, id: id)
-                        .offset(y: -g.frame(in: .global).minY - UIScreen.main.bounds.height/2)
+                        .offset(y: -g.frame(in: .global).minY - 500)
                 }
                 
                 if shownDoneAlert {
                     DoneAlertView(shown: $shownDoneAlert)
-                        .offset(y: -g.frame(in: .global).minY - UIScreen.main.bounds.height/2)
+                        .offset(y: -g.frame(in: .global).minY - 500)
                 }
                 
             }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true, id: id)})
             .background(Color.white)
             .frame(width: g.size.width, alignment: .center)
+            .navigationBarHidden((shownDeleteAlert || shownDoneAlert) ? true : false)
         }
     }
 }
