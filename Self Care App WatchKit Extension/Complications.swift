@@ -1,21 +1,20 @@
 //
-//  ComplicationController.swift
+//  Complications.swift
 //  Self Care App WatchKit Extension
 //
-//  Created by Lucas Carvalho on 25/02/21.
+//  Created by Victor Vidal on 10/03/21.
 //
 
+import Foundation
 import ClockKit
-
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Complication Configuration
-
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-                    CLKComplicationDescriptor(identifier: "complication", displayName: "Land Escape", supportedFamilies: [CLKComplicationFamily.circularSmall, CLKComplicationFamily.graphicCircular, CLKComplicationFamily.graphicCorner])
-                    // Multiple complication support can be added here with more descriptors
+            CLKComplicationDescriptor(identifier: "complication", displayName: "SimpleImageComplications", supportedFamilies: CLKComplicationFamily.allCases)
+            // Multiple complication support can be added here with more descriptors
         ]
         
         // Call the handler with the currently supported complication descriptors
@@ -46,36 +45,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        if let template = getComplicationTemplate(for: complication, using: Date()) {
-                    let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
-                    handler([entry])
-                } else {
-                    handler(nil)
-                }
-        //handler(nil)
+        // Call the handler with the timeline entries after the given date
+        handler(nil)
     }
 
     // MARK: - Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        let template = getComplicationTemplate(for: complication, using: Date())
-                if let t = template {
-                    handler(t)
-                } else {
-                    handler(nil)
-                }
+        // This method will be called once per supported complication, and the results will be cached
+        handler(nil)
     }
-    func getComplicationTemplate(for complication: CLKComplication, using date: Date) -> CLKComplicationTemplate? {
-           switch complication.family {
-           case .graphicCorner:
-               return CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(named: "Complication/Graphic Corner")!))
-           case .graphicCircular:
-               return CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: UIImage(named: "Complication/Graphic Circular")!))
-           case .circularSmall:
-               return CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: UIImage(named: "Complication/Circular")!))
-           default:
-               return nil
-           }
-       }
-
 }

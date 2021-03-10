@@ -100,7 +100,7 @@ struct CirclesView : View {
             Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
                  .frame(width: 100.0, height: 100.0)
                  .padding(25.0)
-        }.frame(width: 100, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }.frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 
@@ -112,7 +112,7 @@ struct Circles: View {
         ZStack {
             Circle()
                 .stroke(lineWidth: 10.0)
-                .opacity(0.3)
+                .opacity(1)
                 .foregroundColor(WatchColorManager.purpleCicleBackgroundColor)
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressIndividual,1.0)))
@@ -123,9 +123,9 @@ struct Circles: View {
             
             Circle()
                 .stroke(lineWidth: 10.0)
-                .opacity(0.3)
+                .opacity(1)
                 .foregroundColor(WatchColorManager.pinkCicleBackgroundColor)
-                .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressSocial,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
@@ -136,7 +136,7 @@ struct Circles: View {
             
             Circle()
                 .stroke(lineWidth: 10.0)
-                .opacity(0.3)
+                .opacity(1)
                 .foregroundColor(WatchColorManager.blueCicleBackgroundColor)
                 .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Circle()
