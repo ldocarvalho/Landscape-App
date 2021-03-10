@@ -14,7 +14,6 @@ struct RegisterMomentPart1View: View {
     
     var body: some View {
         GeometryReader { reader in
-            NavigationView {
                 ZStack {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(.all)
@@ -56,7 +55,6 @@ struct RegisterMomentPart1View: View {
     //                    .padding(.top, 25)
                         Spacer()
                     }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
-                }
             }
         }
     }

@@ -18,7 +18,6 @@ struct RegisterMomentPart3View: View {
   
     var body: some View {
         GeometryReader { reader in
-            NavigationView {
                 ZStack {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -104,10 +103,7 @@ struct RegisterMomentPart3View: View {
                         
                     }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
                 }
-                
-            }
         }
-        
     }
 }
 

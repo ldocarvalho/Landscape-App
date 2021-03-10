@@ -104,6 +104,7 @@ struct OnboardingView: View {
                         Image("iOS - OnboardingImage")
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .center)
+                            //.padding(.bottom, 60)
 
                     }
                     .frame(width: reader.size.width, height: reader.size.height*0.4, alignment: .center)
