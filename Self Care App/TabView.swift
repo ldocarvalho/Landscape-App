@@ -7,23 +7,25 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selection = 0
     var body: some View {
-            TabView {
+        
+            TabView (selection: $selection){
                 NavigationView{
                     MyMomentsView()
                 }.navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
                 .tabItem {
-                   Image(systemName: "tv.fill")
+                    selection == 0 ? Image("TabBarMomentsIconSelected") : Image("TabBarMomentsIconDesselected")
                     
                    Text("Moments")
-                }
+                }.tag(0)
                 ContentViewCircle().navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                  .tabItem {
-                    Image(systemName: "tv.fill")
+                    selection == 1 ? Image("TabBarCyclesIconSelected") : Image( "TabBarCyclesIconDesselected")
                     Text("Cycles")
-                 }
+                 }.tag(1)
         }.navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
