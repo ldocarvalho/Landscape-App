@@ -41,6 +41,9 @@ struct ListPersonalView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
     
+    let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
+
+        
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
         
@@ -55,6 +58,7 @@ struct ListPersonalView: View {
         return scale
     }
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
+    
     var body: some View {
         GeometryReader { g in 
 //            let scale = getScale(proxy: g)
@@ -62,22 +66,24 @@ struct ListPersonalView: View {
                     VStack(spacing: 5) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  1) {
-                                VStack {
-                                    HStack {
-                                        Text("Personal")
-                                            .font(.system(size: 10, weight: .semibold))
-                                            .frame(width: 100, height: 10, alignment: .leading)
-                                            .foregroundColor(WatchColorManager.menuTextColor)
-                                        Spacer()
-                                    }.padding([.leading, .top], 8)
-                                    HStack {
-                                        Text(moments[i].title!)
-                                            .font(.system(size: 12, weight: .semibold))
-                                            .frame(width: 100, height: 40, alignment: .leading)
-                                        Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
-                                            .resizable()
-                                            .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    }.padding([.leading, .trailing, .bottom], 8)
+                                NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
+                                    VStack {
+                                        HStack {
+                                            Text("Personal")
+                                                .font(.system(size: 10, weight: .semibold))
+                                                .frame(width: 100, height: 10, alignment: .leading)
+                                                .foregroundColor(WatchColorManager.menuTextColor)
+                                            Spacer()
+                                        }.padding([.leading, .top], 8)
+                                        HStack {
+                                            Text(moments[i].title!)
+                                                .font(.system(size: 12, weight: .semibold))
+                                                .frame(width: 100, height: 40, alignment: .leading)
+                                            Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
+                                                .resizable()
+                                                .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        }.padding([.leading, .trailing, .bottom], 8)
+                                    }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
@@ -90,9 +96,13 @@ struct ListPersonalView: View {
     }
 }
 
+//MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImagesDetail[Int(moment[i].selfCareType) - 1][Int(moment[i].partOfTheDay) - 1],id: i)
+
 struct ListSocialView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+    
+    let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
 
     
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
@@ -118,22 +128,24 @@ struct ListSocialView: View {
                     VStack(spacing: 5) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  2) {
-                                VStack {
-                                    HStack {
-                                        Text("Social")
-                                            .font(.system(size: 10, weight: .semibold))
-                                            .frame(width: 100, height: 10, alignment: .leading)
-                                            .foregroundColor(WatchColorManager.menuTextColor)
-                                        Spacer()
-                                    }.padding([.leading, .top], 8)
-                                    HStack {
-                                        Text(moments[i].title!)
-                                            .font(.system(size: 12, weight: .semibold))
-                                            .frame(width: 100, height: 40, alignment: .leading)
-                                        Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
-                                            .resizable()
-                                            .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    }.padding([.leading, .trailing, .bottom], 8)
+                                NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
+                                    VStack {
+                                        HStack {
+                                            Text("Social")
+                                                .font(.system(size: 10, weight: .semibold))
+                                                .frame(width: 100, height: 10, alignment: .leading)
+                                                .foregroundColor(WatchColorManager.menuTextColor)
+                                            Spacer()
+                                        }.padding([.leading, .top], 8)
+                                        HStack {
+                                            Text(moments[i].title!)
+                                                .font(.system(size: 12, weight: .semibold))
+                                                .frame(width: 100, height: 40, alignment: .leading)
+                                            Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
+                                                .resizable()
+                                                .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        }.padding([.leading, .trailing, .bottom], 8)
+                                    }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
@@ -149,6 +161,9 @@ struct ListSocialView: View {
 struct ListPhysicalView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+    
+    let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
+
 
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
     
@@ -173,22 +188,24 @@ struct ListPhysicalView: View {
                     VStack(spacing: 5) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  3) {
-                                VStack {
-                                    HStack {
-                                        Text("Physical")
-                                            .font(.system(size: 10, weight: .semibold))
-                                            .frame(width: 100, height: 10, alignment: .leading)
-                                            .foregroundColor(WatchColorManager.menuTextColor)
-                                        Spacer()
-                                    }.padding([.leading, .top], 8)
-                                    HStack {
-                                        Text(moments[i].title!)
-                                            .font(.system(size: 12, weight: .semibold))
-                                            .frame(width: 100, height: 40, alignment: .leading)
-                                        Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
-                                            .resizable()
-                                            .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    }.padding([.leading, .trailing, .bottom], 8)
+                                NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
+                                    VStack {
+                                        HStack {
+                                            Text("Physical")
+                                                .font(.system(size: 10, weight: .semibold))
+                                                .frame(width: 100, height: 10, alignment: .leading)
+                                                .foregroundColor(WatchColorManager.menuTextColor)
+                                            Spacer()
+                                        }.padding([.leading, .top], 8)
+                                        HStack {
+                                            Text(moments[i].title!)
+                                                .font(.system(size: 12, weight: .semibold))
+                                                .frame(width: 100, height: 40, alignment: .leading)
+                                            Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
+                                                .resizable()
+                                                .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        }.padding([.leading, .trailing, .bottom], 8)
+                                    }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
