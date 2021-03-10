@@ -1,25 +1,25 @@
 {
   "images" : [
     {
-      "filename" : "Grupo_236.pdf",
+      "filename" : "Comp_32x32.pdf",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
-      "filename" : "Grupo_235.pdf",
+      "filename" : "Comp_36x36.pdf",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
-      "filename" : "Grupo_235-1.pdf",
+      "filename" : "Comp_36x36-1.pdf",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"
     },
     {
-      "filename" : "Grupo_237.pdf",
+      "filename" : "Comp_40x40.pdf",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

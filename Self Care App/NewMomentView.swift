@@ -31,6 +31,8 @@ struct NewMomentView : View {
     
     @State var showDaysOfWeek : Bool = false
     
+    @State var shownEmptyFieldAlert = false
+    
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
@@ -65,23 +67,37 @@ struct NewMomentView : View {
                                 moment[id].repeatActivity = showDaysOfWeek
                                 moment[id].selfCareType = Int64(selfCareType)
                                 moment[id].done = false
+                                
                                 presentationMode.wrappedValue.dismiss()
+                                
+                                do {
+                                    try moc.save()
+                                }
+                                catch {
+                                }
+                                
                             }
                             else{
-                                let momento = Moment(context: moc)
-                                momento.title = momentTitle
-                                momento.date = Date()
-                                momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
-                                momento.partOfTheDay = Int64(partOfDay)
-                                momento.repeatActivity = showDaysOfWeek
-                                momento.selfCareType = Int64(selfCareType)
-                                momento.done = false
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                            do{
-                                try moc.save()
-                            }
-                            catch{
+                                if (momentTitle == "" || partOfDay == 0 || selfCareType == 0 || daysOfWeek == []) {
+                                    shownEmptyFieldAlert.toggle()
+                                } else {
+                                    let momento = Moment(context: moc)
+                                    momento.title = momentTitle
+                                    momento.date = Date()
+                                    momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+                                    momento.partOfTheDay = Int64(partOfDay)
+                                    momento.repeatActivity = showDaysOfWeek
+                                    momento.selfCareType = Int64(selfCareType)
+                                    momento.done = false
+                                    
+                                    presentationMode.wrappedValue.dismiss()
+                                    
+                                    do {
+                                        try moc.save()
+                                    }
+                                    catch {
+                                    }
+                                }
                                 
                             }
                             // editando
@@ -95,6 +111,8 @@ struct NewMomentView : View {
                                 .fontWeight(.bold)
                         }).padding()
                     }.padding(8)
+//                    .blur(radius: shownEmptyFieldAlert ? 2 : 0)
+                    .opacity(shownEmptyFieldAlert ? 0.3 : 1)
                     
                     ScrollView(.vertical) {
                         VStack {
@@ -442,12 +460,17 @@ struct NewMomentView : View {
                                 NavigationLink(destination: MainView()) { EmptyView() }
                             }
                     }
+//                    .blur(radius: shownEmptyFieldAlert ? 2 : 0)
+                    .opacity(shownEmptyFieldAlert ? 0.3 : 1)
+
                     
+                    if shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                            .offset(y: -reader.frame(in: .global).minY - 120)
+                    }
                     Spacer()
                 }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
-                
             }
-            
         }
     }
 }

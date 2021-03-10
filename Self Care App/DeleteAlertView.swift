@@ -68,8 +68,8 @@ struct DeleteAlertView: View {
     }
 }
 
-//struct DeleteAlertView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DeleteAlertView(shown: .constant(false))
-//    }
-//}
+struct DeleteAlertView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeleteAlertView(shown: .constant(false), id: 0)
+    }
+}

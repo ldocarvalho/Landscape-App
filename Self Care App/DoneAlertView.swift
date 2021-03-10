@@ -22,7 +22,7 @@ struct DoneAlertView: View {
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
                 .frame(width: 250, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("Taking care of you each day helps you increase you well-being")
+            Text("Taking care of you each day helps you increase you well-being.")
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)

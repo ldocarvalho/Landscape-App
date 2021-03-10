@@ -25,7 +25,7 @@ struct MomentDetailView: View {
                         VStack {
                             Image(image)
                                 .resizable()
-                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.2 : 1)
+                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
                                 .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             
                         }.offset(y: -g.frame(in: .global).minY)
@@ -109,7 +109,8 @@ struct MomentDetailView: View {
                         }.background(Color.white)
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
-                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 40 : 0)
+                        .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
+//                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 10 : 0)
                 
                 if shownDeleteAlert {
                     DeleteAlertView(shown: $shownDeleteAlert, id: id)
