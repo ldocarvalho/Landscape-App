@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct DeleteAlertView: View {
+        
+    @Binding var shown: Bool
+    
     var body: some View {
         VStack {
-            Image("p1")
+            Image("DeleteIcon")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Text("Are you sure you want to delete this moment?")
@@ -19,16 +22,16 @@ struct DeleteAlertView: View {
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
                 .frame(width: 250, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("This action cannot be undone and this moment will not count on your cicles anymore.")
+            Text("This action cannot be undone and this moment will not count on your cycles anymore.")
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
                 .font(.body)
-                .frame(width: 250, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 250, height: 80, alignment: .center)
             
             HStack {
                 Button(action: {
-                    
+                    shown.toggle()
                 }, label: {
                     Text("Cancel")
                         .foregroundColor(ColorManager.titleTextColor)
@@ -49,12 +52,15 @@ struct DeleteAlertView: View {
                 .background(ColorManager.mainButtonColor)
                 .cornerRadius(25.0)
             }.padding()
-        }
+        }.frame(width: 350, height: 370, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .background(ColorManager.backgroundColor)
+        .cornerRadius(30.0)
+        .clipped()
     }
 }
 
 struct DeleteAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        DeleteAlertView()
+        DeleteAlertView(shown: .constant(false))
     }
 }

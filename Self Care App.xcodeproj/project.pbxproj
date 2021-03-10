@@ -20,6 +20,7 @@
 		769F88AB25F153F100B68091 /* WatchColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88AA25F153F100B68091 /* WatchColorManager.swift */; };
 		769F88BE25F1696200B68091 /* PagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88BD25F1696200B68091 /* PagerManager.swift */; };
 		769F88D125F172F900B68091 /* DeleteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88D025F172F900B68091 /* DeleteAlertView.swift */; };
+		76A1D47E25F865CA006F7AE7 /* DoneAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1D47D25F865CA006F7AE7 /* DoneAlertView.swift */; };
 		76A59E7125F696D200571698 /* RegisterMomentPart4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */; };
 		76BB7A8025F2A1F1007CE764 /* EmptyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
@@ -132,6 +133,7 @@
 		769F88AA25F153F100B68091 /* WatchColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColorManager.swift; sourceTree = "<group>"; };
 		769F88BD25F1696200B68091 /* PagerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerManager.swift; sourceTree = "<group>"; };
 		769F88D025F172F900B68091 /* DeleteAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAlertView.swift; sourceTree = "<group>"; };
+		76A1D47D25F865CA006F7AE7 /* DoneAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAlertView.swift; sourceTree = "<group>"; };
 		76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart4View.swift; sourceTree = "<group>"; };
 		76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldView.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */,
 				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
 				A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */,
+				76A1D47D25F865CA006F7AE7 /* DoneAlertView.swift */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				76BB7A8025F2A1F1007CE764 /* EmptyFieldView.swift in Sources */,
 				76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */,
 				7616653A25ED7CE500A35A6A /* NewMomentView.swift in Sources */,
+				76A1D47E25F865CA006F7AE7 /* DoneAlertView.swift in Sources */,
 				7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */,
 				7616656C25EEC76C00A35A6A /* RegisterMomentPart2View.swift in Sources */,
 				A85F8E7325ED6CF1008B7AF1 /* TabView.swift in Sources */,

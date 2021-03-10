@@ -12,6 +12,10 @@ struct MomentDetailView: View {
     var description : String = "lallalalalalalasldkdkalsdlksklallalalalalalaslkdkdfkdkmsskmkdmedkmeekmkdxmskxdmcfkcmdkmkxmdckcmkdkdkalsdlksksdsd"
     var image : String = "p1"
     var id : Int = 0
+    
+    @State var shownDeleteAlert = false
+    @State var shownDoneAlert = false
+    
     @State var View : Bool = false
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -21,7 +25,9 @@ struct MomentDetailView: View {
                         VStack {
                             Image(image)
                                 .resizable()
+                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.2 : 1)
                                 .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            
                         }.offset(y: -g.frame(in: .global).minY)
                         
                         VStack {
@@ -48,10 +54,12 @@ struct MomentDetailView: View {
                             } .padding([.leading, .trailing], 16)
                             .padding(.top, 8)
                             
+                            
                             Text(description)
                                 .font(.body)
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
+                            
                             
                             HStack {
                                 Text("Is this moment done for today?")
@@ -63,7 +71,10 @@ struct MomentDetailView: View {
                             
                             HStack {
                                 Button(action: {
-                                    
+//                                    if showDeleteAlert {
+//                                        DeleteAlertView(shown: $showDeleteAlert)
+//                                    }
+                                    shownDeleteAlert.toggle()
                                 }, label: {
                                     Text("Delete moment")
                                         .foregroundColor(ColorManager.titleTextColor)
@@ -76,6 +87,8 @@ struct MomentDetailView: View {
                                 Spacer()
                                 
                                 Button(action: {
+                                    shownDoneAlert.toggle()
+                                    // adicionar salvar na outra view
                                     moment[id].done = true
                                     do{
                                         try moc.save()
@@ -96,7 +109,20 @@ struct MomentDetailView: View {
                         }.background(Color.white)
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
+                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 40 : 0)
+                
+                if shownDeleteAlert {
+                    DeleteAlertView(shown: $shownDeleteAlert)
+                        .offset(y: -g.frame(in: .global).minY - UIScreen.main.bounds.height/2)
+                }
+                
+                if shownDoneAlert {
+                    DoneAlertView(shown: $shownDoneAlert)
+                        .offset(y: -g.frame(in: .global).minY - UIScreen.main.bounds.height/2)
+                }
+                
             }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true, id: id)})
+            .background(Color.white)
             .frame(width: g.size.width, alignment: .center)
         }
     }
