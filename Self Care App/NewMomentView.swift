@@ -245,7 +245,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("S")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.sunday)){
@@ -261,7 +261,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("M")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.monday)){
@@ -276,7 +276,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("T")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.thuesday)){
@@ -291,7 +291,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("W")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.wednesday)){
@@ -306,7 +306,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("T")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.thursday)){
@@ -321,7 +321,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("F")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.friday)){
@@ -336,7 +336,7 @@ struct NewMomentView : View {
                                     .frame(width: 40, height: 40, alignment: .center)
                                     .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
                                     .overlay(Text("S")
-                                                .foregroundColor(ColorManager.bodyTextColor)
+                                                .foregroundColor(ColorManager.daysOfWeekColor)
                                                 .fontWeight(.medium))
                                     .onTapGesture {
                                         if (daysOfWeek.contains(.saturday)){
@@ -418,7 +418,8 @@ struct NewMomentView : View {
                             .frame(width: 350, height: 40, alignment: .leading)
                             .cornerRadius(25.0)
                             .foregroundColor(ColorManager.switchColor)
-                            .overlay(Text("Would you like to know more about self care?").font(.system(size: 16)).foregroundColor(ColorManager.bodyTextColor).fontWeight(.medium))
+                            .overlay(Text("Would you like to know more about self care?").font(.system(size: 16))                                                .foregroundColor(ColorManager.daysOfWeekColor)
+                                    .fontWeight(.medium))
                             .padding([.top, .bottom], 12)
                             .padding(8)
                     }
