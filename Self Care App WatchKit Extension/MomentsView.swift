@@ -39,6 +39,8 @@ struct MomentsView: View {
 
 struct ListPersonalView: View {
     
+    let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+    
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
         
@@ -72,9 +74,9 @@ struct ListPersonalView: View {
                                         Text(moments[i].title!)
                                             .font(.system(size: 12, weight: .semibold))
                                             .frame(width: 100, height: 40, alignment: .leading)
-                                        Image("p1")
+                                        Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                             .resizable()
-                                            .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     }.padding([.leading, .trailing, .bottom], 8)
                                 }
                             }
@@ -89,7 +91,12 @@ struct ListPersonalView: View {
 }
 
 struct ListSocialView: View {
+    
+    let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+
+    
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
+    
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
         
@@ -113,7 +120,7 @@ struct ListSocialView: View {
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  2) {
                                 VStack {
                                     HStack {
-                                        Text("Personal")
+                                        Text("Social")
                                             .font(.system(size: 10, weight: .semibold))
                                             .frame(width: 100, height: 10, alignment: .leading)
                                             .foregroundColor(WatchColorManager.menuTextColor)
@@ -123,9 +130,9 @@ struct ListSocialView: View {
                                         Text(moments[i].title!)
                                             .font(.system(size: 12, weight: .semibold))
                                             .frame(width: 100, height: 40, alignment: .leading)
-                                        Image("p1")
+                                        Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                             .resizable()
-                                            .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     }.padding([.leading, .trailing, .bottom], 8)
                                 }
                             }
@@ -140,7 +147,11 @@ struct ListSocialView: View {
 }
 
 struct ListPhysicalView: View {
+    
+    let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moments: FetchedResults<Moment>
+    
     private func getScale(proxy: GeometryProxy) -> CGFloat {
         var scale: CGFloat = 1
         
@@ -164,7 +175,7 @@ struct ListPhysicalView: View {
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  3) {
                                 VStack {
                                     HStack {
-                                        Text("Personal")
+                                        Text("Physical")
                                             .font(.system(size: 10, weight: .semibold))
                                             .frame(width: 100, height: 10, alignment: .leading)
                                             .foregroundColor(WatchColorManager.menuTextColor)
@@ -174,7 +185,7 @@ struct ListPhysicalView: View {
                                         Text(moments[i].title!)
                                             .font(.system(size: 12, weight: .semibold))
                                             .frame(width: 100, height: 40, alignment: .leading)
-                                        Image("p1")
+                                        Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                             .resizable()
                                             .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     }.padding([.leading, .trailing, .bottom], 8)
