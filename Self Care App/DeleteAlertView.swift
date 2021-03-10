@@ -10,7 +10,9 @@ import SwiftUI
 struct DeleteAlertView: View {
         
     @Binding var shown: Bool
-    
+    @State var id : Int
+    @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         VStack {
             Image("DeleteIcon")
@@ -42,6 +44,13 @@ struct DeleteAlertView: View {
                 .cornerRadius(25.0)
                                 
                 Button(action: {
+                    moc.delete(moment[id])
+                    do{
+                        try moc.save()
+                    }
+                    catch{
+                        
+                    }
                     
                 }, label: {
                     Text("Delete")
@@ -59,8 +68,8 @@ struct DeleteAlertView: View {
     }
 }
 
-struct DeleteAlertView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeleteAlertView(shown: .constant(false))
-    }
-}
+//struct DeleteAlertView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DeleteAlertView(shown: .constant(false))
+//    }
+//}
