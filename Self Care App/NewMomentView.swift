@@ -267,6 +267,12 @@ struct NewMomentView : View {
                         .padding(.top, 10)
                         .padding([.leading, .trailing], 10)
                         
+//                        if showDaysOfWeek {
+//                            withAnimation {
+//                                Text("Oi, Giovanna")
+//                            }
+//                        }
+                        
                         VStack {
                             Text("In what days of the week would you like to do it?")
                                 .font(.body)
@@ -468,6 +474,7 @@ struct NewMomentView : View {
                         EmptyFieldView(shown: $shownEmptyFieldAlert)
                             .offset(y: -reader.frame(in: .global).minY - 120)
                     }
+                    
                     Spacer()
                 }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
             }

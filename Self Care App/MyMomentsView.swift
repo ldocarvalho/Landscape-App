@@ -61,6 +61,7 @@ struct MyMomentsView: View {
                                                             .fontWeight(.medium)
                                                             .foregroundColor(.white)
                                                             .padding(.top, 30)
+                                                            .frame(width: reader.size.width*0.65, alignment: .leading)
                                                             .padding(.leading, 40),
                                                          alignment: .topLeading)
                                             .padding(.bottom, 16)
