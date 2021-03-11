@@ -204,7 +204,7 @@ struct ContentViewCircle: View {
                         .opacity(1)
                         .foregroundColor(ColorManager.pinkCicleBackgroundColor)
                         
-                    Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  300,  300), height: 40)
+                    Rectangle().frame(width: min(CGFloat(self.progressSocial) *  300,  300), height: 40)
                         .foregroundColor(ColorManager.pinkCicleColor)
                         .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                         .cornerRadius(45.0)
@@ -221,7 +221,7 @@ struct ContentViewCircle: View {
                         .opacity(1)
                         .foregroundColor(ColorManager.blueCicleBackgroundColor)
                         
-                    Rectangle().frame(width: min(CGFloat(self.progressSocial) *  300,  300), height: 40)
+                    Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  300,  300), height: 40)
                         .cornerRadius(45.0)
                         .foregroundColor(ColorManager.blueCicleColor)
                         .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
