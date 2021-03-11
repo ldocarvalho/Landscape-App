@@ -67,6 +67,7 @@ struct ContentView: View {
                 }
             }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
+            .accentColor(.white)
         }
     }
 }

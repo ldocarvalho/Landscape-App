@@ -15,6 +15,7 @@ struct MainView: View {
                     MyMomentsView()
                 }.navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
+                .accentColor(.white)
                 .tabItem {
                     selection == 0 ? Image("TabBarMomentsIconSelected") : Image("TabBarMomentsIconDesselected")
                     
