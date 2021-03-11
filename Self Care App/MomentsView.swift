@@ -12,6 +12,7 @@ struct MomentsView : View {
         NavigationView {
             CardScrollView()
         }.navigationTitle("Title")
+        .accentColor(Color("NavigationColor"))
     }
 }
 
