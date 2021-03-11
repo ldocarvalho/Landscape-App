@@ -10,6 +10,7 @@ import SwiftUI
 struct DeleteAlertView: View {
         
     @Binding var shown: Bool
+    @Binding var delete: Bool
     @State var id : Int
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -44,13 +45,15 @@ struct DeleteAlertView: View {
                 .cornerRadius(25.0)
                                 
                 Button(action: {
-                    moc.delete(moment[id])
-                    do{
-                        try moc.save()
-                    }
-                    catch{
-                        
-                    }
+//                    moc.delete(moment[id])
+//                    do{
+//                        try moc.save()
+//                    }
+//                    catch{
+//
+//                    }
+                    delete.toggle()
+                    shown.toggle()
                     
                 }, label: {
                     Text("Delete")
@@ -60,6 +63,7 @@ struct DeleteAlertView: View {
                 .frame(width: 150, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(ColorManager.mainButtonColor)
                 .cornerRadius(25.0)
+               
             }.padding()
         }.frame(width: 350, height: 370, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(ColorManager.backgroundColor)
@@ -68,8 +72,8 @@ struct DeleteAlertView: View {
     }
 }
 
-struct DeleteAlertView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeleteAlertView(shown: .constant(false), id: 0)
-    }
-}
+//struct DeleteAlertView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DeleteAlertView(shown: .constant(false), id: 0)
+//    }
+//}
