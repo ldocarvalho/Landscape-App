@@ -74,7 +74,7 @@ struct OnboardingView: View {
                                 if self.currentPageIndex == 2 {
                                     daysOfWeek.union(RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
                                     showDaysOfWeek = RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
-                                    currentPageIndex += 3
+                                    currentPageIndex += 1
                                     
                                 }
                                 
@@ -85,7 +85,7 @@ struct OnboardingView: View {
                                 
                                 if self.currentPageIndex == 1 {
                                     partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
-                                    currentPageIndex += 2
+                                    currentPageIndex += 1
                                     
                                 }
                                 
