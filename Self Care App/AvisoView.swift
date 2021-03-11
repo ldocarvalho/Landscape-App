@@ -24,17 +24,18 @@ struct AvisoView: View {
                     .frame(width: 330, height: 100, alignment: .leading)
                 Text(mensagem)
                     .fontWeight(.medium)
+                    .padding()
                     .font(.title3)
                     .padding(10)
                     .foregroundColor(ColorManager.bodyTextColor)
-                    .frame(width:350, height: 600, alignment: .leading)
+                    .multilineTextAlignment(.leading)
+                    .frame(width:350, height: 500, alignment: .topLeading)
             }.background(ColorManager.cardColor)
-            .cornerRadius(15)
+            .cornerRadius(25)
         }
-        
     }
-    
 }
+
 struct AvisoView_Previews: PreviewProvider {
     static var previews: some View {
         AvisoView(mensagem: "coloque o aviso aqui",pergunta: "What is self care?")
