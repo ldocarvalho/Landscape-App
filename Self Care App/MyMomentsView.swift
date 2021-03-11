@@ -115,7 +115,7 @@ struct MyMomentsView: View {
                         }
                     })
                 }
-                .navigationBarTitle(Text("Meus momentos"))
+                .navigationBarTitle(Text("My moments"))
                 .navigationBarItems(trailing:
                         Button(action: {
                             self.showModalView.toggle()

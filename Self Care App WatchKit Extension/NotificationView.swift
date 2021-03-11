@@ -26,7 +26,7 @@ struct NotificationView: View {
                         .resizable()
                         .frame(width: g.size.width*0.8, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .cornerRadius(5.0)
-                    Text("Have you already " + title + " today?")
+                    Text("Have you already done " + title + " today?")
     //                    .font(.caption2)
                         .font(.system(size: 13, weight: .semibold))
                         .multilineTextAlignment(.center)

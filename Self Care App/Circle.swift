@@ -28,7 +28,7 @@ struct ContentViewCircle: View {
                 NavigationView {
                     ZStack {
                         ColorManager.backgroundColor
-                            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                            .edgesIgnoringSafeArea(.all)
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack {
                                 
@@ -48,18 +48,17 @@ struct ContentViewCircle: View {
                                     .frame(width: 300.0, height: 350)
                                     .padding(16)
                                     
-                                    
                                     VStack {
                                         ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
-
+                                        
                                     }
-                                    .frame(width: 100, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 100, height: 150, alignment: .center)
                                     .padding(8)
                                     Spacer()
                                 }
                             }
-                        }.navigationTitle(Text("Meus Ciclos"))
-                        .frame(width: reader.size.width*0.9, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.navigationTitle(Text("My cycles"))
+                        .frame(width: reader.size.width*0.9, alignment: .center)
                         
                     }
                 }.accentColor(Color("NavigationColor"))
@@ -194,7 +193,9 @@ struct ContentViewCircle: View {
                     }.cornerRadius(45.0)
                 .overlay(Text("Personal")
                             .foregroundColor(.white)
-                            .padding(.leading)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .frame(width: 300, height: 400, alignment: .leading)
+                            .padding(.leading, 36)
                             )
                 
                 //Barra hobbies
@@ -210,7 +211,9 @@ struct ContentViewCircle: View {
                 }.cornerRadius(45.0)
                 .overlay(Text("Social")
                             .foregroundColor(.white)
-                            .padding(.leading)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .frame(width: 300, height: 400, alignment: .leading)
+                            .padding(.leading, 36)
                             )
                 //Barra social
                 ZStack(alignment: .leading){
@@ -225,7 +228,9 @@ struct ContentViewCircle: View {
                 }.cornerRadius(45.0)
                 .overlay(Text("Physical")
                             .foregroundColor(.white)
-                            .padding(.leading)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .frame(width: 300, height: 400, alignment: .leading)
+                            .padding(.leading, 36)
                             )
             }
             
