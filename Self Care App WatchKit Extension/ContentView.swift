@@ -35,7 +35,7 @@ struct ContentView: View {
                     .frame(width: 8, height: 8)
                     .foregroundColor(currentPage==1 ? Color.white:Color.gray)
             }
-        }
+        }.navigationBarTitle(Text("Cycles"))
     }
     func ProgressOfTheDay(){
         let weekday = Calendar.current.component(.weekday, from: Date())
@@ -189,13 +189,16 @@ struct ProgressBar: View {
                     
                 
                 }.cornerRadius(45.0)
+                .overlay(Text("Personal")
+                        .foregroundColor(.white)
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .frame(width: 150, height: 20, alignment: .leading)
+                        .padding(.leading, 25)
+                        )
                 .padding(.bottom, 8)
-//            .overlay(Text("Personal")
-//                        .foregroundColor(.white)
-//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                        .frame(width: 300, height: 400, alignment: .leading)
-//                        .padding(.leading, 36)
-//                        )
+            
+
             //Barra social
             ZStack(alignment: .leading){
                 Rectangle().frame(width: 150 , height: 20)
@@ -211,12 +214,13 @@ struct ProgressBar: View {
                                 .font(.caption2))
 
             }.cornerRadius(45.0)
-//            .overlay(Text("Social")
-//                        .foregroundColor(.white)
-//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                        .frame(width: 300, height: 400, alignment: .leading)
-//                        .padding(.leading, 36)
-//                        )
+            .overlay(Text("Social")
+                        .foregroundColor(.white)
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .frame(width: 150, height: 20, alignment: .leading)
+                        .padding(.leading, 25)
+                        )
             .padding(.bottom, 8)
 
             
@@ -235,15 +239,14 @@ struct ProgressBar: View {
                                 .font(.caption2))
 
             }.cornerRadius(45.0)
-//            .overlay(Text("Physical")
-//                        .foregroundColor(.white)
-//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                        .frame(width: 300, height: 400, alignment: .leading)
-//                        .padding(.leading, 36)
-//                        )
+            .overlay(Text("Physical")
+                        .foregroundColor(.white)
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .frame(width: 150, height: 20, alignment: .leading)
+                        .padding(.leading, 25)
+                        )
         }
-        
-        
     }
 }
 struct ContentView_Previews: PreviewProvider {

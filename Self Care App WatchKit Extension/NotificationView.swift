@@ -64,7 +64,7 @@ struct NotificationView: View {
                     
                 }
                 NavigationLink(destination: MenuView(), isActive: $View) { EmptyView()}
-            }
+            }.navigationBarTitle(Text("Moments"))
         }
     }
 }
