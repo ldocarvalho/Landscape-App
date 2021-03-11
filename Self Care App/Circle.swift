@@ -162,7 +162,7 @@ struct ContentViewCircle: View {
                     .trim(from: 0.0, to: CGFloat(min(self.progressHobbies,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
 //                    .foregroundColor(ColorManager.blueCicleColor)
-                    .fill(AngularGradient(gradient: .init(colors: [ColorManager.pinkCicleColor]), center: .center, startAngle: Angle(degrees:270), endAngle: Angle(degrees:360)))
+                    .fill(AngularGradient(gradient: .init(colors: [ColorManager.blueCicleColor]), center: .center, startAngle: Angle(degrees:270), endAngle: Angle(degrees:360)))
                     .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                     .rotationEffect(Angle(degrees:270))
                     .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
