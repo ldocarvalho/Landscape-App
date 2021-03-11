@@ -27,6 +27,7 @@ struct MainView: View {
                     Text("Cycles")
                  }.tag(1)
         }.navigationBarHidden(true)
+        .foregroundColor(.red)
         .navigationBarBackButtonHidden(true)
     }
 }

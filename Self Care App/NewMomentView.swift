@@ -33,6 +33,8 @@ struct NewMomentView : View {
     
     @State var shownEmptyFieldAlert = false
     
+//    @State var info = false
+    
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
@@ -464,8 +466,10 @@ struct NewMomentView : View {
                             .padding([.top, .bottom], 12)
                             .padding(8)
 //                            .onTapGesture {
-//                                NavigationLink(destination: MainView()) { EmptyView() }
+//                                info.toggle()
 //                            }
+                        
+//                        NavigationLink(destination: OnboardingViewPage(), isActive: $info) { EmptyView() }
                     }
 //                    .blur(radius: shownEmptyFieldAlert ? 2 : 0)
                     .opacity(shownEmptyFieldAlert ? 0.3 : 1)
