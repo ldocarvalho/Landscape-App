@@ -71,7 +71,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("D")
+                                .overlay(Text("S")
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -86,7 +86,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("S")
+                                .overlay(Text("M")
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -116,7 +116,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: .center)
                                 .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("Q")
+                                .overlay(Text("W")
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -131,7 +131,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("Q")
+                                .overlay(Text("T")
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -146,7 +146,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("S")
+                                .overlay(Text("F")
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
