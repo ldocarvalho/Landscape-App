@@ -30,7 +30,7 @@ struct MenuView: View {
             }.onAppear(perform: {
               //  scheduleNotifications()
             })
-        }.navigationBarHidden(true)
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
