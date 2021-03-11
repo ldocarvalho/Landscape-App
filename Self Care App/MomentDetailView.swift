@@ -126,7 +126,7 @@ struct MomentDetailView: View {
                 
                 if shownDeleteAlert {
                     DeleteAlertView(shown: $shownDeleteAlert, delete: $delete, id: id)
-                        .offset(y: -g.frame(in: .global).minY - 900).onDisappear(perform: {
+                        .offset(y: -g.frame(in: .global).minY - 880).onDisappear(perform: {
                             if delete{
                                 moc.delete(moment[id])
                                     do{
@@ -144,7 +144,7 @@ struct MomentDetailView: View {
                 
                 if shownDoneAlert {
                     DoneAlertView(shown: $shownDoneAlert)
-                        .offset(y: -g.frame(in: .global).minY - 900)
+                        .offset(y: -g.frame(in: .global).minY - 880)
                 }
              //   NavigationLink(destination: MainView(), isActive: $delete) { EmptyView() }
                 
