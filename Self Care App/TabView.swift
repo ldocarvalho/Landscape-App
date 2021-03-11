@@ -19,7 +19,9 @@ struct MainView: View {
                     selection == 0 ? Image("TabBarMomentsIconSelected") : Image("TabBarMomentsIconDesselected")
                     
                    Text("Moments")
+                    
                 }.tag(0)
+               
                 ContentViewCircle().navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                  .tabItem {
@@ -29,5 +31,6 @@ struct MainView: View {
         }.navigationBarHidden(true)
         .foregroundColor(.red)
         .navigationBarBackButtonHidden(true)
+            .accentColor(Color("TabViewColor"))
     }
 }

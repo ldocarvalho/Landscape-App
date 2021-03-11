@@ -54,8 +54,8 @@ struct OnboardingView: View {
                                 momento.repeatActivity = showDaysOfWeek
                                 
                                 do{
-                                   try  moment.save()
-                                //   UserDefaults.standard.set(false, forKey: "isFirtUse")
+                                    try  moment.save()
+                                    //   UserDefaults.standard.set(false, forKey: "isFirtUse")
                                 }
                                 catch{
                                     
@@ -64,7 +64,7 @@ struct OnboardingView: View {
                                 UserDefaults.standard.set(Date(), forKey:"creationTime")
                                 if self.currentPageIndex == 3 {
                                     self.View = true
-
+                                    
                                 }
                                 
                             }
@@ -74,8 +74,8 @@ struct OnboardingView: View {
                                 if self.currentPageIndex == 2 {
                                     daysOfWeek.union(RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
                                     showDaysOfWeek = RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
-                                    currentPageIndex += 1
-
+                                    currentPageIndex += 3
+                                    
                                 }
                                 
                             }
@@ -85,19 +85,19 @@ struct OnboardingView: View {
                                 
                                 if self.currentPageIndex == 1 {
                                     partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
-                                    currentPageIndex += 1
-
+                                    currentPageIndex += 2
+                                    
                                 }
                                 
                             }
                             
                             if(RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle != ""){
-                               
-                                  
+                                
+                                
                                 if self.currentPageIndex == 0 {
                                     title = RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle
                                     currentPageIndex += 1
-
+                                    
                                 }
                                 
                             }
@@ -106,13 +106,13 @@ struct OnboardingView: View {
                             Text("Continue")
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
-                        }.frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
                         .background(ColorManager.mainButtonColor)
                         .cornerRadius(25.0)
                         .padding(.top, -10)
                         
                         //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
-                            
+                        
                         NavigationLink(destination: MainView(), isActive: $View) { EmptyView() }
                         
                     }
@@ -124,7 +124,7 @@ struct OnboardingView: View {
                         Image("iOS - OnboardingImage")
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .center)
-                            //.padding(.bottom, 60)
+                        //.padding(.bottom, 60)
                     }
                     .frame(width: reader.size.width, height: reader.size.height*0.5, alignment: .center)
                 }

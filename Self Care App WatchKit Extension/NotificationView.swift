@@ -11,7 +11,8 @@ struct NotificationView: View {
     
     var title: String = ""
     var image : String = ""
-    var id : Int = 0
+    var id : Int
+    @State var View: Bool = false
     
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     
@@ -44,6 +45,7 @@ struct NotificationView: View {
                         .background(WatchColorManager.noButtonColor)
                         .cornerRadius(15.0)
                         .onTapGesture {
+                            View.toggle()
                         }
                     Text("Sim")
                         .frame(width: g.size.width*0.4, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -57,8 +59,10 @@ struct NotificationView: View {
                             }
                             catch{
                             }
+                            View.toggle()
                     }
                 }
+                NavigationLink(destination: MenuView(), isActive: $View) { EmptyView() }
             }
         }
     }
@@ -66,8 +70,8 @@ struct NotificationView: View {
 
 
 
-struct NotificationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationView()
-    }
-}
+//struct NotificationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NotificationView()
+//    }
+//}
