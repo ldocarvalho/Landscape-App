@@ -126,7 +126,6 @@ struct ContentViewCircle: View {
             ZStack {
                 Circle()
                     .stroke(lineWidth: 20.0)
-                    .opacity(0.3)
                     .foregroundColor(ColorManager.purpleCicleBackgroundColor)
                 Circle()
                     
@@ -142,7 +141,7 @@ struct ContentViewCircle: View {
                 
                 Circle()
                     .stroke(lineWidth: 20.0)
-                    .opacity(0.3)
+                    .opacity(1)
                     .foregroundColor(ColorManager.pinkCicleBackgroundColor)
                     .frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Circle()
@@ -156,7 +155,7 @@ struct ContentViewCircle: View {
 //
                 Circle()
                     .stroke(lineWidth: 20.0)
-                    .opacity(0.3)
+                    .opacity(1)
                     .foregroundColor(ColorManager.blueCicleBackgroundColor)
                     .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Circle()
@@ -184,7 +183,7 @@ struct ContentViewCircle: View {
                 //barra Individual
                 ZStack(alignment: .leading) {
                     Rectangle().frame(width: 300 , height: 40)
-                        .opacity(0.3)
+                        .opacity(1)
                         .foregroundColor(ColorManager.purpleCicleBackgroundColor)
                         
                     Rectangle().frame(width: min(CGFloat(self.progressIndividual) *  300,  300), height: 40)
@@ -197,7 +196,7 @@ struct ContentViewCircle: View {
                 //Barra hobbies
                 ZStack(alignment: .leading){
                     Rectangle().frame(width: 300 , height: 40)
-                        .opacity(0.3)
+                        .opacity(1)
                         .foregroundColor(ColorManager.pinkCicleBackgroundColor)
                         
                     Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  300,  300), height: 40)
@@ -208,7 +207,7 @@ struct ContentViewCircle: View {
                 //Barra social
                 ZStack(alignment: .leading){
                     Rectangle().frame(width: 300 , height: 40)
-                        .opacity(0.3)
+                        .opacity(1)
                         .foregroundColor(ColorManager.blueCicleBackgroundColor)
                         
                     Rectangle().frame(width: min(CGFloat(self.progressSocial) *  300,  300), height: 40)

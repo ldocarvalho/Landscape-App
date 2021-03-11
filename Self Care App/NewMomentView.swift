@@ -458,13 +458,14 @@ struct NewMomentView : View {
                             .frame(width: 350, height: 40, alignment: .leading)
                             .cornerRadius(25.0)
                             .foregroundColor(ColorManager.switchColor)
-                            .overlay(Text("Would you like to know more about self care?").font(.system(size: 16))                                                .foregroundColor(ColorManager.daysOfWeekColor)
-                                    .fontWeight(.medium))
+                            .overlay(Text("Would you like to know more about self care?").font(.system(size: 16))
+                            .foregroundColor(ColorManager.daysOfWeekColor)
+                            .fontWeight(.medium))
                             .padding([.top, .bottom], 12)
                             .padding(8)
-                            .onTapGesture {
-                                NavigationLink(destination: MainView()) { EmptyView() }
-                            }
+//                            .onTapGesture {
+//                                NavigationLink(destination: MainView()) { EmptyView() }
+//                            }
                     }
 //                    .blur(radius: shownEmptyFieldAlert ? 2 : 0)
                     .opacity(shownEmptyFieldAlert ? 0.3 : 1)
