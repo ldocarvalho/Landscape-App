@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MomentDetailView: View {
-    var title : String = "lallalalalalalasldkdkalsdlksksd"
-    var description : String = "lallalalalalalasldkdkalsdlksklallalalalalalaslkdkdfkdkmsskmkdmedkmeekmkdxmskxdmcfkcmdkmkxmdckcmkdkdkalsdlksksdsd"
+    var title : String = ""
+    var description : String = ""
     var image : String = "p1"
     var id : Int = 0
+    
+    var texts = ["Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.", "Social activities are the ones you’ll do with other people around you and will stimulate your social interactions.", "Physical activities are the ones you’ll do in order to take care of your physical health, so your mind and body stay tuned in a great sync."]
     
     @State var shownDeleteAlert = false
     @State var shownDoneAlert = false
@@ -45,17 +47,17 @@ struct MomentDetailView: View {
                             
                             HStack() {
                                 Text(title)
-                                    .font(.largeTitle)
+                                    .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.titleTextColor)
-                                    .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
+                                    .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
                                 Spacer()
                                 
                             } .padding([.leading, .trailing], 16)
                             .padding(.top, 8)
                             
                             
-                            Text(description)
+                            Text(texts[Int(moment[id].selfCareType)-1])
                                 .font(.body)
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
@@ -106,11 +108,16 @@ struct MomentDetailView: View {
                                 .cornerRadius(25.0)
                             }
                             .frame(width: g.size.width*0.9, height: 100, alignment: .center)
-                        }.background(Color.white)
+                            
+                            Rectangle()
+                                .frame(height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(ColorManager.backgroundColor)
+                        }.background(ColorManager.backgroundColor)
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
                         .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
 //                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 10 : 0)
+                
                 
                 if shownDeleteAlert {
                     DeleteAlertView(shown: $shownDeleteAlert, id: id)
@@ -126,7 +133,7 @@ struct MomentDetailView: View {
             .background(Color.white)
             .frame(width: g.size.width, alignment: .center)
             .navigationBarHidden((shownDeleteAlert || shownDoneAlert) ? true : false)
-        }
+        }.background(ColorManager.backgroundColor)
     }
 }
 
