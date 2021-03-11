@@ -23,6 +23,7 @@ struct RegisterMomentPart3View: View {
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     
                     VStack() {
+                        Spacer()
                         VStack(alignment: .center) {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -101,7 +102,8 @@ struct RegisterMomentPart3View: View {
                             .padding(.top,0)
                         }.padding([.leading, .trailing, .top], 16)
                         Spacer()
-                    }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                    }
+                    .frame(width: reader.size.width, alignment: .center)
                 }
         }
     }

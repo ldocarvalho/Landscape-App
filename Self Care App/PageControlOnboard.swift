@@ -39,10 +39,10 @@ struct OnboardingView: View {
                 ColorManager.backgroundColor
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 VStack() {
-                    PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                        .frame(width: reader.size.width, height: reader.size.height*0.50, alignment: .center)
-
                     VStack {
+                        PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
+                            .frame(width: reader.size.width, height: reader.size.height*0.60, alignment: .center)
+                        
                         Button(action: {
                             if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
                                 let momento = Moment(context: moment)
@@ -109,25 +109,30 @@ struct OnboardingView: View {
                         }.frame(width: reader.size.width*0.4, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(ColorManager.mainButtonColor)
                         .cornerRadius(25.0)
+                        .padding(.top, -30)
                         
                         //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                             
                         NavigationLink(destination: MainView(), isActive: $View) { EmptyView() }
                         
-                        
+                    }
+                    .frame(width: reader.size.width, height: reader.size.height*0.60, alignment: .center)
+                    .padding(.top, 35)
+                    .padding(.bottom, -20)
+
+                    VStack {
                         Image("iOS - OnboardingImage")
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .center)
                             //.padding(.bottom, 60)
-
                     }
-                    .frame(width: reader.size.width, height: reader.size.height*0.6, alignment: .center)
+                    .frame(width: reader.size.width, height: reader.size.height*0.4, alignment: .center)
                 }
                 .navigationBarBackButtonHidden(true)
                 .frame(width: reader.size.width, height: reader.size.height, alignment: .top)
                 .navigationBarHidden(true)
                 .padding(.top,20)
-       
+
             }
             
         }
@@ -138,11 +143,11 @@ struct OnboardingView: View {
 }
 
 
-//struct OnBoardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnboardingView(name: "")
-//    }
-//}
+struct OnBoardView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView(name: "Lorena")
+    }
+}
 
 
 ///------------------------------------------------------------

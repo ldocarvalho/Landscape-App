@@ -31,6 +31,7 @@ struct RegisterMomentPart4View: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack() {
+                    Spacer()
                     VStack(alignment: .center) {
                         Text("Hi, " + name + "!")
                             .font(.title)
@@ -173,11 +174,11 @@ struct RegisterMomentPart4View: View {
                                 }
                         }
                         .padding(.top,0)
+                        .navigationBarHidden(true)
                     }.padding([.leading, .trailing, .top], 16)
                     Spacer()
                 }
-                .frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .navigationBarHidden(true)
+                .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
         }
     }

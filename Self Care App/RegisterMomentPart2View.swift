@@ -22,6 +22,7 @@ struct RegisterMomentPart2View: View {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     VStack() {
+                        Spacer()
                         VStack() {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -95,7 +96,7 @@ struct RegisterMomentPart2View: View {
                             .padding(.top,0)
                         }.padding([.leading, .trailing, .top], 16)
                         Spacer()
-                    }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                    }.frame(width: reader.size.width, alignment: .center)
                 }
         }
     }

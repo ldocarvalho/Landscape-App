@@ -18,6 +18,7 @@ struct RegisterMomentPart1View: View {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(.all)
                     VStack() {
+                        Spacer()
                         VStack() {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -43,7 +44,8 @@ struct RegisterMomentPart1View: View {
                                 .cornerRadius(15)
                         }.padding([.leading, .trailing, .top], 16)
                         Spacer()
-                    }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                    }
+                    .frame(width: reader.size.width, alignment: .center)
                     .navigationBarHidden(true)
 //                    .padding(.top,10)
             }
