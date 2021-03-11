@@ -14,7 +14,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-                    CLKComplicationDescriptor(identifier: "complication", displayName: "Land Escape", supportedFamilies: [CLKComplicationFamily.circularSmall, CLKComplicationFamily.graphicCircular, CLKComplicationFamily.graphicCorner])
+                    CLKComplicationDescriptor(identifier: "complication", displayName: "Landscape", supportedFamilies: [CLKComplicationFamily.circularSmall, CLKComplicationFamily.graphicCircular, CLKComplicationFamily.graphicCorner])
                     // Multiple complication support can be added here with more descriptors
         ]
         
