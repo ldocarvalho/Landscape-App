@@ -53,9 +53,7 @@ struct MomentDetailView: View {
                                     .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
                                 Spacer()
                                 
-                            } .padding([.leading, .trailing], 16)
-                            .padding(.top, 8)
-                            
+                            } .padding([.leading, .trailing], 20)     
                             
                             Text(texts[Int(moment[id].selfCareType)-1])
                                 .font(.body)
