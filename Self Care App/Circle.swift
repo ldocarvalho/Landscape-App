@@ -192,6 +192,10 @@ struct ContentViewCircle: View {
                         .cornerRadius(45.0)                    
                     
                     }.cornerRadius(45.0)
+                .overlay(Text("Personal")
+                            .foregroundColor(.white)
+                            .padding(.leading)
+                            )
                 
                 //Barra hobbies
                 ZStack(alignment: .leading){
@@ -204,6 +208,10 @@ struct ContentViewCircle: View {
                         .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                         .cornerRadius(45.0)
                 }.cornerRadius(45.0)
+                .overlay(Text("Social")
+                            .foregroundColor(.white)
+                            .padding(.leading)
+                            )
                 //Barra social
                 ZStack(alignment: .leading){
                     Rectangle().frame(width: 300 , height: 40)
@@ -215,6 +223,10 @@ struct ContentViewCircle: View {
                         .foregroundColor(ColorManager.blueCicleColor)
                         .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
                 }.cornerRadius(45.0)
+                .overlay(Text("Physical")
+                            .foregroundColor(.white)
+                            .padding(.leading)
+                            )
             }
             
             
