@@ -36,9 +36,9 @@ struct NotificationView: View {
                 .frame(width: g.size.width, height: g.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(WatchColorManager.menuBackgroundColor)
                 .cornerRadius(15.0)
-                                 
+               
                 Spacer()
-                
+               
                 HStack {
                     Text("Não")
                         .frame(width: g.size.width*0.4, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -61,8 +61,9 @@ struct NotificationView: View {
                             }
                             View.toggle()
                     }
+                    
                 }
-                NavigationLink(destination: MenuView(), isActive: $View) { EmptyView() }
+                NavigationLink(destination: MenuView(), isActive: $View) { EmptyView()}
             }
         }
     }
