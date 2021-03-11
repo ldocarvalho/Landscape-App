@@ -12,12 +12,13 @@ struct MomentDetailView: View {
     var description : String = ""
     var image : String = "p1"
     var id : Int = 0
-    
+  
     var texts = ["Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.", "Social activities are the ones you’ll do with other people around you and will stimulate your social interactions.", "Physical activities are the ones you’ll do in order to take care of your physical health, so your mind and body stay tuned in a great sync."]
-    
+    @State var done : Bool
     @State var shownDeleteAlert = false
     @State var shownDoneAlert = false
-    
+    @State var delete = false
+    @State var View2 : Bool = false
     @State var View : Bool = false
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -32,6 +33,7 @@ struct MomentDetailView: View {
                                 .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             
                         }.offset(y: -g.frame(in: .global).minY)
+                        
                         
                         VStack {
                             HStack {
@@ -55,11 +57,13 @@ struct MomentDetailView: View {
                                 Spacer()
                                 
                             } .padding([.leading, .trailing], 20)
+                            if !delete{
+                                Text(texts[Int(moment[id].selfCareType)-1])
+                                    .font(.body)
+                                    .foregroundColor(ColorManager.bodyTextColor)
+                                    .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
+                            }
                             
-                            Text(texts[Int(moment[id].selfCareType)-1])
-                                .font(.body)
-                                .foregroundColor(ColorManager.bodyTextColor)
-                                .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
                             
                             
                             HStack {
@@ -76,6 +80,7 @@ struct MomentDetailView: View {
 //                                        DeleteAlertView(shown: $showDeleteAlert)
 //                                    }
                                     shownDeleteAlert.toggle()
+                                   
                                 }, label: {
                                     Text("Delete moment")
                                         .foregroundColor(ColorManager.textColorSecondaryButton)
@@ -98,12 +103,12 @@ struct MomentDetailView: View {
                                         
                                     }
                                 }, label: {
-                                    Text(moment[id].done ? "Done" : "It's done")
+                                    Text(done ? "Done" : "It's done")
                                         .foregroundColor(ColorManager.textColorMainButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })
                                 .frame(width: g.size.width*0.45, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .opacity(moment[id].done ? 0.4 : 1)
+                                .opacity(done ? 0.4 : 1)
                                 .background(ColorManager.mainButtonColor)
                                 .cornerRadius(25.0)
                             }
@@ -120,14 +125,25 @@ struct MomentDetailView: View {
                 
                 
                 if shownDeleteAlert {
-                    DeleteAlertView(shown: $shownDeleteAlert, id: id)
-                        .offset(y: -g.frame(in: .global).minY - 900)
+                    DeleteAlertView(shown: $shownDeleteAlert, delete: $delete, id: id)
+                        .offset(y: -g.frame(in: .global).minY - 900).onDisappear(perform: {
+                            moc.delete(moment[id])
+                                do{
+                                    try moc.save()
+                                }
+                                catch{
+
+                                }
+                                View2.toggle()
+                        })
                 }
+            
                 
                 if shownDoneAlert {
                     DoneAlertView(shown: $shownDoneAlert)
                         .offset(y: -g.frame(in: .global).minY - 900)
                 }
+             //   NavigationLink(destination: MainView(), isActive: $delete) { EmptyView() }
                 
             }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true, id: id)})
             .background(Color.white)
@@ -137,8 +153,8 @@ struct MomentDetailView: View {
     }
 }
 
-struct MomentDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MomentDetailView()
-    }
-}
+//struct MomentDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MomentDetailView()
+//    }
+//}
