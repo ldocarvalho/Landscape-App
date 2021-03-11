@@ -114,8 +114,8 @@ struct NewMomentView : View {
                                     .fontWeight(.bold)
                             }).padding()
                         }.padding(8)
-    //                    .blur(radius: shownEmptyFieldAlert ? 2 : 0)
-                        .opacity(shownEmptyFieldAlert ? 0.3 : 1)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
+//                        .opacity(shownEmptyFieldAlert ? 0.3 : 1)
                         
                         ScrollView(.vertical) {
                             VStack {
@@ -475,20 +475,18 @@ struct NewMomentView : View {
                                     info.toggle()
                                     
                                 }
-                            
-                           
                         }
-    //                    .blur(radius: shownEmptyFieldAlert ? 2 : 0)
-                        .opacity(shownEmptyFieldAlert ? 0.3 : 1)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
+//                        .opacity(shownEmptyFieldAlert ? 0.3 : 1)
 
-                        
-                        if shownEmptyFieldAlert {
-                            EmptyFieldView(shown: $shownEmptyFieldAlert)
-                                .offset(y: -reader.frame(in: .global).minY - 120)
-                        }
                         
                         Spacer()
                     }.frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                    
+                    if shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                            .offset(y: 0)
+                    }
                 }
             }.navigationBarHidden(true)
         }.accentColor(Color("NavigationColor"))
