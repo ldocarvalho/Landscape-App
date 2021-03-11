@@ -35,7 +35,7 @@ struct ContentView: View {
                     .frame(width: 8, height: 8)
                     .foregroundColor(currentPage==1 ? Color.white:Color.gray)
             }
-        }
+        }.navigationBarTitle(Text("Cycles"))
     }
     func ProgressOfTheDay(){
         let weekday = Calendar.current.component(.weekday, from: Date())
