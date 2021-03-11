@@ -27,7 +27,8 @@ struct MomentDetailView: View {
                         VStack {
                             Image(image)
                                 .resizable()
-                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
+//                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
+                                .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 8 : 0)
                                 .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             
                         }.offset(y: -g.frame(in: .global).minY)
@@ -53,7 +54,7 @@ struct MomentDetailView: View {
                                     .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
                                 Spacer()
                                 
-                            } .padding([.leading, .trailing], 20)     
+                            } .padding([.leading, .trailing], 20)
                             
                             Text(texts[Int(moment[id].selfCareType)-1])
                                 .font(.body)
@@ -97,11 +98,12 @@ struct MomentDetailView: View {
                                         
                                     }
                                 }, label: {
-                                    Text("Moment done")
+                                    Text(moment[id].done ? "Done" : "It's done")
                                         .foregroundColor(ColorManager.textColorMainButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })
                                 .frame(width: g.size.width*0.45, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .opacity(moment[id].done ? 0.4 : 1)
                                 .background(ColorManager.mainButtonColor)
                                 .cornerRadius(25.0)
                             }
@@ -113,18 +115,18 @@ struct MomentDetailView: View {
                         }.background(ColorManager.backgroundColor)
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
-                        .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
-//                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 10 : 0)
+//                        .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
+                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 8 : 0)
                 
                 
                 if shownDeleteAlert {
                     DeleteAlertView(shown: $shownDeleteAlert, id: id)
-                        .offset(y: -g.frame(in: .global).minY - 500)
+                        .offset(y: -g.frame(in: .global).minY - 900)
                 }
                 
                 if shownDoneAlert {
                     DoneAlertView(shown: $shownDoneAlert)
-                        .offset(y: -g.frame(in: .global).minY - 500)
+                        .offset(y: -g.frame(in: .global).minY - 900)
                 }
                 
             }.sheet(isPresented: self.$View, content: {NewMomentView(itsEditing: true, id: id)})
