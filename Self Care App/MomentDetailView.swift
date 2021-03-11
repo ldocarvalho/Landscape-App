@@ -18,7 +18,7 @@ struct MomentDetailView: View {
     @State var shownDeleteAlert = false
     @State var shownDoneAlert = false
     @State var delete = false
-    @State var View2 : Bool = false
+    
     @State var View : Bool = false
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -127,14 +127,17 @@ struct MomentDetailView: View {
                 if shownDeleteAlert {
                     DeleteAlertView(shown: $shownDeleteAlert, delete: $delete, id: id)
                         .offset(y: -g.frame(in: .global).minY - 900).onDisappear(perform: {
-                            moc.delete(moment[id])
-                                do{
-                                    try moc.save()
-                                }
-                                catch{
+                            if delete{
+                                moc.delete(moment[id])
+                                    do{
+                                        try moc.save()
+                                    }
+                                    catch{
 
-                                }
-                                View2.toggle()
+                                    }
+                                   
+                            }
+                            
                         })
                 }
             
