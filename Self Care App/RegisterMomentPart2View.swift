@@ -22,7 +22,7 @@ struct RegisterMomentPart2View: View {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     VStack() {
-                      
+                        Spacer()
                         VStack() {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -32,10 +32,10 @@ struct RegisterMomentPart2View: View {
                             Text("What about adding a new self care moment in your routine?")
                                 .font(.body)
                                 .fontWeight(.medium)
-                                .padding([.bottom, .leading, .trailing], 16)
+                                .padding([.leading, .trailing], 16)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.titleTextColor)
-                        }
+                        }.frame(height: 115)
                         VStack {
                             Text("In what part of the day would you rather do it?")
                                 .font(.body)
@@ -107,7 +107,14 @@ struct RegisterMomentPart2View: View {
                         .cornerRadius(25.0)
                         .padding(.top, 10)
                         NavigationLink(destination: RegisterMomentPart4View(name: name, daysOfWeek: [], partOfTheDay: partOfTheDay, momentTitle: momentTitle, showDaysOfWeek: false, View: false), isActive: $View) { EmptyView() }
+                        Spacer()
+                        Image("iOS - OnboardingImage")
+                            .resizable()
+                            .frame(width: reader.size.width, height: 315, alignment: .bottom)
+                            .padding(.bottom, -50)
                     }.frame(width: reader.size.width, alignment: .center)
+                    
+                    
                 }
         }
     }

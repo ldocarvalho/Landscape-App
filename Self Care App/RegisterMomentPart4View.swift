@@ -33,7 +33,7 @@ struct RegisterMomentPart4View: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack() {
- 
+                    Spacer()
                     VStack(alignment: .center) {
                         Text("Hi, " + name + "!")
                             .font(.title)
@@ -43,10 +43,10 @@ struct RegisterMomentPart4View: View {
                         Text("What about adding a new self care moment in your routine?")
                             .font(.body)
                             .fontWeight(.medium)
-                            .padding([.bottom, .leading, .trailing], 16)
+                            .padding([.leading, .trailing], 16)
                             .multilineTextAlignment(.center)
                             .foregroundColor(ColorManager.titleTextColor)
-                    }
+                    }.frame(height: 115)
                     
                     HStack {
                         Text("Would you like to repeat the activity?")
@@ -191,6 +191,12 @@ struct RegisterMomentPart4View: View {
                     .cornerRadius(25.0)
                     .padding(.top, 10)
                     NavigationLink(destination: RegisterMomentPart3View(typeOfCare: 0, name: name, daysOfWeek: daysOfWeek, partOfTheDay: partOfTheDay, momentTitle: momentTitle, showDaysOfWeek: false), isActive: $View) { EmptyView() }
+                    
+                    Spacer()
+                    Image("iOS - OnboardingImage")
+                        .resizable()
+                        .frame(width: reader.size.width, height: 315, alignment: .bottom)
+                        .padding(.bottom, -50)
                 }
                 .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }

@@ -40,14 +40,14 @@ struct NotificationView: View {
                 Spacer()
                
                 HStack {
-                    Text("Não")
+                    Text("No")
                         .frame(width: g.size.width*0.4, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(WatchColorManager.noButtonColor)
                         .cornerRadius(15.0)
                         .onTapGesture {
                             View.toggle()
                         }
-                    Text("Sim")
+                    Text("Yes")
                         .frame(width: g.size.width*0.4, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(WatchColorManager.menuTextColor)
                         .foregroundColor(.black)

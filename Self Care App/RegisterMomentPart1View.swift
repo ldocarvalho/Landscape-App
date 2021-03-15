@@ -18,6 +18,7 @@ struct RegisterMomentPart1View: View {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(.all)
                     VStack() {
+                        Spacer()
                         VStack() {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -27,10 +28,10 @@ struct RegisterMomentPart1View: View {
                             Text("What about adding a new self care moment in your routine?")
                                 .font(.body)
                                 .fontWeight(.medium)
-                                .padding([.bottom, .leading, .trailing], 16)
+                                .padding([.leading, .trailing], 16)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.titleTextColor)
-                        }
+                        }.frame(height: 115)
                         VStack {
                             Text("What would you like to do to take care of yourself today?")
                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -54,6 +55,13 @@ struct RegisterMomentPart1View: View {
                         .cornerRadius(25.0)
                         .padding(.top, 10)
                         NavigationLink(destination: RegisterMomentPart2View(partOfTheDay: 0, name: name, momentTitle: momentTitle), isActive: $View) { EmptyView() }
+                    
+                        Spacer()
+                        
+                        Image("iOS - OnboardingImage")
+                            .resizable()
+                            .frame(width: reader.size.width, height: 315, alignment: .bottom)
+                            .padding(.bottom, -50)
                     }
                     .frame(width: reader.size.width, alignment: .center)
                     .navigationBarHidden(true)
