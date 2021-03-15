@@ -28,6 +28,7 @@ struct RegisterMomentPart3View: View {
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     
                     VStack() {
+                        Spacer()
                         VStack(alignment: .center) {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -37,10 +38,10 @@ struct RegisterMomentPart3View: View {
                             Text("What about adding a new self care moment in your routine?")
                                 .font(.body)
                                 .fontWeight(.medium)
-                                .padding([.bottom, .leading, .trailing], 16)
+                                .padding([.leading, .trailing], 16)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.titleTextColor)
-                        }
+                        }.frame(height: 115)
                         
                         VStack {
                             Text("What type of self care are you making?")
@@ -140,6 +141,11 @@ struct RegisterMomentPart3View: View {
                         .cornerRadius(25.0)
                         .padding(.top, 10)
                         NavigationLink(destination: MainView(), isActive: $View) { EmptyView() }
+                        Spacer()
+                        Image("iOS - OnboardingImage")
+                            .resizable()
+                            .frame(width: reader.size.width, height: 315, alignment: .bottom)
+                            .padding(.bottom, -50)
                     }
                     .frame(width: reader.size.width, alignment: .center)
                 }
