@@ -755,7 +755,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Self Care App WatchKit Extension/Self Care App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Self Care App WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = PQ664D24K8;
+				DEVELOPMENT_TEAM = FG34M55V26;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Self Care App WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -780,7 +780,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Self Care App WatchKit Extension/Self Care App WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Self Care App WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = PQ664D24K8;
+				DEVELOPMENT_TEAM = FG34M55V26;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Self Care App WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

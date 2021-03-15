@@ -58,7 +58,7 @@ struct ContentView: View {
                         }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
                         .background(ColorManager.mainButtonColor)
                         .cornerRadius(25.0)
-                        NavigationLink(destination: OnboardingView(name: userName), isActive: $View) { EmptyView() }
+                        NavigationLink(destination: RegisterMomentPart1View(momentTitle: "", name: userName), isActive: $View) { EmptyView() }
                         Spacer()
                         Image("iOS - OnboardingImage")
                             .resizable()

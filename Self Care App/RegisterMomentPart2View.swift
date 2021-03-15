@@ -9,20 +9,20 @@ import SwiftUI
 
 
 struct RegisterMomentPart2View: View {
-    @Binding  var partOfTheDay: Int
+    @State  var partOfTheDay: Int
     @State var name: String
-    
+    @State var momentTitle: String
     @State private var didTapMornig :Bool = true
     @State private var didTapAfternoon :Bool = true
     @State private var didTapNight :Bool = true
-
+    @State var View : Bool = false
     var body: some View {
         GeometryReader { reader in
                 ZStack {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     VStack() {
-                        Spacer()
+                      
                         VStack() {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -95,7 +95,18 @@ struct RegisterMomentPart2View: View {
                             .navigationBarHidden(true)
                             .padding(.top,0)
                         }.padding([.leading, .trailing, .top], 16)
-                        Spacer()
+//                        Spacer
+                        Button(action: {
+                            View.toggle()
+                        }) {
+                            Text("Continue")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                        }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
+                        .background(ColorManager.mainButtonColor)
+                        .cornerRadius(25.0)
+                        .padding(.top, 10)
+                        NavigationLink(destination: RegisterMomentPart4View(name: name, daysOfWeek: [], partOfTheDay: partOfTheDay, momentTitle: momentTitle, showDaysOfWeek: false, View: false), isActive: $View) { EmptyView() }
                     }.frame(width: reader.size.width, alignment: .center)
                 }
         }
@@ -106,6 +117,6 @@ struct RegisterMomentPart2View_Previews: PreviewProvider {
     @State static var teste = 1
     
     static var previews: some View {
-        RegisterMomentPart2View(partOfTheDay: $teste, name: "Lorena")
+        RegisterMomentPart2View(partOfTheDay: teste, name: "Lorena", momentTitle: "")
     }
 }

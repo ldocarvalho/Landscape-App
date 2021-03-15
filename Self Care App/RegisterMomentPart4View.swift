@@ -19,10 +19,12 @@ struct RegisterMomentPart4View: View {
     @State private var didTapFriday :Bool = true
     @State private var didTapSaturday :Bool = true
     
-    @Binding var daysOfWeek : WeekDays 
+    @State var daysOfWeek : WeekDays
+    @State  var partOfTheDay: Int
+    @State var momentTitle: String
+    @State var showDaysOfWeek :Bool
+    @State var View : Bool
     
-    @Binding var showDaysOfWeek :Bool
-        
     var body: some View {
         GeometryReader { reader in
             //NavigationView {
@@ -31,7 +33,7 @@ struct RegisterMomentPart4View: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack() {
-                    Spacer()
+ 
                     VStack(alignment: .center) {
                         Text("Hi, " + name + "!")
                             .font(.title)
@@ -177,7 +179,18 @@ struct RegisterMomentPart4View: View {
                         .padding(.top,0)
                         .navigationBarHidden(true)
                     }.padding([.leading, .trailing, .top], 16)
-                    Spacer()
+//                    Spacer()
+                    Button(action: {
+                        View.toggle()
+                    }) {
+                        Text("Continue")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                    }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
+                    .background(ColorManager.mainButtonColor)
+                    .cornerRadius(25.0)
+                    .padding(.top, 10)
+                    NavigationLink(destination: RegisterMomentPart3View(typeOfCare: 0, name: name, daysOfWeek: daysOfWeek, partOfTheDay: partOfTheDay, momentTitle: momentTitle, showDaysOfWeek: false), isActive: $View) { EmptyView() }
                 }
                 .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }

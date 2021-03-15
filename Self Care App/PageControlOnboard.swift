@@ -26,12 +26,12 @@ struct OnboardingView: View {
     @State var name : String
     
     var body: some View {
-        let subviews = [
-            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: name )),
-            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: name)),
-            UIHostingController(rootView: RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek)),
-            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: name))
-        ]
+//        let subviews = [
+//            UIHostingController(rootView: RegisterMomentPart1View(momentTitle: $title,name: name )),
+//            UIHostingController(rootView: RegisterMomentPart2View(partOfTheDay: $partOfTheDay,name: name)),
+//            UIHostingController(rootView: RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek)),
+//            UIHostingController(rootView: RegisterMomentPart3View(typeOfCare: $typeOfCare,name: name))
+//        ]
         //NavigationView{
         
         GeometryReader { reader in
@@ -40,76 +40,76 @@ struct OnboardingView: View {
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 VStack() {
                     VStack {
-                        PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                            .frame(width: reader.size.width, height: reader.size.height*0.55, alignment: .center)
+//                        PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
+//                            .frame(width: reader.size.width, height: reader.size.height*0.55, alignment: .center)
                         
-                        Button(action: {
-                            if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
-                                let momento = Moment(context: moment)
-                                momento.date = Date()
-                                momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
-                                momento.title = title
-                                momento.partOfTheDay = Int64(partOfTheDay)
-                                momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
-                                momento.repeatActivity = showDaysOfWeek
-                                
-                                do{
-                                    try  moment.save()
-                                    //   UserDefaults.standard.set(false, forKey: "isFirtUse")
-                                }
-                                catch{
-                                    
-                                }
-                                UserDefaults.standard.set(false, forKey: "isFirtUse")
-                                UserDefaults.standard.set(Date(), forKey:"creationTime")
-                                if self.currentPageIndex == 3 {
-                                    self.View = true
-                                    
-                                }
-                                
-                            }
-                            if(!RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek.isEmpty){
-                                
-                                
-                                if self.currentPageIndex == 2 {
-                                    daysOfWeek.union(RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
-                                    showDaysOfWeek = RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
-                                    currentPageIndex += 1
-                                    
-                                }
-                                
-                            }
-                            
-                            if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay != 0){
-                                
-                                
-                                if self.currentPageIndex == 1 {
-                                    partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
-                                    currentPageIndex += 1
-                                    
-                                }
-                                
-                            }
-                            
-                            if(RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle != ""){
-                                
-                                
-                                if self.currentPageIndex == 0 {
-                                    title = RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle
-                                    currentPageIndex += 1
-                                    
-                                }
-                                
-                            }
-                            
-                        }) {
-                            Text("Continue")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                        }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
-                        .background(ColorManager.mainButtonColor)
-                        .cornerRadius(25.0)
-                        .padding(.top, -10)
+//                        Button(action: {
+//                            if(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare != 0){
+//                                let momento = Moment(context: moment)
+//                                momento.date = Date()
+//                                momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+//                                momento.title = title
+//                                momento.partOfTheDay = Int64(partOfTheDay)
+//                                momento.selfCareType =  Int64(RegisterMomentPart3View(typeOfCare: $typeOfCare, name: name).typeOfCare)
+//                                momento.repeatActivity = showDaysOfWeek
+//                                
+//                                do{
+//                                    try  moment.save()
+//                                    //   UserDefaults.standard.set(false, forKey: "isFirtUse")
+//                                }
+//                                catch{
+//                                    
+//                                }
+//                                UserDefaults.standard.set(false, forKey: "isFirtUse")
+//                                UserDefaults.standard.set(Date(), forKey:"creationTime")
+//                                if self.currentPageIndex == 3 {
+//                                    self.View = true
+//                                    
+//                                }
+//                                
+//                            }
+//                            if(!RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek.isEmpty){
+//                                
+//                                
+//                                if self.currentPageIndex == 2 {
+//                                    daysOfWeek.union(RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).daysOfWeek)
+//                                    showDaysOfWeek = RegisterMomentPart4View(name: name, daysOfWeek: $daysOfWeek, showDaysOfWeek: $showDaysOfWeek).showDaysOfWeek
+//                                    currentPageIndex += 1
+//                                    
+//                                }
+//                                
+//                            }
+//                            
+//                            if(RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay != 0){
+//                                
+//                                
+//                                if self.currentPageIndex == 1 {
+//                                    partOfTheDay = RegisterMomentPart2View(partOfTheDay: $partOfTheDay, name: name).partOfTheDay
+//                                    currentPageIndex += 1
+//                                    
+//                                }
+//                                
+//                            }
+//                            
+//                            if(RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle != ""){
+//                                
+//                                
+//                                if self.currentPageIndex == 0 {
+//                                    title = RegisterMomentPart1View(momentTitle: $title, name: name).momentTitle
+//                                    currentPageIndex += 1
+//                                    
+//                                }
+//                                
+//                            }
+//                            
+//                        }) {
+//                            Text("Continue")
+//                                .foregroundColor(.white)
+//                                .fontWeight(.bold)
+//                        }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
+//                        .background(ColorManager.mainButtonColor)
+//                        .cornerRadius(25.0)
+//                        .padding(.top, -10)
                         
                         //PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                         

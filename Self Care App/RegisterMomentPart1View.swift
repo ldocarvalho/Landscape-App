@@ -9,16 +9,15 @@ import SwiftUI
 
 struct RegisterMomentPart1View: View {
     
-    @Binding var momentTitle: String
+    @State var momentTitle: String
     @State var name: String
-    
+    @State var View : Bool = false
     var body: some View {
         GeometryReader { reader in
                 ZStack {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(.all)
                     VStack() {
-                        Spacer()
                         VStack() {
                             Text("Hi, " + name + "!")
                                 .font(.title)
@@ -43,7 +42,18 @@ struct RegisterMomentPart1View: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .cornerRadius(15)
                         }.padding([.leading, .trailing, .top], 16)
-                        Spacer()
+//                        Spacer()
+                        Button(action: {
+                            View.toggle()
+                        }) {
+                            Text("Continue")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                        }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
+                        .background(ColorManager.mainButtonColor)
+                        .cornerRadius(25.0)
+                        .padding(.top, 10)
+                        NavigationLink(destination: RegisterMomentPart2View(partOfTheDay: 0, name: name, momentTitle: momentTitle), isActive: $View) { EmptyView() }
                     }
                     .frame(width: reader.size.width, alignment: .center)
                     .navigationBarHidden(true)
@@ -61,6 +71,6 @@ struct RegisterMomentPart1View_Previews: PreviewProvider {
     @State static var teste = ""
     
     static var previews: some View {
-        RegisterMomentPart1View(momentTitle: $teste, name: "Lorena")
+        RegisterMomentPart1View(momentTitle: "", name: "Lorena")
     }
 }
