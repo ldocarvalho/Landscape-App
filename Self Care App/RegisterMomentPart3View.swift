@@ -122,7 +122,7 @@ struct RegisterMomentPart3View: View {
                             
                             do{
                                 try  moment.save()
-                                UserDefaults.standard.set(false, forKey: "isFirtUse")
+//                                UserDefaults.standard.set(false, forKey: "isFirtUse")
                             }
                             catch{
                             

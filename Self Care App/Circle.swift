@@ -45,6 +45,17 @@ struct ContentViewCircle: View {
                                     }.onAppear(perform: {
                                         ProgressOfTheDay()
                                     })
+                                    .onDisappear(perform: {
+                                       progressValueIndividual = 0
+                                       progressValueSocial = 0
+                                       progressValueHobbies = 0
+                                       countIndividual = 0
+                                       countHobby = 0
+                                       countSocial = 0
+                                       countTotalIndividual = 0
+                                       countTotalHobby = 0
+                                       countTotalSocial = 0
+                                    })
                                     .frame(width: 300.0, height: 350)
                                     .padding(16)
                                     
@@ -62,6 +73,9 @@ struct ContentViewCircle: View {
                         
                     }
                 }.accentColor(Color("NavigationColor"))
+                .onAppear(perform:{
+                    ProgressOfTheDay()
+                })
             }
     }
     
