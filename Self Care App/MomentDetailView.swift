@@ -29,7 +29,7 @@ struct MomentDetailView: View {
                             Image(image)
                                 .resizable()
 //                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
-                                .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 8 : 0)
+                                .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 1 : 0)
                                 .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             
                         }.offset(y: -g.frame(in: .global).minY)
@@ -93,15 +93,22 @@ struct MomentDetailView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    shownDoneAlert.toggle()
+                                    
                                     // adicionar salvar na outra view
-                                    moment[id].done = true
-                                    do{
-                                        try moc.save()
-                                    }
-                                    catch{
+                                    if(moment[id].done){
                                         
                                     }
+                                    else{
+                                        shownDoneAlert.toggle()
+                                        moment[id].done = true
+                                        do{
+                                            try moc.save()
+                                        }
+                                        catch{
+                                            
+                                        }
+                                    }
+                                    
                                 }, label: {
                                     Text(done ? "Done" : "It's done")
                                         .foregroundColor(ColorManager.textColorMainButton)
@@ -121,7 +128,7 @@ struct MomentDetailView: View {
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
 //                        .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
-                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 8 : 0)
+                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 1 : 0)
                 
                 
                 if shownDeleteAlert {
