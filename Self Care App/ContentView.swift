@@ -31,8 +31,7 @@ struct ContentView: View {
                             
                             TextField("Type your name here", text: $userName)
                                 .frame(width: reader.size.width*0.8, height: 50, alignment: .center)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .cornerRadius(15)
+                                .textFieldStyle(CircularTextFieldStyle())
                                 .padding(16)
                         }.blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         
@@ -91,5 +90,15 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
         ContentView()
+    }
+}
+
+struct CircularTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .padding(.leading, 10)
+            .padding(5)
+            .background(LinearGradient(gradient: Gradient(colors: [ColorManager.textFieldColor, ColorManager.textFieldColor]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(20)
     }
 }

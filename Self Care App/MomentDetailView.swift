@@ -30,9 +30,9 @@ struct MomentDetailView: View {
                                 .resizable()
 //                                .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
                                 .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 1 : 0)
-                                .frame(width: g.size.width, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: g.size.width*1.01, height: g.size.width*0.7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             
-                        }.offset(y: -g.frame(in: .global).minY)
+                        }.offset(y: -g.frame(in: .global).minY-10)
                         
                         
                         VStack {
@@ -61,7 +61,7 @@ struct MomentDetailView: View {
                                 Text(texts[Int(moment[id].selfCareType)-1])
                                     .font(.body)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
+                                    .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
                             }
                             
                             
@@ -128,7 +128,7 @@ struct MomentDetailView: View {
                         .clipShape(CustomCorner())
                         .offset(y: -g.frame(in: .global).minY - 50)
 //                        .opacity((shownDeleteAlert || shownDoneAlert) ? 0.3 : 1)
-                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 1 : 0)
+                        .blur(radius: (shownDeleteAlert || shownDoneAlert) ? 2 : 0)
                 
                 
                 if shownDeleteAlert {
