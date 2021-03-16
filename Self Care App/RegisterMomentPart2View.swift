@@ -16,6 +16,7 @@ struct RegisterMomentPart2View: View {
     @State private var didTapAfternoon :Bool = true
     @State private var didTapNight :Bool = true
     @State var View : Bool = false
+    @State var shownEmptyFieldAlert = false
     var body: some View {
         GeometryReader { reader in
                 ZStack {
@@ -36,6 +37,7 @@ struct RegisterMomentPart2View: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.titleTextColor)
                         }.frame(height: 115)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         VStack {
                             Text("In what part of the day would you rather do it?")
                                 .font(.body)
@@ -95,9 +97,15 @@ struct RegisterMomentPart2View: View {
                             .navigationBarHidden(true)
                             .padding(.top,0)
                         }.padding([.leading, .trailing, .top], 16)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
 //                        Spacer
                         Button(action: {
-                            View.toggle()
+                            if(partOfTheDay == 0){
+                                shownEmptyFieldAlert.toggle()
+                            }
+                            else{
+                                View.toggle()
+                            }
                         }) {
                             Text("Continue")
                                 .foregroundColor(.white)
@@ -106,6 +114,7 @@ struct RegisterMomentPart2View: View {
                         .background(ColorManager.mainButtonColor)
                         .cornerRadius(25.0)
                         .padding(.top, 10)
+                        
                         NavigationLink(destination: RegisterMomentPart4View(name: name, daysOfWeek: [], partOfTheDay: partOfTheDay, momentTitle: momentTitle, showDaysOfWeek: false, View: false), isActive: $View) { EmptyView() }
                         Spacer()
                         Image("iOS - OnboardingImage")
@@ -113,7 +122,11 @@ struct RegisterMomentPart2View: View {
                             .frame(width: reader.size.width, height: 315, alignment: .bottom)
                             .padding(.bottom, -50)
                     }.frame(width: reader.size.width, alignment: .center)
-                    
+                    .blur(radius: shownEmptyFieldAlert ? 8 : 0)
+                    if shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                            .offset(y: 0)
+                    }
                     
                 }
         }

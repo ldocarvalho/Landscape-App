@@ -12,6 +12,7 @@ struct RegisterMomentPart1View: View {
     @State var momentTitle: String
     @State var name: String
     @State var View : Bool = false
+    @State var shownEmptyFieldAlert = false
     var body: some View {
         GeometryReader { reader in
                 ZStack {
@@ -32,6 +33,7 @@ struct RegisterMomentPart1View: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.titleTextColor)
                         }.frame(height: 115)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         VStack {
                             Text("What would you like to do to take care of yourself today?")
                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -43,9 +45,16 @@ struct RegisterMomentPart1View: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .cornerRadius(15)
                         }.padding([.leading, .trailing, .top], 16)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
 //                        Spacer()
                         Button(action: {
-                            View.toggle()
+                            if(momentTitle.isEmpty){
+                                shownEmptyFieldAlert.toggle()
+                            }
+                            else{
+                                View.toggle()
+                            }
+                            
                         }) {
                             Text("Continue")
                                 .foregroundColor(.white)
@@ -62,10 +71,15 @@ struct RegisterMomentPart1View: View {
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .bottom)
                             .padding(.bottom, -50)
-                    }
+                    } .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                     .frame(width: reader.size.width, alignment: .center)
                     .navigationBarHidden(true)
+              
 //                    .padding(.top,10)
+                    if shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                            .offset(y: 0)
+                    }
                 }.onTapGesture {
                     hideKeyboard()
                 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct RegisterMomentPart4View: View {
     
     @State var name : String
-    
+    @State var shownEmptyFieldAlert = false
     @State private var didTapSunday :Bool = true
     @State private var didTapMonday :Bool = true
     @State private var didTapThuesday :Bool = true
@@ -47,6 +47,7 @@ struct RegisterMomentPart4View: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(ColorManager.titleTextColor)
                     }.frame(height: 115)
+                    .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                     
                     HStack {
                         Text("Would you like to repeat the activity?")
@@ -59,6 +60,7 @@ struct RegisterMomentPart4View: View {
                             .frame(width: 40)
                     }.frame(width: reader.size.width*0.9, height: 60, alignment: .leading)
                     .padding(.top, 10)
+                    .blur(radius: shownEmptyFieldAlert ? 8 : 0)
 
                     
                     VStack {
@@ -179,9 +181,15 @@ struct RegisterMomentPart4View: View {
                         .padding(.top,0)
                         .navigationBarHidden(true)
                     }.padding([.leading, .trailing, .top], 16)
+                    .blur(radius: shownEmptyFieldAlert ? 8 : 0)
 //                    Spacer()
                     Button(action: {
-                        View.toggle()
+                        if( daysOfWeek == [] ){
+                            shownEmptyFieldAlert.toggle()
+                        }
+                        else{
+                            View.toggle()
+                        }
                     }) {
                         Text("Continue")
                             .foregroundColor(.white)
@@ -197,8 +205,13 @@ struct RegisterMomentPart4View: View {
                         .resizable()
                         .frame(width: reader.size.width, height: 315, alignment: .bottom)
                         .padding(.bottom, -50)
-                }
+                }.blur(radius: shownEmptyFieldAlert ? 8 : 0)
                 .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                if shownEmptyFieldAlert {
+                    EmptyFieldView(shown: $shownEmptyFieldAlert)
+                        .offset(y: 0)
+                }
             }
         }
     }

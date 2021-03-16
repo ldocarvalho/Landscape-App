@@ -12,6 +12,7 @@ struct ContentView: View {
    // @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     @State public var userName: String = ""
     @State var View : Bool = false
+    @State var shownEmptyFieldAlert = false
     var body: some View {
         GeometryReader { reader in
             NavigationView{
@@ -33,21 +34,27 @@ struct ContentView: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .cornerRadius(15)
                                 .padding(16)
-                        }
+                        }.blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         
                         Button(action: {
                             //colocar ação aqui
-                            let user = Name(context: userNameData)
-                            user.name = self.userName
-                            user.firstUse = true
-                            do{
-                                try userNameData.save()
-                                
+//                            let user = Name(context: userNameData)
+//                            user.name = self.userName
+//                            user.firstUse = true
+//                            do{
+//                                try userNameData.save()
+//
+//                            }
+//                            catch{
+//                                print("error")
+//                            }
+                            if(userName.isEmpty){
+                                shownEmptyFieldAlert.toggle()
                             }
-                            catch{
-                                print("error")
+                            else{
+                                View = true
                             }
-                            View = true
+                            
                         }) {
                             VStack{
                                 Text("Continue")
@@ -64,8 +71,14 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .center)
                     } .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                    .blur(radius: shownEmptyFieldAlert ? 8 : 0)
+                    if shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                            .offset(y: 0)
+                    }
                 }.onTapGesture {
                     hideKeyboard()
+                    shownEmptyFieldAlert = false
                 }
             }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
