@@ -18,19 +18,25 @@ struct AvisoView: View {
                 Text(pergunta)
                     .font(.title)
                     .fontWeight(.bold)
-                    .padding([.leading, .trailing], 8)
+                    .padding([.leading, .trailing, .top], 8)
                     .navigationTitle(Text(pergunta))
                     .foregroundColor(ColorManager.cardTitleColor)
                     .frame(width: 330, height: 100, alignment: .leading)
-                Text(mensagem)
-                    .fontWeight(.medium)
-                    .font(.body)
-                    .padding([.leading, .trailing], 16)
-                    .foregroundColor(ColorManager.bodyTextColor)
-                    .multilineTextAlignment(.leading)
-                    .frame(width:350, height: 350, alignment: .topLeading)
+                
+                ScrollView(.vertical, showsIndicators: true) {
+                    Text(mensagem)
+                        .fontWeight(.medium)
+                        .font(.title3)
+                        .padding([.leading, .trailing, .bottom], 16)
+                        .foregroundColor(ColorManager.bodyTextColor)
+                        .multilineTextAlignment(.leading)
+                }.frame(width:350, height: 350, alignment: .leading)
+
             }.background(ColorManager.cardColor)
             .cornerRadius(25)
+            .padding()
+            
+            Spacer()
         }
     }
 }

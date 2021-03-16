@@ -12,6 +12,7 @@ import SwiftUI
 
 struct OnboardingViewPage: View {
     @State var View = false
+    
     var subviews = [
         UIHostingController(rootView: AvisoView(mensagem: "Self care is not only skincare or yoga. Think about anything in your life that gives you joy and well-being, no matter if it’s calling a friend on the weekends or a meditation session in the morning. There are no rules, just wonder about what makes you happy.",pergunta: "What is self care?")),
         UIHostingController(rootView: AvisoView(mensagem: "The chaotic routine sometimes might let you think there’s no time for you in your day-to-day life. Wonder about what you said you want to do to care for you and in what part of your day you would most likely do it.",pergunta: "How to put self care in your routine?")),
@@ -21,20 +22,27 @@ struct OnboardingViewPage: View {
     @State var currentPageIndex = 0
     
     var body: some View {
+        GeometryReader { reader in
             VStack() {
                 PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                    .frame(height: 600)
-                                    
-                VStack {
-                    PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
-                        .padding()
-                    Spacer()
-                    NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
-                }
+                    .frame(height: 550)
+
+                PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
+                    .padding()
+                    .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(ColorManager.cardColor)
+                    .cornerRadius(25.0)
+                NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+                
+                Spacer()
             }
+            .frame(width: reader.size.width, height: reader.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(false)
+//            .navigationBarTitleDisplayMode(.inline)
+        }
 //        }.navigationBarBackButtonHidden(true)
     }
-        
 }
 
 
