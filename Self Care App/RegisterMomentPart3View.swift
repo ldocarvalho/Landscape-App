@@ -10,7 +10,7 @@ import SwiftUI
 struct RegisterMomentPart3View: View {
     @State var typeOfCare : Int
     @State var name : String
-    
+    @State var shownEmptyFieldAlert = false
     @State private var didTapIndividual :Bool = true
     @State private var didTapSocial :Bool = true
     @State private var didTapHobbys :Bool = true
@@ -42,6 +42,7 @@ struct RegisterMomentPart3View: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.titleTextColor)
                         }.frame(height: 115)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         
                         VStack {
                             Text("What type of self care are you making?")
@@ -106,6 +107,7 @@ struct RegisterMomentPart3View: View {
                             .navigationBarHidden(true)
                             .padding(.top,0)
                         }.padding([.leading, .trailing, .top], 16)
+                        .blur(radius: shownEmptyFieldAlert ? 8 : 0)
 //                        Spacer()
                         Button(action: {
 //                            print(momentTitle)
@@ -113,24 +115,29 @@ struct RegisterMomentPart3View: View {
 //                            print(partOfTheDay)
 //                            print(showDaysOfWeek)
 //                            print(typeOfCare)
-                            let momento = Moment(context: moment)
-                            momento.date = Date()
-                            momento.daysOfWeek = Int32(daysOfWeek.rawValue)
-                            momento.title = momentTitle
-                            momento.partOfTheDay = Int64(partOfTheDay)
-                            momento.selfCareType =  Int64(typeOfCare)
-                            momento.repeatActivity = showDaysOfWeek
-                            
-                            do{
-                                try  moment.save()
-//                                UserDefaults.standard.set(false, forKey: "isFirtUse")
+                            if(typeOfCare == 0){
+                                shownEmptyFieldAlert.toggle()
                             }
-                            catch{
-                            
+                            else{
+                                let momento = Moment(context: moment)
+                                momento.date = Date()
+                                momento.daysOfWeek = Int32(daysOfWeek.rawValue)
+                                momento.title = momentTitle
+                                momento.partOfTheDay = Int64(partOfTheDay)
+                                momento.selfCareType =  Int64(typeOfCare)
+                                momento.repeatActivity = showDaysOfWeek
+                                
+                                do{
+                                    try  moment.save()
+                                }
+                                catch{
+                                
+                                }
+                                UserDefaults.standard.set(false, forKey: "isFirtUse")
+                                UserDefaults.standard.set(Date(), forKey:"creationTime")
+                                View.toggle()
                             }
-                            UserDefaults.standard.set(false, forKey: "isFirtUse")
-                            UserDefaults.standard.set(Date(), forKey:"creationTime")
-                            View.toggle()
+                            
                             
                         }) {
                             Text("Continue")
@@ -146,8 +153,13 @@ struct RegisterMomentPart3View: View {
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .bottom)
                             .padding(.bottom, -50)
-                    }
+                    }.blur(radius: shownEmptyFieldAlert ? 8 : 0)
                     .frame(width: reader.size.width, alignment: .center)
+                    
+                    if shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                            .offset(y: 0)
+                    }
                 }
         }
     }
