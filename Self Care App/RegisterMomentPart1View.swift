@@ -66,7 +66,9 @@ struct RegisterMomentPart1View: View {
                     .frame(width: reader.size.width, alignment: .center)
                     .navigationBarHidden(true)
 //                    .padding(.top,10)
-            }
+                }.onTapGesture {
+                    hideKeyboard()
+                }
         }
     }
     

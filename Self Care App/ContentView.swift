@@ -64,6 +64,8 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: reader.size.width, height: 315, alignment: .center)
                     } .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
+                }.onTapGesture {
+                    hideKeyboard()
                 }
             }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)

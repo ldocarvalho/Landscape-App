@@ -81,13 +81,20 @@ struct NewMomentView : View {
                                     
                                 }
                                 else{
-                                    if (momentTitle == "" || partOfDay == 0 || selfCareType == 0 || daysOfWeek == []) {
+                                    if (momentTitle == "" || partOfDay == 0 || selfCareType == 0 || (daysOfWeek == [] && showDaysOfWeek)) {
                                         shownEmptyFieldAlert.toggle()
                                     } else {
                                         let momento = Moment(context: moc)
                                         momento.title = momentTitle
                                         momento.date = Date()
-                                        momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+                                        if(showDaysOfWeek){
+                                            momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+                                        }
+                                        else{
+                                            ProgressOfTheDay()
+                                            momento.daysOfWeek = Int32(Int(daysOfWeek.rawValue))
+                                        }
+                                        
                                         momento.partOfTheDay = Int64(partOfDay)
                                         momento.repeatActivity = showDaysOfWeek
                                         momento.selfCareType = Int64(selfCareType)
@@ -487,12 +494,48 @@ struct NewMomentView : View {
                         EmptyFieldView(shown: $shownEmptyFieldAlert)
                             .offset(y: 0)
                     }
+                }.onTapGesture {
+                    hideKeyboard()
                 }
             }.navigationBarHidden(true)
+            .onTapGesture {
+                hideKeyboard()
+            }
         }.accentColor(Color("NavigationColor"))
+        .onTapGesture {
+            hideKeyboard()
+        }
+    }
+    func ProgressOfTheDay(){
+        let weekday = Calendar.current.component(.weekday, from: Date())
+        switch(weekday){
+        case 1:
+            daysOfWeek.insert(.sunday)
+        case 2:
+            daysOfWeek.insert(.monday)
+        case 3:
+            daysOfWeek.insert(.thuesday)
+        case 4:
+            daysOfWeek.insert(.wednesday)
+        case 5:
+            daysOfWeek.insert(.thursday)
+        case 6:
+            daysOfWeek.insert(.friday)
+        case 7:
+            daysOfWeek.insert(.saturday)
+        default:
+                daysOfWeek.insert(.sunday)
+            
+        }
     }
 }
-
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
 struct NewMomentView_Previews: PreviewProvider {
     static var previews: some View {
         NewMomentView(itsEditing: false, id: 0)
