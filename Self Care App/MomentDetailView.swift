@@ -140,7 +140,6 @@ struct MomentDetailView: View {
                             
                         })
                 }
-            
                 
                 if shownDoneAlert {
                     DoneAlertView(shown: $shownDoneAlert)
@@ -156,8 +155,8 @@ struct MomentDetailView: View {
     }
 }
 
-//struct MomentDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MomentDetailView()
-//    }
-//}
+struct MomentDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        MomentDetailView(done: false)
+    }
+}

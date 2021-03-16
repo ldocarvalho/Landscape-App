@@ -129,7 +129,7 @@ struct NewMomentView : View {
                                     
                                     .frame(width: reader.size.width*0.9, height: 10, alignment: .leading)
                                     .padding()
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .textFieldStyle(PlainTextFieldStyle())
                                     .cornerRadius(15)
                             }.padding(8)
                             .onAppear() {
