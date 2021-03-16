@@ -32,7 +32,7 @@ struct NotificationView: View {
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
                         .frame(width: 140, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }
+                } .background(NavigationLink(destination: MenuView(), isActive: $View) { EmptyView()})
                 .frame(width: g.size.width, height: g.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(WatchColorManager.menuBackgroundColor)
                 .cornerRadius(15.0)
@@ -63,7 +63,7 @@ struct NotificationView: View {
                     }
                     
                 }
-                .background(NavigationLink(destination: MenuView(), isActive: $View) { EmptyView()})
+               
             }.navigationBarTitle(Text("Moments"))
         }
     }
