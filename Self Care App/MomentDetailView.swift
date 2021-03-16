@@ -61,7 +61,7 @@ struct MomentDetailView: View {
                                 Text(texts[Int(moment[id].selfCareType)-1])
                                     .font(.body)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: g.size.width*0.9, height: 100, alignment: .leading)
+                                    .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
                             }
                             
                             
