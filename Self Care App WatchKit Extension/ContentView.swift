@@ -22,25 +22,31 @@ struct ContentView: View {
     @State var countSocial : Double = 0
     @State var countHobby : Double = 0
     var body: some View {
-        VStack{
-            PagerManager(pageCount: 2, currentIndex: $currentPage) {
-                CirclesView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
-                ProgressBarView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
-            }.onAppear(perform: {
-                ProgressOfTheDay()
-            })
-            HStack{
-                Circle()
-                    .frame(width: 8, height: 8)
-                    .foregroundColor(currentPage==1 ? Color.gray:Color.white)
-                Circle()
-                    .frame(width: 8, height: 8)
-                    .foregroundColor(currentPage==1 ? Color.white:Color.gray)
-            }.onAppear(perform: {
-                ProgressOfTheDay()
-            })
-        }.navigationBarTitle(Text("Cycles"))
+        GeometryReader { reader in
+            VStack{
+                PagerManager(pageCount: 2, currentIndex: $currentPage) {
+                    CirclesView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
+                    ProgressBarView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
+                }.frame(width: reader.size.width, height: reader.size.height*0.999, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .onAppear(perform: {
+                    ProgressOfTheDay()
+                })
+                
+                HStack{
+                    Circle()
+                        .frame(width: 8, height: 8)
+                        .foregroundColor(currentPage==1 ? Color.gray:Color.white)
+                    Circle()
+                        .frame(width: 8, height: 8)
+                        .foregroundColor(currentPage==1 ? Color.white:Color.gray)
+                }.onAppear(perform: {
+                    ProgressOfTheDay()
+                })
+                
+            }.navigationBarTitle(Text("Cycles"))
+        }
     }
+    
     func ProgressOfTheDay(){
         progressValueIndividual = 0
         progressValueSocial = 0
@@ -112,7 +118,8 @@ struct CirclesView : View {
         VStack {
             Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
                  .frame(width: 100.0, height: 100.0)
-                 .padding(25.0)
+                .padding(.top, 25)
+                .padding(25.0)
         }.frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
@@ -127,40 +134,40 @@ struct Circles: View {
                 .stroke(lineWidth: 10.0)
                 .opacity(1)
                 .foregroundColor(WatchColorManager.purpleCicleBackgroundColor)
-                .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 110, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressIndividual,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(WatchColorManager.purpleCicleColor)
                 .rotationEffect(Angle(degrees:270))
                 .animation(.linear)
-                .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 110, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Circle()
                 .stroke(lineWidth: 10.0)
                 .opacity(1)
                 .foregroundColor(WatchColorManager.pinkCicleBackgroundColor)
-                .frame(width: 70, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressSocial,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(WatchColorManager.pinkCicleColor)
                 .rotationEffect(Angle(degrees:270))
                 .animation(.linear)
-                .frame(width: 70, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Circle()
                 .stroke(lineWidth: 10.0)
                 .opacity(1)
                 .foregroundColor(WatchColorManager.blueCicleBackgroundColor)
-                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progressHobbies,1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(WatchColorManager.blueCicleColor)
                 .rotationEffect(Angle(degrees:270))
                 .animation(.linear)
-                .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     
 
         }
@@ -176,7 +183,10 @@ struct ProgressBarView : View {
     
     var body: some View {
         VStack {
-            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial).frame(height: 10)
+            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
+                .frame(height: 10)
+                .padding(.top, 25)
+                .padding(25)
         }.frame(width: 100, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
@@ -188,15 +198,16 @@ struct ProgressBar: View {
     
     var body: some View {
         VStack{
+            Spacer()
             //barra Individual
             ZStack(alignment: .leading) {
-                Rectangle().frame(width: 150 , height: 20)
+                Rectangle().frame(width: 150 , height: 30)
                     .opacity(0.3)
                     .foregroundColor(WatchColorManager.purpleCicleBackgroundColor)
                     .background(WatchColorManager.purpleCicleBackgroundColor)
                
                     
-                Rectangle().frame(width: min(CGFloat(self.progressIndividual) * 150,  150), height: 20)
+                Rectangle().frame(width: min(CGFloat(self.progressIndividual) * 150,  150), height: 30)
                     .foregroundColor(WatchColorManager.purpleCicleColor)
                     .animation(.linear)
                     
@@ -214,12 +225,12 @@ struct ProgressBar: View {
 
             //Barra social
             ZStack(alignment: .leading){
-                Rectangle().frame(width: 150 , height: 20)
+                Rectangle().frame(width: 150 , height: 30)
                     .opacity(0.3)
                     .foregroundColor(WatchColorManager.pinkCicleBackgroundColor)
                     .background(WatchColorManager.pinkCicleBackgroundColor)
                     
-                Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 20)
+                Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.pinkCicleColor)
                     .animation(.linear)
                     .overlay(Text("Social")
@@ -240,11 +251,11 @@ struct ProgressBar: View {
             
             //Barra hobbies
             ZStack(alignment: .leading){
-                Rectangle().frame(width: 150 , height: 20)
+                Rectangle().frame(width: 150 , height: 30)
                     .opacity(0.3)
                     .background(WatchColorManager.blueCicleColor)
                     
-                Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 20)
+                Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.blueCicleColor)
                     .animation(.linear)
                     .overlay(Text("Hobbies")
