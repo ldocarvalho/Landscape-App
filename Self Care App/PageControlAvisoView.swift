@@ -37,8 +37,8 @@ struct OnboardingViewPage: View {
                 Spacer()
             }
             .frame(width: reader.size.width, height: reader.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(false)
+//            .navigationBarHidden(true)
+//            .navigationBarBackButtonHidden(false)
 //            .navigationBarTitleDisplayMode(.inline)
         }
 //        }.navigationBarBackButtonHidden(true)
