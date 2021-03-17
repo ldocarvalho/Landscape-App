@@ -398,7 +398,17 @@ struct NewMomentView : View {
                                                     }
                                                     didTapSaturday.toggle()
                                                 }
-                                        }
+                                        }.onAppear(perform: {
+                                            if showDaysOfWeek{
+                                                didTapSunday = true
+                                                didTapMonday = true
+                                                didTapThuesday = true
+                                                didTapWednesday = true
+                                                didTapThursday = true
+                                                didTapFriday = true
+                                                didTapSaturday = true
+                                            }
+                                        })
                                     }
                                 }
                                 
