@@ -26,7 +26,9 @@ struct ContentView: View {
             PagerManager(pageCount: 2, currentIndex: $currentPage) {
                 CirclesView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
                 ProgressBarView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
-            }
+            }.onAppear(perform: {
+                ProgressOfTheDay()
+            })
             HStack{
                 Circle()
                     .frame(width: 8, height: 8)
@@ -34,10 +36,21 @@ struct ContentView: View {
                 Circle()
                     .frame(width: 8, height: 8)
                     .foregroundColor(currentPage==1 ? Color.white:Color.gray)
-            }
+            }.onAppear(perform: {
+                ProgressOfTheDay()
+            })
         }.navigationBarTitle(Text("Cycles"))
     }
     func ProgressOfTheDay(){
+        progressValueIndividual = 0
+        progressValueSocial = 0
+        progressValueHobbies = 0
+        countIndividual = 0
+        countHobby = 0
+        countSocial = 0
+        countTotalIndividual = 0
+        countTotalHobby = 0
+        countTotalSocial = 0
         let weekday = Calendar.current.component(.weekday, from: Date())
         switch(weekday){
         case 1:
