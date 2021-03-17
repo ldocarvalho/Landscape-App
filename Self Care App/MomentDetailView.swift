@@ -101,6 +101,7 @@ struct MomentDetailView: View {
                                     else{
                                         shownDoneAlert.toggle()
                                         moment[id].done = true
+                                        done = true
                                         do{
                                             try moc.save()
                                         }
@@ -110,7 +111,7 @@ struct MomentDetailView: View {
                                     }
                                     
                                 }, label: {
-                                    Text(done ? "Done" : "It's done")
+                                    Text(done ? "It's done" : "Done")
                                         .foregroundColor(ColorManager.textColorMainButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })

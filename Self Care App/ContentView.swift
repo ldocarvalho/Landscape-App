@@ -68,7 +68,7 @@ struct ContentView: View {
                         Spacer()
                         Image("iOS - OnboardingImage")
                             .resizable()
-                            .frame(width: reader.size.width, height: 315, alignment: .center)
+                            .frame(width: reader.size.width, height: 315 , alignment: .center)
                     } .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
                     .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                     if shownEmptyFieldAlert {

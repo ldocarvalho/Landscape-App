@@ -85,7 +85,7 @@ struct ListPersonalView: View {
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 8)
+                                        }.padding([.leading, .trailing, .bottom], 15)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
