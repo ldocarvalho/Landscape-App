@@ -16,18 +16,19 @@ struct EmptyFieldView: View {
             Image("DeleteIcon")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("You cannot save a new moment with empty fields")
+                .padding(.top, 8)
+            Text("You cannot save a new moment with empty fields.")
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
-                .frame(width: 250, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("Saving a moment requires that all the fields are filled.")
+                .frame(width: 280, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text("Saving a new moment requires that all information are filled.")
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
                 .font(.body)
-                .frame(width: 250, height: 80, alignment: .center)
+                .frame(width: 280, height: 80, alignment: .center)
             
             HStack {
                 Button(action: {
