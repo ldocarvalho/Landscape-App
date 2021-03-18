@@ -124,6 +124,7 @@ struct MyMomentsView: View {
                                 .foregroundColor(ColorManager.actionButtonColor)
                                 .imageScale(.large)
                         })
+                        .padding(8)
 //                                        Button("Add", action: {
 //                    self.showModalView.toggle()
 //                })
