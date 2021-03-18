@@ -20,7 +20,7 @@ struct OnboardingViewPage: View {
     ]
     
     @State var currentPageIndex = 0
-    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         GeometryReader { reader in
             VStack() {
@@ -37,8 +37,11 @@ struct OnboardingViewPage: View {
                 Spacer()
             }
             .frame(width: reader.size.width, height: reader.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//            .navigationBarHidden(true)
-//            .navigationBarBackButtonHidden(false)
+            .navigationBarHidden(false)
+            .navigationBarBackButtonHidden(false)
+            .onDisappear(perform:{
+                print("a")
+            })
 //            .navigationBarTitleDisplayMode(.inline)
         }
 //        }.navigationBarBackButtonHidden(true)

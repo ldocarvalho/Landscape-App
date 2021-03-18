@@ -34,6 +34,7 @@ struct NewMomentView : View {
     @State var shownEmptyFieldAlert = false
     
     @State var info = false
+    @State var infoBack = true
     
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -48,6 +49,10 @@ struct NewMomentView : View {
                     ColorManager.backgroundColor
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     VStack {
+                     
+                        NavigationLink(destination: OnboardingViewPage(), isActive: $info) { EmptyView() }
+                    
+
                         HStack {
                             Button(action: {
                                 presentationMode.wrappedValue.dismiss()
@@ -71,14 +76,14 @@ struct NewMomentView : View {
                                     moment[id].selfCareType = Int64(selfCareType)
                                     moment[id].done = false
                                     
-                                    presentationMode.wrappedValue.dismiss()
+                                   
                                     
                                     do {
                                         try moc.save()
                                     }
                                     catch {
                                     }
-                                    
+                                    presentationMode.wrappedValue.dismiss()
                                 }
                                 else{
                                     if (momentTitle == "" || partOfDay == 0 || selfCareType == 0 || (daysOfWeek == [] && showDaysOfWeek)) {
@@ -100,13 +105,14 @@ struct NewMomentView : View {
                                         momento.selfCareType = Int64(selfCareType)
                                         momento.done = false
                                         
-                                        presentationMode.wrappedValue.dismiss()
+                                       
                                         
                                         do {
                                             try moc.save()
                                         }
                                         catch {
                                         }
+                                        presentationMode.wrappedValue.dismiss()
                                     }
                                     
                                 }
@@ -478,7 +484,10 @@ struct NewMomentView : View {
                                     }.padding()
                                 }.frame(width: reader.size.width*0.9, height: 110, alignment: .center)
                             }.padding(8)
-                            NavigationLink(destination: OnboardingViewPage(), isActive: $info) { EmptyView() }
+                            
+                           
+                            
+                            
                             Rectangle()
                                 .frame(width: 350, height: 40, alignment: .leading)
                                 .cornerRadius(25.0)

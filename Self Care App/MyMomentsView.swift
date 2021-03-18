@@ -46,6 +46,9 @@ struct MyMomentsView: View {
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {
+//                            if( itsMomentsEmpty(moment: moment, selectedCategory: <#T##Int#>)){
+//                                print("a")
+//                            }
                             ForEach((0...moment.count), id: \.self) { i in
                                 if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
                                     NavigationLink(
