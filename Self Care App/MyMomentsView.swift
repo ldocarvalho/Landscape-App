@@ -72,8 +72,7 @@ struct MyMomentsView: View {
                                                          alignment: .topLeading)
                                             .padding(.bottom, 16)
                                     }
-                                }
-                                
+                                } 
                             }
                         }.onAppear(perform:{
                             
@@ -132,6 +131,7 @@ struct MyMomentsView: View {
                                 .foregroundColor(ColorManager.actionButtonColor)
                                 .imageScale(.large)
                         })
+                        .padding(8)
 //                                        Button("Add", action: {
 //                    self.showModalView.toggle()
 //                })

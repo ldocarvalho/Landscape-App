@@ -19,18 +19,19 @@ struct DeleteAlertView: View {
             Image("DeleteIcon")
                 .resizable()
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(.top, 8)
             Text("Are you sure you want to delete this moment?")
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
-                .frame(width: 250, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 280, height: 100, alignment: .center)
             Text("This action cannot be undone and this moment will not count on your cycles anymore.")
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
                 .font(.body)
-                .frame(width: 250, height: 80, alignment: .center)
+                .frame(width: 280, height: 100, alignment: .center)
             
             HStack {
                 Button(action: {
@@ -72,8 +73,8 @@ struct DeleteAlertView: View {
     }
 }
 
-//struct DeleteAlertView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DeleteAlertView(shown: .constant(false), id: 0)
-//    }
-//}
+struct DeleteAlertView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeleteAlertView(shown: .constant(false), delete: .constant(false), id: 0)
+    }
+}

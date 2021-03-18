@@ -49,7 +49,7 @@ struct RegisterMomentPart3View: View {
                                 .font(.body)
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
-                                .frame(width: reader.size.width*0.9, height: 60, alignment: .leading)
+                                .frame(width: reader.size.width*0.9, height: 60, alignment: .center)
                             HStack {
                                 VStack {
                                     Image("iOS-PersonalIcon")
@@ -57,6 +57,7 @@ struct RegisterMomentPart3View: View {
                                         .frame(width: 96, height: 112, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         .cornerRadius(15)
                                 }
+                                .padding()
                                 .opacity(didTapIndividual ? 1 : 0.4)
                                 .cornerRadius(15)
                                 .onTapGesture {
@@ -74,7 +75,7 @@ struct RegisterMomentPart3View: View {
                                         .resizable()
                                         .frame(width: 96, height: 112, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         .cornerRadius(15)
-                                }.padding()
+                                }
                                 .opacity(didTapSocial ? 1 : 0.4)
                                 .cornerRadius(15)
                                 .onTapGesture {
@@ -93,6 +94,7 @@ struct RegisterMomentPart3View: View {
                                         .frame(width: 96, height: 112, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         .cornerRadius(15)
                                 }
+                                .padding()
                                 .opacity(didTapHobbys ? 1 : 0.4)
                                 .onTapGesture {
                                     typeOfCare = 3

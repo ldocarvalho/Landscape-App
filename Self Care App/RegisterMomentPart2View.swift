@@ -43,7 +43,7 @@ struct RegisterMomentPart2View: View {
                                 .font(.body)
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
-                                .frame(width: reader.size.width*0.9, height: 60, alignment: .leading)
+                                .frame(width: reader.size.width*0.9, height: 60, alignment: .center)
                             HStack {
                                 VStack {
                                     Image("iOS-MorningIcon")

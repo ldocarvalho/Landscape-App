@@ -16,18 +16,19 @@ struct DoneAlertView: View {
             Image("DoneIcon")
                 .resizable()
                 .frame(width: 55, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(.top, 8)
             Text("Congrats! You've finished a self care moment!")
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
-                .frame(width: 250, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text("Taking care of you each day helps you increase you well-being.")
+                .frame(width: 280, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text("Taking care of you each day helps you increase your well-being.")
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
                 .font(.body)
-                .frame(width: 250, height: 80, alignment: .center)
+                .frame(width: 280, height: 90, alignment: .center)
             
             HStack {
                 Button(action: {

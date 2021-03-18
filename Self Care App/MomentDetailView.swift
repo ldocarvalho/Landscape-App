@@ -13,7 +13,7 @@ struct MomentDetailView: View {
     var image : String = "p1"
     var id : Int = 0
   
-    var texts = ["Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.", "Social activities are the ones you’ll do with other people around you and will stimulate your social interactions.", "Physical activities are the ones you’ll do in order to take care of your physical health, so your mind and body stay tuned in a great sync."]
+    var texts = ["Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.", "Social activities are the ones you’ll do with other people around you and will stimulate your social interactions.", "Physical activities are the ones you’ll do in order to take care of your physical health."]
     @State var done : Bool
     @State var shownDeleteAlert = false
     @State var shownDoneAlert = false
@@ -65,14 +65,13 @@ struct MomentDetailView: View {
                             }
                             
                             
-                            
                             HStack {
                                 Text("Is this moment done for today?")
                                     .font(.title2)
                                     .bold()
                                     .foregroundColor(ColorManager.titleTextColor)
                                 Spacer()
-                            }.frame(width: g.size.width*0.9, height: 40, alignment: .leading)
+                            }.frame(width: g.size.width*0.9, height: 70, alignment: .leading)
                             
                             HStack {
                                 Button(action: {

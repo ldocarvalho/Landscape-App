@@ -26,6 +26,7 @@ struct NotificationView: View {
                         .resizable()
                         .frame(width: g.size.width*0.8, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .cornerRadius(5.0)
+                        .padding(.bottom, 4)
                         .background(NavigationLink(destination: MenuView(), isActive: $View) { EmptyView()})
                     Text("Have you already done " + title + " today?")
     //                    .font(.caption2)

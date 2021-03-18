@@ -25,54 +25,56 @@ struct ContentViewCircle: View {
     
         var body: some View {
             GeometryReader { reader in
-                NavigationView {
                     ZStack {
                         ColorManager.backgroundColor
                             .edgesIgnoringSafeArea(.all)
-                        ScrollView(.vertical, showsIndicators: false) {
-                            VStack {
-                                
+                        
+                        NavigationView {
+                            ScrollView(.vertical, showsIndicators: false) {
                                 VStack {
-                                    Text("What about taking care of yourself today? You can do it!")
-                                        .font(.body)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(ColorManager.titleTextColor)
-                                        .padding([.leading, .trailing, .bottom], 16)
-                                        .padding([.top], 32)
-                                        .multilineTextAlignment(.center)
-                                    VStack {
-                                        Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
-                                    }.onAppear(perform: {
-                                        ProgressOfTheDay()
-                                    })
-                                    .onDisappear(perform: {
-                                       progressValueIndividual = 0
-                                       progressValueSocial = 0
-                                       progressValueHobbies = 0
-                                       countIndividual = 0
-                                       countHobby = 0
-                                       countSocial = 0
-                                       countTotalIndividual = 0
-                                       countTotalHobby = 0
-                                       countTotalSocial = 0
-                                    })
-                                    .frame(width: 300.0, height: 350)
-                                    .padding(16)
                                     
                                     VStack {
-                                        ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
+                                        Text("What about taking care of yourself today? You can do it!")
+                                            .font(.body)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(ColorManager.titleTextColor)
+                                            .padding([.leading, .trailing, .bottom], 16)
+                                            .padding([.top], 32)
+                                            .multilineTextAlignment(.center)
+                                        VStack {
+                                            Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
+                                        }.onAppear(perform: {
+                                            ProgressOfTheDay()
+                                        })
+                                        .onDisappear(perform: {
+                                           progressValueIndividual = 0
+                                           progressValueSocial = 0
+                                           progressValueHobbies = 0
+                                           countIndividual = 0
+                                           countHobby = 0
+                                           countSocial = 0
+                                           countTotalIndividual = 0
+                                           countTotalHobby = 0
+                                           countTotalSocial = 0
+                                        })
+                                        .frame(width: 300.0, height: 350)
+                                        .padding(16)
                                         
+                                        VStack {
+                                            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
+                                            
+                                        }
+                                        .frame(width: 100, height: 150, alignment: .center)
+                                        .padding(8)
+                                        Spacer()
                                     }
-                                    .frame(width: 100, height: 150, alignment: .center)
-                                    .padding(8)
-                                    Spacer()
                                 }
                             }
-                        }.navigationTitle(Text("My cycles"))
-                        .frame(width: reader.size.width*0.9, alignment: .center)
-                        
-                    }
-                }.accentColor(Color("NavigationColor"))
+                            .navigationTitle(Text("My cycles"))
+                        }
+                        .frame(width: reader.size.width, alignment: .center)
+                }
+                .accentColor(Color("NavigationColor"))
                 .onAppear(perform:{
                     ProgressOfTheDay()
                 })

@@ -44,6 +44,8 @@ struct ListPersonalView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
     
+    let partOfTheDayColors = [WatchColorManager.textColorMorning, WatchColorManager.textColorAfternoon, WatchColorManager.textColorEvening]
+    
     let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
 
         
@@ -66,7 +68,7 @@ struct ListPersonalView: View {
         GeometryReader { g in 
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
-                    VStack(spacing: 5) {
+                    VStack(spacing: 18) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  1) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
@@ -81,19 +83,21 @@ struct ListPersonalView: View {
                                         HStack {
                                             Text(moments[i].title!)
                                                 .font(.system(size: 12, weight: .semibold))
-                                                .frame(width: 100, height: 40, alignment: .leading)
+                                                .frame(width: 80, height: 60, alignment: .leading)
+                                                .foregroundColor(partOfTheDayColors[Int(moments[i].partOfTheDay) - 1])
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 8)
+                                        }.padding([.leading, .trailing, .bottom], 10)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(15.0)
-                        .frame(width: g.size.width*0.9, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }.padding([.bottom, .leading,.trailing], 8)
-                .padding(.top, 5)
+                        .cornerRadius(10.0)
+                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                    .padding([.top, .leading, .trailing], 12)
+                    .padding([.bottom], 8)
             }
         }
     }
@@ -104,6 +108,8 @@ struct ListPersonalView: View {
 struct ListSocialView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+    
+    let partOfTheDayColors = [WatchColorManager.textColorMorning, WatchColorManager.textColorAfternoon, WatchColorManager.textColorEvening]
     
     let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
 
@@ -128,7 +134,7 @@ struct ListSocialView: View {
         GeometryReader { g in
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
-                    VStack(spacing: 5) {
+                    VStack(spacing: 18) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  2) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
@@ -143,19 +149,20 @@ struct ListSocialView: View {
                                         HStack {
                                             Text(moments[i].title!)
                                                 .font(.system(size: 12, weight: .semibold))
-                                                .frame(width: 100, height: 40, alignment: .leading)
+                                                .frame(width: 80, height: 60, alignment: .leading)
+                                                .foregroundColor(partOfTheDayColors[Int(moments[i].partOfTheDay) - 1])
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 8)
+                                        }.padding([.leading, .trailing, .bottom], 10)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(15.0)
-                        .frame(width: g.size.width*0.9, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }.padding([.bottom, .leading,.trailing], 8)
-                    .padding(.top, 5)
+                        .cornerRadius(10.0)
+                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }.padding([.top, .leading,.trailing], 12)
+                .padding(.bottom, 8)
             }
         }
     }
@@ -164,6 +171,8 @@ struct ListSocialView: View {
 struct ListPhysicalView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
+    
+    let partOfTheDayColors = [WatchColorManager.textColorMorning, WatchColorManager.textColorAfternoon, WatchColorManager.textColorEvening]
     
     let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
 
@@ -188,7 +197,7 @@ struct ListPhysicalView: View {
         GeometryReader { g in
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
-                    VStack(spacing: 5) {
+                    VStack(spacing: 18) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  3) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
@@ -203,19 +212,20 @@ struct ListPhysicalView: View {
                                         HStack {
                                             Text(moments[i].title!)
                                                 .font(.system(size: 12, weight: .semibold))
-                                                .frame(width: 100, height: 40, alignment: .leading)
+                                                .frame(width: 80, height: 60, alignment: .leading)
+                                                .foregroundColor(partOfTheDayColors[Int(moments[i].partOfTheDay) - 1])
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 8)
+                                        }.padding([.leading, .trailing, .bottom], 10)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(15.0)
-                        .frame(width: g.size.width*0.9, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }.padding([.bottom, .leading,.trailing], 8)
-                    .padding(.top, 5)
+                        .cornerRadius(10.0)
+                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }.padding([.top, .leading,.trailing], 12)
+                    .padding(.bottom, 8)
             }
         }
     }
