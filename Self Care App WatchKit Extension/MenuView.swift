@@ -47,7 +47,7 @@ struct Button : View {
             HStack {
                 Text(title)
                     .fontWeight(.medium)
-                    .font(.system(size: 16))
+                    .font(.system(size: 20))
                     .padding(.leading, 16)
                     .foregroundColor(WatchColorManager.menuTextColor)
                 Spacer()

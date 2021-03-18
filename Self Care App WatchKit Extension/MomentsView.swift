@@ -44,6 +44,8 @@ struct ListPersonalView: View {
     
     let partOfTheDayImages = ["Watch-Moments-MorningIcon","Watch-Moments-AfternoonIcon","Watch-Moments-EveningIcon"]
     
+    let partOfTheDayColors = [WatchColorManager.textColorMorning, WatchColorManager.textColorAfternoon, WatchColorManager.textColorEvening]
+    
     let partOfTheDayImagesDetail = [["Watch-PersonalMorningDetail","Watch-PersonalAfternoonDetail","Watch-PersonalEveningDetail"], ["Watch-SocialMorningDetail","Watch-SocialAfternoonDetail","Watch-SocialEveningDetail"], ["Watch-PhysicalMorningDetail","Watch-PhysicalAfternoonDetail","Watch-PhysicalEveningDetail"]]
 
         
@@ -66,7 +68,7 @@ struct ListPersonalView: View {
         GeometryReader { g in 
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
-                    VStack(spacing: 5) {
+                    VStack(spacing: 14) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  1) {
                                 NavigationLink(destination: NotificationView(title: moments[i].title!, image: partOfTheDayImagesDetail[Int(moments[i].selfCareType) - 1][Int(moments[i].partOfTheDay) - 1], id: i)) {
@@ -80,8 +82,9 @@ struct ListPersonalView: View {
 //                                        }.padding([.leading, .top], 8)
                                         HStack {
                                             Text(moments[i].title!)
-                                                .font(.system(size: 12, weight: .semibold))
+                                                .font(.system(size: 14, weight: .semibold))
                                                 .frame(width: 100, height: 40, alignment: .leading)
+                                                .foregroundColor(partOfTheDayColors[Int(moments[i].partOfTheDay) - 1])
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -90,10 +93,11 @@ struct ListPersonalView: View {
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(15.0)
-                        .frame(width: g.size.width*0.9, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }.padding([.bottom, .leading,.trailing], 8)
-                .padding(.top, 5)
+                        .cornerRadius(10.0)
+                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                    .padding([.top, .leading, .trailing], 12)
+                    .padding([.bottom], 8)
             }
         }
     }
