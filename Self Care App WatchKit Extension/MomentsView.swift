@@ -68,6 +68,10 @@ struct ListPersonalView: View {
         GeometryReader { g in 
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
+                if (itsMomentsEmpty(selectedCategory: 0)){
+                    Image("Nada")
+                        .frame(width: g.size.width, height: g.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
                     VStack(spacing: 18) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  1) {
@@ -101,6 +105,15 @@ struct ListPersonalView: View {
             }
         }
     }
+    
+    func itsMomentsEmpty(selectedCategory: Int) -> Bool{
+        for i in 0 ... moments.count {
+           if ( i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType == selectedCategory + 1){
+               return false
+           }
+       }
+       return true
+   }
 }
 
 //MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImagesDetail[Int(moment[i].selfCareType) - 1][Int(moment[i].partOfTheDay) - 1],id: i)
@@ -134,6 +147,10 @@ struct ListSocialView: View {
         GeometryReader { g in
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
+                if (itsMomentsEmpty(selectedCategory: 1)){
+                    Image("Nada")
+                        .frame(width: g.size.width, height: g.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
                     VStack(spacing: 18) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  2) {
@@ -166,6 +183,15 @@ struct ListSocialView: View {
             }
         }
     }
+    
+    func itsMomentsEmpty(selectedCategory: Int) -> Bool{
+        for i in 0 ... moments.count {
+           if ( i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType == selectedCategory + 1){
+               return false
+           }
+       }
+       return true
+   }
 }
 
 struct ListPhysicalView: View {
@@ -197,6 +223,10 @@ struct ListPhysicalView: View {
         GeometryReader { g in
 //            let scale = getScale(proxy: g)
             ScrollView(.vertical) {
+                if (itsMomentsEmpty(selectedCategory: 2)){
+                    Image("Nada")
+                        .frame(width: g.size.width, height: g.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
                     VStack(spacing: 18) {
                         ForEach(0...moments.count , id: \.self) { i in
                             if (i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType ==  3) {
@@ -229,6 +259,15 @@ struct ListPhysicalView: View {
             }
         }
     }
+    
+    func itsMomentsEmpty(selectedCategory: Int) -> Bool{
+        for i in 0 ... moments.count {
+           if ( i < moments.count && WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(CurrentDay()) && moments[i].selfCareType == selectedCategory + 1){
+               return false
+           }
+       }
+       return true
+   }
 }
 
 struct MomentsView_Previews: PreviewProvider {
