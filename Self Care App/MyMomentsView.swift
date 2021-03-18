@@ -49,8 +49,8 @@ struct MyMomentsView: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {
                             if (itsMomentsEmpty(selectedCategory: selectedCategory)){
-//                                poe oq tu quer aqui
-                                Text("os de vdd eu sei quem sao")
+                                Image("Nada")
+                                    .padding(.top, 40)
                             }
                             ForEach((0...moment.count), id: \.self) { i in
                                 if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
@@ -149,7 +149,6 @@ struct MyMomentsView: View {
            }
        }
        return true
-       
    }
 }
 
