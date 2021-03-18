@@ -79,12 +79,4 @@ func CurrentDay() -> WeekDays{
 
 }
 
-public func itsMomentsEmpty(moment:[Moment],  selectedCategory: Int) -> Bool{
-    for i in 0...moment.count{
-        if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
-            return false
-        }
-    }
-    return true
-    
-}
+ 

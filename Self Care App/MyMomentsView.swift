@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct MyMomentsView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -20,6 +20,8 @@ struct MyMomentsView: View {
     @State private var selectedCategory = 0
         
     @State var showModalView : Bool = false
+    
+    @State var itsEmpty : Bool = false
     
     var body: some View {
         GeometryReader { reader in
@@ -46,9 +48,10 @@ struct MyMomentsView: View {
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {
-//                            if( itsMomentsEmpty(moment: moment, selectedCategory: <#T##Int#>)){
-//                                print("a")
-//                            }
+                            if (itsMomentsEmpty(selectedCategory: selectedCategory)){
+//                                poe oq tu quer aqui
+                                Text("os de vdd eu sei quem sao")
+                            }
                             ForEach((0...moment.count), id: \.self) { i in
                                 if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
                                     NavigationLink(
@@ -72,7 +75,9 @@ struct MyMomentsView: View {
                                 }
                                 
                             }
-                        }
+                        }.onAppear(perform:{
+                            
+                        })
                     }.frame(width: reader.size.width)
                     .onAppear(perform:{
                         let weekday = Calendar.current.component(.weekday, from: Date())
@@ -137,6 +142,15 @@ struct MyMomentsView: View {
             }
         }
     }
+    func itsMomentsEmpty(selectedCategory: Int) -> Bool{
+        for i in 0 ... moment.count {
+           if ( i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
+               return false
+           }
+       }
+       return true
+       
+   }
 }
 
 struct MyMomentsView_Previews: PreviewProvider {
