@@ -66,8 +66,7 @@ struct MyMomentsView: View {
                                                          alignment: .topLeading)
                                             .padding(.bottom, 16)
                                     }
-                                }
-                                
+                                } 
                             }
                         }
                     }.frame(width: reader.size.width)
