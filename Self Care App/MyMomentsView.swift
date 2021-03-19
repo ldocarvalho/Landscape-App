@@ -23,6 +23,14 @@ struct MyMomentsView: View {
     
     @State var itsEmpty : Bool = false
     
+    @State private var didTapSunday :Bool = true
+    @State private var didTapMonday :Bool = true
+    @State private var didTapThuesday :Bool = true
+    @State private var didTapWednesday :Bool = true
+    @State private var didTapThursday :Bool = true
+    @State private var didTapFriday :Bool = true
+    @State private var didTapSaturday :Bool = true
+    
     var body: some View {
         GeometryReader { reader in
             ZStack {
@@ -44,7 +52,151 @@ struct MyMomentsView: View {
 
                         NewMomentView(itsEditing: false, id: 0)
                     })
+                    HStack {
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("S")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                                daysOfWeek.formIntersection([])
+                           
+                                    daysOfWeek.insert(.sunday)
+                                    didTapSunday = false
+                                    didTapMonday = true
+                                    didTapThuesday = true
+                                    didTapWednesday = true
+                                    didTapThursday = true
+                                    didTapFriday = true
+                                    didTapSaturday = true
+                                
+//                                didTapSunday.toggle()
 
+                            }
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("M")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                                daysOfWeek.formIntersection([])
+                               
+                                    daysOfWeek.insert(.monday)
+                                    didTapSunday = true
+                                    didTapMonday = false
+                                    didTapThuesday = true
+                                    didTapWednesday = true
+                                    didTapThursday = true
+                                    didTapFriday = true
+                                    didTapSaturday = true
+                                
+//                                didTapMonday.toggle()
+                            }
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("T")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                              
+                                daysOfWeek.formIntersection([])
+                                
+                            
+                                    daysOfWeek.insert(.thuesday)
+                                    didTapSunday = true
+                                    didTapMonday = true
+                                    didTapThuesday = false
+                                    didTapWednesday = true
+                                    didTapThursday = true
+                                    didTapFriday = true
+                                    didTapSaturday = true
+                                
+//                                didTapThuesday.toggle()
+                            }
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("W")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                                daysOfWeek.formIntersection([])
+                                
+                                    daysOfWeek.insert(.wednesday)
+                                    didTapSunday = true
+                                    didTapMonday = true
+                                    didTapThuesday = true
+                                    didTapWednesday = false
+                                    didTapThursday = true
+                                    didTapFriday = true
+                                    didTapSaturday = true
+                                
+//                                didTapWednesday.toggle()
+                            }
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("T")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                                daysOfWeek.formIntersection([])
+                              
+                                    daysOfWeek.insert(.thursday)
+                                    didTapSunday = true
+                                    didTapMonday = true
+                                    didTapThuesday = true
+                                    didTapWednesday = true
+                                    didTapThursday = false
+                                    didTapFriday = true
+                                    didTapSaturday = true
+                                
+//                                didTapThursday.toggle()
+                            }
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("F")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                                daysOfWeek.formIntersection([])
+                                
+                                    daysOfWeek.insert(.friday)
+                                    didTapSunday = true
+                                    didTapMonday = true
+                                    didTapThuesday = true
+                                    didTapWednesday = true
+                                    didTapThursday = true
+                                    didTapFriday = false
+                                    didTapSaturday = true
+                                
+//                                didTapFriday.toggle()
+                            }
+                        Circle()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .overlay(Text("S")
+                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .fontWeight(.medium))
+                            .onTapGesture {
+                                daysOfWeek.formIntersection([])
+                                
+                                    daysOfWeek.insert(.saturday)
+                                    didTapSunday = true
+                                    didTapMonday = true
+                                    didTapThuesday = true
+                                    didTapWednesday = true
+                                    didTapThursday = true
+                                    didTapFriday = true
+                                    didTapSaturday = false
+                                
+//                                didTapSaturday.toggle()
+                            }
+                    }
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {
@@ -53,7 +205,7 @@ struct MyMomentsView: View {
                                     .padding(.top, 40)
                             }
                             ForEach((0...moment.count), id: \.self) { i in
-                                if (i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
+                                if (i < moment.count && (WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek) ) && moment[i].selfCareType == selectedCategory + 1){
                                     NavigationLink(
                                         destination: MomentDetailView(title: moment[i].title!, description: "", image: partOfTheDayImagesDetail[Int(moment[i].selfCareType) - 1][Int(moment[i].partOfTheDay) - 1],id: i, done: moment[i].done )) {
                                         Image(partOfTheDayImages[Int(moment[i].selfCareType) - 1][Int(moment[i].partOfTheDay) - 1])
@@ -144,7 +296,7 @@ struct MyMomentsView: View {
     }
     func itsMomentsEmpty(selectedCategory: Int) -> Bool{
         for i in 0 ... moment.count {
-           if ( i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(CurrentDay()) && moment[i].selfCareType == selectedCategory + 1){
+           if ( i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek) && moment[i].selfCareType == selectedCategory + 1){
                return false
            }
        }

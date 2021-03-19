@@ -405,7 +405,7 @@ struct NewMomentView : View {
                                                     didTapSaturday.toggle()
                                                 }
                                         }.onAppear(perform: {
-                                            if showDaysOfWeek{
+                                            if showDaysOfWeek && !itsEditing{
                                                 didTapSunday = true
                                                 didTapMonday = true
                                                 didTapThuesday = true
