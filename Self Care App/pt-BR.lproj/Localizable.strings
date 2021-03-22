@@ -8,28 +8,30 @@
 
 
 // Onboarding
-"Onboarding-1-Label-Name" = "Como você gostaria de ser chamado?";
+"Onboarding-1-Label-Name" = "Como você gostaria de chamado?";
 "Onboarding-1-Button-Name" = "Continuar";
 "Onboarding-1-Placeholder-Name" = "Digite seu nome aqui";
 
 "Onboarding-2-Label-Welcome" = "Vamos adicionar um novo momento de autocuidado na sua rotina?";
-"Onboarding-2-Label-Question" = "O que você quer fazer hoje para se cuidar? ?";
-"Onboarding-2-Placeholder-Name" = "Digite seu momento de autocuidado aqui";
+"Onboarding-2-Label-Question" = "O que você quer fazer hoje para se cuidar?";
+"Onboarding-2-Placeholder-Name" = "Digite seu autocuidado aqui";
 
 "Onboarding-3-Label-Question" = "Em que parte do dia você prefere fazer seu autocuidado?";
 
 "Onboarding-4-Label-Question1" = "Você deseja repetir esse momento??";
-"Onboarding-4-Label-Question1" = "Em quais dias da semana você gostaria de repeti-lo?";
+"Onboarding-4-Label-Question2" = "Em quais dias da semana você gostaria de repeti-lo?";
 
 "Sunday" = "D";
 "Monday" = "S";
 "Tuesday" = "T";
 "Wednesday" = "Q";
-"Thurday" = "Q";
+"Thursday" = "Q";
 "Friday" = "S";
 "Saturday" = "S";
 
-"Onboarding-3-Label-Question" = "Qual o tipo de autocuidado você está fazendo?";
+"Onboarding-5-Label-Question" = "Qual o tipo de autocuidado você está fazendo?";
+
+"Hi" = "Olá";
 
 // Tela My moments
 "My moments" = "Meus momentos";

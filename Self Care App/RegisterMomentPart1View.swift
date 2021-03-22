@@ -26,7 +26,7 @@ struct RegisterMomentPart1View: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .padding(.bottom, 8)
-                            Text("What about adding a new self care moment in your routine?")
+                            Text(LocalizedStringKey("Onboarding-2-Label-Welcome"))
                                 .font(.body)
                                 .fontWeight(.medium)
                                 .padding([.leading, .trailing], 16)
@@ -35,12 +35,12 @@ struct RegisterMomentPart1View: View {
                         }.frame(height: 115)
                         .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         VStack {
-                            Text("What would you like to do to take care of yourself today?")
+                            Text(LocalizedStringKey("Onboarding-2-Label-Question"))
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
                                 .frame(width: reader.size.width*0.9, height: 60, alignment: .center)
-                            TextField("Type your self care moment here", text: $momentTitle)
+                            TextField(LocalizedStringKey("Onboarding-2-Placeholder-Name"), text: $momentTitle)
                                 .frame(width: reader.size.width*0.9, height: 30, alignment: .center)
                                 .padding()
                                 .textFieldStyle(CircularTextFieldStyle())
@@ -57,7 +57,7 @@ struct RegisterMomentPart1View: View {
                             }
                             
                         }) {
-                            Text("Continue")
+                            Text(LocalizedStringKey("Onboarding-1-Button-Name"))
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
                         }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)

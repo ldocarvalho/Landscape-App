@@ -40,7 +40,7 @@ struct RegisterMomentPart4View: View {
                             .fontWeight(.bold)
                             .padding(.bottom, 8)
                             .foregroundColor(ColorManager.bodyTextColor)
-                        Text("What about adding a new self care moment in your routine?")
+                        Text(LocalizedStringKey("Onboarding-2-Label-Welcome"))
                             .font(.body)
                             .fontWeight(.medium)
                             .padding([.leading, .trailing], 16)
@@ -50,7 +50,7 @@ struct RegisterMomentPart4View: View {
                     .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                     
                     HStack {
-                        Text("Would you like to repeat the activity?")
+                        Text(LocalizedStringKey("Onboarding-4-Label-Question1"))
                             .font(.body)
                             .fontWeight(.bold)
                             .foregroundColor(ColorManager.bodyTextColor)
@@ -64,7 +64,7 @@ struct RegisterMomentPart4View: View {
 
                     
                     VStack {
-                                Text("In what days of the week would you like to do it?")
+                                Text(LocalizedStringKey("Onboarding-4-Label-Question2"))
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
@@ -75,7 +75,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("S")
+                                .overlay(Text(LocalizedStringKey("Sunday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -90,7 +90,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("M")
+                                .overlay(Text(LocalizedStringKey("Monday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -105,7 +105,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("T")
+                                .overlay(Text(LocalizedStringKey("Tuesday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -120,7 +120,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: .center)
                                 .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("W")
+                                .overlay(Text(LocalizedStringKey("Wednesday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -135,7 +135,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("T")
+                                .overlay(Text(LocalizedStringKey("Thursday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -150,7 +150,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("F")
+                                .overlay(Text(LocalizedStringKey("Friday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -165,7 +165,7 @@ struct RegisterMomentPart4View: View {
                             Circle()
                                 .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
-                                .overlay(Text("S")
+                                .overlay(Text(LocalizedStringKey("Saturday"))
                                             .foregroundColor(ColorManager.daysOfWeekColor)
                                             .fontWeight(.medium))
                                 .onTapGesture {
@@ -191,7 +191,7 @@ struct RegisterMomentPart4View: View {
                             View.toggle()
                         }
                     }) {
-                        Text("Continue")
+                        Text(LocalizedStringKey("Onboarding-1-Button-Name"))
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                     }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)

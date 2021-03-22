@@ -18,17 +18,19 @@
 "Onboarding-3-Label-Question" = "In what part of the day would you rather do it?";
 
 "Onboarding-4-Label-Question1" = "Would you like to repeat the activity?";
-"Onboarding-4-Label-Question1" = "In what days of the week would you like to do it?";
+"Onboarding-4-Label-Question2" = "In what days of the week would you like to do it?";
 
 "Sunday" = "S";
 "Monday" = "M";
 "Tuesday" = "T";
 "Wednesday" = "W";
-"Thurday" = "W";
+"Thursday" = "W";
 "Friday" = "F";
 "Saturday" = "S";
 
 "Onboarding-3-Label-Question" = "What type of self care are you making?";
+
+"Hi" = "Hello";
 
 // Tela My moments
 "My moments" = "My moments";
