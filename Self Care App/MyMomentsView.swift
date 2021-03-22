@@ -57,7 +57,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapSunday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("S")
+                            .overlay(Text(LocalizedStringKey("Sunday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
@@ -78,7 +78,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapMonday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("M")
+                            .overlay(Text(LocalizedStringKey("Monday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
@@ -98,7 +98,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapThuesday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("T")
+                            .overlay(Text(LocalizedStringKey("Tuesday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
@@ -120,7 +120,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapWednesday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("W")
+                            .overlay(Text(LocalizedStringKey("Wednesday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
@@ -140,7 +140,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapThursday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("T")
+                            .overlay(Text(LocalizedStringKey("Thursday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
@@ -160,7 +160,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapFriday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("F")
+                            .overlay(Text(LocalizedStringKey("Friday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
@@ -180,7 +180,7 @@ struct MyMomentsView: View {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
                             .foregroundColor(didTapSaturday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
-                            .overlay(Text("S")
+                            .overlay(Text(LocalizedStringKey("Saturday"))
                                         .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
