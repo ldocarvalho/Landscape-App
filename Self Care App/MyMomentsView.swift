@@ -52,6 +52,7 @@ struct MyMomentsView: View {
 
                         NewMomentView(itsEditing: false, id: 0)
                     })
+                    
                     HStack(spacing: 8) {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
@@ -197,6 +198,27 @@ struct MyMomentsView: View {
 //                                didTapSaturday.toggle()
                             }
                     }.padding(.bottom, 16)
+//                    .onAppear(perform: {
+//                        if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
+//                            if let diff = Calendar.current.dateComponents([.day], from: date, to: Date()).day, diff != 0{
+//                                for i in 0 ... moment.count {
+//                                    if(i < moment.count){
+//                                        moment[i].done = false
+//                                    }
+//                                }
+//                                UserDefaults.standard.removeObject(forKey: "creationTime")
+//                                UserDefaults.standard.setValue(Date(), forKey: "creationTime")
+//                                do{
+//                                    try moc.save()
+//                                }
+//                                catch{
+//
+//                                }
+//
+//                            }
+//                        }
+//                    })
+                    
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {
