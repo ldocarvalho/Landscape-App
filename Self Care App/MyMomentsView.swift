@@ -255,14 +255,11 @@ struct MyMomentsView: View {
                             if let diff = Calendar.current.dateComponents([.weekday], from: date, to: Date()).weekday, diff != 0{
                                 for i in 0 ... moment.count {
                                     if(i < moment.count){
-                                        if (WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek)  ){
-                                            
-                                            moment[i].done = false
-                                            }
-                                        UserDefaults.standard.removeObject(forKey: "creationTime")
-                                        UserDefaults.standard.setValue(Date(), forKey: "creationTime")
+                                        moment[i].done = false
                                     }
                                 }
+                                UserDefaults.standard.removeObject(forKey: "creationTime")
+                                UserDefaults.standard.setValue(Date(), forKey: "creationTime")
                                 do{
                                     try moc.save()
                                 }
@@ -296,24 +293,66 @@ struct MyMomentsView: View {
                     switch(weekday){
                     case 1:
                         didTapSunday = false
+                        didTapMonday = true
+                        didTapThursday = true
+                        didTapWednesday = true
+                        didTapThuesday = true
+                        didTapSaturday = true
+                        didTapFriday = true
                         break
                     case 2:
+                        didTapSunday = true
                         didTapMonday = false
+                        didTapThursday = true
+                        didTapWednesday = true
+                        didTapThuesday = true
+                        didTapSaturday = true
+                        didTapFriday = true
                         break
                     case 3:
+                        didTapSunday = true
+                        didTapMonday = true
+                        didTapThursday = true
+                        didTapWednesday = true
                         didTapThuesday = false
+                        didTapSaturday = true
+                        didTapFriday = true
                         break
                     case 4:
+                        didTapSunday = true
+                        didTapMonday = true
+                        didTapThursday = true
                         didTapWednesday = false
+                        didTapThuesday = true
+                        didTapSaturday = true
+                        didTapFriday = true
                         break
                     case 5:
+                        didTapSunday = true
+                        didTapMonday = true
                         didTapThursday = false
+                        didTapWednesday = true
+                        didTapThuesday = true
+                        didTapSaturday = true
+                        didTapFriday = true
                         break
                     case 6:
+                        didTapSunday = true
+                        didTapMonday = true
+                        didTapThursday = true
+                        didTapWednesday = true
+                        didTapThuesday = true
+                        didTapSaturday = true
                         didTapFriday = false
                         break
                     case 7:
-                        didTapFriday = false
+                        didTapSunday = true
+                        didTapMonday = true
+                        didTapThursday = true
+                        didTapWednesday = true
+                        didTapThuesday = true
+                        didTapSaturday = false
+                        didTapFriday = true
                         break
                     default:
                         didTapSaturday = false
@@ -321,9 +360,42 @@ struct MyMomentsView: View {
                         
                     }
                 })
+                
             }
         }
     }
+    
+    func ResetOtherDays(){
+        let weekday = Calendar.current.component(.weekday, from: Date())
+        switch(weekday){
+        case 1:
+            daysOfWeek.insert(.sunday)
+        case 2:
+            daysOfWeek.insert(.monday)
+        case 3:
+            daysOfWeek.insert(.thuesday)
+        case 4:
+            daysOfWeek.insert(.wednesday)
+        case 5:
+            daysOfWeek.insert(.thursday)
+        case 6:
+            daysOfWeek.insert(.friday)
+        case 7:
+            daysOfWeek.insert(.saturday)
+        default:
+                daysOfWeek.insert(.sunday)
+            
+        }
+        for i in 0 ... moment.count {
+            if(i < moment.count){
+                if (!WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek)){
+                    moment[i].done = false
+                   
+                }
+            }
+        }
+    }
+    
     func itsMomentsEmpty(selectedCategory: Int) -> Bool{
         for i in 0 ... moment.count {
            if ( i < moment.count && WeekDays(rawValue: Int(moment[i].daysOfWeek)).contains(daysOfWeek) && moment[i].selfCareType == selectedCategory + 1){
