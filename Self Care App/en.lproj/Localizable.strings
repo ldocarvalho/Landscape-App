@@ -69,12 +69,12 @@
 // Tela Done alert
 "DoneAlert-Title" = "Congrats! You've taken care of you once more!";
 "DoneAlert-Body" = "Taking care of you each day helps you increase your well-being.";
-"DoneAlert-Button1" = "That's nice!";
+"DoneAlert-Button" = "That's nice!";
 
 // Tela Empty fields alert
 "EmptyFieldAlert-Title" = "You cannot save a new moment with empty fields.";
 "EmptyFieldAlert-Body" = "Saving a new moment requires that all information are filled.";
-"EmptyFieldAlert-Button1" = "OK";
+"EmptyFieldAlert-Button" = "OK";
 
 // Tela Info
 "Info-1-Question" = "What is self care?";

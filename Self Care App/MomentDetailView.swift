@@ -111,7 +111,7 @@ struct MomentDetailView: View {
                                     }
                                     
                                 }, label: {
-                                    Text(done ? LocalizedStringKey("MomentDetail-Button2") : LocalizedStringKey("MomentDetail-Button4"))
+                                    Text(done ? LocalizedStringKey("MomentDetail-Button4") : LocalizedStringKey("MomentDetail-Button2"))
                                         .foregroundColor(ColorManager.textColorMainButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })
