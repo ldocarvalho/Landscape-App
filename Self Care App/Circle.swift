@@ -25,11 +25,10 @@ struct ContentViewCircle: View {
     
         var body: some View {
             GeometryReader { reader in
+                NavigationView {
                     ZStack {
                         ColorManager.backgroundColor
-                            .edgesIgnoringSafeArea(.all)
-                        
-                        NavigationView {
+                            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             ScrollView(.vertical, showsIndicators: false) {
                                 VStack {
                                     
