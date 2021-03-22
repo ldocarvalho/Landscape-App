@@ -53,6 +53,7 @@
 // Tela Moment detail
 "MomentDetail-Button1" = "Edit";
 "MomentDetail-Button2" = "It's done";
+"MomentDetail-Button4" = "Done";
 "MomentDetail-Button3" = "Delete moment";
 "MomentDetail-Label-Question1" = "Is this moment done for today?";
 "MomentDetail-Description-Personal" = "Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.";

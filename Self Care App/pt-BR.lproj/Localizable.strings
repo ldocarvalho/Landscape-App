@@ -54,6 +54,7 @@
 // Tela Moment detail
 "MomentDetail-Button1" = "Editar";
 "MomentDetail-Button2" = "Está feito";
+"MomentDetail-Button4" = "Feito";
 "MomentDetail-Button3" = "Deletar momento";
 "MomentDetail-Label-Question1" = "Este autocuidado foi feito hoje?";
 "MomentDetail-Description-Personal" = "As atividades individuais são aquelas que você fará sozinho e fortalecerão seu bem-estar consigo.";
