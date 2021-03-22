@@ -291,6 +291,36 @@ struct MyMomentsView: View {
                 .navigationBarBackButtonHidden(true)
                 .frame(width: reader.size.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .padding(0.0)
+                .onAppear(perform:{
+                    let weekday = Calendar.current.component(.weekday, from: Date())
+                    switch(weekday){
+                    case 1:
+                        didTapSunday = false
+                        break
+                    case 2:
+                        didTapMonday = false
+                        break
+                    case 3:
+                        didTapThuesday = false
+                        break
+                    case 4:
+                        didTapWednesday = false
+                        break
+                    case 5:
+                        didTapThursday = false
+                        break
+                    case 6:
+                        didTapFriday = false
+                        break
+                    case 7:
+                        didTapFriday = false
+                        break
+                    default:
+                        didTapSaturday = false
+                        break
+                        
+                    }
+                })
             }
         }
     }

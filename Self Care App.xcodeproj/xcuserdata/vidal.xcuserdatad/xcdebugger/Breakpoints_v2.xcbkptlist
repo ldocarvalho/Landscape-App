@@ -1445,10 +1445,10 @@
             filePath = "Self Care App/MyMomentsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "itsMomentsEmpty(selectedCategory:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
