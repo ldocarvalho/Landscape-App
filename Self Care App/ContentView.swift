@@ -22,14 +22,14 @@ struct ContentView: View {
                     VStack {
                         Spacer()
                         VStack {
-                            Text("How would you like to be called?")
+                            Text(LocalizedStringKey("Onboarding-1-Label-Name"))
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .foregroundColor(ColorManager.titleTextColor)
                                 .multilineTextAlignment(.center)
                                 .frame(width: reader.size.width*0.9, height: 100, alignment: .center)
                             
-                            TextField("Type your name here", text: $userName)
+                            TextField(LocalizedStringKey("Onboarding-1-Placeholder-Name"), text: $userName)
                                 .frame(width: reader.size.width*0.8, height: 50, alignment: .center)
                                 .textFieldStyle(CircularTextFieldStyle())
                                 .padding(16)
@@ -56,7 +56,7 @@ struct ContentView: View {
                             
                         }) {
                             VStack{
-                                Text("Continue")
+                                Text(LocalizedStringKey("Onboarding-1-Button-Name"))
                                     .foregroundColor(.white)
                                     .fontWeight(.bold)
                                 
