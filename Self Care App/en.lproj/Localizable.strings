@@ -6,4 +6,85 @@
   
 */
 
+// Onboarding
+"Onboarding-1-Label-Name" = "How would you like to be called?";
+"Onboarding-1-Button-Name" = "Continue";
+"Onboarding-1-Placeholder-Name" = "Type your name here";
+
+"Onboarding-2-Label-Welcome" = "What about adding a new self care moment in your routine?";
+"Onboarding-2-Label-Question" = "What would you like to do to take care of yourself today?";
+"Onboarding-2-Placeholder-Name" = "Type your self care moment here";
+
+"Onboarding-3-Label-Question" = "In what part of the day would you rather do it?";
+
+"Onboarding-4-Label-Question1" = "Would you like to repeat the activity?";
+"Onboarding-4-Label-Question1" = "In what days of the week would you like to do it?";
+
+"Sunday" = "S";
+"Monday" = "M";
+"Tuesday" = "T";
+"Wednesday" = "W";
+"Thurday" = "W";
+"Friday" = "F";
+"Saturday" = "S";
+
+"Onboarding-3-Label-Question" = "What type of self care are you making?";
+
+// Tela My moments
+"My moments" = "My moments";
+"My cycles" = "My cycles";
+
+"Personal" = "Personal";
+"Social" = "Social";
+"Physical" = "Physical";
+
+// Tela My cycles
+"MyCycles-Label" = "What about taking care of yourself today? You can do it!";
+
+
+// Tela New moment
+"NewMoment-Button1" = "Cancel";
+"NewMoment-Button2" = "Save";
+"NewMoment-Label-1" = "New moment";
+"NewMoment-Label-Question" = "Would you like to know more about self care?";
+
+// Tela Moment detail
+"MomentDetail-Button1" = "Edit";
+"MomentDetail-Button2" = "It's done";
+"MomentDetail-Button3" = "Delete moment";
+"MomentDetail-Label-Question1" = "Is this moment done for today?";
+"MomentDetail-Description-Personal" = "Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.";
+"MomentDetail-Description-Social" = "Social activities are the ones you’ll do with other people around you and will stimulate your social interactions.";
+"MomentDetail-Description-Physical" = "Physical activities are the ones you’lldo in order to take care of your physical health.";
+
+// Tela Delete alert
+"DeleteAlert-Title" = "Are you sure you want to delete this moment?";
+"DeleteAlert-Body" = "This action cannot be undone and this moment will not count on your cycles anymore.";
+"DeleteAlert-Button1" = "Cancel";
+"DeleteAlert-Button2" = "Delete";
+
+// Tela Done alert
+"DoneAlert-Title" = "Congrats! You've taken care of you once more!";
+"DoneAlert-Body" = "Taking care of you each day helps you increase your well-being.";
+"DoneAlert-Button1" = "That's nice!";
+
+// Tela Empty fields alert
+"EmptyFieldAlert-Title" = "You cannot save a new moment with empty fields.";
+"EmptyFieldAlert-Body" = "Saving a new moment requires that all information are filled.";
+"EmptyFieldAlert-Button1" = "OK";
+
+// Tela Info
+"Info-1-Question" = "What is self care?";
+"Info-1-Answer" = "Self care is not only skincare or yoga. Think about anything in your life that gives you joy and well-being, no matter if it’s calling a friend on the weekends or a meditation session in the morning. There are no rules, just wonder about what makes you happy.";
+
+"Info-2-Question" = "How to put self care in your routine?";
+"Info-2-Answer" = "The chaotic routine sometimes might let you think there’s no time for you in your day-to-day life. Wonder about what you said you want to do to care for you and in what part of your day you would most likely do it.";
+
+"Info-3-Question" = "What is self care type?";
+"Info-3-Answer" = "There are many categories of activities that are seen as self care. \n\n• Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself. \n• Social activities are the ones you’ll do with other people around you and will stimulate your social interactions. \n• Physical activities are the ones you’lldo in order to take care of your physical health.";
+
+
+
+
+
 
