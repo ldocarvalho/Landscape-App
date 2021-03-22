@@ -30,7 +30,7 @@ struct RegisterMomentPart2View: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .padding(.bottom, 8)
-                            Text("What about adding a new self care moment in your routine?")
+                            Text(LocalizedStringKey("Onboarding-2-Label-Welcome"))
                                 .font(.body)
                                 .fontWeight(.medium)
                                 .padding([.leading, .trailing], 16)
@@ -39,7 +39,7 @@ struct RegisterMomentPart2View: View {
                         }.frame(height: 115)
                         .blur(radius: shownEmptyFieldAlert ? 8 : 0)
                         VStack {
-                            Text("In what part of the day would you rather do it?")
+                            Text(LocalizedStringKey("Onboarding-3-Label-Question"))
                                 .font(.body)
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
@@ -107,7 +107,7 @@ struct RegisterMomentPart2View: View {
                                 View.toggle()
                             }
                         }) {
-                            Text("Continue")
+                            Text(LocalizedStringKey("Onboarding-1-Button-Name"))
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
                         }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)

@@ -19,7 +19,7 @@ struct MainView: View {
                 .tabItem {
                     selection == 0 ? Image("TabBarMomentsIconSelected") : Image("TabBarMomentsIconDesselected")
                     
-                   Text(LocalizedStringKey("MyMoments"))
+                   Text(LocalizedStringKey("My moments"))
                     
                 }.tag(0)
                
@@ -27,7 +27,7 @@ struct MainView: View {
                     .navigationBarBackButtonHidden(true)
                  .tabItem {
                     selection == 1 ? Image("TabBarCyclesIconSelected") : Image( "TabBarCyclesIconDesselected")
-                    Text(LocalizedStringKey("MyCycles"))
+                    Text(LocalizedStringKey("My cycles"))
                  }.tag(1)
         }.navigationBarHidden(true)
         .foregroundColor(.red)
