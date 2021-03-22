@@ -47,7 +47,7 @@
 // Tela New moment
 "NewMoment-Button1" = "Cancel";
 "NewMoment-Button2" = "Save";
-"NewMoment-Label-1" = "New moment";
+"NewMoment-Label-1" = "Add new moment";
 "NewMoment-Label-Question" = "Would you like to know more about self care?";
 
 // Tela Moment detail
