@@ -213,7 +213,7 @@ struct MyMomentsView: View {
                                                 .frame(height: 223)
                                                 .cornerRadius(30.0)
                                                 .padding(.horizontal)
-                                                .opacity(moment[i].done ? 0.3 : 1)
+                                            .opacity(moment[i].done && daysOfWeek.contains(CurrentDay()) ? 0.3 : 1)
                                                 .overlay(Text(moment[i].title!)
                                                             .font(.largeTitle)
                                                             .fontWeight(.medium)
