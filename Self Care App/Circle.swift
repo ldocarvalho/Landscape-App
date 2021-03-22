@@ -33,7 +33,7 @@ struct ContentViewCircle: View {
                                 VStack {
                                     
                                     VStack {
-                                        Text("What about taking care of yourself today? You can do it!")
+                                        Text(LocalizedStringKey("MyCycles-Label"))
                                             .font(.body)
                                             .fontWeight(.bold)
                                             .foregroundColor(ColorManager.titleTextColor)
