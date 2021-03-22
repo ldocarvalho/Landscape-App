@@ -7,3 +7,79 @@
 */
 
 
+// Onboarding
+"Onboarding-1-Label-Name" = "Como você gostaria de ser chamado?";
+"Onboarding-1-Button-Name" = "Continuar";
+"Onboarding-1-Placeholder-Name" = "Digite seu nome aqui";
+
+"Onboarding-2-Label-Welcome" = "Vamos adicionar um novo momento de autocuidado na sua rotina?";
+"Onboarding-2-Label-Question" = "O que você quer fazer hoje para se cuidar? ?";
+"Onboarding-2-Placeholder-Name" = "Digite seu momento de autocuidado aqui";
+
+"Onboarding-3-Label-Question" = "Em que parte do dia você prefere fazer seu autocuidado?";
+
+"Onboarding-4-Label-Question1" = "Você deseja repetir esse momento??";
+"Onboarding-4-Label-Question1" = "Em quais dias da semana você gostaria de repeti-lo?";
+
+"Sunday" = "D";
+"Monday" = "S";
+"Tuesday" = "T";
+"Wednesday" = "Q";
+"Thurday" = "Q";
+"Friday" = "S";
+"Saturday" = "S";
+
+"Onboarding-3-Label-Question" = "Qual o tipo de autocuidado você está fazendo?";
+
+// Tela My moments
+"My moments" = "Meus momentos";
+"My cycles" = "Meus ciclos";
+
+"Personal" = "Pessoal";
+"Social" = "Social";
+"Physical" = "Físico";
+
+// Tela My cycles
+"MyCycles-Label" = "Que tal cuidar um pouco mais de você hoje? Você consegue!";
+
+
+// Tela New moment
+"NewMoment-Button1" = "Cancelar";
+"NewMoment-Button2" = "Salvar";
+"NewMoment-Label-1" = "Novo momento";
+"NewMoment-Label-Question" = "Você quer saber mais sobre autocuidado?";
+
+// Tela Moment detail
+"MomentDetail-Button1" = "Editar";
+"MomentDetail-Button2" = "Está feito";
+"MomentDetail-Button3" = "Deletar momento";
+"MomentDetail-Label-Question1" = "Este autocuidado foi feito hoje?";
+"MomentDetail-Description-Personal" = "As atividades individuais são aquelas que você fará sozinho e fortalecerão seu bem-estar consigo.";
+"MomentDetail-Description-Social" = "As atividades sociais são aquelas em que você estará acompanhado e estimularão suas conexões sociais.";
+"MomentDetail-Description-Physical" = "As atividades físicas são aquelas em que você fará pensando na sua saúde física.";
+
+// Tela Delete alert
+"DeleteAlert-Title" = "Você tem certeza que deseja deletar este momento?";
+"DeleteAlert-Body" = "Essa ação não pode ser desfeita e esse autocuidado não contará mais nos seus ciclos.";
+"DeleteAlert-Button1" = "Cancelar";
+"DeleteAlert-Button2" = "Deletar";
+
+// Tela Done alert
+"DoneAlert-Title" = "Parabéns! Você cuidou um pouco de si mais uma vez!";
+"DoneAlert-Body" = "Cuidar de você todo dia aumenta sua qualidade de vida e bem-estar.";
+"DoneAlert-Button1" = "Que legal!";
+
+// Tela Empty fields alert
+"EmptyFieldAlert-Title" = "Você não pode salvar um novo momento com campos vazios.";
+"EmptyFieldAlert-Body" = "Para salvar um novo momento, é necessário que todas as informações estejam preenchidas.";
+"EmptyFieldAlert-Button1" = "OK";
+
+// Tela Info
+"Info-1-Question" = "O que é autocuidado?";
+"Info-1-Answer" = "Autocuidado não é apenas cuidado com a pele. Você pode pensar em qualquer coisa no seu dia a dia que traga bem-estar, não importa se for ligar para seu melhor amigo ou um tempinho para meditação na sua manhã. Não há regras, pense no que faz você feliz.";
+
+"Info-2-Question" = "Mas como encaixar autocuidado na rotina?";
+"Info-2-Answer" = "A rotina corrida muitas vezes pode levar você a pensar que não há tempo para você no seu dia a dia. Pense naquilo que você disse que gostaria de fazer para cuidar de você e em qual momento do dia essa atividade ficaria melhor para realizá-la.";
+
+"Info-3-Question" = "E o que é tipo de autocuidado?";
+"Info-3-Answer" = "Existem muitas categorias de atividades que são vistas como autocuidado: \n\n• As atividades individuais são aquelas que você fará sozinho e fortalecerão seu bem-estar consigo. \n• As atividades sociais são aquelas em que você estará acompanhado e estimularão suas conexões sociais. \n• As atividades físicas são aquelas em que você fará pensando na sua saúde física.";
