@@ -52,12 +52,12 @@ struct MyMomentsView: View {
 
                         NewMomentView(itsEditing: false, id: 0)
                     })
-                    HStack {
+                    HStack(spacing: 8) {
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapSunday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapSunday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("S")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                                 daysOfWeek.formIntersection([])
@@ -76,9 +76,9 @@ struct MyMomentsView: View {
                             }
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapMonday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapMonday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("M")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                                 daysOfWeek.formIntersection([])
@@ -96,9 +96,9 @@ struct MyMomentsView: View {
                             }
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapThuesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapThuesday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("T")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                               
@@ -118,9 +118,9 @@ struct MyMomentsView: View {
                             }
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapWednesday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapWednesday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("W")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                                 daysOfWeek.formIntersection([])
@@ -138,9 +138,9 @@ struct MyMomentsView: View {
                             }
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapThursday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapThursday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("T")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                                 daysOfWeek.formIntersection([])
@@ -158,9 +158,9 @@ struct MyMomentsView: View {
                             }
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapFriday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapFriday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("F")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                                 daysOfWeek.formIntersection([])
@@ -178,9 +178,9 @@ struct MyMomentsView: View {
                             }
                         Circle()
                             .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(didTapSaturday ? Color("DayButtonColorUnselected") : Color("DayButtonColorSelected"))
+                            .foregroundColor(didTapSaturday ? ColorManager.daysOfWeekUnselected : ColorManager.daysOfWeekSelected)
                             .overlay(Text("S")
-                                        .foregroundColor(ColorManager.daysOfWeekColor)
+                                        .foregroundColor(ColorManager.daysOfWeekText)
                                         .fontWeight(.medium))
                             .onTapGesture {
                                 daysOfWeek.formIntersection([])
@@ -196,7 +196,7 @@ struct MyMomentsView: View {
                                 
 //                                didTapSaturday.toggle()
                             }
-                    }
+                    }.padding(.bottom, 16)
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 15) {

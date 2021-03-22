@@ -39,5 +39,9 @@ struct ColorManager {
     static let daysOfWeekColor = Color("DaysOfWeek-Color")
     
     static let textFieldColor = Color("TextFieldColor")
+    
+    static let daysOfWeekSelected = Color("ColorDaysOfWeekSelected")
+    static let daysOfWeekUnselected = Color("ColorDaysOfWeekUnselected")
 
+    static let daysOfWeekText = Color("ColorDaysOfWeek")
 }
