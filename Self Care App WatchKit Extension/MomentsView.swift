@@ -11,7 +11,7 @@ struct MomentsView: View {
     
     @State private var currentPage = 0
     
-    var pages = ["Personal", "Social", "Physical"]
+    var pages = [LocalizedStringKey("Personal"), LocalizedStringKey("Social"), LocalizedStringKey("Physical")]
     
     var body: some View {
         GeometryReader { g in

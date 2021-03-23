@@ -17,14 +17,14 @@ struct MenuView: View {
                 NavigationLink(
                     destination: MomentsView(),
                     label: {
-                        Button(image: "Watch-Menu-MomentsIcon", title: "Moments", width: 48, height: 37)
+                        Button(image: "Watch-Menu-MomentsIcon", title: LocalizedStringKey("Moments"), width: 40, height: 30)
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
                 // adicionar View com ciclos como destination
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Button(image: "Watch-Menu-CyclesIcon", title: "Cycles", width: 47, height: 47)
+                        Button(image: "Watch-Menu-CyclesIcon", title: LocalizedStringKey("Cycles"), width: 40, height: 40)
                     }).buttonStyle(PlainButtonStyle())
                 Spacer()
             }.onAppear(perform: {
@@ -37,7 +37,7 @@ struct MenuView: View {
 struct Button : View {
     
     var image : String
-    var title : String
+    var title : LocalizedStringKey
     
     var width: Int
     var height: Int
@@ -48,7 +48,7 @@ struct Button : View {
                 Text(title)
                     .fontWeight(.medium)
                     .font(.system(size: 18))
-                    .padding(.leading, 16)
+                    .padding(.leading, 12)
                     .foregroundColor(WatchColorManager.menuTextColor)
                 Spacer()
                 Image(image)
@@ -58,7 +58,8 @@ struct Button : View {
             }
             .frame(width: reader.size.width, height: reader.size.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .background(WatchColorManager.menuBackgroundColor)
-            .cornerRadius(15.0)
+            .cornerRadius(10.0)
+            .navigationTitle(Text("Landscape"))
         }
     }
 }

@@ -43,7 +43,7 @@ struct ContentView: View {
                     ProgressOfTheDay()
                 })
                 
-            }.navigationBarTitle(Text("Cycles"))
+            }.navigationBarTitle(Text(LocalizedStringKey("Cycles")))
         }
     }
     
@@ -213,7 +213,7 @@ struct ProgressBar: View {
                     
                 
                 }.cornerRadius(45.0)
-                .overlay(Text("Personal")
+                .overlay(Text(LocalizedStringKey("Personal"))
                         .foregroundColor(.white)
                         .font(.caption2)
                         .fontWeight(.semibold)
@@ -233,12 +233,12 @@ struct ProgressBar: View {
                 Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.pinkCicleColor)
                     .animation(.linear)
-                    .overlay(Text("Social")
-                                .bold()
-                                .font(.caption2))
+//                    .overlay(Text("Social")
+//                                .bold()
+//                                .font(.caption2))
 
             }.cornerRadius(45.0)
-            .overlay(Text("Social")
+            .overlay(Text(LocalizedStringKey("Social"))
                         .foregroundColor(.white)
                         .font(.caption2)
                         .fontWeight(.semibold)
@@ -258,12 +258,12 @@ struct ProgressBar: View {
                 Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.blueCicleColor)
                     .animation(.linear)
-                    .overlay(Text("Hobbies")
-                                .bold()
-                                .font(.caption2))
+//                    .overlay(Text("Hobbies")
+//                                .bold()
+//                                .font(.caption2))
 
             }.cornerRadius(45.0)
-            .overlay(Text("Physical")
+            .overlay(Text(LocalizedStringKey("Physical"))
                         .foregroundColor(.white)
                         .font(.caption2)
                         .fontWeight(.semibold)

@@ -17,12 +17,35 @@
 		<key>Self Care App WatchKit App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Self Care App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>76F593B825E82ED3008E171E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76F593C925E82ED4008E171E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76F593D425E82ED4008E171E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76F593DD25E82ED4008E171E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -107,5 +107,4 @@
 // Tela My moments
 "Yes" = "Yes";
 "No" = "No";
-"Question1" = "Have you already done ";
-"QuestionPart2" = " today?";
+"Question %@" = "Have you already done %@ today?";
