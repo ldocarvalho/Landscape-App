@@ -33,7 +33,7 @@ struct MyMomentsView: View {
     @State private var didTapSaturday :Bool = true
     
     var body: some View {
-        
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         GeometryReader { reader in
             ZStack {
                 ColorManager.backgroundColor
@@ -278,7 +278,7 @@ struct MyMomentsView: View {
                         
                         
                     })
-                    .onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification)) { _ in
+                    .onReceive(timer) { _ in
                         let weekday = Calendar.current.component(.weekday, from: Date())
                         switch(weekday){
                         case 1:
@@ -317,7 +317,7 @@ struct MyMomentsView: View {
 
                             }
                         }
-                    }
+                     }
                     
                 }
                 .navigationBarTitle(Text("My moments"))
