@@ -14,10 +14,31 @@
       "filename" : "iOS - PersonalIcon @ 3x.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "Pessoal.png",
+      "idiom" : "universal",
+      "locale" : "pt-BR",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Pessoal@2x.png",
+      "idiom" : "universal",
+      "locale" : "pt-BR",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Pessoal@3x.png",
+      "idiom" : "universal",
+      "locale" : "pt-BR",
+      "scale" : "3x"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
   }
 }
