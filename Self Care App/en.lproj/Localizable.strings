@@ -6,6 +6,10 @@
   
 */
 
+//
+//// iOS
+//
+
 // Onboarding
 "Onboarding-1-Label-Name" = "How would you like to be called?";
 "Onboarding-1-Button-Name" = "Continue";
@@ -87,7 +91,21 @@
 "Info-3-Answer" = "There are many categories of activities that are seen as self care. \n\n• Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself. \n• Social activities are the ones you’ll do with other people around you and will stimulate your social interactions. \n• Physical activities are the ones you’lldo in order to take care of your physical health.";
 
 
+//
+//// watchOS
+//
 
+// Menu
+"Moments" = "Moments";
+"Cycles" = "Cycles";
 
+// Tela Meus ciclos
+"Personal" = "Personal";
+"Social" = "Social";
+"Physical" = "Physical";
 
-
+// Tela My moments
+"Yes" = "Yes";
+"No" = "No";
+"Question1" = "Have you already done ";
+"QuestionPart2" = " today?";

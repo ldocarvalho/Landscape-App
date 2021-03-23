@@ -6,6 +6,10 @@
   
 */
 
+//
+//// iOS
+//
+
 
 // Onboarding
 "Onboarding-1-Label-Name" = "Como você gostaria de chamado?";
@@ -86,3 +90,23 @@
 
 "Info-3-Question" = "E o que é tipo de autocuidado?";
 "Info-3-Answer" = "Existem muitas categorias de atividades que são vistas como autocuidado: \n\n• As atividades individuais são aquelas que você fará sozinho e fortalecerão seu bem-estar consigo. \n• As atividades sociais são aquelas em que você estará acompanhado e estimularão suas conexões sociais. \n• As atividades físicas são aquelas em que você fará pensando na sua saúde física.";
+
+
+//
+//// watchOS
+//
+
+// Menu
+"Moments" = "Momentos";
+"Cycles" = "Ciclos";
+
+// Tela Meus ciclos
+"Personal" = "Pessoal";
+"Social" = "Social";
+"Physical" = "Físico";
+
+// Tela My moments
+"Yes" = "Sim";
+"No" = "Não";
+"Question1" = "Você já conseguiu fazer o ";
+"QuestionPart2" = " hoje?";
