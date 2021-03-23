@@ -108,5 +108,4 @@
 // Tela My moments
 "Yes" = "Sim";
 "No" = "Não";
-"Question1" = "Você já conseguiu fazer o ";
-"QuestionPart2" = " hoje?";
+"Question %@" = "Você já conseguiu fazer o %@ hoje?";

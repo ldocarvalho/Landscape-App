@@ -28,7 +28,7 @@ struct NotificationView: View {
                         .cornerRadius(5.0)
                         .padding(.bottom, 4)
                         .background(NavigationLink(destination: MenuView(), isActive: $View) { EmptyView()})
-                    Text("Have you already done " + title + " today?")
+                    Text("Question \(title)")
     //                    .font(.caption2)
                         .font(.system(size: 13, weight: .semibold))
                         .multilineTextAlignment(.center)
