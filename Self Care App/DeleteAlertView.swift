@@ -20,13 +20,13 @@ struct DeleteAlertView: View {
                 .resizable()
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .padding(.top, 8)
-            Text("Are you sure you want to delete this moment?")
+            Text(LocalizedStringKey("DeleteAlert-Title"))
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
                 .frame(width: 280, height: 100, alignment: .center)
-            Text("This action cannot be undone and this moment will not count on your cycles anymore.")
+            Text(LocalizedStringKey("DeleteAlert-Body"))
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
@@ -37,7 +37,7 @@ struct DeleteAlertView: View {
                 Button(action: {
                     shown.toggle()
                 }, label: {
-                    Text("Cancel")
+                    Text(LocalizedStringKey("DeleteAlert-Button1"))
                         .foregroundColor(ColorManager.textColorSecondaryButton)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 })
@@ -57,7 +57,7 @@ struct DeleteAlertView: View {
                     shown.toggle()
                     
                 }, label: {
-                    Text("Delete")
+                    Text(LocalizedStringKey("DeleteAlert-Button2"))
                         .foregroundColor(ColorManager.textColorMainButton)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 })

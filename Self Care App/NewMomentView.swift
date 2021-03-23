@@ -57,12 +57,12 @@ struct NewMomentView : View {
                             Button(action: {
                                 presentationMode.wrappedValue.dismiss()
                             }, label: {
-                                Text("Cancel")
+                                Text(LocalizedStringKey("NewMoment-Button1"))
                                     .foregroundColor(ColorManager.actionButtonColor)
                                     .fontWeight(.medium)
                             }).padding()
                             Spacer()
-                            Text("Add new moment")
+                            Text(LocalizedStringKey("NewMoment-Label-1"))
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
                             Spacer()
@@ -122,7 +122,7 @@ struct NewMomentView : View {
                                 //                        try? moc.save()
                                 //                    }
                             }, label: {
-                                Text("Save")
+                                Text(LocalizedStringKey("NewMoment-Button2"))
                                     .foregroundColor(ColorManager.actionButtonColor)
                                     .fontWeight(.bold)
                             }).padding()
@@ -132,12 +132,12 @@ struct NewMomentView : View {
                         
                         ScrollView(.vertical) {
                             VStack {
-                                Text("What would you like to care for yourself today?")
+                                Text(LocalizedStringKey("Onboarding-2-Label-Question"))
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
                                     .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
-                                TextField("Type your self care moment here", text: $momentTitle)
+                                TextField(LocalizedStringKey("Onboarding-2-Placeholder-Name"), text: $momentTitle)
                                     .foregroundColor(ColorManager.bodyTextColor)
                                     
                                     .frame(width: reader.size.width*0.9, height: 10, alignment: .leading)
@@ -211,7 +211,7 @@ struct NewMomentView : View {
                             }
                             
                             VStack {
-                                Text("In what part of the day would you rather do it?")
+                                Text(LocalizedStringKey("Onboarding-3-Label-Question"))
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
@@ -271,7 +271,7 @@ struct NewMomentView : View {
                             }.padding(8)
                             
                             HStack {
-                                Text("Would you like to do it in other days?")
+                                Text(LocalizedStringKey("Onboarding-4-Label-Question1"))
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
@@ -287,7 +287,7 @@ struct NewMomentView : View {
                             VStack {
                                 if showDaysOfWeek {
                                     withAnimation {
-                                        Text("In what days of the week would you like to do it?")
+                                        Text(LocalizedStringKey("Onboarding-4-Label-Question2"))
                                             .font(.body)
                                             .fontWeight(.bold)
                                             .foregroundColor(ColorManager.bodyTextColor)
@@ -422,7 +422,7 @@ struct NewMomentView : View {
                             }.padding(showDaysOfWeek ? 8 : 0)
                             
                             VStack {
-                                Text("What type of self care are you making?")
+                                Text(LocalizedStringKey("Onboarding-5-Label-Question"))
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
@@ -492,7 +492,7 @@ struct NewMomentView : View {
                                 .frame(width: 350, height: 40, alignment: .leading)
                                 .cornerRadius(25.0)
                                 .foregroundColor(ColorManager.switchColor)
-                                .overlay(Text("Would you like to know more about self care?").font(.system(size: 16))
+                                .overlay(Text(LocalizedStringKey("NewMoment-Label-Question")).font(.system(size: 16))
                                 .foregroundColor(ColorManager.daysOfWeekColor)
                                 .fontWeight(.medium))
                                 .padding([.top, .bottom], 12)

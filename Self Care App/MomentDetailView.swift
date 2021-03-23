@@ -13,7 +13,8 @@ struct MomentDetailView: View {
     var image : String = "p1"
     var id : Int = 0
   
-    var texts = ["Personal activities are the ones you’ll do by yourself and will reinforce your connection with yourself.", "Social activities are the ones you’ll do with other people around you and will stimulate your social interactions.", "Physical activities are the ones you’ll do in order to take care of your physical health."]
+    var texts = [LocalizedStringKey("MomentDetail-Description-Personal"), LocalizedStringKey("MomentDetail-Description-Social"), LocalizedStringKey("MomentDetail-Description-Physical")]
+    
     @State var done : Bool
     @State var shownDeleteAlert = false
     @State var shownDoneAlert = false
@@ -41,7 +42,7 @@ struct MomentDetailView: View {
                                 Button(action: {
                                     View.toggle()
                                 }, label: {
-                                    Text("Edit")
+                                    Text(LocalizedStringKey("MomentDetail-Button1"))
                                         .foregroundColor(ColorManager.actionButtonColor)
                                         .fontWeight(.bold)
                                 })
@@ -66,7 +67,7 @@ struct MomentDetailView: View {
                             
                             
                             HStack {
-                                Text("Is this moment done for today?")
+                                Text(LocalizedStringKey("MomentDetail-Label-Question1"))
                                     .font(.title2)
                                     .bold()
                                     .foregroundColor(ColorManager.titleTextColor)
@@ -81,7 +82,7 @@ struct MomentDetailView: View {
                                     shownDeleteAlert.toggle()
                                    
                                 }, label: {
-                                    Text("Delete moment")
+                                    Text(LocalizedStringKey("MomentDetail-Button3"))
                                         .foregroundColor(ColorManager.textColorSecondaryButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })
@@ -110,7 +111,7 @@ struct MomentDetailView: View {
                                     }
                                     
                                 }, label: {
-                                    Text(done ? "It's done" : "Done")
+                                    Text(done ? LocalizedStringKey("MomentDetail-Button4") : LocalizedStringKey("MomentDetail-Button2"))
                                         .foregroundColor(ColorManager.textColorMainButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })

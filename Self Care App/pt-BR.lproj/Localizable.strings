@@ -54,6 +54,7 @@
 // Tela Moment detail
 "MomentDetail-Button1" = "Editar";
 "MomentDetail-Button2" = "Está feito";
+"MomentDetail-Button4" = "Feito";
 "MomentDetail-Button3" = "Deletar momento";
 "MomentDetail-Label-Question1" = "Este autocuidado foi feito hoje?";
 "MomentDetail-Description-Personal" = "As atividades individuais são aquelas que você fará sozinho e fortalecerão seu bem-estar consigo.";
@@ -69,12 +70,12 @@
 // Tela Done alert
 "DoneAlert-Title" = "Parabéns! Você cuidou um pouco de si mais uma vez!";
 "DoneAlert-Body" = "Cuidar de você todo dia aumenta sua qualidade de vida e bem-estar.";
-"DoneAlert-Button1" = "Que legal!";
+"DoneAlert-Button" = "Que legal!";
 
 // Tela Empty fields alert
 "EmptyFieldAlert-Title" = "Você não pode salvar um novo momento com campos vazios.";
 "EmptyFieldAlert-Body" = "Para salvar um novo momento, é necessário que todas as informações estejam preenchidas.";
-"EmptyFieldAlert-Button1" = "OK";
+"EmptyFieldAlert-Button" = "OK";
 
 // Tela Info
 "Info-1-Question" = "O que é autocuidado?";
