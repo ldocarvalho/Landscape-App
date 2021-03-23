@@ -25,8 +25,8 @@ struct ContentView: View {
         GeometryReader { reader in
             VStack{
                 PagerManager(pageCount: 2, currentIndex: $currentPage) {
-                    CirclesView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
-                    ProgressBarView(progressValueIndividual: progressValueIndividual, progressValueSocial: progressValueSocial, progressValueHobbies: progressValueHobbies)
+                    CirclesView(progressValueIndividual: $progressValueIndividual, progressValueSocial: $progressValueSocial, progressValueHobbies: $progressValueHobbies)
+                    ProgressBarView(progressValueIndividual: $progressValueIndividual, progressValueSocial: $progressValueSocial, progressValueHobbies: $progressValueHobbies)
                 }.frame(width: reader.size.width, height: reader.size.height*0.999, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .onAppear(perform: {
                     ProgressOfTheDay()
@@ -109,9 +109,9 @@ struct ContentView: View {
 
 struct CirclesView : View {
     
-    @State var progressValueIndividual: Float  //Colocar informação do banco aqui
-    @State var progressValueSocial: Float //Colocar informação do banco aqui
-    @State var progressValueHobbies: Float  //Colocar informação do banco aqui
+    @Binding var progressValueIndividual: Float  //Colocar informação do banco aqui
+    @Binding var progressValueSocial: Float //Colocar informação do banco aqui
+    @Binding var progressValueHobbies: Float  //Colocar informação do banco aqui
 
     
     var body: some View {
@@ -176,9 +176,9 @@ struct Circles: View {
 
 struct ProgressBarView : View {
     
-    @State var progressValueIndividual: Float  //Colocar informação do banco aqui
-    @State var progressValueSocial: Float //Colocar informação do banco aqui
-    @State var progressValueHobbies: Float  //Colocar informação do banco aqui
+    @Binding var progressValueIndividual: Float  //Colocar informação do banco aqui
+    @Binding var progressValueSocial: Float //Colocar informação do banco aqui
+    @Binding var progressValueHobbies: Float  //Colocar informação do banco aqui
 
     
     var body: some View {
@@ -230,7 +230,7 @@ struct ProgressBar: View {
                     .foregroundColor(WatchColorManager.pinkCicleBackgroundColor)
                     .background(WatchColorManager.pinkCicleBackgroundColor)
                     
-                Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 30)
+                Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.pinkCicleColor)
                     .animation(.linear)
 //                    .overlay(Text("Social")
@@ -253,9 +253,9 @@ struct ProgressBar: View {
             ZStack(alignment: .leading){
                 Rectangle().frame(width: 150 , height: 30)
                     .opacity(0.3)
-                    .background(WatchColorManager.blueCicleColor)
+                    .background(WatchColorManager.blueCicleBackgroundColor)
                     
-                Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 30)
+                Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.blueCicleColor)
                     .animation(.linear)
 //                    .overlay(Text("Hobbies")
