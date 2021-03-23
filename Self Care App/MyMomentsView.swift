@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Foundation
 struct MyMomentsView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
@@ -32,6 +33,7 @@ struct MyMomentsView: View {
     @State private var didTapSaturday :Bool = true
     
     var body: some View {
+        
         GeometryReader { reader in
             ZStack {
                 ColorManager.backgroundColor
@@ -198,26 +200,7 @@ struct MyMomentsView: View {
 //                                didTapSaturday.toggle()
                             }
                     }.padding(.bottom, 16)
-//                    .onAppear(perform: {
-//                        if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
-//                            if let diff = Calendar.current.dateComponents([.day], from: date, to: Date()).day, diff != 0{
-//                                for i in 0 ... moment.count {
-//                                    if(i < moment.count){
-//                                        moment[i].done = false
-//                                    }
-//                                }
-//                                UserDefaults.standard.removeObject(forKey: "creationTime")
-//                                UserDefaults.standard.setValue(Date(), forKey: "creationTime")
-//                                do{
-//                                    try moc.save()
-//                                }
-//                                catch{
-//
-//                                }
-//
-//                            }
-//                        }
-//                    })
+
                     
                     
                     ScrollView(.vertical, showsIndicators: false) {
@@ -253,44 +236,47 @@ struct MyMomentsView: View {
                         })
                     }.frame(width: reader.size.width)
                     .onAppear(perform:{
-                        let weekday = Calendar.current.component(.weekday, from: Date())
-                        switch(weekday){
-                        case 1:
-                            daysOfWeek.insert(.sunday)
-                        case 2:
-                            daysOfWeek.insert(.monday)
-                        case 3:
-                            daysOfWeek.insert(.thuesday)
-                        case 4:
-                            daysOfWeek.insert(.wednesday)
-                        case 5:
-                            daysOfWeek.insert(.thursday)
-                        case 6:
-                            daysOfWeek.insert(.friday)
-                        case 7:
-                            daysOfWeek.insert(.saturday)
-                        default:
+                        DispatchQueue.main.async {
+                            let weekday = Calendar.current.component(.weekday, from: Date())
+                            switch(weekday){
+                            case 1:
                                 daysOfWeek.insert(.sunday)
-                            
-                        }
-                        if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
-                            if let diff = Calendar.current.dateComponents([.weekday], from: date, to: Date()).weekday, diff != 0{
-                                for i in 0 ... moment.count {
-                                    if(i < moment.count){
-                                        moment[i].done = false
+                            case 2:
+                                daysOfWeek.insert(.monday)
+                            case 3:
+                                daysOfWeek.insert(.thuesday)
+                            case 4:
+                                daysOfWeek.insert(.wednesday)
+                            case 5:
+                                daysOfWeek.insert(.thursday)
+                            case 6:
+                                daysOfWeek.insert(.friday)
+                            case 7:
+                                daysOfWeek.insert(.saturday)
+                            default:
+                                    daysOfWeek.insert(.sunday)
+                                
+                            }
+                            if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
+                                if let diff = Calendar.current.dateComponents([.weekday], from: date, to: Date()).weekday, diff != 0{
+                                    for i in 0 ... moment.count {
+                                        if(i < moment.count){
+                                            moment[i].done = false
+                                        }
                                     }
-                                }
-                                UserDefaults.standard.removeObject(forKey: "creationTime")
-                                UserDefaults.standard.setValue(Date(), forKey: "creationTime")
-                                do{
-                                    try moc.save()
-                                }
-                                catch{
-                                    
-                                }
+                                    UserDefaults.standard.removeObject(forKey: "creationTime")
+                                    UserDefaults.standard.setValue(Date(), forKey: "creationTime")
+                                    do{
+                                        try moc.save()
+                                    }
+                                    catch{
+                                        
+                                    }
 
+                                }
                             }
                         }
+                        
                     })
                     .onDisappear(perform:{
                         let weekday = Calendar.current.component(.weekday, from: Date())
