@@ -10,8 +10,8 @@ import SwiftUI
 
 
 struct AvisoView: View {
-    @State public var mensagem: String
-    @State public var pergunta: String
+    @State public var mensagem: LocalizedStringKey
+    @State public var pergunta: LocalizedStringKey
     var body: some View {
         VStack {
             VStack {
