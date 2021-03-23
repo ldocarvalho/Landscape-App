@@ -236,7 +236,7 @@ struct MyMomentsView: View {
                         })
                     }.frame(width: reader.size.width)
                     .onAppear(perform:{
-                        DispatchQueue.main.async {
+                       
                             let weekday = Calendar.current.component(.weekday, from: Date())
                             switch(weekday){
                             case 1:
@@ -275,10 +275,10 @@ struct MyMomentsView: View {
 
                                 }
                             }
-                        }
+                        
                         
                     })
-                    .onDisappear(perform:{
+                    .onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification)) { _ in
                         let weekday = Calendar.current.component(.weekday, from: Date())
                         switch(weekday){
                         case 1:
@@ -317,7 +317,8 @@ struct MyMomentsView: View {
 
                             }
                         }
-                    })
+                    }
+                    
                 }
                 .navigationBarTitle(Text("My moments"))
                 .navigationBarItems(trailing:
