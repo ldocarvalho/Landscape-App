@@ -235,31 +235,13 @@ struct MyMomentsView: View {
                             
                         })
                     }.frame(width: reader.size.width)
-                    .onChange(of:scenePhase){ (newPhase) in
+                    .onChange(of: scenePhase) { (newPhase) in
                         switch(newPhase){
 //                        case .background:
 //                            print ("entrei no background")
                         case .active:
                             let weekday = Calendar.current.component(.weekday, from: Date())
-                            switch(weekday){
-                            case 1:
-                                daysOfWeek.insert(.sunday)
-                            case 2:
-                                daysOfWeek.insert(.monday)
-                            case 3:
-                                daysOfWeek.insert(.thuesday)
-                            case 4:
-                                daysOfWeek.insert(.wednesday)
-                            case 5:
-                                daysOfWeek.insert(.thursday)
-                            case 6:
-                                daysOfWeek.insert(.friday)
-                            case 7:
-                                daysOfWeek.insert(.saturday)
-                            default:
-                                    daysOfWeek.insert(.sunday)
-                                
-                            }
+                                                        
                             if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
                                 if let diff = Calendar.current.dateComponents([.weekday], from: date, to: Date()).weekday, diff != 0{
                                     for i in 0 ... moment.count {
@@ -267,9 +249,81 @@ struct MyMomentsView: View {
                                             moment[i].done = false
                                         }
                                     }
+                                    
+                                    switch(weekday) {
+                                    case 1:
+                                        didTapSunday = false
+                                        didTapMonday = true
+                                        didTapThursday = true
+                                        didTapWednesday = true
+                                        didTapThuesday = true
+                                        didTapSaturday = true
+                                        didTapFriday = true
+                                        break
+                                    case 2:
+                                        didTapSunday = true
+                                        didTapMonday = false
+                                        didTapThursday = true
+                                        didTapWednesday = true
+                                        didTapThuesday = true
+                                        didTapSaturday = true
+                                        didTapFriday = true
+                                        break
+                                    case 3:
+                                        didTapSunday = true
+                                        didTapMonday = true
+                                        didTapThursday = true
+                                        didTapWednesday = true
+                                        didTapThuesday = false
+                                        didTapSaturday = true
+                                        didTapFriday = true
+                                        break
+                                    case 4:
+                                        didTapSunday = true
+                                        didTapMonday = true
+                                        didTapThursday = true
+                                        didTapWednesday = false
+                                        didTapThuesday = true
+                                        didTapSaturday = true
+                                        didTapFriday = true
+                                        break
+                                    case 5:
+                                        didTapSunday = true
+                                        didTapMonday = true
+                                        didTapThursday = false
+                                        didTapWednesday = true
+                                        didTapThuesday = true
+                                        didTapSaturday = true
+                                        didTapFriday = true
+                                        break
+                                    case 6:
+                                        didTapSunday = true
+                                        didTapMonday = true
+                                        didTapThursday = true
+                                        didTapWednesday = true
+                                        didTapThuesday = true
+                                        didTapSaturday = true
+                                        didTapFriday = false
+                                        break
+                                    case 7:
+                                        didTapSunday = true
+                                        didTapMonday = true
+                                        didTapThursday = true
+                                        didTapWednesday = true
+                                        didTapThuesday = true
+                                        didTapSaturday = false
+                                        didTapFriday = true
+                                        break
+                                    default:
+                                        didTapSaturday = false
+                                        break
+
+                                    }
+                                    
                                     UserDefaults.standard.removeObject(forKey: "creationTime")
-                                    UserDefaults.standard.setValue(Date(), forKey: "creationTime")
-                                    do{
+                                    UserDefaults.standard.set(Date(), forKey: "creationTime")
+                                    
+                                    do {
                                         try moc.save()
                                     }
                                     catch{
@@ -278,14 +332,15 @@ struct MyMomentsView: View {
 
                                 }
                             }
+                            
                         default:
                             print ("nao entrei no background")
                         }
                     }
                     .onAppear(perform:{
-                       
-                            let weekday = Calendar.current.component(.weekday, from: Date())
-                            switch(weekday){
+                        let weekday = Calendar.current.component(.weekday, from: Date())
+                        
+                        switch(weekday) {
                             case 1:
                                 daysOfWeek.insert(.sunday)
                             case 2:
@@ -301,10 +356,10 @@ struct MyMomentsView: View {
                             case 7:
                                 daysOfWeek.insert(.saturday)
                             default:
-                                    daysOfWeek.insert(.sunday)
-                                
-                            }
-                            if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
+                                daysOfWeek.insert(.sunday)
+                        }
+                            
+                        if let date = UserDefaults.standard.object(forKey: "creationTime") as? Date {
                                 if let diff = Calendar.current.dateComponents([.weekday], from: date, to: Date()).weekday, diff != 0{
                                     for i in 0 ... moment.count {
                                         if(i < moment.count){
@@ -313,7 +368,7 @@ struct MyMomentsView: View {
                                     }
                                     UserDefaults.standard.removeObject(forKey: "creationTime")
                                     UserDefaults.standard.setValue(Date(), forKey: "creationTime")
-                                    do{
+                                    do {
                                         try moc.save()
                                     }
                                     catch{
@@ -322,8 +377,6 @@ struct MyMomentsView: View {
 
                                 }
                             }
-                        
-                        
                     })
                     
                     
