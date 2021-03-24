@@ -31,7 +31,7 @@ struct PersistenceController {
         
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        description.cloudKitContainerOptions?.databaseScope = .private
+        description.cloudKitContainerOptions?.databaseScope = .public
         
     
         container.loadPersistentStores { description, error in

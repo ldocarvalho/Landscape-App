@@ -10,7 +10,7 @@ import UserNotifications
 
 struct ContentView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
-    @State private var currentPage = 0
+    @State var currentPage = 0
     @State var daysOfWeek : WeekDays = []
     @State var progressValueIndividual: Float = 0 //Colocar informação do banco aqui
     @State var progressValueSocial: Float = 0 //Colocar informação do banco aqui
@@ -21,12 +21,15 @@ struct ContentView: View {
     @State var countIndividual : Double = 0
     @State var countSocial : Double = 0
     @State var countHobby : Double = 0
+    
+//    @State var isMoving: Bool = Int
+    
     var body: some View {
         GeometryReader { reader in
-            VStack{
+            VStack {
                 PagerManager(pageCount: 2, currentIndex: $currentPage) {
-                    CirclesView(progressValueIndividual: $progressValueIndividual, progressValueSocial: $progressValueSocial, progressValueHobbies: $progressValueHobbies)
-                    ProgressBarView(progressValueIndividual: $progressValueIndividual, progressValueSocial: $progressValueSocial, progressValueHobbies: $progressValueHobbies)
+                    CirclesView(progressValueIndividual: $progressValueIndividual, progressValueSocial: $progressValueSocial, progressValueHobbies: $progressValueHobbies, isMoving: $currentPage)
+                    ProgressBarView(progressValueIndividual: $progressValueIndividual, progressValueSocial: $progressValueSocial, progressValueHobbies: $progressValueHobbies, isMoving: $currentPage)
                 }.frame(width: reader.size.width, height: reader.size.height*0.999, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .onAppear(perform: {
                     ProgressOfTheDay()
@@ -44,6 +47,17 @@ struct ContentView: View {
                 })
                 
             }.navigationBarTitle(Text(LocalizedStringKey("Cycles")))
+//            .onTapGesture {
+//                isMoving.toggle()
+//            }
+//            .gesture(TapGesture()
+//                        .onChanged { value in
+//                            self.isMoving = true
+//                        }
+//                        .onEnded { value in
+//                            self.isMoving = false
+//                        }
+//            )
         }
     }
     
@@ -113,10 +127,11 @@ struct CirclesView : View {
     @Binding var progressValueSocial: Float //Colocar informação do banco aqui
     @Binding var progressValueHobbies: Float  //Colocar informação do banco aqui
 
+    @Binding var isMoving: Int
     
     var body: some View {
         VStack {
-            Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies)
+            Circles(progressIndividual: self.$progressValueIndividual,progressSocial: self.$progressValueSocial,progressHobbies: self.$progressValueHobbies, isMoving: $isMoving)
                  .frame(width: 100.0, height: 100.0)
                 .padding(.top, 25)
                 .padding(25.0)
@@ -128,6 +143,9 @@ struct Circles: View {
     @Binding var progressIndividual : Float
     @Binding var progressSocial: Float
     @Binding var progressHobbies: Float
+    
+    @Binding var isMoving: Int
+    
     var body: some View {
         ZStack {
             Circle()
@@ -140,7 +158,7 @@ struct Circles: View {
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(WatchColorManager.purpleCicleColor)
                 .rotationEffect(Angle(degrees:270))
-                .animation(.linear)
+                .animation(isMoving == 0 ? .linear : .none)
                 .frame(width: 110, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Circle()
@@ -153,7 +171,7 @@ struct Circles: View {
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(WatchColorManager.pinkCicleColor)
                 .rotationEffect(Angle(degrees:270))
-                .animation(.linear)
+                .animation(isMoving == 0 ? .linear : .none)
                 .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Circle()
@@ -166,10 +184,8 @@ struct Circles: View {
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(WatchColorManager.blueCicleColor)
                 .rotationEffect(Angle(degrees:270))
-                .animation(.linear)
+                .animation(isMoving == 0 ? .linear : .none)
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-    
-
         }
     }
 }
@@ -179,11 +195,13 @@ struct ProgressBarView : View {
     @Binding var progressValueIndividual: Float  //Colocar informação do banco aqui
     @Binding var progressValueSocial: Float //Colocar informação do banco aqui
     @Binding var progressValueHobbies: Float  //Colocar informação do banco aqui
+    
+    @Binding var isMoving: Int
 
     
     var body: some View {
         VStack {
-            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies,progressSocial: $progressValueSocial)
+            ProgressBar(progressIndividual: $progressValueIndividual,progressHobbies: $progressValueHobbies, progressSocial: $progressValueSocial, isMoving: $isMoving)
                 .frame(height: 10)
                 .padding(.top, 25)
                 .padding(25)
@@ -195,6 +213,8 @@ struct ProgressBar: View {
     @Binding var progressIndividual: Float
     @Binding var progressHobbies: Float
     @Binding var progressSocial: Float
+    
+    @Binding var isMoving: Int
     
     var body: some View {
         VStack{
@@ -209,7 +229,7 @@ struct ProgressBar: View {
                     
                 Rectangle().frame(width: min(CGFloat(self.progressIndividual) * 150,  150), height: 30)
                     .foregroundColor(WatchColorManager.purpleCicleColor)
-                    .animation(.linear)
+                    .animation(isMoving == 1 ? .linear : .none)
                     
                 
                 }.cornerRadius(45.0)
@@ -232,7 +252,7 @@ struct ProgressBar: View {
                     
                 Rectangle().frame(width: min(CGFloat(self.progressSocial) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.pinkCicleColor)
-                    .animation(.linear)
+                    .animation(isMoving == 1 ? .linear : .none)
 //                    .overlay(Text("Social")
 //                                .bold()
 //                                .font(.caption2))
@@ -257,7 +277,7 @@ struct ProgressBar: View {
                     
                 Rectangle().frame(width: min(CGFloat(self.progressHobbies) *  150,  150), height: 30)
                     .foregroundColor(WatchColorManager.blueCicleColor)
-                    .animation(.linear)
+                    .animation(isMoving == 1 ? .linear : .none)
 //                    .overlay(Text("Hobbies")
 //                                .bold()
 //                                .font(.caption2))
