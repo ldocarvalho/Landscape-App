@@ -31,6 +31,8 @@ struct NewMomentView : View {
     
     @State var showDaysOfWeek : Bool = false
     
+    @State var showCharactersMessage: Bool = false
+    
     @State var shownEmptyFieldAlert = false
     
     @State var info = false
@@ -47,7 +49,7 @@ struct NewMomentView : View {
             GeometryReader { reader in
                 ZStack {
                     ColorManager.backgroundColor
-                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        .edgesIgnoringSafeArea(.all)
                     VStack {
                      
                         NavigationLink(destination: OnboardingViewPage(), isActive: $info) { EmptyView() }
@@ -138,13 +140,22 @@ struct NewMomentView : View {
                                     .foregroundColor(ColorManager.bodyTextColor)
                                     .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
                                 TextField(LocalizedStringKey("Onboarding-2-Placeholder-Name"), text: $momentTitle)
+                                    .onChange(of: self.momentTitle, perform: { value in
+                                        if value.count >= 25 {
+                                            self.momentTitle = String(value.prefix(25))
+                                            showCharactersMessage = true
+                                        } else {
+                                            showCharactersMessage = false
+                                        }
+                                    })
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    
                                     .frame(width: reader.size.width*0.9, height: 10, alignment: .leading)
                                     .padding()
                                     .textFieldStyle(CircularTextFieldStyle())
                                     .cornerRadius(15)
-                            }.padding(8)
+                            }
+                            .padding([.leading, .trailing, .top], 8)
+                            .padding(.bottom, 4)
                             .onAppear() {
                                 if (itsEditing) {
                                     momentTitle = moment[id].title!
@@ -207,6 +218,17 @@ struct NewMomentView : View {
                                     if (daysOfWeek.contains(.saturday)){
                                         didTapSaturday = false
                                     }
+                                }
+                            }
+                            
+                            if showCharactersMessage {
+                                withAnimation {
+                                    VStack {
+                                        Text(LocalizedStringKey("Characters"))
+                                            .font(.system(size: 14))
+                                            .foregroundColor(ColorManager.actionButtonColor)
+                                    }
+                                    .frame(width: reader.size.width*0.9, height: 10, alignment: .leading)
                                 }
                             }
                             

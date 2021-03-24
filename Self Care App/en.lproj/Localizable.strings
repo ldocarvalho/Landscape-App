@@ -108,3 +108,5 @@
 "Yes" = "Yes";
 "No" = "No";
 "Question %@" = "Have you already done %@ today?";
+
+"Characters" = "Maximum number of characters reached.";

@@ -109,3 +109,5 @@
 "Yes" = "Sim";
 "No" = "Não";
 "Question %@" = "Você já conseguiu fazer o %@ hoje?";
+
+"Characters" = "Número máximo de caracteres atingido.";

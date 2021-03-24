@@ -92,15 +92,16 @@ struct ListPersonalView: View {
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 10)
+                                        }.padding([.leading, .trailing], 10)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(10.0)
-                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(8.0)
+                        .frame(width: g.size.width*0.80, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
-                    .padding([.top, .leading, .trailing], 12)
+                    .padding([.leading, .trailing], 12)
+                    .padding(.top, 16)
                     .padding([.bottom], 8)
             }
         }
@@ -171,14 +172,15 @@ struct ListSocialView: View {
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 10)
+                                        }.padding([.leading, .trailing], 10)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(10.0)
-                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }.padding([.top, .leading,.trailing], 12)
+                        .cornerRadius(8.0)
+                        .frame(width: g.size.width*0.83, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }.padding([.leading,.trailing], 12)
+                    .padding(.top, 16)
                 .padding(.bottom, 8)
             }
         }
@@ -247,14 +249,15 @@ struct ListPhysicalView: View {
                                             Image(partOfTheDayImages[Int(moments[i].partOfTheDay) - 1])
                                                 .resizable()
                                                 .frame(width: 35, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }.padding([.leading, .trailing, .bottom], 10)
+                                        }.padding([.leading, .trailing], 10)
                                     }.opacity(moments[i].done ? 0.4 : 1)
                                 }
                             }
                         }.background(WatchColorManager.menuBackgroundColor)
-                        .cornerRadius(10.0)
-                        .frame(width: g.size.width*0.83, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }.padding([.top, .leading,.trailing], 12)
+                        .cornerRadius(8.0)
+                        .frame(width: g.size.width*0.83, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }.padding([.leading,.trailing], 12)
+                    .padding(.top, 16)
                     .padding(.bottom, 8)
             }
         }

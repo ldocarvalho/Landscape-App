@@ -13,6 +13,8 @@ struct RegisterMomentPart1View: View {
     @State var name: String
     @State var View : Bool = false
     @State var shownEmptyFieldAlert = false
+    @State var showCharactersMessage: Bool = false
+    
     var body: some View {
         GeometryReader { reader in
                 ZStack {
@@ -41,13 +43,32 @@ struct RegisterMomentPart1View: View {
                                 .multilineTextAlignment(.center)
                                 .frame(width: reader.size.width*0.9, height: 60, alignment: .center)
                             TextField(LocalizedStringKey("Onboarding-2-Placeholder-Name"), text: $momentTitle)
+                                .onChange(of: self.momentTitle, perform: { value in
+                                    if value.count >= 25 {
+                                        self.momentTitle = String(value.prefix(25))
+                                        showCharactersMessage = true
+                                    } else {
+                                        showCharactersMessage = false
+                                    }
+                                })
                                 .frame(width: reader.size.width*0.9, height: 30, alignment: .center)
                                 .padding()
                                 .textFieldStyle(CircularTextFieldStyle())
                                 .cornerRadius(15)
                         }.padding([.leading, .trailing, .top], 16)
                         .blur(radius: shownEmptyFieldAlert ? 8 : 0)
-//                        Spacer()
+                        
+                        if showCharactersMessage {
+                            withAnimation {
+                                VStack {
+                                    Text(LocalizedStringKey("Characters"))
+                                        .font(.system(size: 14))
+                                        .foregroundColor(ColorManager.actionButtonColor)
+                                }
+                                .frame(width: reader.size.width*0.9, height: 10, alignment: .leading)
+                            }
+                        }
+                        
                         Button(action: {
                             if(momentTitle.isEmpty){
                                 shownEmptyFieldAlert.toggle()
