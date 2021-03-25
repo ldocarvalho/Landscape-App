@@ -13,31 +13,37 @@ struct AvisoView: View {
     @State public var mensagem: LocalizedStringKey
     @State public var pergunta: LocalizedStringKey
     var body: some View {
-        VStack {
-            VStack {
-                Text(pergunta)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding([.leading, .trailing, .top], 8)
-                    .navigationTitle(Text(pergunta))
-                    .foregroundColor(ColorManager.cardTitleColor)
-                    .frame(width: 330, height: 100, alignment: .leading)
-                
-                ScrollView(.vertical, showsIndicators: true) {
-                    Text(mensagem)
-                        .fontWeight(.medium)
-                        .font(.title3)
-                        .padding([.leading, .trailing, .bottom], 16)
-                        .foregroundColor(ColorManager.bodyTextColor)
-                        .multilineTextAlignment(.leading)
-                }.frame(width:350, height: 350, alignment: .leading)
-
-            }.background(ColorManager.cardColor)
-            .cornerRadius(25)
-            .padding()
+        ZStack {
+            ColorManager.backgroundColor
+                .edgesIgnoringSafeArea(.all)
             
-            Spacer()
+            VStack {
+                VStack {
+                    Text(pergunta)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding([.leading, .trailing, .top], 8)
+                        .navigationTitle(Text(pergunta))
+                        .foregroundColor(ColorManager.cardTitleColor)
+                        .frame(width: 330, height: 100, alignment: .leading)
+                    
+                    ScrollView(.vertical, showsIndicators: true) {
+                        Text(mensagem)
+                            .fontWeight(.medium)
+                            .font(.title3)
+                            .padding([.leading, .trailing, .bottom], 16)
+                            .foregroundColor(ColorManager.bodyTextColor)
+                            .multilineTextAlignment(.leading)
+                    }.frame(width:350, height: 350, alignment: .leading)
+
+                }.background(ColorManager.cardColor)
+                .cornerRadius(25)
+                .padding()
+                
+                Spacer()
+            }
         }
+        
     }
 }
 

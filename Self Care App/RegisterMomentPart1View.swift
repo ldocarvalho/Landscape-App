@@ -63,7 +63,7 @@ struct RegisterMomentPart1View: View {
                                 VStack {
                                     Text(LocalizedStringKey("Characters"))
                                         .font(.system(size: 14))
-                                        .foregroundColor(ColorManager.actionButtonColor)
+                                        .foregroundColor(ColorManager.titleTextColor)
                                 }
                                 .frame(width: reader.size.width*0.9, height: 10, alignment: .leading)
                             }

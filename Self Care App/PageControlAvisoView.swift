@@ -23,25 +23,31 @@ struct OnboardingViewPage: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         GeometryReader { reader in
-            VStack() {
-                PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                    .frame(height: 550)
-
-                PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
-                    .padding()
-                    .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(ColorManager.cardColor)
-                    .cornerRadius(25.0)
-                NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+            ZStack {
+                ColorManager.backgroundColor
+                    .edgesIgnoringSafeArea(.all)
                 
-                Spacer()
+                VStack() {
+                    PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
+                        .frame(height: 550)
+
+                    PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
+                        .padding()
+                        .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(ColorManager.cardColor)
+                        .cornerRadius(25.0)
+                    NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+                    
+                    Spacer()
+                }
+                .frame(width: reader.size.width, height: reader.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(false)
+                .onDisappear(perform:{
+                    print("a")
+                })
             }
-            .frame(width: reader.size.width, height: reader.size.height*0.8, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .navigationBarHidden(false)
-            .navigationBarBackButtonHidden(false)
-            .onDisappear(perform:{
-                print("a")
-            })
+
 //            .navigationBarTitleDisplayMode(.inline)
         }
 //        }.navigationBarBackButtonHidden(true)
