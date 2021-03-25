@@ -111,3 +111,10 @@
 "Question %@" = "Você já conseguiu fazer o %@ hoje?";
 
 "Characters" = "Número máximo de caracteres atingido.";
+
+
+"Have-Title" = ", que tal um autocuidado agora?";
+"Have-Body" = "Você tem momentos de autocuidado para fazer hoje. Que tal cuidar de você agora?";
+
+"DontHave-Title" = ", vamos cuidar mais de você?";
+"DontHave-Body" = "Parece que você não se cuidou muito hoje. Vamos adicionar um novo momento de autocuidado?";

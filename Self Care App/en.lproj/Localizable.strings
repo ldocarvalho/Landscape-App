@@ -110,3 +110,14 @@
 "Question %@" = "Have you already done %@ today?";
 
 "Characters" = "Maximum number of characters reached.";
+
+
+//
+//// Notifications
+//
+
+"Have-Title" = ", what about a self care moment right now?";
+"Have-Body" = "You have self care moments for today. What about taking care of you right now?";
+
+"DontHave-Title" = ", let's care more for you today?";
+"DontHave-Body" = "It looks like you didn't care for you so much today. Let's add a new self care moment?";
