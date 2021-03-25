@@ -47,6 +47,7 @@ struct NotificationView: View {
                         .background(WatchColorManager.noButtonColor)
                         .cornerRadius(15.0)
                         .onTapGesture {
+                            scheduleNotifications(hour: 12, weekday: NextDay(), repeats: false)
                             View.toggle()
                         }
                     Text(LocalizedStringKey("Yes"))
@@ -61,6 +62,7 @@ struct NotificationView: View {
                             }
                             catch{
                             }
+                            scheduleNotifications(hour: 12, weekday: NextDay(), repeats: false)
                             View.toggle()
                     }
                     

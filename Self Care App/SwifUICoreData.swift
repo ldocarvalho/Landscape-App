@@ -53,5 +53,23 @@ struct PersistenceController {
             }
         }
     }
-    
+    func IsMomentToday(daysOfWeek:WeekDays) -> Bool{
+        let context = container.viewContext
+        
+        let fetchRequest = NSFetchRequest<Moment>(entityName: "Moment")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Moment.date, ascending: true)]
+        
+        do {
+            let moments = try context.fetch(fetchRequest)
+            for i in 0 ... moments.count {
+                if(i < moments.count && (WeekDays(rawValue: Int(moments[i].daysOfWeek)).contains(daysOfWeek))){
+                    return true
+                }
+            }
+        } catch {
+            print(error)
+            return false
+        }
+        return false
+    }
 }

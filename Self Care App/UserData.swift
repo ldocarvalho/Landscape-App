@@ -78,5 +78,36 @@ func CurrentDay() -> WeekDays{
     }
 
 }
+func NextDay() -> WeekDays{
+    var daysOfWeek : WeekDays = []
+    let weekday = Calendar.current.component(.weekday, from: Date())
+    switch(weekday){
+    case 7:
+        daysOfWeek.insert(.sunday)
+        return daysOfWeek
+    case 1:
+        daysOfWeek.insert(.monday)
+        return daysOfWeek
+    case 2:
+        daysOfWeek.insert(.thuesday)
+        return daysOfWeek
+    case 3:
+        daysOfWeek.insert(.wednesday)
+        return daysOfWeek
+    case 4:
+        daysOfWeek.insert(.thursday)
+        return daysOfWeek
+    case 5:
+        daysOfWeek.insert(.friday)
+        return daysOfWeek
+    case 6:
+        daysOfWeek.insert(.saturday)
+        return daysOfWeek
+    default:
+        daysOfWeek.insert(.sunday)
+        return daysOfWeek
+        
+    }
 
+}
  

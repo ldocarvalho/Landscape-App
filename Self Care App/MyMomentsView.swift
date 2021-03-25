@@ -232,6 +232,7 @@ struct MyMomentsView: View {
                                 } 
                             }
                         }.onAppear(perform:{
+                            scheduleNotifications(hour: 12, weekday: NextDay(), repeats: false)
                             
                         })
                     }.frame(width: reader.size.width)

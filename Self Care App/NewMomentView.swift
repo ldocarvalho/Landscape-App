@@ -110,7 +110,9 @@ struct NewMomentView : View {
                                        
                                         
                                         do {
+                                            scheduleNotifications(hour: 12, weekday: NextDay(), repeats: false)
                                             try moc.save()
+                                            
                                         }
                                         catch {
                                         }
