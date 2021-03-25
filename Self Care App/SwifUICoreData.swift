@@ -72,4 +72,18 @@ struct PersistenceController {
         }
         return false
     }
+    func userName() -> String{
+        let context = container.viewContext
+        
+        let fetchRequest = NSFetchRequest<Name>(entityName: "Name")
+        
+        do {
+            let moments = try context.fetch(fetchRequest)
+            return moments[0].name as! String
+        } catch {
+            print(error)
+            return ""
+        }
+        return ""
+    }
 }

@@ -110,4 +110,23 @@ func NextDay() -> WeekDays{
     }
 
 }
+func PartOfDay() -> String{
+    let hour = Calendar.current.component(.hour, from: Date())
+  
+    if (hour < 12){
+    return "Bom dia"
+    }
+        
+        
+    if (hour >= 12 && hour < 18){
+        return "Boa tarde"
+    }
+        
+    else{
+        return "Boa noite"
+    }
+    
+        
+    
+}
  

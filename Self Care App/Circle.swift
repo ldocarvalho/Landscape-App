@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+let coloredNavAppearance = UINavigationBarAppearance()
 
 struct ContentViewCircle: View {
     @State var progressValueIndividual: Float = 0 //Colocar informação do banco aqui
@@ -23,6 +24,17 @@ struct ContentViewCircle: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
     
+    
+//    init() {
+//            let appearance = UINavigationBarAppearance()
+//            appearance.shadowColor = .clear
+//            coloredNavAppearance.configureWithOpaqueBackground()
+//            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
+//            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
+//            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+//            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+//       
+//        }
         var body: some View {
             GeometryReader { reader in
                     ZStack {
@@ -66,7 +78,7 @@ struct ContentViewCircle: View {
                                         .padding(8)
                                         Spacer()
                                     }
-                            }
+                            }.background(Color("BackgroundColor"))
                             .navigationTitle(Text("My cycles"))
                         }
                         .frame(width: reader.size.width, alignment: .center)

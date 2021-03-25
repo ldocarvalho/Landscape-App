@@ -11,7 +11,7 @@ struct MainViewFirstUse: View {
     var body: some View {
         
             TabView {
-                MyMomentsView( showModalView: showModalView)
+                MyMomentsView( )
                     .navigationBarBackButtonHidden(true)
                     
                     .navigationBarBackButtonHidden(true)
@@ -30,7 +30,7 @@ struct MainViewFirstUse: View {
         }.navigationBarTitle(Text("Meus momentos"))
          .navigationBarBackButtonHidden(true)
          .navigationBarItems(trailing: Button("Add", action: {
-                MyMomentsView(showModalView: false).showModalView.toggle()
+                MyMomentsView().showModalView.toggle()
          }))
             
             
