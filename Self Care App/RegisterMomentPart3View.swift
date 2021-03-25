@@ -49,7 +49,8 @@ struct RegisterMomentPart3View: View {
                                 .font(.body)
                                 .fontWeight(.bold)
                                 .foregroundColor(ColorManager.bodyTextColor)
-                                .frame(width: reader.size.width*0.9, height: 60, alignment: .center)
+                                .multilineTextAlignment(.center)
+                                .frame(width: reader.size.width*0.9, height: 70, alignment: .center)
                             HStack {
                                 VStack {
                                     Image("iOS-PersonalIcon")

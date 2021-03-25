@@ -25,13 +25,14 @@ struct DeleteAlertView: View {
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
-                .frame(width: 280, height: 100, alignment: .center)
+                .frame(width: 280, alignment: .center)
+                .padding(.bottom, 8)
             Text(LocalizedStringKey("DeleteAlert-Body"))
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
                 .font(.body)
-                .frame(width: 280, height: 100, alignment: .center)
+                .frame(width: 280, alignment: .center)
             
             HStack {
                 Button(action: {
@@ -66,7 +67,7 @@ struct DeleteAlertView: View {
                 .cornerRadius(25.0)
                
             }.padding()
-        }.frame(width: 350, height: 370, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }.frame(width: 350, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(ColorManager.backgroundColor)
         .cornerRadius(30.0)
         .clipped()

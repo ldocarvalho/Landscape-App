@@ -22,13 +22,14 @@ struct DoneAlertView: View {
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(ColorManager.titleTextColor)
-                .frame(width: 280, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 280, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(.bottom, 8)
             Text(LocalizedStringKey("DoneAlert-Body"))
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundColor(ColorManager.bodyTextColor)
                 .font(.body)
-                .frame(width: 280, height: 90, alignment: .center)
+                .frame(width: 280, alignment: .center)
             
             HStack {
                 Button(action: {
@@ -43,7 +44,7 @@ struct DoneAlertView: View {
                 .cornerRadius(25.0)
             }.padding()
         }
-        .frame(width: 350, height: 370, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .frame(width: 350, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(ColorManager.backgroundColor)
         .cornerRadius(30.0)
         .clipped()

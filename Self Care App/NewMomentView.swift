@@ -66,6 +66,7 @@ struct NewMomentView : View {
                             Spacer()
                             Text(LocalizedStringKey("NewMoment-Label-1"))
                                 .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
                                 .foregroundColor(ColorManager.bodyTextColor)
                             Spacer()
                             
@@ -140,7 +141,7 @@ struct NewMomentView : View {
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
+                                    .frame(width: reader.size.width*0.9, height: 70, alignment: .leading)
                                 TextField(LocalizedStringKey("Onboarding-2-Placeholder-Name"), text: $momentTitle)
                                     .onChange(of: self.momentTitle, perform: { value in
                                         if value.count >= 25 {
@@ -239,7 +240,7 @@ struct NewMomentView : View {
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
+                                    .frame(width: reader.size.width*0.9, height: 70, alignment: .leading)
                                 HStack {
                                     VStack {
                                         Image("iOS-MorningIcon")
@@ -315,7 +316,7 @@ struct NewMomentView : View {
                                             .font(.body)
                                             .fontWeight(.bold)
                                             .foregroundColor(ColorManager.bodyTextColor)
-                                            .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
+                                            .frame(width: reader.size.width*0.9, height: 70, alignment: .leading)
                                     }
                                 }
                                 
@@ -450,7 +451,7 @@ struct NewMomentView : View {
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
+                                    .frame(width: reader.size.width*0.9, height: 70, alignment: .leading)
                                 
                                 HStack {
                                     VStack {

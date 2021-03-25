@@ -68,7 +68,7 @@ struct RegisterMomentPart4View: View {
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: reader.size.width*0.9, height: 50, alignment: .leading)
+                                    .frame(width: reader.size.width*0.9, height: 70, alignment: .leading)
 
                         
                         HStack {

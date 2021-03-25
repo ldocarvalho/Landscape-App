@@ -54,7 +54,7 @@ struct MomentDetailView: View {
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(ColorManager.titleTextColor)
-                                    .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
+                                    .frame(width: g.size.width*0.9, height: 85, alignment: .leading)
                                 Spacer()
                                 
                             } .padding([.leading, .trailing], 20)
@@ -62,7 +62,7 @@ struct MomentDetailView: View {
                                 Text(texts[Int(moment[id].selfCareType)-1])
                                     .font(.body)
                                     .foregroundColor(ColorManager.bodyTextColor)
-                                    .frame(width: g.size.width*0.9, height: 80, alignment: .leading)
+                                    .frame(width: g.size.width*0.9, height: 95, alignment: .leading)
                             }
                             
                             
@@ -86,7 +86,7 @@ struct MomentDetailView: View {
                                         .foregroundColor(ColorManager.textColorSecondaryButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })
-                                .frame(width: g.size.width*0.45, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: g.size.width*0.48, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .background(ColorManager.secondaryButtonColor)
                                 .cornerRadius(25.0)
                                 
@@ -115,7 +115,7 @@ struct MomentDetailView: View {
                                         .foregroundColor(ColorManager.textColorMainButton)
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 })
-                                .frame(width: g.size.width*0.45, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: g.size.width*0.48, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .opacity(done ? 0.4 : 1)
                                 .background(ColorManager.mainButtonColor)
                                 .cornerRadius(25.0)
