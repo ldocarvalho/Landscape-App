@@ -23,10 +23,12 @@ struct MainView: View {
                     
                 }.tag(0)
                
-                ContentViewCircle().navigationBarHidden(true)
+                ContentViewCircle()
+                    .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                  .tabItem {
                     selection == 1 ? Image("TabBarCyclesIconSelected") : Image( "TabBarCyclesIconDesselected")
+                    
                     Text(LocalizedStringKey("My cycles"))
                  }.tag(1)
         }.navigationBarHidden(true)
