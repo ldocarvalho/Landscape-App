@@ -41,7 +41,7 @@ struct RegisterMomentPart1View: View {
                                 .foregroundColor(ColorManager.bodyTextColor)
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
-                                .frame(width: reader.size.width*0.9, height: 60, alignment: .center)
+                                .frame(width: reader.size.width*0.9, height: 70, alignment: .center)
                             TextField(LocalizedStringKey("Onboarding-2-Placeholder-Name"), text: $momentTitle)
                                 .onChange(of: self.momentTitle, perform: { value in
                                     if value.count >= 25 {
