@@ -27,8 +27,8 @@ import SwiftUI
         var dateComponents = DateComponents()
         dateComponents.hour = hour
         dateComponents.weekday =  Calendar.current.component(.weekday, from: Date()) + 1
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeats)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeats)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
@@ -42,8 +42,8 @@ import SwiftUI
         var dateComponents = DateComponents()
         dateComponents.hour = hour
         dateComponents.weekday = Calendar.current.component(.weekday, from: Date()) + 1
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeats)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeats)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
