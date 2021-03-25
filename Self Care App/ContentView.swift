@@ -37,20 +37,21 @@ struct ContentView: View {
                         
                         Button(action: {
                             //colocar ação aqui
-//                            let user = Name(context: userNameData)
-//                            user.name = self.userName
-//                            user.firstUse = true
-//                            do{
-//                                try userNameData.save()
-//
-//                            }
-//                            catch{
-//                                print("error")
-//                            }
+                           
                             if(userName.isEmpty){
                                 shownEmptyFieldAlert.toggle()
                             }
                             else{
+                                
+                                let user = Name(context: userNameData)
+                                user.name = self.userName
+                                do{
+                                    try userNameData.save()
+
+                                }
+                                catch{
+                                    print("error")
+                                }
                                 View = true
                             }
                             

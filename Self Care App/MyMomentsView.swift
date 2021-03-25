@@ -10,6 +10,7 @@ import CoreData
 import Foundation
 struct MyMomentsView: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
+    @FetchRequest(entity: Name.entity(), sortDescriptors: []) var name: FetchedResults<Name>
     @Environment(\.managedObjectContext) var moc
     @State var daysOfWeek : WeekDays = []
     let partOfTheDayImage = ["iOS - PersonalIllustrationMorning","iOS - PersonalIllustrationAfternoon","iOS - PersonalIllustrationEvening"]
@@ -32,6 +33,18 @@ struct MyMomentsView: View {
     @State private var didTapFriday :Bool = true
     @State private var didTapSaturday :Bool = true
     @Environment(\.scenePhase) var scenePhase
+    
+    init() {
+            let appearance = UINavigationBarAppearance()
+            appearance.shadowColor = .clear
+            coloredNavAppearance.configureWithOpaqueBackground()
+            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
+            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
+            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+
+        }
+    
     var body: some View {
        
         GeometryReader { reader in
@@ -233,7 +246,13 @@ struct MyMomentsView: View {
                             }
                         }.onAppear(perform:{
                             scheduleNotifications(hour: 12, weekday: NextDay(), repeats: false)
-                            
+                            let appearance = UINavigationBarAppearance()
+                            appearance.shadowColor = .clear
+                            coloredNavAppearance.configureWithOpaqueBackground()
+                            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
+                            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
+                            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+                            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
                         })
                     }.frame(width: reader.size.width)
                     .onChange(of: scenePhase) { (newPhase) in
@@ -390,7 +409,7 @@ struct MyMomentsView: View {
                     
                     
                 }
-                .navigationBarTitle(Text("My moments"))
+                .navigationBarTitle(Text("Hi " + PersistenceController.shared.userName() ))
                 .navigationBarItems(trailing:
                         Button(action: {
                             self.showModalView.toggle()
