@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import CoreData
 public func scheduleNotifications(hour: Int, minute: Int, weekday: Int, repeats: Bool, title: String, body: String) {
         
         
@@ -24,8 +25,10 @@ public func scheduleNotifications(hour: Int, minute: Int, weekday: Int, repeats:
         dateComponents.hour = hour
         dateComponents.minute = minute
         dateComponents.weekday = weekday
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
        // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeats)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
 }
+
+

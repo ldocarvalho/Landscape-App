@@ -43,7 +43,10 @@ struct ContentView: View {
                         .frame(width: 8, height: 8)
                         .foregroundColor(currentPage==1 ? Color.white:Color.gray)
                 }.onAppear(perform: {
-                    ProgressOfTheDay()
+                
+                        ProgressOfTheDay()
+                    
+                    
                 })
                 
             }.navigationBarTitle(Text(LocalizedStringKey("Cycles")))
