@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var userNameData
-   // @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
+    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
     @State public var userName: String = ""
     @State var View : Bool = false
     @State var shownEmptyFieldAlert = false
@@ -42,7 +42,15 @@ struct ContentView: View {
                                 shownEmptyFieldAlert.toggle()
                             }
                             else{
-                                
+                                if nome.count > 0{
+                                    userNameData.delete(nome[0])
+                                        do{
+                                            try userNameData.save()
+                                        }
+                                        catch{
+
+                                        }
+                                }
                                 let user = Name(context: userNameData)
                                 user.name = self.userName
                                 do{
