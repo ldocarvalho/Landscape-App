@@ -118,3 +118,5 @@
 
 "DontHave-Title" = ", vamos cuidar mais de você?";
 "DontHave-Body" = "Parece que você não se cuidou muito hoje. Vamos adicionar um novo momento de autocuidado?";
+
+"Hello %@" = "Olá, %@";

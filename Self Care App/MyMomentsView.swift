@@ -409,7 +409,7 @@ struct MyMomentsView: View {
                     
                     
                 }
-                .navigationBarTitle(Text("Hi " + PersistenceController.shared.userName() ))
+                .navigationBarTitle(Text(LocalizedStringKey("Hello \(PersistenceController.shared.userName())")))
                 .navigationBarItems(trailing:
                         Button(action: {
                             self.showModalView.toggle()
