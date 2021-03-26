@@ -79,11 +79,11 @@ struct PersistenceController {
         
         do {
             let moments = try context.fetch(fetchRequest)
-            return moments[0].name as! String
+            return moments[0].name!
         } catch {
             print(error)
             return ""
         }
-        return ""
+       
     }
 }
