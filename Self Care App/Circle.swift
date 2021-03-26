@@ -25,13 +25,12 @@ struct ContentViewCircle: View {
     
         var body: some View {
             GeometryReader { reader in
-                NavigationView {
                     ZStack {
                         ColorManager.backgroundColor
                             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        
+                        NavigationView {
                             ScrollView(.vertical, showsIndicators: false) {
-                                VStack {
-                                    
                                     VStack {
                                         Text(LocalizedStringKey("MyCycles-Label"))
                                             .font(.body)
@@ -67,7 +66,6 @@ struct ContentViewCircle: View {
                                         .padding(8)
                                         Spacer()
                                     }
-                                }
                             }
                             .navigationTitle(Text("My cycles"))
                         }
