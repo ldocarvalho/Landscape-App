@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-let coloredNavAppearance = UINavigationBarAppearance()
 
 struct ContentViewCircle: View {
     @State var progressValueIndividual: Float = 0 //Colocar informação do banco aqui
@@ -24,25 +23,15 @@ struct ContentViewCircle: View {
     @FetchRequest(entity: Moment.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Moment.date, ascending: true )]) var moment: FetchedResults<Moment>
     @Environment(\.managedObjectContext) var moc
     
-    
-//    init() {
-//            let appearance = UINavigationBarAppearance()
-//            appearance.shadowColor = .clear
-//            coloredNavAppearance.configureWithOpaqueBackground()
-//            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
-//            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
-//            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
-//            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
-//       
-//        }
         var body: some View {
             GeometryReader { reader in
+                NavigationView {
                     ZStack {
                         ColorManager.backgroundColor
                             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                        
-                        NavigationView {
                             ScrollView(.vertical, showsIndicators: false) {
+                                VStack {
+                                    
                                     VStack {
                                         Text(LocalizedStringKey("MyCycles-Label"))
                                             .font(.body)
@@ -78,7 +67,8 @@ struct ContentViewCircle: View {
                                         .padding(8)
                                         Spacer()
                                     }
-                            }.background(Color("BackgroundColor"))
+                                }
+                            }
                             .navigationTitle(Text("My cycles"))
                         }
                         .frame(width: reader.size.width, alignment: .center)
@@ -213,7 +203,7 @@ struct ContentViewCircle: View {
                     Rectangle().frame(width: min(CGFloat(self.progressIndividual) *  300,  300), height: 40)
                         .foregroundColor(ColorManager.purpleCicleColor)
                         .animation(.spring(response: 2.0, dampingFraction: 1.0, blendDuration: 1.0))
-                        .cornerRadius(45.0)                    
+                        .cornerRadius(45.0)
                     
                     }.cornerRadius(45.0)
                 .overlay(Text("Personal")

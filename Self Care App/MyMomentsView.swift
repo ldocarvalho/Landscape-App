@@ -34,16 +34,16 @@ struct MyMomentsView: View {
     @State private var didTapSaturday :Bool = true
     @Environment(\.scenePhase) var scenePhase
     
-    init() {
-            let appearance = UINavigationBarAppearance()
-            appearance.shadowColor = .clear
-            coloredNavAppearance.configureWithOpaqueBackground()
-            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
-            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
-            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+//    init() {
+//            let appearance = UINavigationBarAppearance()
+//            appearance.shadowColor = .clear
+//            coloredNavAppearance.configureWithOpaqueBackground()
+//            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
+//            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
+//            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+//            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
 
-        }
+        //}
     
     var body: some View {
        
@@ -246,13 +246,13 @@ struct MyMomentsView: View {
                             }
                         }.onAppear(perform:{
                             scheduleNotifications(hour: 12, weekday: NextDay(), repeats: false)
-                            let appearance = UINavigationBarAppearance()
-                            appearance.shadowColor = .clear
-                            coloredNavAppearance.configureWithOpaqueBackground()
-                            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
-                            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
-                            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
-                            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+//                            let appearance = UINavigationBarAppearance()
+//                            appearance.shadowColor = .clear
+//                            coloredNavAppearance.configureWithOpaqueBackground()
+//                            coloredNavAppearance.backgroundColor = UIColor(Color("BackgroundColor"))
+//                            UINavigationBar.appearance().standardAppearance.shadowColor = .clear
+//                            UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+//                            UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
                         })
                     }.frame(width: reader.size.width)
                     .onChange(of: scenePhase) { (newPhase) in
