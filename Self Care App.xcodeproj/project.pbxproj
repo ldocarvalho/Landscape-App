@@ -18,6 +18,7 @@
 		7616657325EEC86800A35A6A /* RegisterMomentPart3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */; };
 		7616657A25EED44C00A35A6A /* MyMomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616657925EED44C00A35A6A /* MyMomentsView.swift */; };
 		7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7616658025EED7E700A35A6A /* MomentDetailView.swift */; };
+		761DDC922637584F006C5BB9 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DDC912637584F006C5BB9 /* ContentViewModel.swift */; };
 		769F889825F028BC00B68091 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F889725F028BC00B68091 /* ColorManager.swift */; };
 		769F889F25F02EC100B68091 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F889E25F02EC100B68091 /* CustomCorner.swift */; };
 		769F88AB25F153F100B68091 /* WatchColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F88AA25F153F100B68091 /* WatchColorManager.swift */; };
@@ -135,6 +136,7 @@
 		7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart3View.swift; sourceTree = "<group>"; };
 		7616657925EED44C00A35A6A /* MyMomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMomentsView.swift; sourceTree = "<group>"; };
 		7616658025EED7E700A35A6A /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
+		761DDC912637584F006C5BB9 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		769F889725F028BC00B68091 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		769F889E25F02EC100B68091 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		769F88AA25F153F100B68091 /* WatchColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColorManager.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				769F889725F028BC00B68091 /* ColorManager.swift */,
 				769F889E25F02EC100B68091 /* CustomCorner.swift */,
+				761DDC912637584F006C5BB9 /* ContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				A867067E25F9681500C37CD2 /* FuncNotification.swift in Sources */,
 				A85F8E9F25ED7804008B7AF1 /* UserData.swift in Sources */,
 				A80B1CF025F1664A002386F8 /* UserData.xcdatamodeld in Sources */,
+				761DDC922637584F006C5BB9 /* ContentViewModel.swift in Sources */,
 				7616656525EEC3E300A35A6A /* RegisterMomentPart1View.swift in Sources */,
 				76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */,
 				769F889825F028BC00B68091 /* ColorManager.swift in Sources */,

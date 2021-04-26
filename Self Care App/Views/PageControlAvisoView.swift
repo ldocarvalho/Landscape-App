@@ -36,7 +36,7 @@ struct OnboardingViewPage: View {
                         .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(ColorManager.cardColor)
                         .cornerRadius(25.0)
-                    NavigationLink(destination: MomentsView(), isActive: $View) { EmptyView() }
+                    NavigationLink(destination: MyMomentsView(), isActive: $View) { EmptyView() }
                     
                     Spacer()
                 }

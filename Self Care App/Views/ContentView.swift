@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var userNameData
-    @FetchRequest(entity:Name.entity() , sortDescriptors: []) var nome : FetchedResults<Name>
-    @State public var userName: String = ""
-    @State var View : Bool = false
-    @State var shownEmptyFieldAlert = false
+    @StateObject var viewModel = ContentViewModel()
+    
     var body: some View {
         GeometryReader { reader in
             NavigationView{
@@ -29,40 +26,14 @@ struct ContentView: View {
                                 .multilineTextAlignment(.center)
                                 .frame(width: reader.size.width*0.9, height: 100, alignment: .center)
                             
-                            TextField(LocalizedStringKey("Onboarding-1-Placeholder-Name"), text: $userName)
+                            TextField(LocalizedStringKey("Onboarding-1-Placeholder-Name"), text: $viewModel.userName)
                                 .frame(width: reader.size.width*0.8, height: 50, alignment: .center)
                                 .textFieldStyle(CircularTextFieldStyle())
                                 .padding(16)
-                        }.blur(radius: shownEmptyFieldAlert ? 8 : 0)
+                        }.blur(radius: viewModel.shownEmptyFieldAlert ? 8 : 0)
                         
-                        Button(action: {
-                            //colocar ação aqui
-                           
-                            if(userName.isEmpty){
-                                shownEmptyFieldAlert.toggle()
-                            }
-                            else{
-                                if nome.count > 0{
-                                    userNameData.delete(nome[0])
-                                        do{
-                                            try userNameData.save()
-                                        }
-                                        catch{
-
-                                        }
-                                }
-                                let user = Name(context: userNameData)
-                                user.name = self.userName
-                                do{
-                                    try userNameData.save()
-
-                                }
-                                catch{
-                                    print("error")
-                                }
-                                View = true
-                            }
-                            
+                        Button(action: {                           
+                            viewModel.saveName()
                         }) {
                             VStack{
                                 Text(LocalizedStringKey("Onboarding-1-Button-Name"))
@@ -73,20 +44,21 @@ struct ContentView: View {
                         }.frame(width: reader.size.width*0.4, height: 40, alignment: .center)
                         .background(ColorManager.mainButtonColor)
                         .cornerRadius(25.0)
-                        NavigationLink(destination: RegisterMomentPart1View(momentTitle: "", name: userName), isActive: $View) { EmptyView() }
+                        NavigationLink(destination: RegisterMomentPart1View(momentTitle: "", name: viewModel.name), isActive: $viewModel.View) { EmptyView() }
                         Spacer()
                         Image("iOS - OnboardingImage")
                             .resizable()
                             .frame(width: reader.size.width, height: reader.size.height*0.38, alignment: .center)
                     } .frame(width: reader.size.width, height: reader.size.height, alignment: .center)
-                    .blur(radius: shownEmptyFieldAlert ? 8 : 0)
-                    if shownEmptyFieldAlert {
-                        EmptyFieldView(shown: $shownEmptyFieldAlert)
+                    .blur(radius: viewModel.shownEmptyFieldAlert ? 8 : 0)
+                    
+                    if viewModel.shownEmptyFieldAlert {
+                        EmptyFieldView(shown: $viewModel.shownEmptyFieldAlert)
                             .offset(y: 0)
                     }
                 }.onTapGesture {
                     hideKeyboard()
-                    shownEmptyFieldAlert = false
+                    viewModel.shownEmptyFieldAlert = false
                 }
             }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
