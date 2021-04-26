@@ -27,7 +27,6 @@
 		76A59E7125F696D200571698 /* RegisterMomentPart4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */; };
 		76BB7A8025F2A1F1007CE764 /* EmptyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */; };
 		76ED3A6925ED564F00EF84A8 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A6825ED564F00EF84A8 /* Circle.swift */; };
-		76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */; };
 		76F593BD25E82ED3008E171E /* Self_Care_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */; };
 		76F593BF25E82ED3008E171E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F593BE25E82ED3008E171E /* ContentView.swift */; };
 		76F593C125E82ED4008E171E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F593C025E82ED4008E171E /* Assets.xcassets */; };
@@ -145,7 +144,6 @@
 		76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomentPart4View.swift; sourceTree = "<group>"; };
 		76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldView.swift; sourceTree = "<group>"; };
 		76ED3A6825ED564F00EF84A8 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsView.swift; sourceTree = "<group>"; };
 		76F593B925E82ED3008E171E /* Self Care App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Care App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_Care_AppApp.swift; sourceTree = "<group>"; };
 		76F593BE25E82ED3008E171E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -220,6 +218,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		761DDC7E2637560A006C5BB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */,
+				A85F8E9E25ED7804008B7AF1 /* UserData.swift */,
+				A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		761DDC7F2637560E006C5BB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				761DDC8626375665006C5BB9 /* Alerts */,
+				76F593BE25E82ED3008E171E /* ContentView.swift */,
+				7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */,
+				7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */,
+				7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */,
+				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
+				A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */,
+				A85F8E7225ED6CF1008B7AF1 /* TabView.swift */,
+				A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */,
+				76ED3A6825ED564F00EF84A8 /* Circle.swift */,
+				7616657925EED44C00A35A6A /* MyMomentsView.swift */,
+				7616658025EED7E700A35A6A /* MomentDetailView.swift */,
+				7616653925ED7CE500A35A6A /* NewMomentView.swift */,
+				A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */,
+				A80B1CB725F008C6002386F8 /* AvisoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		761DDC8026375617006C5BB9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				769F889725F028BC00B68091 /* ColorManager.swift */,
+				769F889E25F02EC100B68091 /* CustomCorner.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		761DDC8626375665006C5BB9 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */,
+				769F88D025F172F900B68091 /* DeleteAlertView.swift */,
+				76A1D47D25F865CA006F7AE7 /* DoneAlertView.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		76F593B025E82ED3008E171E = {
 			isa = PBXGroup;
 			children = (
@@ -248,35 +297,15 @@
 		76F593BB25E82ED3008E171E /* Self Care App */ = {
 			isa = PBXGroup;
 			children = (
-				A892519325F707470068D4BE /* Self Care App.entitlements */,
+				761DDC7E2637560A006C5BB9 /* Models */,
+				761DDC7F2637560E006C5BB9 /* Views */,
+				761DDC8026375617006C5BB9 /* ViewModels */,
+				761244D526090F7A00867C73 /* Localizable.strings */,
 				76F593BC25E82ED3008E171E /* Self_Care_AppApp.swift */,
-				A85F8E7225ED6CF1008B7AF1 /* TabView.swift */,
-				76F593BE25E82ED3008E171E /* ContentView.swift */,
+				A892519325F707470068D4BE /* Self Care App.entitlements */,
 				76F593C025E82ED4008E171E /* Assets.xcassets */,
 				76F593C525E82ED4008E171E /* Info.plist */,
 				76F593C225E82ED4008E171E /* Preview Content */,
-				76ED3A6825ED564F00EF84A8 /* Circle.swift */,
-				76ED3A7B25ED5A8D00EF84A8 /* MomentsView.swift */,
-				A85F8E9E25ED7804008B7AF1 /* UserData.swift */,
-				7616653925ED7CE500A35A6A /* NewMomentView.swift */,
-				7616656425EEC3E300A35A6A /* RegisterMomentPart1View.swift */,
-				7616656B25EEC76C00A35A6A /* RegisterMomentPart2View.swift */,
-				7616657225EEC86800A35A6A /* RegisterMomentPart3View.swift */,
-				76A59E7025F696D200571698 /* RegisterMomentPart4View.swift */,
-				7616657925EED44C00A35A6A /* MyMomentsView.swift */,
-				7616658025EED7E700A35A6A /* MomentDetailView.swift */,
-				A85F8EBB25EED088008B7AF1 /* PageControlOnboard.swift */,
-				A80B1CB725F008C6002386F8 /* AvisoView.swift */,
-				A80B1CBE25F00CC0002386F8 /* PageControlAvisoView.swift */,
-				A80B1CC625F01EA2002386F8 /* SwifUICoreData.swift */,
-				769F889725F028BC00B68091 /* ColorManager.swift */,
-				769F889E25F02EC100B68091 /* CustomCorner.swift */,
-				A80B1CEE25F1664A002386F8 /* UserData.xcdatamodeld */,
-				769F88D025F172F900B68091 /* DeleteAlertView.swift */,
-				76BB7A7F25F2A1F1007CE764 /* EmptyFieldView.swift */,
-				A89251DF25F809D90068D4BE /* TabViewFirstUse.swift */,
-				76A1D47D25F865CA006F7AE7 /* DoneAlertView.swift */,
-				761244D526090F7A00867C73 /* Localizable.strings */,
 			);
 			path = "Self Care App";
 			sourceTree = "<group>";
@@ -563,7 +592,6 @@
 				769F889825F028BC00B68091 /* ColorManager.swift in Sources */,
 				769F88D125F172F900B68091 /* DeleteAlertView.swift in Sources */,
 				76BB7A8025F2A1F1007CE764 /* EmptyFieldView.swift in Sources */,
-				76ED3A7C25ED5A8D00EF84A8 /* MomentsView.swift in Sources */,
 				7616653A25ED7CE500A35A6A /* NewMomentView.swift in Sources */,
 				76A1D47E25F865CA006F7AE7 /* DoneAlertView.swift in Sources */,
 				7616658125EED7E700A35A6A /* MomentDetailView.swift in Sources */,
